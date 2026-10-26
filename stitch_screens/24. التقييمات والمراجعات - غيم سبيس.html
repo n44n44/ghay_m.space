@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>24. التقييمات والمراجعات - غيم سبيس | نفحات حضرموت</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Kufi+Arabic:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#2f3a49",
+            "on-background": "#d8e3f7",
+            "inverse-surface": "#d8e3f7",
+            "surface-dim": "#091422",
+            "on-primary-container": "#7f92b3",
+            "background": "#091422",
+            "primary-fixed": "#d6e3ff",
+            "on-error": "#690005",
+            "on-tertiary-container": "#8f80fa",
+            "on-error-container": "#ffdad6",
+            "surface-container-highest": "#2b3545",
+            "secondary-fixed-dim": "#84cfff",
+            "on-primary-fixed-variant": "#354765",
+            "primary": "#b5c7eb",
+            "on-secondary-fixed-variant": "#004c6c",
+            "surface-container-lowest": "#040f1c",
+            "on-surface": "#d8e3f7",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#e5deff",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "inverse-primary": "#4d5f7e",
+            "surface-container": "#15202f",
+            "on-surface-variant": "#c4c6ce",
+            "on-secondary": "#00344c",
+            "primary-fixed-dim": "#b5c7eb",
+            "error-container": "#93000a",
+            "outline-variant": "#44474d",
+            "on-secondary-container": "#002d42",
+            "primary-container": "#172a46",
+            "on-secondary-fixed": "#001e2e",
+            "tertiary-fixed-dim": "#c7bfff",
+            "inverse-on-surface": "#263140",
+            "on-primary": "#1e314d",
+            "surface-tint": "#b5c7eb",
+            "secondary-fixed": "#c7e7ff",
+            "on-primary-fixed": "#061c37",
+            "on-tertiary": "#2c0e94",
+            "surface-container-low": "#111c2a",
+            "tertiary": "#c7bfff",
+            "outline": "#8e9098",
+            "secondary-container": "#299ad1",
+            "secondary": "#84cfff",
+            "surface-container-high": "#202b39",
+            "surface-variant": "#2b3545",
+            "tertiary-container": "#25008c",
+            "on-tertiary-fixed": "#180065",
+            "surface": "#091422"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-2xl": "3rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["Noto Kufi Arabic", "Manrope", "sans-serif"],
+            "label-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "label-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg-mobile": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "label-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-lg": ["Noto Kufi Arabic", "Manrope", "sans-serif"],
+            "body-sm": ["Noto Kufi Arabic", "Manrope", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .star-gold {
+      color: #FFC857;
+      font-variation-settings: 'FILL' 1;
+    }
+    .star-muted {
+      color: rgba(255, 200, 87, 0.25);
+    }
+    /* Ambient cloud glowing border */
+    .glow-card {
+      box-shadow: 0 4px 20px -2px rgba(13, 24, 38, 0.6), 0 0 1px 1px rgba(84, 185, 242, 0.12);
+    }
+    .glow-card:hover {
+      box-shadow: 0 8px 28px -4px rgba(84, 185, 242, 0.16), 0 0 1px 1px rgba(84, 185, 242, 0.28);
+    }
+  </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body-md antialiased selection:bg-secondary selection:text-surface-dim min-h-screen flex flex-col justify-between">
+<!-- ================= TOP APP BAR ================= -->
+<header class="bg-surface-container-low/85 backdrop-blur-md text-secondary docked full-width top-0 z-50 border-b border-outline-variant/20 shadow-2xl shadow-surface-container-lowest/50 sticky">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+<!-- Brand Logo & Mobile Trigger -->
+<div class="flex items-center gap-4">
+<button aria-label="فتح القائمة" class="md:hidden p-2 text-on-surface hover:text-secondary rounded-lg transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-9 h-9 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary shadow-lg shadow-secondary/10 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-secondary tracking-tight">Ghaym Space</span>
+</a>
+</div>
+<!-- Desktop Search Bar (on_left in RTL context = logical flow) -->
+<div class="hidden sm:flex flex-1 max-w-md mx-6">
+<div class="relative w-full">
+<span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="w-full pr-10 pl-4 py-2 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-body-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" placeholder="البحث في تقييمات العملاء، أرقام الطلبات..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links (Active state correctly mapping Merchant Portal) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">المتجر</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">الطلبات</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">العروض</a>
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 transition-all text-label-md font-label-md" href="#">لوحة التاجر</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<button class="relative p-2 text-on-surface-variant hover:text-secondary rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 duration-150" title="الشحن والتوصيل">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+</button>
+<button class="relative p-2 text-on-surface-variant hover:text-secondary rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 duration-150" title="الإشعارات">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface-container-low"></span>
+</button>
+<button class="relative p-2 text-on-surface-variant hover:text-secondary rounded-lg hover:bg-surface-container-high transition-colors active:scale-95 duration-150" title="سلة المشتريات">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+<div class="h-5 w-px bg-outline-variant/30 hidden sm:block"></div>
+<button class="flex items-center gap-2 pl-2 pr-1 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 transition-all text-label-md font-label-md text-on-surface">
+<img alt="صورة الملف الشخصي للمستخدم" class="w-7 h-7 rounded-full object-cover border border-secondary/40" data-alt="Modern circular portrait photograph of a Yemeni entrepreneur merchant wearing traditional clean white headwear and confident smile, captured in high-detail studio lighting with soft nocturnal blue cinematic backdrop tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGaI_2F3Iuq0kvOLaE66QhucWzRuUGmRo6uR_nd5XHmeCVDUlKitrD7qg8nYidq7AEzEd3EWKBEWkPbElZdDely7uGZHtcCZ6DQhfFKwObXj8kyicuWsEbrjLrevJ_uWYfF9ejHw9LipLnCS3LP5s-yyQNhGYoavMyCT5KH-YsAVjd8psS1gXq-Vhr2kNbT5dBd6GusER_dew7aBKV7Use2Es96MljUc2zvblCZxGYCLjAywWctwpM"/>
+<span class="hidden md:inline font-semibold">حسابي</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= MAIN APP WORKSPACE ================= -->
+<div class="flex-1 w-full max-w-7xl mx-auto flex flex-col md:flex-row">
+<!-- ================= SIDE NAV BAR (Integrated Merchant Panel) ================= -->
+<aside class="w-full md:w-72 flex-shrink-0 bg-surface-container border-b md:border-b-0 md:border-l border-outline-variant/20 shadow-xl shadow-surface-container-lowest/40 md:sticky md:top-16 md:h-[calc(100vh-4rem)] p-4 flex flex-col justify-between overflow-y-auto">
+<!-- Top Section: Merchant Brand Identity -->
+<div>
+<div class="p-3 bg-surface-container-low rounded-xl border border-secondary/20 mb-6 flex items-center gap-3">
+<div class="relative">
+<img alt="شعار متجر التاجر المعتمد في المكلا" class="w-12 h-12 rounded-xl object-cover border border-secondary/30 shadow-md" data-alt="Distinctive brand badge for luxury Yemeni perfumery and oud store showing elegant golden Arabic calligraphy of Nafahat Hadramout on an Arabian deep indigo background with soft atmospheric lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL8NFDWR1sUfsPEjI2L7d9vdh3ftDzGuzFr8c7KPsWVvu9S_NI_QwZGkOszuzs6QjBL9SpCaZOdd9aaKMJ7eSDoP1pDLqpbruTZZhmGq0l9OzKKFboRARFPHqe9Cqii41O_bk2chKRjK17n28F6x8fSZkfQz_iQ_PNuQCxGZHbX4CpBHe-Z2QWuVHLsqJRmXdd9Ylucc0WAcKgkwaQHgjcZr3UE6ylMSIutxvwfJN9TnMUzVdu60fh"/>
+<span class="absolute -bottom-1 -left-1 bg-secondary text-surface-dim rounded-full p-0.5 shadow-sm" title="متجر موثق">
+<span class="material-symbols-outlined text-xs block" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="min-w-0 flex-1">
+<h2 class="text-headline-sm font-headline-sm font-bold text-on-surface truncate">سوق الغيم التجاري</h2>
+<p class="text-body-sm font-body-sm text-secondary truncate flex items-center gap-1">
+<span>متجر نفحات حضرموت</span>
+<span class="text-[10px] text-on-surface-variant font-normal">| المكلا</span>
+</p>
+<span class="text-[11px] text-on-surface-variant/70 block truncate">بوابة التاجر المعتمد - حضرموت</span>
+</div>
+</div>
+<!-- Action CTA Button -->
+<button class="w-full py-2.5 px-4 mb-6 bg-secondary text-surface-dim rounded-lg text-label-lg font-label-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-fixed shadow-md shadow-secondary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>إضافة منتج جديد</span>
+</button>
+<!-- Navigation Tabs (6 Standard merchant tabs + active state logic) -->
+<nav aria-label="قائمة لوحة التحكم" class="space-y-1.5">
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">dashboard</span>
+<span>لوحة التحكم</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">inventory_2</span>
+<span>إدارة المنتجات</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">receipt_long</span>
+<span>طلبات الزبائن</span>
+</a>
+<!-- Contextually highlighted Review Management item -->
+<a class="bg-secondary/15 text-secondary font-semibold rounded-lg px-4 py-2.5 flex items-center justify-between transition-all text-label-lg font-label-lg border border-secondary/20 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">reviews</span>
+<span>التقييمات والمراجعات</span>
+</div>
+<span class="bg-secondary/20 text-secondary text-xs px-2 py-0.5 rounded-full font-label-sm">4 جديدة</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">storefront</span>
+<span>إعدادات المتجر</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">near_me</span>
+<span>الموقع والتوصيل</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg group" href="#">
+<span class="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-secondary transition-colors">analytics</span>
+<span>التقارير المالية</span>
+</a>
+</nav>
+</div>
+<!-- Footer Action Links of SideBar -->
+<div class="pt-4 mt-6 border-t border-outline-variant/20 space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2 flex items-center gap-3 transition-all text-body-sm font-body-sm" href="#">
+<span class="material-symbols-outlined text-lg">help_center</span>
+<span>مركز المساعدة</span>
+</a>
+<a class="text-error hover:bg-error-container/20 rounded-lg px-4 py-2 flex items-center gap-3 transition-all text-body-sm font-body-sm" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6">
+<!-- Breadcrumbs & Headline Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mb-1">
+<span>لوحة التاجر</span>
+<span class="material-symbols-outlined text-xs">chevron_left</span>
+<span>متجر نفحات حضرموت</span>
+<span class="material-symbols-outlined text-xs">chevron_left</span>
+<span class="text-secondary font-medium">التقييمات والمراجعات</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface flex items-center gap-2">
+<span>تقييمات وآراء العملاء</span>
+<span class="text-xs font-normal py-1 px-2.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30">
+              خاص بمنتجات متجرك
+            </span>
+</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+            متابعة ردود أفعال المشترين الموثقين في ساحل حضرموت وإدارة تجربة الزبائن بجودة عالية
+          </p>
+</div>
+<!-- Quick Summary Actions -->
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/30 text-on-surface px-4 py-2 rounded-lg text-label-md font-label-md flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-base">download</span>
+<span>تصدير السجل (CSV)</span>
+</button>
+<button class="bg-primary-container text-secondary border border-secondary/40 hover:bg-secondary/20 px-4 py-2 rounded-lg text-label-md font-label-md flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-base">verified</span>
+<span>معايير التميز التجاري</span>
+</button>
+</div>
+</div>
+<!-- ================= HERO BENTO: PERFORMANCE & RATING METRICS ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+<!-- Score & Star Breakdown Card (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container p-6 rounded-xl border border-secondary/15 glow-card relative overflow-hidden">
+<!-- Background subtle watermarks -->
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
+<!-- Overall Score Badge -->
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-xl border border-secondary/25 w-full sm:w-52 text-center shadow-inner">
+<span class="text-display-lg font-display-lg font-bold text-on-surface tracking-tighter">4.9</span>
+<!-- Stars Rating -->
+<div class="flex items-center gap-1 my-2">
+<span class="material-symbols-outlined star-gold text-xl">star</span>
+<span class="material-symbols-outlined star-gold text-xl">star</span>
+<span class="material-symbols-outlined star-gold text-xl">star</span>
+<span class="material-symbols-outlined star-gold text-xl">star</span>
+<span class="material-symbols-outlined star-gold text-xl">star_half</span>
+</div>
+<span class="text-body-sm font-body-sm text-secondary font-semibold">من 5.0 نجوم</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-1">412 تقييماً موثقاً</span>
+</div>
+<!-- Breakdown Bars -->
+<div class="flex-1 w-full space-y-2.5">
+<div class="flex items-center justify-between text-label-md font-label-md text-on-surface mb-1">
+<span class="font-bold">توزيع تقييمات المتجر</span>
+<span class="text-secondary text-xs">نسبة الإيجابية: 97%</span>
+</div>
+<!-- 5 Stars -->
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-12 text-on-surface flex items-center gap-1 font-semibold text-xs">
+                  5 <span class="material-symbols-outlined star-gold text-xs">star</span>
+</span>
+<div class="flex-1 bg-surface-container-lowest h-2.5 rounded-full overflow-hidden border border-outline-variant/20">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 88%;"></div>
+</div>
+<span class="w-10 text-left text-xs font-mono font-medium text-on-surface-variant">88%</span>
+</div>
+<!-- 4 Stars -->
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-12 text-on-surface flex items-center gap-1 font-semibold text-xs">
+                  4 <span class="material-symbols-outlined star-gold text-xs">star</span>
+</span>
+<div class="flex-1 bg-surface-container-lowest h-2.5 rounded-full overflow-hidden border border-outline-variant/20">
+<div class="bg-secondary/70 h-full rounded-full transition-all duration-500" style="width: 9%;"></div>
+</div>
+<span class="w-10 text-left text-xs font-mono font-medium text-on-surface-variant">9%</span>
+</div>
+<!-- 3 Stars -->
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-12 text-on-surface flex items-center gap-1 font-semibold text-xs">
+                  3 <span class="material-symbols-outlined star-gold text-xs">star</span>
+</span>
+<div class="flex-1 bg-surface-container-lowest h-2.5 rounded-full overflow-hidden border border-outline-variant/20">
+<div class="bg-secondary/40 h-full rounded-full transition-all duration-500" style="width: 2%;"></div>
+</div>
+<span class="w-10 text-left text-xs font-mono font-medium text-on-surface-variant">2%</span>
+</div>
+<!-- 2 Stars -->
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-12 text-on-surface flex items-center gap-1 font-semibold text-xs">
+                  2 <span class="material-symbols-outlined star-gold text-xs">star</span>
+</span>
+<div class="flex-1 bg-surface-container-lowest h-2.5 rounded-full overflow-hidden border border-outline-variant/20">
+<div class="bg-secondary/20 h-full rounded-full transition-all duration-500" style="width: 0.8%;"></div>
+</div>
+<span class="w-10 text-left text-xs font-mono font-medium text-on-surface-variant">0.8%</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-12 text-on-surface flex items-center gap-1 font-semibold text-xs">
+                  1 <span class="material-symbols-outlined star-gold text-xs">star</span>
+</span>
+<div class="flex-1 bg-surface-container-lowest h-2.5 rounded-full overflow-hidden border border-outline-variant/20">
+<div class="bg-error/50 h-full rounded-full transition-all duration-500" style="width: 0.2%;"></div>
+</div>
+<span class="w-10 text-left text-xs font-mono font-medium text-on-surface-variant">0.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick KPI Indicators (4 cols) -->
+<div class="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-4">
+<!-- Card: Customer Satisfaction -->
+<div class="bg-surface-container p-5 rounded-xl border border-secondary/15 glow-card flex items-center justify-between">
+<div>
+<span class="text-body-sm font-body-sm text-on-surface-variant block mb-1">نسبة رضا الزبائن</span>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-on-surface">98.4%</span>
+<span class="text-xs text-secondary font-medium flex items-center">
+<span class="material-symbols-outlined text-xs">trending_up</span> +2.1%
+                </span>
+</div>
+<p class="text-[11px] text-on-surface-variant/80 mt-1">بناءً على طلبات آخر 30 يوماً</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+</div>
+</div>
+<!-- Card: Response Velocity & Pending -->
+<div class="bg-surface-container p-5 rounded-xl border border-secondary/15 glow-card flex items-center justify-between">
+<div>
+<span class="text-body-sm font-body-sm text-on-surface-variant block mb-1">سرعة الرد والردود المنجزة</span>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-secondary">99%</span>
+<span class="text-xs text-on-surface-variant font-medium">(408 من 412)</span>
+</div>
+<p class="text-[11px] text-secondary/90 mt-1 font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+                متبقي 4 تقييمات بانتظار ردك
+              </p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">quickreply</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= FILTER TABS & SEARCH CONTROLS ================= -->
+<div class="bg-surface-container p-4 rounded-xl border border-secondary/15 space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+<button class="bg-secondary text-surface-dim font-bold px-4 py-2 rounded-lg text-label-md font-label-md whitespace-nowrap transition-transform active:scale-95 shadow-sm">
+              جميع التقييمات (412)
+            </button>
+<button class="bg-surface-container-high hover:bg-surface-container-highest border border-secondary/30 text-secondary font-semibold px-4 py-2 rounded-lg text-label-md font-label-md whitespace-nowrap flex items-center gap-2 transition-colors">
+<span>تقييمات بحاجة لرد</span>
+<span class="w-5 h-5 rounded-full bg-secondary text-surface-dim text-xs flex items-center justify-center font-bold">4</span>
+</button>
+<button class="bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/20 text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-lg text-label-md font-label-md whitespace-nowrap transition-colors">
+              تقييمات المنتجات
+            </button>
+<button class="bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/20 text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-lg text-label-md font-label-md whitespace-nowrap transition-colors">
+              تقييمات خدمة المتجر والتوصيل
+            </button>
+</div>
+<!-- Sort Select Menu -->
+<div class="flex items-center gap-3">
+<label class="text-label-md font-label-md text-on-surface-variant whitespace-nowrap flex items-center gap-1" for="sort-reviews">
+<span class="material-symbols-outlined text-base">sort</span>
+<span>الترتيب حسب:</span>
+</label>
+<div class="relative min-w-[170px]">
+<select class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface text-label-md font-label-md rounded-lg py-2 pr-3 pl-8 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none appearance-none cursor-pointer" id="sort-reviews">
+<option selected="">الأحدث أولاً</option>
+<option>الأعلى تقييماً (5 نجوم)</option>
+<option>الأقل تقييماً</option>
+<option>الأكثر تفاعلاً</option>
+</select>
+<span class="absolute inset-y-0 left-2.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= DETAILED REVIEWS FEED ================= -->
+<div class="space-y-4">
+<!-- REVIEW ITEM 1 (5 Stars, With Existing Merchant Reply) -->
+<article class="bg-surface-container p-5 sm:p-6 rounded-xl border border-secondary/15 glow-card space-y-4 transition-all">
+<!-- Top Row: User Meta + Rating & Timestamp -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-container border border-secondary/30 flex items-center justify-center font-bold text-secondary text-base shadow-sm">
+                أ.ع
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">أحمد عمر باوزير</h3>
+<span class="inline-flex items-center gap-1 bg-secondary/15 text-secondary border border-secondary/30 text-[11px] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    مشتري موثق
+                  </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>المكلا - حي الديس</span>
+<span class="text-outline-variant/80">•</span>
+<span>رقم الطلب: #GH-88219</span>
+</p>
+</div>
+</div>
+<!-- Stars and Date -->
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+</div>
+<span class="text-[12px] font-mono text-on-surface-variant">منذ يومين (18 مايو 2025)</span>
+</div>
+</div>
+<!-- Product Association Snippet -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="عطر نفحات حضرموت الفاخر" class="w-12 h-12 rounded-lg object-cover border border-secondary/20 flex-shrink-0" data-alt="Exquisite dark glass luxury perfume bottle with golden details resting on polished black stone with deep blue misty haze and soft glowing reflection, showcasing Yemeni artisanal packaging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNip_ZzjstN7A0t8HmJKm9lReZOXvcLbdSATgmiviNnGSRH7GpsJq-xx8HY0k9oJPeNybh8bl88FL-jx5h9xBAwJyzxENkt-hS7lpZR1llj1gAymGB0ST_EjvB9j9vTlkHf0slOsTw4O6jiExXAeWWoHUqV0x5WNwcH6Lo0-BQ60zA1YF_ICgEu6XwKTtUjD-zxHN6BFmYkVuRaGT0U4qZJg3lL9WnLaV28NGiax5Y67fRcd_wVFpO"/>
+<div class="min-w-0">
+<span class="text-[11px] text-on-surface-variant block">المنتج المُقيَّم:</span>
+<a class="text-label-md font-label-md font-semibold text-secondary hover:underline truncate block" href="#">
+                  عطر نفحات حضرموت الفاخر (دهن عود ملكي معتق 50 مل)
+                </a>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface bg-surface-container-high px-2.5 py-1 rounded border border-outline-variant/30 flex-shrink-0">
+              38,000 ر.ي
+            </span>
+</div>
+<!-- Review Text Body -->
+<div class="space-y-2">
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+              "ما شاء الله تبارك الله، العطر فخم جداً وثباته عالي يستمر لأكثر من يوم كامل. التغليف أنيق ومحمي بشكل ممتاز، وسرعة التوصيل من متجركم إلى بيتي في حي الديس كانت خلال أقل من ساعتين فقط مع مندوب غيم سبيس المحترم. هذا تعاملي الثالث معكم ولن يكون الأخير بإذن الله."
+            </p>
+</div>
+<!-- Merchant Existing Response Box -->
+<div class="mr-4 sm:mr-8 p-4 bg-primary-container/40 rounded-xl border-r-4 border-secondary border-t border-b border-l border-secondary/20 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-label-md font-label-md font-bold text-secondary">رد التاجر المعتمد (متجر نفحات حضرموت)</span>
+</div>
+<span class="text-[11px] font-mono text-on-surface-variant">منذ يوم</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface leading-normal">
+              "أهلاً وسهلاً بك أخي الكريم أستاذ أحمد. نسعد ونعتز دائماً بثقتك الغالية في منتجاتنا الحضرمية الأصيلة. حرصنا على توفير أفضل زيوت العود الطبيعية مع خدمة التوصيل السريع هو غايتنا الدائمة. تسرنا خدمتك دائماً ونتطلع لطل��ك القادم بحفظ الله!"
+            </p>
+<div class="flex items-center gap-3 pt-1 text-[11px] text-secondary">
+<button class="hover:underline flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-xs">edit</span>
+<span>تعديل الرد</span>
+</button>
+</div>
+</div>
+<!-- Bottom Action Strip -->
+<div class="pt-2 flex items-center justify-between border-t border-outline-variant/15 text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="text-xs text-on-surface-variant/70 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 14 وجدوا هذا التقييم مفيداً
+              </span>
+</div>
+<button class="text-on-surface-variant hover:text-error text-xs flex items-center gap-1 transition-colors group">
+<span class="material-symbols-outlined text-sm group-hover:text-error">flag</span>
+<span>إبلاغ الإدارة عن تعليق مسيء</span>
+</button>
+</div>
+</article>
+<!-- REVIEW ITEM 2 (5 Stars, Needs Reply / Integrated Response Form) -->
+<article class="bg-surface-container p-5 sm:p-6 rounded-xl border border-secondary/25 glow-card space-y-4 transition-all relative">
+<!-- Urgent Badge -->
+<div class="absolute top-4 left-4 sm:left-6">
+<span class="bg-secondary/20 text-secondary border border-secondary/40 text-[11px] px-2.5 py-1 rounded-full font-bold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+              بانتظار ردك
+            </span>
+</div>
+<!-- Top Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pl-24 sm:pl-0">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-tertiary-container/60 border border-tertiary/40 flex items-center justify-center font-bold text-tertiary text-base shadow-sm">
+                ف.ع
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">فاطمة علي بامعس</h3>
+<span class="inline-flex items-center gap-1 bg-secondary/15 text-secondary border border-secondary/30 text-[11px] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    مشتري موثق
+                  </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>المكلا - فوه (المساكن)</span>
+<span class="text-outline-variant/80">•</span>
+<span>رقم الطلب: #GH-89045</span>
+</p>
+</div>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+</div>
+<span class="text-[12px] font-mono text-on-surface-variant">اليوم، 11:30 ص</span>
+</div>
+</div>
+<!-- Product Association -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="بخور ظفاري حضرمي ملكي فاخر" class="w-12 h-12 rounded-lg object-cover border border-secondary/20 flex-shrink-0" data-alt="Handcrafted traditional Hadrami incense bakhour burner with smoldering aromatic bakhour releasing velvety fragrant white smoke against an atmospheric twilight coastal navy interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC37LZ0W5EAhmwtxV_fIF_tA-NtmAASoAfw_tuhLwdTS4k2L3uwaryfMnrkNooZcNSBRr5OSVFgQr4u-Cr7fkHan_Lguy4JAYgu1VZPpDTh-OVNU9hxssK5njXHgoU5qXai6MNIiIuCDz-JqzRJHY_jYs36OP0xMtgBHhxKOubwNUammqDhAsM9C6U6SbSVK8WqB-LFVTmm3_d1ysUHqW24cGlP10CFy_5A-CHDo1iW_ioyYH4hGrc6"/>
+<div class="min-w-0">
+<span class="text-[11px] text-on-surface-variant block">المنتج المُقيَّم:</span>
+<a class="text-label-md font-label-md font-semibold text-secondary hover:underline truncate block" href="#">
+                  بخور ظفاري حضرمي معجون بالمسك والعنبر (علبة زجاجية 150 جرام)
+                </a>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface bg-surface-container-high px-2.5 py-1 rounded border border-outline-variant/30 flex-shrink-0">
+              14,500 ر.ي
+            </span>
+</div>
+<!-- Review Text Body -->
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+            "البخور خيال وريحته تفتح النفس في البيت، بارد وهادئ ولا يسبب أي كتمة. تعامل المتجر في قمة الذوق أرسلوا عينة صغيرة مجانية لتجربة عطر اللبان الذكر. سؤالي فقط: هل ستتوفر العلبة الكبيرة قريباً؟ شكراً نفحات حضرموت."
+          </p>
+<!-- INLINE MERCHANT REPLY FORM -->
+<div class="mr-2 sm:mr-6 p-4 bg-surface-container-high rounded-xl border border-secondary/30 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-base">reply</span>
+                كتابة رد التاجر المعتمد على الزبونة فاطمة:
+              </span>
+<span class="text-[11px] text-on-surface-variant">يظهر ردك كشعار رسمي للمتجر</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-body-sm text-on-surface placeholder:text-on-surface-variant/40 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" placeholder="اكتب ردك اللبق والموثق هنا لمساعدة العميل وبناء الثقة..." rows="3"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">lightbulb</span>
+<span>نصيحة: الإجابة عن توفر المنتج يشجع على الشراء المباشر.</span>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/30 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-colors">
+                  تجاهل مؤقت
+                </button>
+<button class="px-5 py-1.5 rounded-lg bg-secondary text-surface-dim hover:bg-secondary-fixed text-label-md font-label-md font-bold flex items-center gap-1.5 shadow-md shadow-secondary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base">send</span>
+<span>إرسال الرد المعتمد</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action Strip -->
+<div class="pt-2 flex items-center justify-between border-t border-outline-variant/15 text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="text-xs text-on-surface-variant/70 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 8 وجدوا هذا التقييم مفيداً
+              </span>
+</div>
+<button class="text-on-surface-variant hover:text-error text-xs flex items-center gap-1 transition-colors group">
+<span class="material-symbols-outlined text-sm group-hover:text-error">flag</span>
+<span>إبلاغ الإدارة عن تعليق مسيء</span>
+</button>
+</div>
+</article>
+<!-- REVIEW ITEM 3 (4 Stars, Constructive Feedback with Official Response) -->
+<article class="bg-surface-container p-5 sm:p-6 rounded-xl border border-secondary/15 glow-card space-y-4 transition-all">
+<!-- Top Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-container border border-secondary/30 flex items-center justify-center font-bold text-secondary text-base shadow-sm">
+                م.ع
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">مروان العطاس</h3>
+<span class="inline-flex items-center gap-1 bg-secondary/15 text-secondary border border-secondary/30 text-[11px] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    مشتري موثق
+                  </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>المكلا - الشرج (شارع الستين)</span>
+<span class="text-outline-variant/80">•</span>
+<span>رقم الطلب: #GH-87114</span>
+</p>
+</div>
+</div>
+<!-- 4 Stars -->
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-gold text-lg">star</span>
+<span class="material-symbols-outlined star-muted text-lg">star</span>
+</div>
+<span class="text-[12px] font-mono text-on-surface-variant">منذ 5 أيام</span>
+</div>
+</div>
+<!-- Product Association -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="عسل سدر دوعني ملكي فاخر قطفة أولى" class="w-12 h-12 rounded-lg object-cover border border-secondary/20 flex-shrink-0" data-alt="Premium wooden box containing pure golden liquid Yemeni Doani Sidr Honey jar with wooden honey dipper stick set on traditional dark textile background with soft golden atmospheric glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Rm0EfuNS5W5WpyP921Kz4V52EMJDFTqYo6hF-R990noFnwULOeSjbsTF66Ca1BOdXCWjaMEjxU04mZhNCP2romEFTgfeeYvPZ36F3i5bxaLbhIVXRtL5VNE_k0_velEtkWi5ylBZF7izYs2floCPjXmbGzfDJUABsmFOXAL1Zuv2elq5f2tnQfA1NTq9mk_WHhdgukL1dDDlTwO9g7_HzGHJVaa5uNg5BVLqhuo3MHjq1I-zlj8o"/>
+<div class="min-w-0">
+<span class="text-[11px] text-on-surface-variant block">المنتج المُقيَّم:</span>
+<a class="text-label-md font-label-md font-semibold text-secondary hover:underline truncate block" href="#">
+                  عسل سدر دوعني حضرمي خالص (قطفة شتوية أولى - نصف كيلو)
+                </a>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface bg-surface-container-high px-2.5 py-1 rounded border border-outline-variant/30 flex-shrink-0">
+              25,000 ر.ي
+            </span>
+</div>
+<!-- Review Text Body -->
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+            "جودة العسل لا غبار عليها، عسل دوعني أصلي ذو رائحة ونكهة مميزة وواضح نقاوته وفحصه المخبري. خصمت نجمة واحدة فقط لأن شركة التوصيل تأخرت عن الموعد المحدد بنصف ساعة، نرجو التنسيق بشكل أدق مع المندوبين في فترة الذروة بشارع الستين."
+          </p>
+<!-- Merchant Reply -->
+<div class="mr-4 sm:mr-8 p-4 bg-primary-container/40 rounded-xl border-r-4 border-secondary border-t border-b border-l border-secondary/20 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-label-md font-label-md font-bold text-secondary">رد التاجر المعتمد (متجر نفحات حضرموت)</span>
+</div>
+<span class="text-[11px] font-mono text-on-surface-variant">منذ 4 أيام</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface leading-normal">
+              "حياك الله أستاذ مروان، سررنا جداً بإعجابك بجودة العسل السدري الدوعني، ونعتذر بصدق عن تأخر مندوب التوصيل بسبب الازدحام المروري في شارع الستين. قمنا فوراً برفع الملاحظة لفريق لوجستيات غيم سبيس لضبط المواعيد بدقة متناهية. ��هديك كود خصم خاص بطلبك القادم (NAFAHAT10)."
+            </p>
+</div>
+<!-- Bottom Action Strip -->
+<div class="pt-2 flex items-center justify-between border-t border-outline-variant/15 text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="text-xs text-on-surface-variant/70 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 5 وجدوا هذا التقييم مفيداً
+              </span>
+</div>
+<button class="text-on-surface-variant hover:text-error text-xs flex items-center gap-1 transition-colors group">
+<span class="material-symbols-outlined text-sm group-hover:text-error">flag</span>
+<span>إبلاغ الإدارة عن تعليق مسيء</span>
+</button>
+</div>
+</article>
+</div>
+<!-- ================= PAGINATION CONTROLS ================= -->
+<div class="bg-surface-container p-4 rounded-xl border border-secondary/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+          عرض <span class="font-bold text-on-surface">1 - 3</span> من أصل <span class="font-bold text-secondary">412 تقييم</span>
+</div>
+<nav aria-label="ترقيم الصفحات" class="flex items-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/20 text-on-surface-variant hover:text-secondary disabled:opacity-40 transition-colors" disabled="" title="الصفحة السابقة">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-secondary text-surface-dim font-bold text-label-md font-label-md shadow-sm">
+            1
+          </button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/20 text-on-surface text-label-md font-label-md transition-colors">
+            2
+          </button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/20 text-on-surface text-label-md font-label-md transition-colors">
+            3
+          </button>
+<span class="px-1 text-on-surface-variant text-sm font-bold">...</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/20 text-on-surface text-label-md font-label-md transition-colors">
+            138
+          </button>
+<button class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/20 text-on-surface-variant hover:text-secondary transition-colors" title="الصفحة التالية">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+</nav>
+</div>
+</main>
+</div>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-surface-container-lowest text-secondary docked full-width bottom-0 border-t border-outline-variant/15 shadow-none mt-12">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
+<span class="text-headline-md font-headline-md font-bold text-secondary tracking-tight">Ghaym Space</span>
+<span class="hidden sm:inline text-outline-variant/50">|</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2025 منصة غيم سبيس للتجارة المتعددة - المكلا، حضرموت. جميع الحقوق محفوظة.
+        </p>
+</div>
+<!-- Essential Links from JSON Source of Truth -->
+<nav aria-label="روابط سفلية" class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">عن غيم سبيس</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">شروط الخدمة للتاجر</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">سياسة الشحن والتوصيل</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">طرق الدفع المحلية</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">تتبع الشحنات</a>
+</nav>
+</div>
+</footer>
+</body></html>

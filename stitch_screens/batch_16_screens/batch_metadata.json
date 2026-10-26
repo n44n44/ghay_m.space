@@ -1,0 +1,114 @@
+[
+  {
+    "index": 1,
+    "id": "3f98be456a6649a88ee4a1dd70cc036b",
+    "title": "27. الرئيسية الإدارية - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/01_27. الرئيسية الإدارية - غيم سبيس_3f98be456a6649a88ee4a1dd70cc036b.html",
+    "imgFile": ""
+  },
+  {
+    "index": 2,
+    "id": "19e47d8ca5dd454283755803c9771d39",
+    "title": "29. إدارة التجار وطلبات الانضمام - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/02_29. إدارة التجار وطلبات الانضمام - غيم سبيس_19e47d8ca5dd454283755803c9771d39.html",
+    "imgFile": ""
+  },
+  {
+    "index": 3,
+    "id": "1c5640f9c4fb48458785bb78ff4e600c",
+    "title": "33. إدارة الاشتراكات والمدفوعات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/03_33. إدارة الاشتراكات والمدفوعات - غيم سبيس_1c5640f9c4fb48458785bb78ff4e600c.html",
+    "imgFile": ""
+  },
+  {
+    "index": 4,
+    "id": "78af4a13359f4a45a620268635d7a961",
+    "title": "28. إدارة العملاء - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/04_28. إدارة العملاء - غيم سبيس_78af4a13359f4a45a620268635d7a961.html",
+    "imgFile": ""
+  },
+  {
+    "index": 5,
+    "id": "947e9716a3854772934c9c1c26d655df",
+    "title": "30. إدارة المتاجر - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/05_30. إدارة المتاجر - غيم سبيس_947e9716a3854772934c9c1c26d655df.html",
+    "imgFile": ""
+  },
+  {
+    "index": 6,
+    "id": "ae7a853e3e724ef590b285918a8e05c0",
+    "title": "31. إدارة المنتجات والأقسام - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/06_31. إدارة المنتجات والأقسام - غيم سبيس_ae7a853e3e724ef590b285918a8e05c0.html",
+    "imgFile": ""
+  },
+  {
+    "index": 7,
+    "id": "beb4c3d2e6fe4ea5a333ad86758ad070",
+    "title": "32. إدارة الطلبات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/07_32. إدارة الطلبات - غيم سبيس_beb4c3d2e6fe4ea5a333ad86758ad070.html",
+    "imgFile": ""
+  },
+  {
+    "index": 8,
+    "id": "ad41417644ed47bea5b6f769fa2a3464",
+    "title": "34. إدارة الإعلانات والبانرات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/08_34. إدارة الإعلانات والبانرات - غيم سبيس_ad41417644ed47bea5b6f769fa2a3464.html",
+    "imgFile": ""
+  },
+  {
+    "index": 9,
+    "id": "4e16ea6a686f48708ed898a84dd4cb93",
+    "title": "35. المراجعات والشكاوى والتقارير والإعدادات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/09_35. المراجعات والشكاوى والتقارير والإعدادات - غيم سبيس_4e16ea6a686f48708ed898a84dd4cb93.html",
+    "imgFile": ""
+  },
+  {
+    "index": 10,
+    "id": "1c9c52699f7a471e8b008c3f06b5b29a",
+    "title": "40. تواصل معنا - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/10_40. تواصل معنا - غيم سبيس_1c9c52699f7a471e8b008c3f06b5b29a.html",
+    "imgFile": ""
+  },
+  {
+    "index": 11,
+    "id": "86676f4cf4e14e158035abab0847263e",
+    "title": "41. سياسة الخصوصية - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/11_41. سياسة الخصوصية - غيم سبيس_86676f4cf4e14e158035abab0847263e.html",
+    "imgFile": ""
+  },
+  {
+    "index": 12,
+    "id": "8af8e3fb56a943ebaf8ce93285bd2b84",
+    "title": "42. الشروط والأحكام - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/12_42. الشروط والأحكام - غيم سبيس_8af8e3fb56a943ebaf8ce93285bd2b84.html",
+    "imgFile": ""
+  },
+  {
+    "index": 13,
+    "id": "aeac364dc6524aaa88ce0f806473bd0c",
+    "title": "36. قائمة طلبات المندوب - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/13_36. قائمة طلبات المندوب - غيم سبيس_aeac364dc6524aaa88ce0f806473bd0c.html",
+    "imgFile": ""
+  },
+  {
+    "index": 14,
+    "id": "c3e925e37e2d42cf91ba585a0c558cdf",
+    "title": "37. تفاصيل طلب التوصيل - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/14_37. تفاصيل طلب التوصيل - غيم سبيس_c3e925e37e2d42cf91ba585a0c558cdf.html",
+    "imgFile": ""
+  },
+  {
+    "index": 15,
+    "id": "d3f8b072f7174ca0996c105f887e12dc",
+    "title": "39. من نحن - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/15_39. من نحن - غيم سبيس_d3f8b072f7174ca0996c105f887e12dc.html",
+    "imgFile": ""
+  },
+  {
+    "index": 16,
+    "id": "e170afb6ce3448dc82e2474bb98bf430",
+    "title": "38. تحديث حالة التوصيل - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_16_screens/16_38. تحديث حالة التوصيل - غيم سبيس_e170afb6ce3448dc82e2474bb98bf430.html",
+    "imgFile": ""
+  }
+]

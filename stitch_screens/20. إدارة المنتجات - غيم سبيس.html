@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>20. إدارة المنتجات - غيم سبيس | متجر نفحات حضرموت</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#2f3a49",
+            "on-background": "#d8e3f7",
+            "inverse-surface": "#d8e3f7",
+            "surface-dim": "#091422",
+            "on-primary-container": "#7f92b3",
+            "background": "#091422",
+            "primary-fixed": "#d6e3ff",
+            "on-error": "#690005",
+            "on-tertiary-container": "#8f80fa",
+            "on-error-container": "#ffdad6",
+            "surface-container-highest": "#2b3545",
+            "secondary-fixed-dim": "#84cfff",
+            "on-primary-fixed-variant": "#354765",
+            "primary": "#b5c7eb",
+            "on-secondary-fixed-variant": "#004c6c",
+            "surface-container-lowest": "#040f1c",
+            "on-surface": "#d8e3f7",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#e5deff",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "inverse-primary": "#4d5f7e",
+            "surface-container": "#15202f",
+            "on-surface-variant": "#c4c6ce",
+            "on-secondary": "#00344c",
+            "primary-fixed-dim": "#b5c7eb",
+            "error-container": "#93000a",
+            "outline-variant": "#44474d",
+            "on-secondary-container": "#002d42",
+            "primary-container": "#172a46",
+            "on-secondary-fixed": "#001e2e",
+            "tertiary-fixed-dim": "#c7bfff",
+            "inverse-on-surface": "#263140",
+            "on-primary": "#1e314d",
+            "surface-tint": "#b5c7eb",
+            "secondary-fixed": "#c7e7ff",
+            "on-primary-fixed": "#061c37",
+            "on-tertiary": "#2c0e94",
+            "surface-container-low": "#111c2a",
+            "tertiary": "#c7bfff",
+            "outline": "#8e9098",
+            "secondary-container": "#299ad1",
+            "secondary": "#84cfff",
+            "surface-container-high": "#202b39",
+            "surface-variant": "#2b3545",
+            "tertiary-container": "#25008c",
+            "on-tertiary-fixed": "#180065",
+            "surface": "#091422"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-2xl": "3rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["Manrope"],
+            "label-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "label-sm": ["Space Grotesk"],
+            "body-lg": ["Manrope"],
+            "body-sm": ["Manrope"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #091422;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #202b39;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col selection:bg-secondary/30 selection:text-secondary">
+<!-- Desktop & Main Shell Flexbox Wrapper -->
+<div class="flex-1 flex w-full min-h-screen">
+<!-- SideNavBar (Shared Component from JSON) -->
+<aside class="w-72 flex-shrink-0 p-4 flex flex-col justify-between h-screen sticky top-0 bg-surface-container border-l border-outline-variant/20 shadow-xl shadow-surface-container-lowest/40 hidden lg:flex z-40">
+<!-- Top Section: Store Brand & Info -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-primary-container via-surface-container-high to-secondary/20 p-0.5 border border-secondary/30 flex items-center justify-center relative overflow-hidden shadow-lg shadow-surface-container-lowest/60">
+<span class="material-symbols-outlined text-secondary" style="font-size: 26px;">local_mall</span>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full animate-ping opacity-60"></div>
+</div>
+<div class="overflow-hidden">
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface truncate">سوق الغيم التجاري</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">بوابة التاجر المعتمد - حضرموت</p>
+</div>
+</div>
+<!-- Store Profile Card: نفحات حضرموت -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary border border-secondary/40 flex items-center justify-center font-bold text-label-md">
+              ن
+            </div>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">متجر نفحات حضرموت</p>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-label-sm font-label-sm text-emerald-400">متجر موثق (المكلا)</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-label-lg">verified</span>
+</div>
+<!-- CTA from JSON: إضافة منتج جديد -->
+<button class="w-full bg-secondary text-on-secondary font-headline-sm font-bold rounded-lg py-2.5 px-4 flex items-center justify-center gap-2 shadow-lg shadow-secondary/25 hover:bg-secondary-fixed transition-all active:scale-95 duration-150" onclick="document.getElementById('product-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-label-lg font-label-lg">إضافة منتج جديد</span>
+</button>
+<!-- Navigation Links (6 tabs from JSON: إداراة المنتجات is Active) -->
+<nav class="space-y-1">
+<!-- 1. لوحة التحكم -->
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-lg font-label-lg">لوحة التحكم</span>
+</a>
+<!-- 2. إدارة المنتجات (ACTIVE TAB) -->
+<a class="bg-secondary/15 text-secondary font-semibold rounded-lg px-4 py-3 flex items-center gap-3 transition-all border-r-2 border-secondary shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-label-lg font-label-lg">إدارة المنتجات</span>
+<span class="mr-auto bg-secondary/20 text-secondary text-label-sm px-2 py-0.5 rounded-full font-label-sm">34</span>
+</a>
+<!-- 3. طلبات الزبائن -->
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-label-lg font-label-lg">طلبات الزبائن</span>
+<span class="mr-auto bg-amber-500/20 text-amber-300 text-label-sm px-2 py-0.5 rounded-full font-label-sm">5 جديد</span>
+</a>
+<!-- 4. إعدادات المتجر -->
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-lg font-label-lg">إعدادات المتجر</span>
+</a>
+<!-- 5. الموقع والتوصيل -->
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">near_me</span>
+<span class="text-label-lg font-label-lg">الموقع والتوصيل</span>
+</a>
+<!-- 6. التقارير المالية -->
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-lg font-label-lg">التقارير المالية</span>
+</a>
+</nav>
+</div>
+<!-- Footer Actions (from JSON) -->
+<div class="pt-4 border-t border-outline-variant/15 space-y-1">
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-label-md font-label-md">مركز المساعدة</span>
+</a>
+<a class="text-error hover:bg-error/10 rounded-lg px-4 py-2.5 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label-md font-label-md">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Content Workspace Canvas -->
+<div class="flex-1 flex flex-col min-w-0 bg-background overflow-x-hidden">
+<!-- Top Header / Bar (Matching JSON TopNavBar styling anchors) -->
+<header class="bg-surface-container-low/85 backdrop-blur-md sticky top-0 z-30 border-b border-outline-variant/20 shadow-2xl shadow-surface-container-lowest/50">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+<!-- Left in RTL (Actually Right visually): Mobile toggle & Quick Search -->
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-secondary tracking-tight">Ghaym Space</span>
+<span class="text-outline-variant hidden sm:inline">|</span>
+<span class="text-label-md font-label-md text-on-surface-variant hidden sm:inline">إدارة الكتالوج والبضائع</span>
+</div>
+</div>
+<!-- Quick Actions & Profile Info (from TopNavBar JSON) -->
+<div class="flex items-center gap-3">
+<button class="relative p-2 rounded-lg bg-surface-container text-on-surface hover:text-secondary transition-colors" title="التنبيهات">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 left-1 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container text-on-surface hover:text-secondary transition-colors" title="حقيبة المتجر">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container text-on-surface hover:text-secondary transition-colors" title="حال�� الشحن والتوصيل">
+<span class="material-symbols-outlined">local_shipping</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+<div class="flex items-center gap-2 pl-1">
+<div class="w-9 h-9 rounded-full bg-primary-container border border-secondary/40 flex items-center justify-center text-secondary font-bold">
+                ح
+              </div>
+<div class="hidden md:block text-right">
+<span class="block text-label-md font-label-md font-semibold text-on-surface">أحمد باوزير</span>
+<span class="block text-label-sm font-label-sm text-secondary">مدير المتجر</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Body Container -->
+<main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
+<!-- Top Title & Stats Banner Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container p-6 rounded-2xl border border-secondary/15 relative overflow-hidden shadow-xl shadow-surface-container-lowest/50">
+<div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="space-y-1 relative z-10">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-bold tracking-wide">
+                بوابة التاجر - المكلا
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">• قسم العطور والبخور</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">إدارة المنتجات</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">تحكم بكامل منتجات متجر نفحات حضرموت، تحديث الأسعار، كميات المخزون وحالة العرض في سوق الغيم.</p>
+</div>
+<!-- Primary CTA Button -->
+<div class="relative z-10 flex-shrink-0">
+<button class="w-full sm:w-auto bg-secondary hover:bg-secondary-fixed text-on-secondary font-label-lg font-bold px-6 py-3.5 rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-secondary/30 active:scale-95 transition-all duration-150" onclick="document.getElementById('product-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-headline-sm">add_box</span>
+<span>إضافة منتج جديد</span>
+</button>
+</div>
+</div>
+<!-- 4 Quick Metric Cards Bento -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1: Total Products -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 hover:border-secondary/40 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md">إجمالي المنتجات</span>
+<span class="p-2 rounded-lg bg-surface-container text-secondary material-symbols-outlined text-headline-sm">inventory_2</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-on-surface">34</span>
+<span class="text-label-sm font-label-sm text-secondary">منتج مسجل</span>
+</div>
+</div>
+<!-- Metric 2: Active / Displayed -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md">نشطة ومعروضة</span>
+<span class="p-2 rounded-lg bg-emerald-950/40 text-emerald-400 material-symbols-outlined text-headline-sm">visibility</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-emerald-400">32</span>
+<span class="text-label-sm font-label-sm text-emerald-500/80">في واجهة المتجر</span>
+</div>
+</div>
+<!-- Metric 3: Hidden / Inactive -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 hover:border-outline-variant transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md">غير نشطة / مخفية</span>
+<span class="p-2 rounded-lg bg-surface-container text-on-surface-variant material-symbols-outlined text-headline-sm">visibility_off</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-on-surface-variant">2</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">مسودة ومخفية</span>
+</div>
+</div>
+<!-- Metric 4: Out of Stock -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/20 hover:border-error/40 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-label-md font-label-md">نفدت الكمية</span>
+<span class="p-2 rounded-lg bg-error/10 text-error material-symbols-outlined text-headline-sm">production_quantity_limits</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-error">1</span>
+<span class="text-label-sm font-label-sm text-error/80">يتطلب إعادة طلب</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Control Bar -->
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant/20 flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between">
+<!-- Search input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full pr-11 pl-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-on-surface placeholder:text-on-surface-variant/60 focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md transition-all outline-none" placeholder="البحث باسم المنتج، الكود التعريفي (SKU)، أو الباركود..." type="text"/>
+</div>
+<!-- Filters Row -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5">
+<!-- Category Filter Dropdown -->
+<div class="relative w-full sm:w-auto">
+<select class="w-full sm:w-48 appearance-none bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-label-md rounded-lg py-2.5 pr-3 pl-8 focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none cursor-pointer">
+<option value="all">كافة الأقسام</option>
+<option selected="" value="perfumes">عطور وبخور</option>
+<option value="blends">مخلطات ملكية</option>
+<option value="gifts">بكجات وهدايا</option>
+<option value="oud">دهن عود وأخشاب</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-headline-sm">expand_more</span>
+</div>
+<!-- Status Filter Dropdown -->
+<div class="relative w-full sm:w-auto">
+<select class="w-full sm:w-40 appearance-none bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-label-md rounded-lg py-2.5 pr-3 pl-8 focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none cursor-pointer">
+<option selected="" value="all">حالة التوفر: الكل</option>
+<option value="active">نشط ومعروض</option>
+<option value="hidden">مخفي</option>
+<option value="out">منتهي الكمية</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-headline-sm">tune</span>
+</div>
+<!-- Bulk actions / Export -->
+<button class="p-2.5 rounded-lg bg-surface-container-high border border-outline-variant/30 text-on-surface hover:text-secondary hover:border-secondary transition-colors" title="تصدير Excel/PDF">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container-high border border-outline-variant/30 text-on-surface hover:text-secondary hover:border-secondary transition-colors" title="تحديث القائمة">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+<!-- Products Table Container -->
+<div class="bg-surface-container rounded-2xl border border-outline-variant/20 shadow-xl overflow-hidden">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/25 text-on-surface-variant text-label-md font-label-md">
+<th class="py-3.5 px-4 w-12 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4">تفاصيل المنتج والقسم</th>
+<th class="py-3.5 px-4">السعر الحالي (ر.ي)</th>
+<th class="py-3.5 px-4">المخزون المتوفر</th>
+<th class="py-3.5 px-4">حالة النشر بالسوق</th>
+<th class="py-3.5 px-4">المبيعات والطلبات</th>
+<th class="py-3.5 px-4 text-center">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-body-md font-body-md">
+<!-- Product Row 1: عطر نفحات حضرموت الفاخر -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="py-4 px-4 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-secondary/20 relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A luxury perfume bottle with traditional Arabian gold filigree pattern filled with rich amber liquid, resting on a deep navy velvet podium with soft blue glowing mist in the backdrop representing Mukalla coastal nights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXKcwZxU0gz490mJ9-pcXKXva1UHVMWEom7rRGKMLpOq0PpJm7H5JO1iMw94TtFoUO_4HMWDtNj2FVRdduO1c8vOnPm51bVXxUz_WDrht9Sdry0DxTH_fkOBG2R09fRRcBbjd07FHx3XrHGzKGBpyVQT1y1HyUrtyr0My77IJ5vA0bYRManb6G_zKdAbP_k6tA_byXKRuTnsRv0BhMVH-ROXkdHfplbfL6epjNAzdUF3hmWpyffi-I"/>
+</div>
+<div class="space-y-0.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                          عطر نفحات حضرموت الفاخر
+                        </span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">عطور وبخور</span>
+<span>•</span>
+<span>رمز SKU: NH-8821</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+<span>42,500</span>
+<span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant line-through block">48,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-label-lg font-bold text-on-surface">18</span>
+<span class="text-label-sm text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">متوفر بكثرة</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-label-md font-label-md text-emerald-300 font-semibold">معروض في السوق</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-label-lg font-bold text-on-surface">142 طلب</span>
+<span class="block text-label-sm font-label-sm text-secondary">إجمالي: 6,035,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary hover:bg-surface-bright transition-colors" title="تعديل المنتج">
+<span class="material-symbols-outlined text-headline-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-amber-400 hover:bg-surface-bright transition-colors" title="إخفاء من السوق">
+<span class="material-symbols-outlined text-headline-sm">visibility</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-error hover:bg-surface-bright transition-colors" onclick="confirmDelete('عطر نفحات حضرموت الفاخر')" title="حذف أو أرشفة">
+<span class="material-symbols-outlined text-headline-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Row 2: بخور ظفاري حضرمي -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="py-4 px-4 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-secondary/20 relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Traditional aromatic incense pieces and fragrant dark bakhoor cubes arranged neatly inside an ornate Hadhrami wooden box with brass corners on a dark studio surface with soft cinematic blue lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYSB38JE3_7rWq7-wCzmbF2fXZWZ3WrilDOkAyuWvLq8mveEhwGBfZYc-eqV3OQBlmejqOf4QAn3cW_S9BxAjxDbV9kvgZAt1oLtEI1KCuuqk0jXY3gd1GSCj-GfbKeXO8VD7S0nlihmqXbtpZ4gZLkFoo2BcH2kJ9G7yIBS1Dw2cszwXF41tYuFspM4zVZ_0KCR8kpuv1IejPn8W4V1LMYZfGYL5QPjIHG4ZVdIWmmZBr8E6SUZcp"/>
+</div>
+<div class="space-y-0.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                          بخور ظفاري حضرمي
+                        </span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">عطور وبخور</span>
+<span>•</span>
+<span>رمز SKU: BZ-3304</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+<span>15,000</span>
+<span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-label-lg font-bold text-amber-300">4</span>
+<span class="text-label-sm text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm">warning</span> كمية منخفضة
+                      </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="text-label-md font-label-md text-emerald-300 font-semibold">معروض في السوق</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-label-lg font-bold text-on-surface">89 طلب</span>
+<span class="block text-label-sm font-label-sm text-secondary">إجمالي: 1,335,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary hover:bg-surface-bright transition-colors" title="تعديل المنتج">
+<span class="material-symbols-outlined text-headline-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-amber-400 hover:bg-surface-bright transition-colors" title="إخفاء من السوق">
+<span class="material-symbols-outlined text-headline-sm">visibility</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-error hover:bg-surface-bright transition-colors" onclick="confirmDelete('بخور ظفاري حضرمي')" title="حذف أو أرشفة">
+<span class="material-symbols-outlined text-headline-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Row 3: مرشوش الغيم الملكي -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="py-4 px-4 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-secondary/20 relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An elegant glass spray mist bottle labeled Royal Ghaym room freshener spray with water drop condensations and silver nozzle against a misty dark blue twilight atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQlvCsJrLhqPTHkMyaPljF6XP5_bQM25JCqMWnDPCgUKlFY5duKLxZxEmuMI2dvEesqJim1O93c-jezJlkgYbHvzI458l4011Lywn-nDvUaf6akgTWq22xajP7UUGZUMmIiJQAddLoKrjZ64xHSU7oYO3bXTA9wnfLfOt3LZ2XQ50MxGQ9KIo3Q-NUWUHfxxRlsiFl8z8HlzXCmwo9flgT_tE_R_Kcb6yZTM6vL-cYe_CkYlmFH-6j"/>
+</div>
+<div class="space-y-0.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                          مرشوش الغيم الملكي
+                        </span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">مخلطات</span>
+<span>•</span>
+<span>رمز SKU: MR-1090</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+<span>18,500</span>
+<span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant line-through block">21,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-label-lg font-bold text-on-surface">25</span>
+<span class="text-label-sm text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">متوفر</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="text-label-md font-label-md text-emerald-300 font-semibold">معروض في السوق</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-label-lg font-bold text-on-surface">64 طلب</span>
+<span class="block text-label-sm font-label-sm text-secondary">إجمالي: 1,184,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary hover:bg-surface-bright transition-colors" title="تعديل المنتج">
+<span class="material-symbols-outlined text-headline-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-amber-400 hover:bg-surface-bright transition-colors" title="إخفاء من السوق">
+<span class="material-symbols-outlined text-headline-sm">visibility</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-error hover:bg-surface-bright transition-colors" onclick="confirmDelete('مرشوش الغيم الملكي')" title="حذف أو أرشفة">
+<span class="material-symbols-outlined text-headline-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Row 4: معمول حضرمي بالعسل الدوعني -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="py-4 px-4 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-secondary/20 relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Handcrafted Hadhrami incense dough balls blended with Doani pure Sidr honey and agarwood oils displayed gracefully on a polished slate tray under warm golden micro lights against a navy gradient background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMGLNJKxa53AmFaa9ls_pLPSGmZ-8LV_ZmDUCjf7GzN37Q76yabixyZgxygsew-riwf0j8IjNpw3H1eWcouh4kWPfq68KeK_VHnbE3RfdfClkmT742GxwWMz2C0pZsPRtUcNRrjdxeVNWI55tSFrpycvhXuz5A1xsesrkbDnaUAmj5YYECcXDpj6wEr6jKufUEPm35dpePSzxR-EwhwLpRSfeB5fjUjaXgyNCcb-4LVxZm_RuH_nvb"/>
+</div>
+<div class="space-y-0.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                          معمول حضرمي بالعسل الدوعني
+                        </span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">عطور وبخور</span>
+<span>•</span>
+<span>رمز SKU: MH-4412</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+<span>22,000</span>
+<span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-label-lg font-bold text-on-surface-variant">12</span>
+<span class="text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">مخزون محجوز</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="text-label-md font-label-md text-on-surface-variant font-medium">مخفي (مسودة)</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-label-lg font-bold text-on-surface">31 طلب</span>
+<span class="block text-label-sm font-label-sm text-secondary">إجمالي: 682,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary hover:bg-surface-bright transition-colors" title="تعديل المنتج">
+<span class="material-symbols-outlined text-headline-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-emerald-400 hover:bg-surface-bright transition-colors" title="إظهار في السوق">
+<span class="material-symbols-outlined text-headline-sm">visibility_off</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-error hover:bg-surface-bright transition-colors" onclick="confirmDelete('معمول حضرمي بالعسل الدوعني')" title="حذف أو أرشفة">
+<span class="material-symbols-outlined text-headline-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Row 5: تولة دهن عود كمبودي (Out of stock) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="py-4 px-4 text-center">
+<input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-error/30 relative shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-60" data-alt="A small crystalline glass tola bottle containing pure viscous Cambodian oud oil, capped with a faceted crystal stopper illuminated from beneath with deep midnight blue and gold ambient glows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRCrFUf-DfD610b5GUd5hQqKv713H_XebqBiFM89wBgGWQBl6SoRih0Z6Oxp-766IeKpuN6Z8L5T2RX6mYvvoUOxclrV5kWQR0r5DFoekSphmfrisjdSSkNUHOJxTRFQfl41-V1fs1QX7ZlDZHG2rZMx7Z1wlOYzmfAMCtt9v7r8mPVF7eXabQepVIJoT70NoJHazhp_szaj5svVo9bGVToRXDeIzQbgMjyw_22GEaw0sg2gh-4XOi"/>
+<span class="absolute inset-0 bg-background/60 flex items-center justify-center text-label-sm font-bold text-error">نفد</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                          تولة دهن عود كمبودي
+                        </span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">دهن عود</span>
+<span>•</span>
+<span>رمز SKU: OK-9901</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+<span>65,000</span>
+<span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-label-lg font-bold text-error">0</span>
+<span class="text-label-sm text-error bg-error/15 px-2 py-0.5 rounded-full font-bold">نفدت الكمية</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="text-label-md font-label-md text-error/90 font-medium">غير متوفر بالسوق</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-label-lg font-bold text-on-surface">52 طلب</span>
+<span class="block text-label-sm font-label-sm text-secondary">إجمالي: 3,380,000 ر.ي</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary hover:bg-surface-bright transition-colors" title="تعديل المنتج">
+<span class="material-symbols-outlined text-headline-sm">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-secondary/20 text-secondary hover:bg-secondary/30 transition-colors" title="تحديث المخزون">
+<span class="material-symbols-outlined text-headline-sm">add_shopping_cart</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-error hover:bg-surface-bright transition-colors" onclick="confirmDelete('تولة دهن عود كمبودي')" title="حذف أو أرشفة">
+<span class="material-symbols-outlined text-headline-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Results Counter -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-label-md font-label-md text-on-surface-variant">
+              عرض <span class="text-secondary font-bold">1 - 5</span> من إجمالي <span class="text-on-surface font-bold">34</span> منتجاً
+            </div>
+<!-- Page Buttons -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:text-secondary disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-headline-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary text-on-secondary font-label-md font-bold flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/20 font-label-md text-on-surface hover:text-secondary flex items-center justify-center">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/20 font-label-md text-on-surface hover:text-secondary flex items-center justify-center">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/20 font-label-md text-on-surface hover:text-secondary flex items-center justify-center">7</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/20 flex items-center justify-center text-on-surface hover:text-secondary">
+<span class="material-symbols-outlined text-headline-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component (Shared Components JSON Anchor) -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/15 mt-auto">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-bold text-secondary">Ghaym Space</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">
+              © 2025 منصة غيم سبيس للتجارة المتعددة - المكلا، حضرموت. جميع الحقوق محفوظة.
+            </span>
+</div>
+<div class="flex flex-wrap gap-4 text-label-md font-label-md text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">عن غيم سبيس</a>
+<a class="hover:text-secondary transition-colors" href="#">شروط الخدمة للتاجر</a>
+<a class="hover:text-secondary transition-colors" href="#">سياسة الشحن والتوصيل</a>
+<a class="hover:text-secondary transition-colors" href="#">طرق الدفع المحلية</a>
+<a class="hover:text-secondary transition-colors" href="#">تتبع الشحنات</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<!-- Modal: إضافة / تعديل منتج سريع -->
+<div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="product-modal">
+<div class="bg-surface-container border border-secondary/30 rounded-2xl max-w-xl w-full p-6 shadow-2xl shadow-surface-container-lowest/80 space-y-5 animate-in fade-in duration-200">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-headline-md">add_circle</span>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface">إضافة منتج جديد لمتجر نفحات</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg" onclick="document.getElementById('product-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">اسم المنتج</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-2.5 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md outline-none" placeholder="مثال: عطر غيم حضرموت العرائسي" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">القسم</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-2.5 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md outline-none">
+<option>عطور وبخور</option>
+<option>مخلطات</option>
+<option>دهن عود</option>
+<option>بكجات وهدايا</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">السعر (ر.ي)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-2.5 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md outline-none" placeholder="25000" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">الكمية بالمستودع</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-2.5 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md outline-none" placeholder="50" type="number"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">حالة العرض الأولية</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-2.5 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary text-body-md outline-none">
+<option>نشط ومعروض فوراً</option>
+<option>حفظ كمسودة مخفية</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">رفع صورة المنتج</label>
+<div class="border-2 border-dashed border-outline-variant/40 rounded-xl p-4 text-center hover:border-secondary/60 cursor-pointer bg-surface-container-lowest">
+<span class="material-symbols-outlined text-secondary text-display-lg-mobile">cloud_upload</span>
+<p class="text-label-md font-label-md text-on-surface mt-1">اضغط لاختيار صورة من جهازك أو اسحبها هنا</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant">PNG, JPG بحد أقصى 5 ميجابايت</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3 border-t border-outline-variant/20">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright text-label-md font-semibold" onclick="document.getElementById('product-modal').classList.add('hidden')">
+          إلغاء
+        </button>
+<button class="px-6 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-fixed text-label-md font-bold shadow-md shadow-secondary/30" onclick="alert('تم حفظ المنتج بنجاح وإدراجه في الكتالوج!'); document.getElementById('product-modal').classList.add('hidden')">
+          حفظ ونشر
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
+<script>
+    function confirmDelete(productName) {
+      if (confirm(`هل أنت متأكد من رغبتك في أرشفة أو حذف "${productName}"؟ لن يتمكن العملاء من طلبه في سوق الغيم.`)) {
+        alert(`تمت أرشفة ${productName} بنجاح.`);
+      }
+    }
+  </script>
+</body></html>

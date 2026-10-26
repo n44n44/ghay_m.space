@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تحديث حالة التوصيل | غيم سبيس - المندوب الميداني</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Manrope & Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Kufi+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed": "#001e2e",
+            "primary-container": "#172a46",
+            "primary-fixed": "#d6e3ff",
+            "secondary-fixed-dim": "#84cfff",
+            "primary": "#b5c7eb",
+            "on-primary-fixed": "#061c37",
+            "on-background": "#d8e3f7",
+            "tertiary": "#c7bfff",
+            "secondary": "#84cfff",
+            "outline": "#8e9098",
+            "on-tertiary": "#2c0e94",
+            "inverse-surface": "#d8e3f7",
+            "outline-variant": "#44474d",
+            "error-container": "#93000a",
+            "surface": "#091422",
+            "tertiary-fixed-dim": "#c7bfff",
+            "background": "#091422",
+            "surface-container": "#15202f",
+            "surface-tint": "#b5c7eb",
+            "secondary-fixed": "#c7e7ff",
+            "tertiary-container": "#25008c",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "surface-dim": "#091422",
+            "on-primary-container": "#7f92b3",
+            "surface-variant": "#2b3545",
+            "on-error": "#690005",
+            "secondary-container": "#299ad1",
+            "on-surface": "#d8e3f7",
+            "inverse-on-surface": "#263140",
+            "surface-container-highest": "#2b3545",
+            "on-primary-fixed-variant": "#354765",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#180065",
+            "surface-container-lowest": "#040f1c",
+            "surface-container-low": "#111c2a",
+            "tertiary-fixed": "#e5deff",
+            "surface-container-high": "#202b39",
+            "surface-bright": "#2f3a49",
+            "on-primary": "#1e314d",
+            "on-secondary-container": "#002d42",
+            "on-surface-variant": "#c4c6ce",
+            "on-tertiary-container": "#8f80fa",
+            "on-secondary-fixed-variant": "#004c6c",
+            "inverse-primary": "#4d5f7e",
+            "on-secondary": "#00344c",
+            "primary-fixed-dim": "#b5c7eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "3rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Noto Kufi Arabic", "Manrope", "sans-serif"],
+            "label-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg-mobile": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-sm": ["Noto Kufi Arabic", "Manrope", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "label-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-lg": ["Noto Kufi Arabic", "Manrope", "sans-serif"],
+            "label-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Chrome, Safari, Edge, Opera: Hide number spinner */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col font-body-md">
+<!-- Top Sticky Navigation Bar (Focused Task View: Shell suppressed for field dispatch journey) -->
+<header class="sticky top-0 z-30 w-full bg-surface-container-low/90 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-md">
+<div class="flex items-center gap-3">
+<!-- زر الرجوع لتفاصيل الطلب #37 -->
+<a aria-label="رجوع لتفاصيل الطلب" class="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors active:scale-95" href="#order-details-37">
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">تحديث حالة التوصيل</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">واجهة المندوب الميداني • قطاع المكلا</p>
+</div>
+</div>
+<!-- Quick Status Badge -->
+<div class="flex items-center gap-2">
+<div class="hidden sm:flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-outline">المندوب الحالي</span>
+<span class="font-label-md text-label-md text-secondary">عوض باجابر</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary font-headline-sm">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-4 py-5 space-y-5">
+<!-- Card 1: ملخص الطلب والعميل ومبلغ التحصيل COD -->
+<section class="bg-surface-container-low border border-secondary/20 rounded-xl p-4 sm:p-5 relative overflow-hidden shadow-lg">
+<div class="absolute -end-8 -top-8 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-wrap items-start justify-between gap-4 border-b border-outline-variant/30 pb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-primary-container text-secondary px-2.5 py-0.5 rounded text-label-sm font-label-sm tracking-wider">
+              #GS-84920
+            </span>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">
+              طلب تسليم فوري
+            </span>
+</div>
+<h2 class="mt-2 font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+            فاطمة محمد باوزير
+            <span class="material-symbols-outlined text-secondary text-sm" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-base" data-icon="location_on">location_on</span>
+            حي السلام، قرب مسجد الجامع، عمارة الأمل، الدور الثاني
+          </p>
+</div>
+<!-- COD Amount Highlight Card -->
+<div class="bg-surface-container-lowest border border-secondary/30 rounded-lg p-3 text-left min-w-[150px] shadow-sm">
+<span class="font-label-sm text-label-sm text-outline-variant block">المطلوب تحصيله (COD)</span>
+<div class="flex items-baseline justify-end gap-1 mt-0.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-secondary font-bold tracking-tight">58,000</span>
+<span class="font-label-md text-label-md text-on-surface">ر.ي</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-tertiary font-medium mt-1">
+<span class="material-symbols-outlined text-xs" data-icon="payments">payments</span>
+            الدفع نقداً عند الاستلام
+          </span>
+</div>
+</div>
+<!-- Quick Action: Direct Call Button for Driver -->
+<div class="pt-3 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="storefront">storefront</span>
+<span>المتجر: دار الأناقة الحضرمية - المكلا مول</span>
+</div>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md border border-secondary/20" href="tel:770000000">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+<span>اتصال بالعميل</span>
+</a>
+</div>
+</section>
+<!-- Card 2: مسار خطوات التوصيل الميداني -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 sm:p-5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="route">route</span>
+          مسار مراحل التوصيل
+        </h3>
+<span class="text-label-sm font-label-sm text-secondary bg-primary-container px-2 py-1 rounded">
+          المرحلة 2 من 4
+        </span>
+</div>
+<div class="relative ps-6 sm:ps-8 space-y-6 before:absolute before:top-3 before:bottom-3 before:start-3 sm:before:start-4 before:w-0.5 before:bg-outline-variant/40">
+<!-- Step 1: تم استلام الطلب من المتجر (مكتملة ومؤكدة) -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -start-6 sm:-start-8 mt-0.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center ring-4 ring-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+<div class="flex-1 bg-surface-container/60 border border-outline-variant/20 rounded-lg p-3">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface line-through opacity-80">تم استلام الطلب من المتجر</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-highest px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                03:15 م (مؤكدة)
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">تم فحص المنتجات ومطابقتها مع فاتورة المتجر بالمكلا مول بنجاح.</p>
+</div>
+</div>
+<!-- Step 2: في الطريق للعميل (الحالة الحالية النشطة) -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -start-6 sm:-start-8 mt-0.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center ring-4 ring-surface-container-low shadow-md animate-pulse">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex-1 bg-primary-container/80 border-2 border-secondary rounded-lg p-3 shadow-md">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">في الطريق للعميل</span>
+<span class="inline-block px-2 py-0.5 text-label-sm font-label-sm rounded bg-secondary text-surface-container-lowest font-bold">الحالة الحالية النشطة</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">بدأت منذ 18 دقيقة</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-background mt-1">المندوب متواجد حالياً على شارع الستين متجهاً إلى حي السلام.</p>
+</div>
+</div>
+<!-- Step 3: وصلت إلى موقع العميل (متاحة للضغ�� الفوري) -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -start-6 sm:-start-8 mt-0.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-surface-container-highest text-secondary border border-secondary/40 flex items-center justify-center ring-4 ring-surface-container-low">
+<span class="material-symbols-outlined text-sm" data-icon="pin_drop">pin_drop</span>
+</div>
+<div class="flex-1 bg-surface-container border border-secondary/20 hover:border-secondary/50 transition-all rounded-lg p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">وصلت إلى موقع العميل</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">اضغط هنا لإرسال تنبيه آلي فوري للعميلة بأن المندوب أمام المبنى.</p>
+</div>
+<button class="self-start sm:self-center shrink-0 px-3 py-2 bg-surface-container-high hover:bg-secondary hover:text-surface-container-lowest text-secondary rounded-lg font-label-md text-label-md transition-all active:scale-95 border border-secondary/30 flex items-center gap-1.5" id="btn-arrived" onclick="selectStatus('ARRIVED')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="notifications_active">notifications_active</span>
+<span>تأكيد الوصول الآن</span>
+</button>
+</div>
+</div>
+<!-- Step 4: تم التسليم بنجاح وتحصيل المبلغ (تتطلب OTP) -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -start-6 sm:-start-8 mt-0.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center ring-4 ring-surface-container-low">
+<span class="material-symbols-outlined text-sm" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex-1 bg-surface-container/50 border border-outline-variant/30 rounded-lg p-3">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">تم التسليم بنجاح وتحصيل المبلغ</span>
+<span class="text-label-sm font-label-sm text-outline-variant bg-surface-container-lowest px-2 py-0.5 rounded">
+                تتطلب رمز OTP والنقد
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">تأكيد استلام كامل المبلغ (58,000 ر.ي) وإدخال رمز التحقق المسلم من العميل لإغلاق الطلب رسمياً.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Card 3: نموذج تأكيد التغيير (Change Confirmation Form) -->
+<form class="bg-surface-container-low border border-secondary/20 rounded-xl p-4 sm:p-5 space-y-5" id="status-update-form" onsubmit="event.preventDefault(); handleSubmit();">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="edit_calendar">edit_calendar</span>
+          تثبيت الحالة الجديدة والملاحظات الميدانية
+        </h3>
+<span class="text-label-sm font-label-sm text-outline">خطوة إلزامية</span>
+</div>
+<!-- Selection: اختر الحالة المطلوب نقل الطلب إليها -->
+<div class="space-y-2">
+<label class="block font-label-lg text-label-lg text-on-surface">
+          اختر الحالة الجديدة للطلب:
+        </label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<label class="relative flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all bg-surface-container border-outline-variant/30 has-[:checked]:border-secondary has-[:checked]:bg-primary-container/60 hover:bg-surface-container-high">
+<input class="accent-secondary h-4 w-4 text-secondary focus:ring-secondary/30" id="opt-arrived" name="new_status" onchange="handleRadioChange('ARRIVED')" type="radio" value="ARRIVED"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="home_pin">home_pin</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-bold">وصلت لموقع العميل</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">أمام بوابة المبنى / الشارع</span>
+</div>
+</div>
+</label>
+<label class="relative flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all bg-surface-container border-outline-variant/30 has-[:checked]:border-secondary has-[:checked]:bg-primary-container/60 hover:bg-surface-container-high">
+<input checked="" class="accent-secondary h-4 w-4 text-secondary focus:ring-secondary/30" id="opt-delivered" name="new_status" onchange="handleRadioChange('DELIVERED')" type="radio" value="DELIVERED"/>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="price_check">price_check</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-bold">تم التسليم واستلام المبلغ</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">إتمام العملية بالكامل</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- OTP Block: إدخال رمز التحقق المكون من 4 أرقام -->
+<div class="bg-surface-container-lowest border border-secondary/30 rounded-lg p-4 space-y-3" id="otp-section">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="pin">pin</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">رمز تسليم العميل الميداني (OTP)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-primary-container px-2 py-0.5 rounded">مطلوب من الزبون</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          اطلب من الزبونة (فاطمة باوزير) الرمز السري المكون من 4 أرقام المستلم على هاتفها لتأكيد التسليم الموثق:
+        </p>
+<!-- 4-Digit Segmented Input Cells -->
+<div class="flex justify-center items-center gap-3 dir-ltr py-2" dir="ltr">
+<input autofocus="" class="otp-cell w-12 h-14 sm:w-14 sm:h-16 text-center text-headline-lg font-headline-lg bg-surface-container-low text-secondary border border-secondary/30 rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/40 focus:outline-none transition-all shadow-inner" inputmode="numeric" maxlength="1" onkeyup="moveNext(this, 0)" pattern="[0-9]*" type="text"/>
+<input class="otp-cell w-12 h-14 sm:w-14 sm:h-16 text-center text-headline-lg font-headline-lg bg-surface-container-low text-secondary border border-secondary/30 rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/40 focus:outline-none transition-all shadow-inner" inputmode="numeric" maxlength="1" onkeyup="moveNext(this, 1)" pattern="[0-9]*" type="text"/>
+<input class="otp-cell w-12 h-14 sm:w-14 sm:h-16 text-center text-headline-lg font-headline-lg bg-surface-container-low text-secondary border border-secondary/30 rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/40 focus:outline-none transition-all shadow-inner" inputmode="numeric" maxlength="1" onkeyup="moveNext(this, 2)" pattern="[0-9]*" type="text"/>
+<input class="otp-cell w-12 h-14 sm:w-14 sm:h-16 text-center text-headline-lg font-headline-lg bg-surface-container-low text-secondary border border-secondary/30 rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/40 focus:outline-none transition-all shadow-inner" inputmode="numeric" maxlength="1" onkeyup="moveNext(this, 3)" pattern="[0-9]*" type="text"/>
+</div>
+<!-- Cash Confirmation Checkbox -->
+<div class="pt-2 border-t border-outline-variant/20 flex items-center gap-3">
+<input checked="" class="h-4 w-4 rounded bg-surface-container border-secondary/40 text-secondary focus:ring-secondary/30" id="cash-collected" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="cash-collected">
+            أؤكد استلام المبلغ النقدي بالكامل <span class="text-secondary font-bold font-label-md">(58,000 ر.ي)</span> من العميل عداً ونقداً.
+          </label>
+</div>
+</div>
+<!-- Field Notes: ملاحظات المندوب الميدانية -->
+<div class="space-y-2">
+<label class="block font-label-lg text-label-lg text-on-surface" for="field-note">
+          إضافة ملاحظة ميدانية سريعة:
+        </label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-secondary focus:ring-2 focus:ring-secondary/20 focus:outline-none text-body-md font-body-md transition-colors" id="field-note" placeholder="مثال: تم التسليم شخصياً للزبونة، أو استلم الشحنة الحارس بموافقة هاتفية..." rows="2"></textarea>
+<span class="absolute end-3 bottom-3 text-xs text-outline pointer-events-none">اختياري</span>
+</div>
+<!-- Quick Preset Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors border border-outline-variant/20" onclick="setNote('تم التسليم شخصياً للعميلة مع عد المبلغ')" type="button">
+            + استلام شخصي
+          </button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors border border-outline-variant/20" onclick="setNote('تم التسليم للشخص المخول في العنوان')" type="button">
+            + استلام من ين��ب
+          </button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors border border-outline-variant/20" onclick="setNote('تم الدفع بالأوراق النقدية الجديدة')" type="button">
+            + تم التحصيل نقدياً
+          </button>
+</div>
+</div>
+<!-- Primary Action: زر رئيسي كبير بلون الهوية السماوي #54B9F2 -->
+<div class="pt-2">
+<button class="w-full py-4 px-6 rounded-lg bg-secondary text-surface-container-lowest font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 hover:bg-secondary-fixed shadow-[0_0_20px_rgba(84,185,242,0.35)] active:scale-[0.98] transition-all duration-150" id="submit-btn" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="check_circle">check_circle</span>
+<span>تأكيد تحديث الحالة وحفظ التغيير</span>
+</button>
+</div>
+<!-- Alternative Secondary Action: الإبلاغ عن تعذر التسليم -->
+<div class="pt-1">
+<button class="w-full py-2.5 px-4 rounded-lg bg-surface-container/60 hover:bg-error-container/30 text-error hover:text-on-error-container border border-error/30 font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors active:scale-98" onclick="openIssueModal()" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="warning">warning</span>
+<span>الإبلاغ عن تعذر التسليم أو مشكلة في الطلب</span>
+</button>
+</div>
+</form>
+<!-- Support Help Footer Hint -->
+<div class="text-center pb-6">
+<p class="font-body-sm text-body-sm text-outline flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="headset_mic">headset_mic</span>
+        هل تواجه صعوبة في الموقع؟ تواصل فوراً مع منسق العمليات الميدانية بالمكلا: 
+        <a class="text-secondary underline font-label-sm" href="tel:05300000">05-300000</a>
+</p>
+</div>
+</main>
+<!-- Modal: الإبلاغ عن تعذر التسليم (Delivery Issue Modal) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md hidden items-center justify-center p-4" id="issue-modal">
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl max-w-md w-full p-5 space-y-4 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<h3 class="font-headline-sm text-headline-sm">الإبلاغ عن تعذر التسليم</h3>
+</div>
+<button class="text-outline hover:text-on-surface" onclick="closeIssueModal()" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        يرجى اخ��يار سبب تعذر التسليم للطلب <strong class="text-secondary font-label-md">#GS-84920</strong> لإشعار غرفة العمليات وإعادة جدولة المسار:
+      </p>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 cursor-pointer hover:bg-surface-container-high text-body-sm">
+<input checked="" class="accent-secondary h-4 w-4" name="issue_reason" type="radio" value="no_answer"/>
+<span>العميل لا يجيب على الاتصالات المتكررة</span>
+</label>
+<label class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 cursor-pointer hover:bg-surface-container-high text-body-sm">
+<input class="accent-secondary h-4 w-4" name="issue_reason" type="radio" value="wrong_address"/>
+<span>العنوان غير دقيق / تعذر الوصول للشارع</span>
+</label>
+<label class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 cursor-pointer hover:bg-surface-container-high text-body-sm">
+<input class="accent-secondary h-4 w-4" name="issue_reason" type="radio" value="customer_reschedule"/>
+<span>العميل طلب تأجيل الاستلام لوقت لاحق</span>
+</label>
+<label class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container border border-outline-variant/30 cursor-pointer hover:bg-surface-container-high text-body-sm">
+<input class="accent-secondary h-4 w-4" name="issue_reason" type="radio" value="cash_issue"/>
+<span>المبلغ النقدي (COD) غير جاهز لدى العميل</span>
+</label>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex-1 py-2.5 bg-error-container text-on-error-container font-label-lg text-label-lg font-bold rounded-lg hover:bg-error transition-colors active:scale-95" onclick="submitIssueReport()" type="button">
+          إرسال البلاغ لغرفة العمليات
+        </button>
+<button class="px-4 py-2.5 bg-surface-container text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high" onclick="closeIssueModal()" type="button">
+          إلغاء
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 start-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-lg bg-secondary text-surface-container-lowest font-headline-sm text-headline-sm font-bold shadow-2xl flex items-center gap-2 transition-all transform translate-y-20 opacity-0 pointer-events-none" id="toast">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span id="toast-text">تم تحديث حالة الطلب بنجاح</span>
+</div>
+<!-- Micro-Interactions & Form Logistics -->
+<script>
+    // Segmented OTP Input Navigation
+    function moveNext(current, index) {
+      const cells = document.querySelectorAll('.otp-cell');
+      if (current.value.length >= 1) {
+        if (index < cells.length - 1) {
+          cells[index + 1].focus();
+        }
+      }
+    }
+
+    // Set Quick Preset Note
+    function setNote(text) {
+      const textarea = document.getElementById('field-note');
+      textarea.value = text;
+      textarea.focus();
+    }
+
+    // Radio Selection Behavior
+    function handleRadioChange(status) {
+      const otpSection = document.getElementById('otp-section');
+      if (status === 'ARRIVED') {
+        otpSection.classList.add('opacity-40', 'pointer-events-none');
+      } else {
+        otpSection.classList.remove('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    // Quick Action button click
+    function selectStatus(status) {
+      if (status === 'ARRIVED') {
+        document.getElementById('opt-arrived').checked = true;
+        handleRadioChange('ARRIVED');
+        showToast('تم اختيار حالة الوصول إلى موقع العميل. اضغط زر التأكيد بالأسفل.');
+      }
+    }
+
+    // Issue Modal Controls
+    function openIssueModal() {
+      const modal = document.getElementById('issue-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeIssueModal() {
+      const modal = document.getElementById('issue-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function submitIssueReport() {
+      closeIssueModal();
+      showToast('تم قيد بلاغ تعذر التسليم وإشعار الدعم الفني بالمكلا');
+    }
+
+    // Toast Utility
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // Submit Handler
+    function handleSubmit() {
+      const isDelivered = document.getElementById('opt-delivered').checked;
+      if (isDelivered) {
+        const cells = document.querySelectorAll('.otp-cell');
+        let otpValue = '';
+        cells.forEach(c => otpValue += c.value.trim());
+        
+        if (otpValue.length < 4) {
+          showToast('يرجى إدخال رمز التحقق (OTP) المكون من 4 أرقام لإتمام التسليم');
+          cells[0].focus();
+          return;
+        }
+
+        const cashCheck = document.getElementById('cash-collected').checked;
+        if (!cashCheck) {
+          showToast('يرجى تأكيد استلام النقدية (58,000 ر.ي)');
+          return;
+        }
+
+        showToast('تم تسليم الطلب #GS-84920 وتحصيل 58,000 ر.ي بنجاح!');
+      } else {
+        showToast('تم إشعار العميل بوصولك للموقع ��نجاح!');
+      }
+    }
+  </script>
+</body></html>

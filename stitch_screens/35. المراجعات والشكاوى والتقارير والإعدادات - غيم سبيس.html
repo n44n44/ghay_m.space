@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghaym Space - المراجعات والشكاوى والتقارير والإعدادات</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Space Grotesk & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Kufi+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#690005",
+            "on-background": "#d8e3f7",
+            "on-tertiary-container": "#8f80fa",
+            "on-primary-container": "#7f92b3",
+            "surface-dim": "#091422",
+            "primary-fixed": "#d6e3ff",
+            "on-primary": "#1e314d",
+            "on-secondary-fixed-variant": "#004c6c",
+            "inverse-primary": "#4d5f7e",
+            "primary-container": "#172a46",
+            "primary-fixed-dim": "#b5c7eb",
+            "secondary-container": "#299ad1",
+            "surface-bright": "#2f3a49",
+            "on-tertiary-fixed": "#180065",
+            "on-primary-fixed-variant": "#354765",
+            "inverse-surface": "#d8e3f7",
+            "outline": "#8e9098",
+            "secondary": "#84cfff",
+            "on-error-container": "#ffdad6",
+            "tertiary-fixed": "#e5deff",
+            "surface-container-lowest": "#040f1c",
+            "on-primary-fixed": "#061c37",
+            "surface": "#091422",
+            "on-secondary": "#00344c",
+            "background": "#091422",
+            "tertiary-container": "#25008c",
+            "surface-container-highest": "#2b3545",
+            "secondary-fixed-dim": "#84cfff",
+            "surface-variant": "#2b3545",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "on-secondary-container": "#002d42",
+            "surface-tint": "#b5c7eb",
+            "surface-container": "#15202f",
+            "tertiary-fixed-dim": "#c7bfff",
+            "surface-container-high": "#202b39",
+            "error-container": "#93000a",
+            "primary": "#b5c7eb",
+            "on-secondary-fixed": "#001e2e",
+            "outline-variant": "#44474d",
+            "inverse-on-surface": "#263140",
+            "on-tertiary": "#2c0e94",
+            "on-surface-variant": "#c4c6ce",
+            "tertiary": "#c7bfff",
+            "error": "#ffb4ab",
+            "on-surface": "#d8e3f7",
+            "secondary-fixed": "#c7e7ff",
+            "surface-container-low": "#111c2a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-desktop": "2.5rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "3rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-md": ["Manrope", "Noto Kufi Arabic", "sans-serif"],
+            "label-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "label-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-sm": ["Manrope", "Noto Kufi Arabic", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "body-lg": ["Manrope", "Noto Kufi Arabic", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "headline-md": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"],
+            "display-lg-mobile": ["Space Grotesk", "Noto Kufi Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #091422;
+      color: #d8e3f7;
+      font-family: 'Manrope', 'Noto Kufi Arabic', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom glow & cloud-curved motifs */
+    .luminous-glow {
+      box-shadow: 0 0 24px -4px rgba(84, 185, 242, 0.25);
+    }
+    .cloud-card {
+      background: #132238;
+      border: 1px solid rgba(84, 185, 242, 0.12);
+      border-radius: 0.75rem;
+    }
+    .cloud-card:hover {
+      border-color: rgba(84, 185, 242, 0.28);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-row overflow-x-hidden antialiased selection:bg-secondary selection:text-surface-container-lowest">
+<!-- ==================== SHARED COMPONENT: SideNavBar ==================== -->
+<aside class="fixed inset-y-0 start-0 z-40 flex flex-col w-72 h-screen shrink-0 bg-surface-container-lowest border-r border-outline-variant/30 shadow-2xl">
+<!-- Header Brand Info -->
+<div class="px-5 py-5 flex items-center gap-3.5 border-b border-outline-variant/20">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-container via-surface-container-high to-surface-container-lowest border border-secondary/30 flex items-center justify-center luminous-glow overflow-hidden relative group">
+<!-- SVG Brand Cloud & Cart Motif -->
+<svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path class="opacity-40" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" fill="currentColor"></path>
+<circle cx="9" cy="20" fill="currentColor" r="1"></circle>
+<circle cx="16" cy="20" fill="currentColor" r="1"></circle>
+<path d="M3 5h2l1.68 8.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L19 7H6" stroke="#84cfff"></path>
+<path d="M19 4l.5 1.5L21 6l-1.5.5L19 8l-.5-1.5L17 6l1.5-.5L19 4z" fill="#ffc857" stroke="none"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-headline-sm font-headline-sm font-bold text-secondary tracking-tight">Ghaym Space</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+          Super Admin • Mukalla
+        </span>
+</div>
+</div>
+<!-- Quick CTA as specified in JSON -->
+<div class="px-4 pt-4 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-surface-container-lowest font-headline-sm text-body-md font-bold shadow-md hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span>Add Merchant</span>
+</button>
+</div>
+<!-- Navigation Tab Links -->
+<nav class="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
+<!-- 1. Overview -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- 2. Customers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+<!-- 3. Merchants & Applications -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Merchants &amp; Applications</span>
+</a>
+<!-- 4. Stores -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span>Stores</span>
+</a>
+<!-- 5. Products & Categories -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Products &amp; Categories</span>
+</a>
+<!-- 6. Orders -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</a>
+<!-- 7. Subscriptions & Payouts -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Subscriptions &amp; Payouts</span>
+</a>
+<!-- 8. Banners & Ads -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span>Banners &amp; Ads</span>
+</a>
+<!-- 9. Reviews & Complaints (ACTIVE TAB based on context) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container/60 dark:bg-primary-container/80 text-secondary border border-secondary/30 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review" data-weight="fill" style="font-variation-settings: 'FILL' 1;">rate_review</span>
+<span class="font-semibold">Reviews &amp; Complaints</span>
+<span class="ms-auto bg-secondary/20 text-secondary text-label-sm font-label-sm px-1.5 py-0.5 rounded-full border border-secondary/40">3 جديد</span>
+</a>
+</nav>
+<!-- Footer Nav Items -->
+<div class="p-3 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#settings-panel" onclick="activateTab('tab-settings')">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<div class="pt-2 px-2 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Ghaym OS v2.4</span>
+<span class="text-emerald-400 font-mono">ONLINE</span>
+</div>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="flex-1 flex flex-col ms-72 min-w-0">
+<!-- ==================== SHARED COMPONENT: TopNavBar ==================== -->
+<header class="sticky top-0 z-30 flex items-center justify-between w-full h-16 px-6 bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant/20">
+<!-- Search on Left (or start side in RTL) -->
+<div class="flex items-center gap-4 flex-1 max-w-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute inset-y-0 start-3 my-auto h-5 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-10 ps-10 pe-4 bg-surface-container-lowest/80 border border-outline-variant/40 rounded-xl text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" placeholder="بحث برقم الشكوى، اسم المتجر، العميل، أو المعرف..." type="text"/>
+<kbd class="hidden md:inline-flex absolute inset-y-0 end-2.5 my-auto h-5 items-center px-1.5 text-label-sm font-label-sm rounded bg-surface-container text-outline border border-outline-variant/30">⌘K</kbd>
+</div>
+</div>
+<!-- Center Brand text anchor -->
+<div class="hidden lg:flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Ghaym Space Admin</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary-container text-secondary border border-secondary/30">سوق المكلا الرقمي</span>
+</div>
+<!-- Trailing Actions Cluster -->
+<div class="flex items-center gap-3">
+<!-- Action Buttons -->
+<div class="flex items-center gap-1">
+<!-- Translate -->
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors" title="تغيير اللغة">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+</button>
+<!-- Mail -->
+<button class="relative w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors" title="الرسائل">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<!-- Notifications -->
+<button class="relative w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors" title="الإشعارات">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<!-- Trailing Primary Action -->
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-secondary text-surface-container-lowest font-headline-sm text-body-sm font-bold hover:brightness-110 active:scale-[0.97] transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>Create Order</span>
+</button>
+<!-- Admin Profile -->
+<div class="flex items-center gap-3 ps-2">
+<img alt="Super Admin Avatar Mukalla HQ" class="w-9 h-9 rounded-full object-cover border border-secondary/40" data-alt="Modern professional portrait of a senior Arabic system administrator in Mukalla headquarters, high-tech background with ambient sky blue nocturnal backlighting, wearing crisp coastal attire, ultra-clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGg479MiRSWIawx0xC9FzX4Lc-qO7IkzIrQIVwMkXTzky7an9C0-1-6zvxJFwF9XMAyiL3YJy4PWNFw3bXNMC0D-0tINPEWq-d7wzhZCV5ckXwkQgtvXaVOhKB_V5qokH37cUJRuRRfSN58SzEZlkDCSKaKGN_2eYYYf9pntkHrdS7IqdB4xcKKePmKFF-5JD1c1x_7xfeL0d6S-jmimMcCPr_uOUDezDGbWb6OA3OIfyfNHr9_vXN"/>
+<div class="hidden xl:block text-start">
+<p class="text-body-sm font-body-sm font-bold text-on-surface leading-tight">عمر بن حيدرة</p>
+<p class="text-label-sm font-label-sm text-secondary">مالك المنصة</p>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== BODY WORKSPACE ==================== -->
+<main class="p-6 lg:p-8 space-y-6">
+<!-- Top Title Bar with Summary Badges & Quick Stats -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-outline-variant/15">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">المراجعات والشكاوى والتقارير والإعدادات</h1>
+<span class="bg-primary-container text-secondary px-2.5 py-1 rounded-full text-label-sm font-label-sm border border-secondary/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="verified_user">verified_user</span>
+              منطقة إشراف المالك
+            </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+            إدارة النزاعات المحلية بين عملاء المكلا ومتاجر غيم سبيس، وضبط سمعة السوق، والتقارير المالية والتشغيلية الموحدة.
+          </p>
+</div>
+<!-- Metric micro-cards -->
+<div class="flex items-center gap-3 flex-wrap">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl px-4 py-2.5 flex items-center gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-error-container/30 border border-error/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-lg" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">شكاوى مفتوحة</p>
+<p class="text-headline-sm font-headline-sm font-bold text-error">4 قضايا</p>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl px-4 py-2.5 flex items-center gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-300">
+<span class="material-symbols-outlined text-lg" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">متوسط الرضا العام</p>
+<p class="text-headline-sm font-headline-sm font-bold text-on-surface">4.85 / 5</p>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-xl px-4 py-2.5 flex items-center gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">معدل الإغلاق الودي</p>
+<p class="text-headline-sm font-headline-sm font-bold text-secondary">96.4%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== TAB NAVIGATION BAR ==================== -->
+<div class="flex items-center gap-2 border-b border-outline-variant/20 overflow-x-auto pb-1" id="tab-nav-container">
+<!-- Tab 1: الشكاوى والنزاعات -->
+<button class="tab-btn active-tab flex items-center gap-2 px-5 py-3 rounded-t-xl bg-surface-container border-b-2 border-secondary text-secondary font-label-lg text-label-lg transition-all" onclick="switchTab('disputes-panel', this)">
+<span class="material-symbols-outlined text-[19px]" data-icon="gavel">gavel</span>
+<span>الشكاوى والنزاعات</span>
+<span class="bg-error text-surface-container-lowest text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded-full">4</span>
+</button>
+<!-- Tab 2: إدارة المراجعات -->
+<button class="tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low/50 font-label-lg text-label-lg transition-all" onclick="switchTab('reviews-panel', this)">
+<span class="material-symbols-outlined text-[19px]" data-icon="rate_review">rate_review</span>
+<span>إدارة المراجعات</span>
+<span class="bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm px-2 py-0.5 rounded-full">142 جديد</span>
+</button>
+<!-- Tab 3: التقارير السريعة -->
+<button class="tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low/50 font-label-lg text-label-lg transition-all" onclick="switchTab('reports-panel', this)">
+<span class="material-symbols-outlined text-[19px]" data-icon="analytics">analytics</span>
+<span>التقارير السريعة</span>
+</button>
+<!-- Tab 4: إعدادات المنصة الأساسية -->
+<button class="tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low/50 font-label-lg text-label-lg transition-all" id="tab-settings-trigger" onclick="switchTab('settings-panel', this)">
+<span class="material-symbols-outlined text-[19px]" data-icon="tune">tune</span>
+<span>إعدادات المنصة الأساسية</span>
+</button>
+</div>
+<!-- ======================================================== -->
+<!-- TAB 1: الشكاوى والنزاعات (Active by Default) -->
+<!-- ======================================================== -->
+<section class="tab-content block space-y-5" id="disputes-panel">
+<!-- Filter and Search Actions Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 cloud-card">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-outline-variant/30 text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-label-sm font-label-sm">تصفية حسب الحالة:</span>
+<select class="bg-transparent border-0 text-on-surface focus:ring-0 p-0 text-body-sm font-semibold cursor-pointer">
+<option value="all">كل الشكاوى (18)</option>
+<option selected="" value="pending">بانتظار الإجراء (4)</option>
+<option value="investigating">قيد التحقيق المشترك (6)</option>
+<option value="resolved">مغلقة ومحسومة (8)</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-outline-variant/30 text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-label-sm font-label-sm">النوع:</span>
+<select class="bg-transparent border-0 text-on-surface focus:ring-0 p-0 text-body-sm font-semibold cursor-pointer">
+<option>الكل</option>
+<option>جودة المنتج</option>
+<option>تأخير أو خطأ التوصيل</option>
+<option>استرجاع مالي</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<span class="text-label-sm font-label-sm text-on-surface-variant">ترتيب:</span>
+<button class="flex items-center gap-1.5 text-body-sm font-body-sm px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30">
+<span>الأحدث تصعيداً</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="swap_vert">swap_vert</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Dispute Cards (Avoiding Plain Standard Lists) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+<!-- Dispute Card 1 (URGENT - Frozen Seafood Quality) -->
+<div class="cloud-card p-5 relative overflow-hidden flex flex-col justify-between border-s-4 border-s-error transition-all hover:shadow-lg">
+<div>
+<div class="flex items-start justify-between gap-3 pb-3 border-b border-outline-variant/15">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md font-bold text-secondary">#DISP-8921</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-error text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                      حرجة - تصعيد مباشر
+                    </span>
+<span class="text-label-sm font-label-sm text-outline">منذ 38 دقيقة</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">وصول أسماك تالفة مع سوء تبريد أثناء النقل البحري للمكلا</h2>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error-container/20 border border-error/30 flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+</div>
+</div>
+<!-- Parties Involved Asymmetric Mini-Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+<!-- Customer Details -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-secondary flex items-center justify-center font-bold text-label-md font-label-md">
+                    س.ب
+                  </div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">العميل المشتكي</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">سالم باوزير</p>
+<p class="text-label-sm font-label-sm text-secondary font-mono">+967 771 234 567 (المكلا - الديس)</p>
+</div>
+</div>
+<!-- Merchant Details -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center font-bold text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="store">store</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">المتجر المشكو ضده</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">مأكولات بحر العرب الطازجة</p>
+<span class="text-label-sm font-label-sm text-amber-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                      تاجر موثق • تقييم 4.6
+                    </span>
+</div>
+</div>
+</div>
+<!-- Dispute Context & Delivery Carrier -->
+<div class="bg-surface-container/60 p-3.5 rounded-lg border border-outline-variant/25 text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="local_shipping">local_shipping</span>
+                    كابتن التوصيل: أحمد الشاطري (دراجة نارية مع حافظة ثلج)
+                  </span>
+<span class="font-mono text-outline">الطلب: #ORD-7741 • 38,500 ر.ي</span>
+</div>
+<p class="text-on-surface leading-relaxed">
+                  "استلمت الطلب بعد ساعة ونصف من الموعد وكانت الأسماك دافئة تماماً ورائحتها غير مقبولة ورفض الكابتن إرجاع المبلغ للمحفظة بحجة أنه مجرد مندوب توصيل."
+                </p>
+</div>
+<!-- Timeline Process Pills -->
+<div class="flex items-center gap-2 mt-4 text-label-sm font-label-sm">
+<span class="text-outline">مسار النزاع:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface border border-outline-variant/30">1. تقديم البلاغ</span>
+<span class="text-secondary">←</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface border border-outline-variant/30">2. إيقاف الصرف للمتجر</span>
+<span class="text-secondary">←</span>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary border border-secondary/40 font-bold">3. قرار الإدارة</span>
+</div>
+</div>
+<!-- Action Buttons Footer -->
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-body-sm font-body-sm text-on-surface flex items-center gap-1 border border-outline-variant/30 transition-all">
+<span class="material-symbols-outlined text-[17px]" data-icon="chat">chat</span>
+<span>سجل محادثة الطرفين</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-body-sm font-body-sm text-on-surface flex items-center gap-1 border border-outline-variant/30 transition-all">
+<span class="material-symbols-outlined text-[17px]" data-icon="image">image</span>
+<span>معاينة إثبات الصور (3)</span>
+</button>
+</div>
+<!-- Main Resolution CTA -->
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-xl bg-secondary text-surface-container-lowest font-headline-sm text-body-sm font-bold shadow-md hover:brightness-110 active:scale-[0.98] flex items-center gap-1.5 transition-all" onclick="openDisputeModal('DISP-8921', 'سالم باوزير', 'مأكولات بحر العرب')">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+<span>اتخاذ إجراء أو إغلاق الشكوى</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dispute Card 2 (Pending Merchant Response - Electronics Warranty) -->
+<div class="cloud-card p-5 relative overflow-hidden flex flex-col justify-between border-s-4 border-s-secondary transition-all hover:shadow-lg">
+<div>
+<div class="flex items-start justify-between gap-3 pb-3 border-b border-outline-variant/15">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md font-bold text-secondary">#DISP-8914</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-label-sm font-bold flex items-center gap-1 border border-secondary/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      تحت مراجعة المتجر (مهلة 24 س)
+                    </span>
+<span class="text-label-sm font-label-sm text-outline">منذ 3 ساعات</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">عدم تطابق شاحن متنقل أصلي مع الموديل المعروض بالمتجر</h2>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined" data-icon="sync_problem">sync_problem</span>
+</div>
+</div>
+<!-- Parties Involved Asymmetric Mini-Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+<!-- Customer Details -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-secondary flex items-center justify-center font-bold text-label-md font-label-md">
+                    م.ع
+                  </div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">العميل المشتكي</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">محمد عوض العطاس</p>
+<p class="text-label-sm font-label-sm text-secondary font-mono">+967 733 998 112 (فوه - المساكن)</p>
+</div>
+</div>
+<!-- Merchant Details -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="devices">devices</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">المتجر المشكو ضده</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">تيك زون المكلا للإلكترونيات</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-0.5">
+                      سجل تجاري معتمد #902
+                    </span>
+</div>
+</div>
+</div>
+<!-- Dispute Context -->
+<div class="bg-surface-container/60 p-3.5 rounded-lg border border-outline-variant/25 text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="receipt">receipt</span>
+                    الطلب: #ORD-7719 • بطارية Anker 20,000mAh
+                  </span>
+<span class="font-mono text-outline">القيمة: 19,000 ر.ي</span>
+</div>
+<p class="text-on-surface leading-relaxed">
+                  "المنتج المستلم بسعة 10,000mAh وليس 20,000mAh كما هو مسجل في وصف العرض، ورفض البائع الاستبدال مدعياً أن الصورة للعرض التوضيحي فقط."
+                </p>
+</div>
+<!-- Timeline Process Pills -->
+<div class="flex items-center gap-2 mt-4 text-label-sm font-label-sm">
+<span class="text-outline">مسار النزاع:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface border border-outline-variant/30">1. البلاغ</span>
+<span class="text-secondary">←</span>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary border border-secondary/40 font-bold">2. فحص الفاتورة المرفقة</span>
+<span class="text-secondary">←</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline border border-outline-variant/20">3. الاستبدال الإجباري</span>
+</div>
+</div>
+<!-- Action Buttons Footer -->
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-body-sm font-body-sm text-on-surface flex items-center gap-1 border border-outline-variant/30 transition-all">
+<span class="material-symbols-outlined text-[17px]" data-icon="sms">sms</span>
+<span>تنبيه المتجر عبر واتساب</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-xl bg-secondary text-surface-container-lowest font-headline-sm text-body-sm font-bold shadow-md hover:brightness-110 active:scale-[0.98] flex items-center gap-1.5 transition-all" onclick="openDisputeModal('DISP-8914', 'محمد عوض العطاس', 'تيك زون المكلا')">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+<span>اتخاذ إجراء أو إغلاق الشكوى</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dispute Card 3 (Delivery Dispute - Late Delivery) -->
+<div class="cloud-card p-5 relative overflow-hidden flex flex-col justify-between border-s-4 border-s-amber-400 transition-all hover:shadow-lg">
+<div>
+<div class="flex items-start justify-between gap-3 pb-3 border-b border-outline-variant/15">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md font-bold text-secondary">#DISP-8902</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 text-label-sm font-label-sm font-bold border border-amber-400/30">
+                      قيد التحقق الجغرافي (GPS)
+                    </span>
+<span class="text-label-sm font-label-sm text-outline">منذ يوم</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">شكوى احتساب رسوم توصيل إضافية من قبل المندوب دون مسوغ</h2>
+</div>
+<div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-300 shrink-0">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-secondary flex items-center justify-center font-bold text-label-md font-label-md">
+                    ف.ص
+                  </div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">العميلة</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">فاطمة صالح الكندي</p>
+<p class="text-label-sm font-label-sm text-secondary font-mono">+967 711 552 441 (روكب)</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-sky-500/20 text-secondary flex items-center justify-center font-bold text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_mall">local_mall</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-label-sm font-label-sm text-on-surface-variant">المتجر الشريك</p>
+<p class="text-body-sm font-body-sm font-bold text-on-surface truncate">حلويات النخيل الحضرمية</p>
+<span class="text-label-sm font-label-sm text-emerald-400">سجل نزاعات نظيف 100%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container/60 p-3.5 rounded-lg border border-outline-variant/25 text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<p class="text-on-surface leading-relaxed">
+                  "طالب السائق بمبلغ 1,500 ريال يمني إضافي بحجة وعورة طريق روكب مع أن تسعيرة التطبيق شملت كامل المسافة."
+                </p>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center justify-between gap-3">
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="pin_drop">pin_drop</span>
+                تم مطابقة مسار الـ GPS للمندوب
+              </span>
+<button class="px-4 py-2 rounded-xl bg-secondary text-surface-container-lowest font-headline-sm text-body-sm font-bold shadow-md hover:brightness-110 active:scale-[0.98] flex items-center gap-1.5 transition-all" onclick="openDisputeModal('DISP-8902', 'فاطمة صالح', 'حلويات النخيل / المندوب')">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+<span>اتخاذ إجراء أو إغلاق الشكوى</span>
+</button>
+</div>
+</div>
+<!-- Dispute Card 4 (Resolved Archive Preview) -->
+<div class="cloud-card p-5 relative overflow-hidden flex flex-col justify-between opacity-85 hover:opacity-100 transition-all border-s-4 border-s-emerald-400">
+<div>
+<div class="flex items-start justify-between gap-3 pb-3 border-b border-outline-variant/15">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md font-bold text-secondary">#DISP-8890</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-label-sm font-label-sm font-bold border border-emerald-500/30">
+                      تم الحل ودياً وتعويض المحفظة
+                    </span>
+<span class="text-label-sm font-label-sm text-outline">أُغلقت بالأمس</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">نقص صنف من سلة تسوق العطارة الحضرمية</h2>
+</div>
+<div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 shrink-0">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="my-4 p-3 bg-surface-container-lowest/80 rounded-lg text-body-sm font-body-sm text-on-surface-variant flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline">القرار المعتمد:</span>
+<p class="font-bold text-on-surface">إعادة شحن 4,200 ر.ي إلى محفظة غيم للعميل وخصمها من رصيد المتج��.</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-2xl" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="pt-4 mt-2 border-t border-outline-variant/15 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">أشرف على الحل: كمال بن سليم (مسؤول الدعم)</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-body-sm font-body-sm text-secondary hover:underline">
+                معاينة تقرير الإغلاق
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- TAB 2: إدارة المراجعات (Reviews Moderation) -->
+<!-- ======================================================== -->
+<section class="tab-content hidden space-y-5" id="reviews-panel">
+<!-- Controls & Sentiment Filter -->
+<div class="flex flex-col lg:flex-row items-center justify-between gap-4 p-4 cloud-card">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-body-sm font-body-sm text-on-surface-variant ms-2">فلترة التقييمات:</span>
+<button class="px-3.5 py-1.5 rounded-full bg-secondary text-surface-container-lowest text-label-md font-label-md font-bold">
+              الكل (1,489)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface text-label-md font-label-md flex items-center gap-1 border border-outline-variant/30">
+<span class="text-amber-400">★ 1 &amp; 2</span>
+<span>تقييمات منخفضة (14)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface text-label-md font-label-md flex items-center gap-1 border border-outline-variant/30">
+<span class="material-symbols-outlined text-error text-[16px]" data-icon="flag">flag</span>
+<span>مبلغ عنها كإساءة (5)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface text-label-md font-label-md border border-outline-variant/30">
+              مرفق بصور (210)
+            </button>
+</div>
+<!-- Merchant Search inside reviews -->
+<div class="flex items-center gap-2 w-full lg:w-auto">
+<input class="w-full lg:w-64 h-9 px-3 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none" placeholder="ابحث بالمتجر أو اسم العميل..." type="text"/>
+</div>
+</div>
+<!-- Moderation Cards Grid -->
+<div class="space-y-3">
+<!-- Review Item 1: Flagged for Profanity / Merchant Harassment -->
+<div class="cloud-card p-4.5 border-s-4 border-s-error transition-all hover:border-outline-variant/40">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<!-- Reviewer & Context -->
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-error-container/30 border border-error/30 flex items-center justify-center text-error font-bold text-label-lg font-label-lg shrink-0">
+<span class="material-symbols-outlined" data-icon="sentiment_very_dissatisfied">sentiment_very_dissatisfied</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-body-sm font-body-sm font-bold text-on-surface">عميل مجهول (IP: المكلا - باجعمان)</span>
+<span class="text-outline text-label-sm font-label-sm">• حول متجر:</span>
+<a class="text-secondary hover:underline font-bold text-body-sm font-body-sm" href="#">مطعم ومندي الغويزي</a>
+<span class="bg-error-container text-error px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="report">report</span>
+                      محتوى غير لائق تم رصده آلياً
+                    </span>
+</div>
+<!-- Stars -->
+<div class="flex items-center gap-1">
+<span class="text-amber-400 text-sm">★</span>
+<span class="text-outline text-sm">★★★★</span>
+<span class="text-label-sm font-label-sm text-outline ms-2 font-mono">1.0 نجوم • قبل 52 دقيقة</span>
+</div>
+<!-- Comment Text -->
+<p class="text-body-md font-body-md text-on-surface bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20 mt-2">
+                    "أكل سيء جداً وصاحب المطعم حرامي ونصاب لا أحد يشتري منهم أبداً..."
+                  </p>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-amber-400" data-icon="storefront">storefront</span>
+                    رد المتجر: "العميل لم يقم بأي طلب رسمي لدينا ونرجو من إدارة غيم سبيس مراجعة الفواتير وحماية سمعة متجرنا."
+                  </p>
+</div>
+</div>
+<!-- Moderation Actions -->
+<div class="flex md:flex-col items-center md:items-end justify-end gap-2 shrink-0 pt-2 md:pt-0">
+<button class="px-3.5 py-1.5 rounded-lg bg-error-container hover:bg-error/80 text-error hover:text-white text-body-sm font-body-sm font-semibold flex items-center gap-1.5 transition-all" onclick="deleteReview(this)">
+<span class="material-symbols-outlined text-[17px]" data-icon="delete">delete</span>
+<span>حذف التعليق المسيء</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 border border-outline-variant/30 transition-all" onclick="warnUser(this)">
+<span class="material-symbols-outlined text-[17px]" data-icon="notification_important">notification_important</span>
+<span>تنبيه كاتب المراجعة</span>
+</button>
+<button class="px-3 py-1 rounded-lg text-outline hover:text-on-surface text-label-sm font-label-sm">
+                  تأكيد صحة المراجعة كطلب حقيقي
+                </button>
+</div>
+</div>
+</div>
+<!-- Review Item 2: Legitimate Negative Review (Constructive Feedback) -->
+<div class="cloud-card p-4.5 border-s-4 border-s-amber-400 transition-all hover:border-outline-variant/40">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 font-bold text-label-lg font-label-lg shrink-0">
+<span class="material-symbols-outlined" data-icon="thumb_down">thumb_down</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-body-sm font-body-sm font-bold text-on-surface">نهى باحشوان</span>
+<span class="px-1.5 py-0.2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-label-sm font-label-sm rounded">مشتري موثق</span>
+<span class="text-outline text-label-sm font-label-sm">• حول:</span>
+<a class="text-secondary hover:underline font-bold text-body-sm font-body-sm" href="#">بوتيك ليلك للأزياء</a>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-amber-400 text-sm">★★</span>
+<span class="text-outline text-sm">★★★</span>
+<span class="text-label-sm font-label-sm text-outline ms-2 font-mono">2.0 نجوم • أمس الساعة 9:15 م</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20 mt-2">
+                    "القماش جميل وجودة الخياطة ممتازة، لكن المقاس المكتوب في جدول القياسات بالموقع أصغر من الواقع بكثير، اضطررت لإعادة تعديله."
+                  </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-label-sm font-label-sm text-emerald-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                      تم إثبات الشراء برقم طلب #ORD-7612
+                    </span>
+</div>
+</div>
+</div>
+<!-- Moderation Actions -->
+<div class="flex md:flex-col items-center md:items-end justify-end gap-2 shrink-0 pt-2 md:pt-0">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-label-sm font-label-sm text-secondary border border-secondary/20">
+                  مراجعة مقبولة ومطابقة للشروط
+                </span>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat_bubble">chat_bubble</span>
+<span>حث المتجر على الرد والتعويض</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Review Item 3: Suspicious Repeated High Ratings (Bot/Self Promotion check) -->
+<div class="cloud-card p-4.5 border-s-4 border-s-secondary transition-all hover:border-outline-variant/40">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary font-bold text-label-lg font-label-lg shrink-0">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-body-sm font-body-sm font-bold text-on-surface">حساب جديد #USR-990</span>
+<span class="text-outline text-label-sm font-label-sm">• حول:</span>
+<a class="text-secondary hover:underline font-bold text-body-sm font-body-sm" href="#">مجوهرات المكلا الذهبية</a>
+<span class="bg-primary-container text-secondary px-2 py-0.5 rounded text-label-sm font-label-sm">اشتباه تقييم مكرر بنفس شبكة الإنترنت</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-amber-400 text-sm">★★★★★</span>
+<span class="text-label-sm font-label-sm text-outline ms-2 font-mono">5.0 نجوم • اليوم</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface bg-surface-container-lowest/60 p-3 rounded-lg border border-outline-variant/20 mt-2">
+                    "أفضل متجر في كل حضرموت أمانة وسرعة وخامة أصلية 100% أنصح الكل بالشراء منهم فوراً!"
+                  </p>
+</div>
+</div>
+<!-- Moderation Actions -->
+<div class="flex md:flex-col items-center md:items-end justify-end gap-2 shrink-0 pt-2 md:pt-0">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[17px]" data-icon="visibility_off">visibility_off</span>
+<span>إخفاء مؤقت للتحقق</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- TAB 3: التقارير السري��ة (Instant Platform Reports) -->
+<!-- ======================================================== -->
+<section class="tab-content hidden space-y-6" id="reports-panel">
+<!-- Reports Control & Export Hub -->
+<div class="cloud-card p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="space-y-1">
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="file_download">file_download</span>
+              مركز تصدير تقارير منصة غيم سبيس
+            </h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              توليد ملخصات تشغيلية موثقة لحركة المبيعات، مؤشرات التوصيل داخل أحياء المكلا، ومستحقات المتاجر.
+            </p>
+</div>
+<!-- Direct Export Actions -->
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl bg-error-container/80 text-on-surface hover:bg-error-container font-headline-sm text-body-sm font-bold flex items-center gap-2 border border-error/40 transition-all" onclick="exportData('PDF')">
+<span class="material-symbols-outlined text-error" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>تصدير تقرير شامل (PDF)</span>
+</button>
+<button class="px-4 py-2.5 rounded-xl bg-emerald-950/80 text-emerald-300 hover:bg-emerald-900 font-headline-sm text-body-sm font-bold flex items-center gap-2 border border-emerald-500/40 transition-all" onclick="exportData('Excel')">
+<span class="material-symbols-outlined text-emerald-400" data-icon="table_chart">table_chart</span>
+<span>تصدير بيانات إكسل (Excel)</span>
+</button>
+</div>
+</div>
+<!-- 3-Column Bento KPI Cards for Operational Reports -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Report 1: Sales & Commissions -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="monetization_on">monetization_on</span>
+</div>
+<span class="text-label-sm font-label-sm text-emerald-400 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="trending_up">trending_up</span>
+                +14.2% هذا الشهر
+              </span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">إجمالي مبيعات السوق (30 يوم)</p>
+<h3 class="text-headline-lg font-headline-lg font-bold text-on-surface mt-0.5">84,650,000 <span class="text-headline-sm font-headline-sm font-normal text-secondary">ر.ي</span></h3>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>عمولة المنصة الصافية (5%):</span>
+<span class="font-bold text-on-surface font-mono">4,232,500 ر.ي</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>المب��لغ المحولة لحسابات المتاجر:</span>
+<span class="font-bold text-on-surface font-mono">80,417,500 ر.ي</span>
+</div>
+</div>
+</div>
+<!-- Report 2: Delivery & Logistics Mukalla Grid -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-300">
+<span class="material-symbols-outlined" data-icon="moped">moped</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">متوسط التوصيل: 28 دقيقة</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">إجمالي رحلات التوصيل المنجزة</p>
+<h3 class="text-headline-lg font-headline-lg font-bold text-on-surface mt-0.5">3,812 <span class="text-headline-sm font-headline-sm font-normal text-outline">مشوار</span></h3>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>أعلى نطاق طلباً:</span>
+<span class="font-bold text-on-surface">فوه - الديس - الشرج</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>نسبة نجاح التسليم من أول محاولة:</span>
+<span class="font-bold text-emerald-400 font-mono">98.2%</span>
+</div>
+</div>
+</div>
+<!-- Report 3: Customer Satisfaction & Disputes Resolution -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+</div>
+<span class="text-label-sm font-label-sm text-emerald-400 font-bold">سجل ممتاز</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">سرعة الفصل في النزاعات</p>
+<h3 class="text-headline-lg font-headline-lg font-bold text-on-surface mt-0.5">3.4 <span class="text-headline-sm font-headline-sm font-normal text-secondary">ساعات</span></h3>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>نزاعات أُغلقت بالتراضي:</span>
+<span class="font-bold text-on-surface font-mono">94%</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>قرارات إلغاء وإرجاع مالي كامل:</span>
+<span class="font-bold text-on-surface font-mono">6%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monthly Activity Breakdown Visualizer -->
+<div class="cloud-card p-5">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold">توزيع نشاط القطاعات الأكثر نمواً بسوق المكلا</h4>
+<span class="text-label-sm font-label-sm text-outline">تحديث فوري من قاعدة البيانات</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4">
+<div class="bg-surface-container-lowest/80 p-3.5 rounded-lg border border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-bold text-on-surface">المطاعم والمأكولات</span>
+<span class="text-secondary font-mono">42%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 42%"></div>
+</div>
+<p class="text-label-sm font-label-sm text-outline">35.5 مليون ر.ي</p>
+</div>
+<div class="bg-surface-container-lowest/80 p-3.5 rounded-lg border border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-bold text-on-surface">العطارة والمواد الغذائية</span>
+<span class="text-emerald-400 font-mono">26%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 26%"></div>
+</div>
+<p class="text-label-sm font-label-sm text-outline">22.0 مليون ر.ي</p>
+</div>
+<div class="bg-surface-container-lowest/80 p-3.5 rounded-lg border border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-bold text-on-surface">الأزياء والعبايات</span>
+<span class="text-indigo-400 font-mono">18%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-indigo-400 rounded-full" style="width: 18%"></div>
+</div>
+<p class="text-label-sm font-label-sm text-outline">15.2 مليون ر.ي</p>
+</div>
+<div class="bg-surface-container-lowest/80 p-3.5 rounded-lg border border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-bold text-on-surface">الإلكترونيات والملحقات</span>
+<span class="text-amber-400 font-mono">14%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-amber-400 rounded-full" style="width: 14%"></div>
+</div>
+<p class="text-label-sm font-label-sm text-outline">11.9 مليون ر.ي</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- TAB 4: إعدادات المنصة الأساسية (Platform Core Settings) -->
+<!-- ======================================================== -->
+<section class="tab-content hidden space-y-6" id="settings-panel">
+<form class="space-y-6" onsubmit="event.preventDefault(); saveSettings();">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Box 1: Geographic Scope & Market Boundaries -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center gap-3 pb-3 border-b border-outline-variant/20">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_city">location_city</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">نطاق العمل الجغرافي لسوق غيم سبيس</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">المدن والأحياء المفعلة لخدمات المتاجر والتوصيل السريع</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1.5">المدينة المركزية الرئيسية</label>
+<div class="relative">
+<input class="w-full h-11 px-3 bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-body-md font-body-md text-on-surface focus:border-secondary focus:outline-none" readonly="" type="text" value="المكلا، ح��رموت، الجمهورية اليمنية"/>
+<span class="material-symbols-outlined absolute inset-y-0 end-3 my-auto h-5 text-emerald-400" data-icon="lock">lock</span>
+</div>
+</div>
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1.5">الأحياء المشمولة بالتغطية الحالية</label>
+<div class="flex flex-wrap gap-2 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-label-md font-label-md flex items-center gap-1.5 border border-secondary/20">
+<span>فوه (المساكن والمخطط)</span>
+<button class="text-outline hover:text-error" type="button">×</button>
+</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-label-md font-label-md flex items-center gap-1.5 border border-secondary/20">
+<span>الديس والشافعي</span>
+<button class="text-outline hover:text-error" type="button">×</button>
+</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-label-md font-label-md flex items-center gap-1.5 border border-secondary/20">
+<span>الشرج والميناء</span>
+<button class="text-outline hover:text-error" type="button">×</button>
+</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-label-md font-label-md flex items-center gap-1.5 border border-secondary/20">
+<span>روكب وبويش</span>
+<button class="text-outline hover:text-error" type="button">×</button>
+</span>
+<button class="px-2.5 py-1 rounded-lg border border-dashed border-secondary/40 text-secondary text-label-sm font-label-sm hover:bg-secondary/10 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="add">add</span>
+                      إضافة حي جديد
+                    </button>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container/40 rounded-xl border border-outline-variant/20">
+<div>
+<p class="text-body-sm font-body-sm font-semibold text-on-surface">تحديد أقصى مسافة توصيل كابتن الدراجة</p>
+<p class="text-label-sm font-label-sm text-outline">لحفظ جودة الأطعمة والمثلجات من الذوبان</p>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-16 h-9 text-center bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-body-sm font-bold text-secondary" type="number" value="18"/>
+<span class="text-body-sm font-body-sm text-on-surface-variant">كم</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Box 2: Merchant Registration Criteria & Verification Rules -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center gap-3 pb-3 border-b border-outline-variant/20">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">ضوابط قبول وتسجيل التجار الجدد</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">شروط الاعتماد قبل السماح بعرض المنتجات للجمهور</p>
+</div>
+</div>
+<div class="space-y-3">
+<label class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 cursor-pointer hover:border-secondary/30 transition-colors">
+<input checked="" class="mt-1 rounded bg-surface-container border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+<div>
+<span class="text-body-sm font-body-sm font-bold text-on-surface block">إلزامية السجل التجاري أو عقد المحل الفعلي</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">يمنع قبول المتاجر الوهمية التي لا تملك مقراً جغرافياً مسجلاً داخل ساحل حضرموت.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 cursor-pointer hover:border-secondary/30 transition-colors">
+<input checked="" class="mt-1 rounded bg-surface-container border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+<div>
+<span class="text-body-sm font-body-sm font-bold text-on-surface block">تفعيل التحقق بخطوتين (OTP) لرقم الهاتف اليمني</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">إرسال كود تحقق رسالة نصية فورية لتأكيد هوية التاجر أو مالك المتجر.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 cursor-pointer hover:border-secondary/30 transition-colors">
+<input class="mt-1 rounded bg-surface-container border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+<div>
+<span class="text-body-sm font-body-sm font-bold text-on-surface block">الموافقة التلقائية على الطلبات المكتملة</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">السماح للتاجر بالبدء فور رفع الوثائق دون انتظار المراجعة الي��وية للمالك.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Box 3: Commission Engine & Default Payouts -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center gap-3 pb-3 border-b border-outline-variant/20">
+<div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="percent">percent</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">العمولة الافتراضية والتسويات المالية</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">النسبة المقتطعة لدعم البنية التحتية لمنصة غيم سبيس</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-primary-container/40 rounded-xl border border-secondary/30 flex items-center justify-between">
+<div>
+<span class="text-body-md font-body-md font-bold text-on-surface block">نسبة العمولة الافتراضية للمنصة</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">تطبق تلقائياً على كل عملية بيع ناجحة داخل التطبيق</span>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-20 h-11 text-center font-mono text-headline-sm font-headline-sm font-bold bg-surface-container-lowest border border-secondary/40 rounded-xl text-secondary focus:outline-none" max="20" min="1" step="0.5" type="number" value="5.0"/>
+<span class="text-headline-sm font-headline-sm font-bold text-secondary">%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20">
+<label class="text-label-sm font-label-sm text-on-surface-variant block mb-1">دورة تحويل الأرباح للمتاجر</label>
+<select class="w-full h-9 bg-surface-container border border-outline-variant/30 rounded-lg text-body-sm font-body-sm text-on-surface px-2">
+<option>أسبوعي (كل يوم خميس)</option>
+<option>نصف شهري (15 و 30)</option>
+<option>فوري بعد تسليم الطلب بـ 24 ساعة</option>
+</select>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20">
+<label class="text-label-sm font-label-sm text-on-surface-variant block mb-1">قنوات التسوية المالية المعتمدة</label>
+<select class="w-full h-9 bg-surface-container border border-outline-variant/30 rounded-lg text-body-sm font-body-sm text-on-surface px-2">
+<option>محفظة الكريمي جوال / كاش</option>
+<option>العمقي للصرافة</option>
+<option>البسيري للصرافة</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Box 4: Local Support Channels & WhatsApp API Gateway -->
+<div class="cloud-card p-5 space-y-4">
+<div class="flex items-center gap-3 pb-3 border-b border-outline-variant/20">
+<div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<!-- Custom WhatsApp / Chat Icon -->
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">قنوات الدعم الفني المحلية وربط الواتساب</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">الربط الآلي لإشعارات المتاجر وحل النزاعات السريعة</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1">رقم خط الواتساب الموحد لغيم سبيس (WhatsApp Business API)</label>
+<div class="relative">
+<input class="w-full h-10 ps-10 pe-3 font-mono bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-body-md font-body-md text-emerald-400 font-bold focus:border-secondary focus:outline-none" type="text" value="+967 770 000 892"/>
+<span class="material-symbols-outlined absolute inset-y-0 start-3 my-auto h-5 text-emerald-400" data-icon="phone_iphone">phone_iphone</span>
+<span class="absolute inset-y-0 end-3 my-auto h-5 flex items-center gap-1 text-label-sm font-label-sm text-emerald-400">
+<span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping"></span>
+                      متصل (API Valid)
+                    </span>
+</div>
+</div>
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1">البريد الإلكتروني للشكاوى الرسمية</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-body-md font-body-md text-on-surface focus:border-secondary focus:outline-none" type="email" value="support@ghaym.space"/>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-on-surface">إرسال إشعار فوري للتاجر عند فتح شكوى جديدة</span>
+<input checked="" class="rounded bg-surface-container border-outline-variant text-secondary focus:ring-secondary w-5 h-5" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky Actions Bar for Settings -->
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-secondary/30 flex items-center justify-between shadow-xl">
+<div class="flex items-center gap-2 text-on-surface-variant text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+<span>التعديلات تؤثر فورياً على خوادم سوق المكلا ومحفظة التجار.</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface text-body-md font-body-md font-bold transition-colors" type="reset">
+                إلغ��ء التغييرات
+              </button>
+<button class="px-6 py-2.5 rounded-xl bg-secondary text-surface-container-lowest text-body-md font-body-md font-bold shadow-lg hover:brightness-110 active:scale-[0.98] flex items-center gap-2 transition-all" type="submit">
+<span class="material-symbols-outlined text-[19px]" data-icon="save">save</span>
+<span>حفظ وتهيئة المنصة</span>
+</button>
+</div>
+</div>
+</form>
+</section>
+</main>
+</div>
+<!-- ==================== MODAL: اتخاذ إجراء أو إغلاق الشكوى ==================== -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm" id="dispute-modal">
+<div class="cloud-card w-full max-w-xl bg-surface-container-low border border-secondary/40 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-5 border-b border-outline-variant/20 flex items-center justify-between bg-surface-container-lowest/80">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-on-surface" id="modal-dispute-title">اتخاذ قرار الفصل في النزاع</h3>
+<p class="text-label-sm font-label-sm text-secondary font-mono" id="modal-dispute-id">#DISP-8921</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeDisputeModal()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<div class="p-3.5 bg-surface-container-lowest rounded-xl border border-outline-variant/25 text-body-sm font-body-sm space-y-1">
+<div class="flex justify-between">
+<span class="text-outline">العميل:</span>
+<span class="font-bold text-on-surface" id="modal-customer-name">سالم باوزير</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">المتجر / الجهة:</span>
+<span class="font-bold text-on-surface" id="modal-merchant-name">مأكولات بحر العرب</span>
+</div>
+</div>
+<div>
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-2">اختر الإجراء الإداري النهائي:</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container border border-outline-variant/30 hover:border-secondary cursor-pointer transition-colors">
+<input checked="" class="text-secondary focus:ring-secondary" name="dispute_action" type="radio" value="full_refund"/>
+<div>
+<span class="font-bold text-body-sm font-body-sm text-on-surface block">تعويض كامل للعميل وخصم القيمة من التاجر</span>
+<span class="text-label-sm font-label-sm text-outline">إيداع المبلغ فوراً في محفظة غيم سبيس الخاصة بالعميل.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container border border-outline-variant/30 hover:border-secondary cursor-pointer transition-colors">
+<input class="text-secondary focus:ring-secondary" name="dispute_action" type="radio" value="merchant_favor"/>
+<div>
+<span class="font-bold text-body-sm font-body-sm text-on-surface block">رفض الشكوى وحفظ حقوق المتجر</span>
+<span class="text-label-sm font-label-sm text-outline">بناءً على مطابقة أدلة الشحن أو فواتير الاستلام.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container border border-outline-variant/30 hover:border-secondary cursor-pointer transition-colors">
+<input class="text-secondary focus:ring-secondary" name="dispute_action" type="radio" value="split"/>
+<div>
+<span class="font-bold text-body-sm font-body-sm text-on-surface block">تسوية مشتركة (تحمل تكلفة النقل على المنصة)</span>
+<span class="text-label-sm font-label-sm text-outline">في حالات الظروف القاهرة أو أعطال الدراجة بالمكلا.</span>
+</div>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-1">ملاحظات القرار الإداري (تُرسل للطرفين عبر إشعار):</label>
+<textarea class="w-full p-3 bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-body-sm font-body-sm text-on-surface focus:border-secondary focus:outline-none" placeholder="اكتب مبررات القرار أو توجيهات للتاجر..." rows="3"></textarea>
+</div>
+<div class="flex items-center gap-2">
+<input class="rounded bg-surface-container border-outline-variant text-secondary" id="penalize_merchant" type="checkbox"/>
+<label class="text-body-sm font-body-sm text-on-surface" for="penalize_merchant">إصدار إنذار رسمي للمتجر لخفض تقييم الثقة</label>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-end gap-3">
+<button class="px-4 py-2 rounded-xl text-body-sm font-body-sm font-bold text-on-surface-variant hover:text-on-surface" onclick="closeDisputeModal()">
+          إلغاء
+        </button>
+<button class="px-5 py-2.5 rounded-xl bg-secondary text-surface-container-lowest font-headline-sm text-body-sm font-bold shadow-md hover:brightness-110 active:scale-[0.98] transition-all" onclick="submitDisputeResolution()">
+          اعتماد القرار وإغلاق الشكوى
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Template -->
+<div class="fixed bottom-6 end-6 z-50 hidden bg-surface-container-highest border border-secondary/50 text-on-surface px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all animate-bounce" id="toast">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span class="text-body-sm font-body-sm font-bold" id="toast-message">تم الإجراء بنجاح</span>
+</div>
+<!-- ==================== JAVASCRIPT MICRO-INTERACTIONS ==================== -->
+<script>
+    // Tab Switching Logic
+    function switchTab(panelId, btnElement) {
+      // Hide all panels
+      document.querySelectorAll('.tab-content').forEach(panel => {
+        panel.classList.add('hidden');
+        panel.classList.remove('block');
+      });
+
+      // Reset all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active-tab', 'bg-surface-container', 'border-b-2', 'border-secondary', 'text-secondary');
+        btn.classList.add('text-on-surface-variant');
+      });
+
+      // Show active panel
+      const targetPanel = document.getElementById(panelId);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+        targetPanel.classList.add('block');
+      }
+
+      // Activate clicked button
+      if (btnElement) {
+        btnElement.classList.add('active-tab', 'bg-surface-container', 'border-b-2', 'border-secondary', 'text-secondary');
+        btnElement.classList.remove('text-on-surface-variant');
+      }
+    }
+
+    // Direct activation helper (e.g. from footer settings link)
+    function activateTab(tabType) {
+      if (tabType === 'tab-settings') {
+        const trigger = document.getElementById('tab-settings-trigger');
+        if (trigger) trigger.click();
+      }
+    }
+
+    // Dispute Resolution Modal Controls
+    function openDisputeModal(dispId, customer, merchant) {
+      document.getElementById('modal-dispute-id').textContent = '#' + dispId;
+      document.getElementById('modal-customer-name').textContent = customer;
+      document.getElementById('modal-merchant-name').textContent = merchant;
+      document.getElementById('dispute-modal').classList.remove('hidden');
+    }
+
+    function closeDisputeModal() {
+      document.getElementById('dispute-modal').classList.add('hidden');
+    }
+
+    function submitDisputeResolution() {
+      closeDisputeModal();
+      showToast('تم اعتماد القرار الإداري وإغلاق ملف النزاع وإشعار الأطراف بالمكلا.');
+    }
+
+    // Review Moderation Functions
+    function deleteReview(btn) {
+      if (confirm('هل أنت متأكد من حذف هذا التعليق المسيء لحماية سمعة ال��تجر؟')) {
+        const card = btn.closest('.cloud-card');
+        if (card) {
+          card.style.opacity = '0.3';
+          card.style.pointerEvents = 'none';
+          showToast('تم حذف التعليق المسيء وتجميد صلاحية التقييم للعميل.');
+        }
+      }
+    }
+
+    function warnUser(btn) {
+      showToast('تم إرسال إنذار رسمي للعميل عبر رسالة نصية وواتساب.');
+    }
+
+    // Save Settings Toast
+    function saveSettings() {
+      showToast('تم حفظ وتحديث إعدادات منصة غيم سبيس بنجاح.');
+    }
+
+    // Export Trigger
+    function exportData(type) {
+      showToast(`جاري تجهيز وتنزيل تقرير سوق غيم سبيس (${type})...`);
+    }
+
+    // Generic Toast Helper
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  </script>
+</body></html>

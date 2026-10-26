@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>غيم سبيس - تصفح الأقسام</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome for crisp vector icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts: Cairo for modern Arabic UI -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#172A46',
+              sky: '#54B9F2',
+              bg: '#F3F6FB',
+              purple: '#8B7CF6',
+              amber: '#FFC857'
+            }
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0 8px 24px -4px rgba(23, 42, 70, 0.06)',
+            'card-hover': '0 12px 28px -6px rgba(84, 185, 242, 0.22)',
+            'bottom-nav': '0 -8px 25px rgba(23, 42, 70, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    body {
+      font-family: 'Cairo', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    /* Hide scrollbar for standard look */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style data-purpose="card-animation">
+    .category-card {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-card.active-selected {
+      border-color: #54B9F2;
+      background-color: #ffffff;
+      box-shadow: 0 10px 25px -4px rgba(84, 185, 242, 0.3);
+      transform: translateY(-2px);
+    }
+    .category-card.active-selected .check-indicator {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-[#e9edf5] min-h-screen flex justify-center items-center p-0 sm:p-4 text-slate-800 antialiased">
+<!-- BEGIN: MobileDeviceContainer -->
+<!-- iOS Mobile Container Mockup -->
+<div class="w-full max-w-[430px] h-screen sm:h-[890px] bg-[#F3F6FB] sm:rounded-[44px] shadow-2xl flex flex-col overflow-hidden relative border-0 sm:border-[8px] sm:border-slate-800">
+<!-- iOS Dynamic Island & Status Bar Area -->
+<header class="pt-2 px-6 pb-2 flex justify-between items-center z-30 select-none bg-white/70 backdrop-blur-md">
+<!-- iOS Clock Time -->
+<span class="text-xs font-bold text-slate-700 tracking-tight">9:41</span>
+<!-- Dynamic Notch Area (Visual simulation on desktop) -->
+<div class="w-24 h-4 bg-slate-900 rounded-full hidden sm:block"></div>
+<!-- Status Icons -->
+<div class="flex items-center space-x-1.5 space-x-reverse text-slate-700 text-xs">
+<i class="fa-solid fa-signal text-[11px]"></i>
+<i class="fa-solid fa-wifi text-[11px]"></i>
+<i class="fa-solid fa-battery-full text-sm text-[#172A46]"></i>
+</div>
+</header>
+<!-- BEGIN: TopHeader -->
+<!-- App Navigation Header -->
+<nav class="bg-white px-4 py-3 shadow-sm border-b border-slate-100 flex items-center justify-between z-20">
+<!-- Back Button -->
+<button aria-label="رجوع" class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 text-[#172A46] active:scale-95 transition-transform" type="button">
+<i class="fa-solid fa-arrow-right text-sm"></i>
+</button>
+<!-- App Title & Identity -->
+<div class="flex items-center gap-2.5">
+<div class="text-right">
+<h1 class="text-base font-extrabold text-[#172A46] leading-none">جميع الأقسام</h1>
+<p class="text-[10px] text-slate-400 font-medium mt-0.5">سوق غيم سبيس المكلا</p>
+</div>
+<!-- Logo Image -->
+<div class="w-10 h-10 rounded-xl overflow-hidden border border-slate-200 shadow-sm p-0.5 bg-[#172A46] flex items-center justify-center">
+<img alt="شعار غيم سبيس Ghaym Space" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0IKXBRgWoJ_6xVveg9LJ54N4riCnAys7fu12w2Yj_CocTjRbiF9HIaxeE20lgNC9rpK8Owrr-k8HxHPy86J8v01Yr8n149DGMKczi-8m4YkBmUFB9x_H_PZtcJrIzZQFmpORqts2cxa1ULykpoQPw5yUCmDvPuz9kL4902dUQPePlqgX4jgqyzyVONXIW4fBRp1lBOiKXsA0nzODsFcrIZLN1HRaFlNMtoxXKVsdIWhIhMQU-H6A"/>
+</div>
+</div>
+</nav>
+<!-- END: TopHeader -->
+<!-- BEGIN: MainContentScrollableArea -->
+<main class="flex-1 overflow-y-auto px-4 pt-3 pb-28 space-y-4">
+<!-- Search Bar -->
+<div class="relative w-full" data-purpose="category-search-bar">
+<input class="w-full py-2.5 pr-10 pl-10 rounded-2xl bg-white border border-slate-200/90 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#54B9F2]/50 focus:border-[#54B9F2] shadow-sm transition-all" id="categorySearchInput" placeholder="ابحث عن قسم: عطور، ملابس، طعام..." type="search"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+<i class="fa-solid fa-magnifying-glass text-sm"></i>
+</div>
+<div class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-300 text-xs">
+<i class="fa-solid fa-sliders text-xs"></i>
+</div>
+</div>
+<!-- Quick Summary / Stats Tag -->
+<div class="flex items-center justify-between px-1 text-xs">
+<span class="text-slate-500 font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#54B9F2] inline-block animate-pulse"></span>
+          تصفح التصنيفات المعتمدة
+        </span>
+<span class="bg-[#54B9F2]/10 text-[#172A46] font-bold px-2.5 py-0.5 rounded-full text-[11px]">
+          7 أقسام رئيسية
+        </span>
+</div>
+<!-- BEGIN: CategoriesGrid -->
+<!-- Interactive Grid of Categories -->
+<div class="grid grid-cols-2 gap-3" data-purpose="categories-grid" id="categoriesContainer">
+<!-- Category 1: Perfumes -->
+<article class="category-card active-selected relative bg-white border-2 border-[#54B9F2] rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none" data-category="عطور وبخور وزيوت عطرية">
+<span class="check-indicator absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white flex items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-sky-50 text-[#54B9F2] flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-spray-can-sparkles"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">عطور وبخور</h3>
+<p class="text-[11px] text-slate-400 font-medium">وزيوت عطرية فاخرة</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-[#54B9F2] bg-sky-50 px-2 py-0.5 rounded-md">18 متجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 2: Food & Home Production -->
+<article class="category-card relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none hover:border-slate-200" data-category="طعام، مخبوزات وأسر منتجة">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-basket-shopping"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">طعام ومخبوزات</h3>
+<p class="text-[11px] text-slate-400 font-medium">أسر منتجة وحلويات</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">24 متجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 3: Gifts & Flowers -->
+<article class="category-card relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none hover:border-slate-200" data-category="هدايا، زهور وتوزيعات">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-gift"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">هدايا وزهور</h3>
+<p class="text-[11px] text-slate-400 font-medium">توزيعات وباقات خاصة</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md">15 متجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 4: Crafts & Silverware -->
+<article class="category-card relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none hover:border-slate-200" data-category="حِرف، فضيات وتراثيات">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-purple-50 text-[#8B7CF6] flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-gem"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">حِرف وفضيات</h3>
+<p class="text-[11px] text-slate-400 font-medium">تراثيات ومصنوعات يدوية</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md">12 متجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 5: Clothes & Abayas -->
+<article class="category-card relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none hover:border-slate-200" data-category="ملابس وأزياء وعبايات">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-500 flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-shirt"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">ملابس وأزياء</h3>
+<p class="text-[11px] text-slate-400 font-medium">عبايات وموضة عصرية</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">32 متجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 6: Electronics & Accessories -->
+<article class="category-card relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex flex-col justify-between cursor-pointer select-none hover:border-slate-200" data-category="إلكترونيات وإكسسوارات">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="w-11 h-11 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-3 shadow-inner">
+<i class="fa-solid fa-laptop"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight mb-1">إلكترونيات</h3>
+<p class="text-[11px] text-slate-400 font-medium">إكسسوارات وأجهزة ذكية</p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+<span class="font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-md">9 متاجر</span>
+<i class="fa-solid fa-angle-left text-slate-300 text-xs"></i>
+</div>
+</article>
+<!-- Category 7: Kids & Toys (Span across columns for balance) -->
+<article class="category-card col-span-2 relative bg-white border-2 border-transparent rounded-2xl p-3.5 shadow-soft flex items-center justify-between cursor-pointer select-none hover:border-slate-200" data-category="مستلزمات الأطفال والألعاب">
+<span class="check-indicator hidden absolute top-2.5 left-2.5 w-5 h-5 rounded-full bg-[#54B9F2] text-white items-center justify-center text-[10px]">
+<i class="fa-solid fa-check"></i>
+</span>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center text-xl shadow-inner shrink-0">
+<i class="fa-solid fa-cubes"></i>
+</div>
+<div>
+<h3 class="font-bold text-sm text-[#172A46] leading-tight">مستلزمات الأطفال والألعاب</h3>
+<p class="text-[11px] text-slate-400 font-medium mt-0.5">ألعاب، ملابس رضع، وعناية بالطفل</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md text-[11px]">11 متجر</span>
+<i class="fa-solid fa-chevron-left text-slate-300 text-xs"></i>
+</div>
+</article>
+</div>
+<!-- END: CategoriesGrid -->
+<!-- BEGIN: PromotionalBanner -->
+<!-- Interactive Bottom Trust Banner -->
+<section class="mt-4 rounded-2xl p-4 bg-gradient-to-l from-[#172A46] to-[#25426d] text-white shadow-lg relative overflow-hidden" data-purpose="promo-banner">
+<!-- Background Decorative Circles -->
+<div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-[#54B9F2]/10 blur-xl pointer-events-none"></div>
+<div class="absolute right-12 -top-6 w-20 h-20 rounded-full bg-white/5 blur-lg pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between gap-3">
+<div class="space-y-1">
+<span class="inline-block text-[10px] font-bold bg-[#54B9F2]/25 text-[#54B9F2] px-2 py-0.5 rounded-full">ضمان جودة غيم سبيس</span>
+<h4 class="text-sm font-bold leading-snug">منتجات تلبي احتياجاتك</h4>
+<p class="text-[11px] text-slate-300">من متاجر وأسر موثوقة في المكلا</p>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center shrink-0 text-[#54B9F2] text-xl shadow-inner">
+<i class="fa-solid fa-shield-heart"></i>
+</div>
+</div>
+</section>
+<!-- END: PromotionalBanner -->
+</main>
+<!-- END: MainContentScrollableArea -->
+<!-- BEGIN: FixedBottomAction -->
+<!-- Fixed Action Bar with Dynamic Button -->
+<footer class="absolute bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-100 p-4 shadow-bottom-nav z-30">
+<div class="flex items-center justify-between gap-3">
+<button class="w-full bg-[#172A46] hover:bg-[#1f385c] active:scale-[0.98] text-white py-3.5 px-4 rounded-2xl font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all" id="submitActionBtn" type="button">
+<i class="fa-solid fa-arrow-left text-[#54B9F2]"></i>
+<span>الانتقال للمنتجات في: <span class="text-[#54B9F2]" id="selectedCategoryLabel">عطور وبخور</span></span>
+</button>
+</div>
+<!-- iOS Home Indicator Line -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-3"></div>
+</footer>
+<!-- END: FixedBottomAction -->
+</div>
+<!-- END: MobileDeviceContainer -->
+<!-- BEGIN: InteractiveScript -->
+<script data-purpose="category-selection-handler">
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.category-card');
+      const label = document.getElementById('selectedCategoryLabel');
+      const searchInput = document.getElementById('categorySearchInput');
+
+      // Selection handling
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          // Reset previous active state
+          cards.forEach(c => {
+            c.classList.remove('active-selected');
+            c.classList.remove('border-[#54B9F2]');
+            c.classList.add('border-transparent');
+            const check = c.querySelector('.check-indicator');
+            if (check) check.classList.add('hidden');
+          });
+
+          // Set new active state
+          card.classList.add('active-selected');
+          card.classList.remove('border-transparent');
+          card.classList.add('border-[#54B9F2]');
+          const check = card.querySelector('.check-indicator');
+          if (check) check.classList.remove('hidden');
+
+          // Update Button text
+          const catName = card.getAttribute('data-category');
+          if (catName && label) {
+            // Shorten if long for button readability
+            const cleanName = catName.split('،')[0].split('و')[0].trim();
+            label.textContent = cleanName || catName;
+          }
+        });
+      });
+
+      // Simple Search Filter
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const desc = card.querySelector('p').textContent.toLowerCase();
+          if (title.includes(query) || desc.includes(query)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: InteractiveScript -->
+</body></html>

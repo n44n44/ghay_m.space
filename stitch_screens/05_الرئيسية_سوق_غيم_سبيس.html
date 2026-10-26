@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>12. السلة - غيم سبيس | سوق المكلا الإلكتروني</title>
+<!-- Google Fonts: Cairo for sleek Arabic typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with forms & container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#172A46',
+            brandBlue: '#54B9F2',
+            brandBg: '#F3F6FB',
+            brandAccentPurple: '#8B7CF6',
+            brandAccentYellow: '#FFC857',
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Base Layout Styles -->
+<style data-purpose="base-layout">
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #F3F6FB;
+      color: #172A46;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<!-- END: Base Layout Styles -->
+<!-- BEGIN: Custom Button and Utility Styles -->
+<style data-purpose="custom-utilities">
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(23, 42, 70, 0.06);
+    }
+    .custom-shadow-lg {
+      box-shadow: 0 10px 25px -5px rgba(23, 42, 70, 0.08);
+    }
+  </style>
+<!-- END: Custom Button and Utility Styles -->
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+<!-- BEGIN: MainHeader -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo and Platform Title -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3" href="#">
+<img alt="شعار غيم سبيس" class="w-12 h-12 object-contain rounded-xl border border-slate-100 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSO6RMyWI5_6XolAr7247R-pxnyQTveFZKYqsxNkKdZO0lEvtulGdjDPnW-e3n85cc_o3iZn-BJE7hlJa_kjtwJvGRiRQjP1Cw8JfuozV8s2UGjNbqtgVi1oJebazP6NeHbubFoLxLt2QUOpG-aegOjmcbyztbqrudRUtG4l2Sa0dq8g8JQuwmSjNtdfEdbm4HdR19jVYG5Je0GTPteut3QL_U8qmqWl-cadi5dDZiIOAiqHh5hcBSBH0ITFUSQ3cYQ"/>
+<div class="text-right">
+<span class="text-xl font-bold tracking-tight text-brandDark block leading-none">Ghaym Space</span>
+<span class="text-xs font-semibold text-brandBlue">غيم سبيس | سوق المكلا</span>
+</div>
+</a>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-md mx-8" data-purpose="header-search">
+<div class="relative w-full">
+<input class="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-full focus:outline-none focus:border-brandBlue focus:bg-white transition-all text-brandDark placeholder-slate-400" placeholder="ابحث عن منتج، متجر، أو صنف في المكلا..." type="text"/>
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Navigation and Cart Indicator -->
+<nav aria-label="رأس الصفحة" class="flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 hover:text-brandBlue transition" href="#">الرئيسية</a>
+<a class="text-sm font-medium text-slate-600 hover:text-brandBlue transition" href="#">المتاجر</a>
+<a class="text-sm font-medium text-slate-600 hover:text-brandBlue transition" href="#">الأقسام</a>
+<!-- Active Cart Icon with Badge -->
+<a class="relative p-2.5 bg-blue-50 text-brandBlue rounded-full border border-sky-100 flex items-center justify-center hover:bg-sky-100 transition shadow-sm" data-purpose="active-cart-button" href="#" title="سلة المشتريات">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute -top-1 -right-1 bg-brandBlue text-white text-[11px] font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md">
+              3
+            </span>
+</a>
+<!-- User Profile Avatar/Icon -->
+<div class="flex items-center gap-2 pr-2 border-r border-slate-200">
+<span class="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-brandDark font-semibold text-xs">
+              سالم
+            </span>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: BreadcrumbAndBackBar -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2 w-full">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<!-- Breadcrumb navigation -->
+<nav aria-label="شريط المسار" class="flex items-center text-sm text-slate-500 font-medium">
+<a class="hover:text-brandBlue transition" href="#">الرئيسية</a>
+<svg class="w-4 h-4 mx-2 text-slate-400 rotate-180" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-brandDark font-semibold">سلة المشتريات</span>
+</nav>
+<!-- Return back to shopping button -->
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-brandDark bg-white px-4 py-2 rounded-xl border border-slate-200 hover:border-brandBlue hover:text-brandBlue shadow-sm transition" data-purpose="continue-shopping-button" href="#">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>رجوع لمواصلة التسوق</span>
+</a>
+</div>
+</section>
+<!-- END: BreadcrumbAndBackBar -->
+<!-- BEGIN: CartMainContent -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow">
+<!-- Desktop 65% / 35% Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Right Column: Products List (Approx 65%) -->
+<div class="lg:col-span-8 space-y-4" data-purpose="cart-items-column">
+<!-- Cart Items Header -->
+<div class="bg-white p-5 rounded-2xl border border-slate-200/80 custom-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue flex items-center justify-center font-bold">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-lg font-bold text-brandDark leading-tight">سلة التسوق</h1>
+<p class="text-xs text-slate-500 mt-0.5">3 منتجات محددة من متجرين محليين بالمكلا</p>
+</div>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+            جاهز للشحن المحلي
+          </span>
+</div>
+<!-- Product Card 1 -->
+<article class="bg-white p-5 rounded-2xl border border-slate-200/80 custom-shadow flex flex-col sm:flex-row items-center gap-5 relative transition hover:border-sky-200" data-purpose="cart-item-card">
+<!-- Product Image Placeholder -->
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center relative">
+<img alt="عطر نفحات حضرموت الفاخر" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIwLN8WdnGYaRDWC03HqbTnbGIqxd08eyVNBUX8gv9DrVjEQ-2YGD9wtfZPAWshGbJIz9JHnyUhS8d8r5HpbHm58-nGwG7ajZ5VFR-ynX7HR5szuHtPs06DpsGktRCJkYH58oCAKtrQ9byC7BZSHHie4z6Pt_R8px2lCl9ZIJyfGdZYekY4jXmy4ZiU8XQeRfbPqwJb-juCtvLs2oQwVGSOt-pr9Gk7bCExi3bsiomupJqOSDaTR8H"/>
+</div>
+<!-- Product Details -->
+<div class="flex-grow text-center sm:text-right space-y-1.5 w-full">
+<div class="flex items-center justify-center sm:justify-start gap-2">
+<span class="text-[11px] font-medium text-brandDark/70 bg-slate-100 px-2 py-0.5 rounded-md">
+                متجر نفحات حضرموت (الشرج)
+              </span>
+</div>
+<h2 class="text-base font-bold text-brandDark">عطر نفحات حضرموت الفاخر (100 مل)</h2>
+<div class="text-sm font-bold text-brandBlue">
+              14,000 <span class="text-xs font-normal text-slate-500">ر.ي للقطعة</span>
+</div>
+</div>
+<!-- Quantity and Total Price Controller -->
+<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-slate-100">
+<!-- Counter component -->
+<div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-700 hover:bg-sky-50 hover:text-brandBlue shadow-xs transition" title="زيادة الكمية">
+                +
+              </button>
+<span class="w-8 text-center text-sm font-bold text-brandDark">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-400 hover:bg-slate-100 transition" disabled="" title="إنقاص الكمية">
+                -
+              </button>
+</div>
+<!-- Subtotal -->
+<div class="text-left min-w-[90px]">
+<span class="text-xs text-slate-400 block">المجموع:</span>
+<span class="text-base font-bold text-brandDark">14,000</span>
+<span class="text-xs font-semibold text-slate-500">ر.ي</span>
+</div>
+<!-- Remove Button -->
+<button class="text-slate-400 hover:text-rose-500 p-2 rounded-lg hover:bg-rose-50 transition" title="حذف المنتج من السلة">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-white p-5 rounded-2xl border border-slate-200/80 custom-shadow flex flex-col sm:flex-row items-center gap-5 relative transition hover:border-sky-200" data-purpose="cart-item-card">
+<!-- Product Image Placeholder -->
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center relative">
+<img alt="معمول حضرمي فاخر بالعسل الدوعني" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE8XCx2W12RrmA8jckJgW6TUYytv5PwORRT-fS9yhYb1EkkmOycZI5Yk9kAPudGp-a1iZbi0rAE_nYiHrncmjV3kY72HFoHoj8GiQTf8PkGfdGvteNe1syQVFf_nYZpvXwD4CoRpAlfXVaS4mZv1abCQbNcue4n-1FpWNGXY2PVPXwsi2-LebVtsSJgksw-bkytsz-yHwIXzY7IP4F4RtFsPpbmdhcuhDH5z8ej-VgcnynLFPHlpPe"/>
+</div>
+<!-- Product Details -->
+<div class="flex-grow text-center sm:text-right space-y-1.5 w-full">
+<div class="flex items-center justify-center sm:justify-start gap-2">
+<span class="text-[11px] font-medium text-brandDark/70 bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-md">
+                أطايب المكلا للأسر المنتجة (الديس)
+              </span>
+</div>
+<h2 class="text-base font-bold text-brandDark">معمول حضرمي فاخر بالعسل الدوعني (علبة 1 كجم)</h2>
+<div class="text-sm font-bold text-brandBlue">
+              9,000 <span class="text-xs font-normal text-slate-500">ر.ي للقطعة</span>
+</div>
+</div>
+<!-- Quantity and Total Price Controller -->
+<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-slate-100">
+<!-- Counter component -->
+<div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-700 hover:bg-sky-50 hover:text-brandBlue shadow-xs transition" title="زيادة الكمية">
+                +
+              </button>
+<span class="w-8 text-center text-sm font-bold text-brandDark">2</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-700 hover:bg-sky-50 hover:text-brandBlue shadow-xs transition" title="إنقاص الكمية">
+                -
+              </button>
+</div>
+<!-- Subtotal -->
+<div class="text-left min-w-[90px]">
+<span class="text-xs text-slate-400 block">المجموع:</span>
+<span class="text-base font-bold text-brandDark">18,000</span>
+<span class="text-xs font-semibold text-slate-500">ر.ي</span>
+</div>
+<!-- Remove Button -->
+<button class="text-slate-400 hover:text-rose-500 p-2 rounded-lg hover:bg-rose-50 transition" title="حذف المنتج من السلة">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-white p-5 rounded-2xl border border-slate-200/80 custom-shadow flex flex-col sm:flex-row items-center gap-5 relative transition hover:border-sky-200" data-purpose="cart-item-card">
+<!-- Product Image Placeholder -->
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center relative">
+<img alt="مرشوش غيم سبيس الملكي للمفارش" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHyTk6mooI0wX2lk-l6YGxH_4nGkNcujOkyEbgGGGfxNfTV5enCWQ05TSB6NjH4K6EiDdVr1Cot_iGiCXx16o9rHFf3Oi4hsOLpST8w7b1eKhlnteOVtr2lLEcwH3Tg0m2RfLswxnZbLJRaLjQGpaQQgpkXLZBi532RzHQ9Am3ULpU4hgh69ea5kvn07gnt23b5tekVuQuY0J9UMw3_NpECrgN_EbTNou2YiHOV5cw7lsaavpJqWp0"/>
+</div>
+<!-- Product Details -->
+<div class="flex-grow text-center sm:text-right space-y-1.5 w-full">
+<div class="flex items-center justify-center sm:justify-start gap-2">
+<span class="text-[11px] font-medium text-brandDark/70 bg-slate-100 px-2 py-0.5 rounded-md">
+                متجر نفحات حضرموت (الشرج)
+              </span>
+</div>
+<h2 class="text-base font-bold text-brandDark">مرشوش غيم سبيس الملكي للمفارش 500 مل</h2>
+<div class="text-sm font-bold text-brandBlue">
+              6,000 <span class="text-xs font-normal text-slate-500">ر.ي للقطعة</span>
+</div>
+</div>
+<!-- Quantity and Total Price Controller -->
+<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-slate-100">
+<!-- Counter component -->
+<div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-700 hover:bg-sky-50 hover:text-brandBlue shadow-xs transition" title="زيادة الكمية">
+                +
+              </button>
+<span class="w-8 text-center text-sm font-bold text-brandDark">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-lg bg-white text-slate-400 hover:bg-slate-100 transition" disabled="" title="إنقاص الكمية">
+                -
+              </button>
+</div>
+<!-- Subtotal -->
+<div class="text-left min-w-[90px]">
+<span class="text-xs text-slate-400 block">المجموع:</span>
+<span class="text-base font-bold text-brandDark">6,000</span>
+<span class="text-xs font-semibold text-slate-500">ر.ي</span>
+</div>
+<!-- Remove Button -->
+<button class="text-slate-400 hover:text-rose-500 p-2 rounded-lg hover:bg-rose-50 transition" title="حذف المنتج من السلة">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</article>
+</div>
+<!-- Left Column: Order Summary (Approx 35%) -->
+<aside class="lg:col-span-4" data-purpose="order-summary-column">
+<div class="bg-white p-6 rounded-2xl border border-slate-200/90 custom-shadow-lg sticky top-28 space-y-6">
+<!-- Summary Header -->
+<div class="border-b border-slate-100 pb-4">
+<h2 class="text-lg font-bold text-brandDark">ملخص الطلب</h2>
+<p class="text-xs text-slate-500 mt-1">تفاصيل الفاتورة الأولية لسلعك المختارة</p>
+</div>
+<!-- Price Calculations Breakdown -->
+<div class="space-y-3.5 text-sm">
+<div class="flex justify-between items-center">
+<span class="text-slate-600">المجموع الفرعي للمنتجات</span>
+<span class="font-bold text-brandDark">38,000 ر.ي</span>
+</div>
+<!-- Shipping Information Banner Notice -->
+<div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-100 text-xs text-brandDark space-y-1">
+<div class="flex items-center gap-1.5 font-bold text-brandBlue">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>تكلفة التوصيل:</span>
+</div>
+<p class="leading-relaxed text-slate-600">
+                تُحدّد تكلفة التوصيل وفق بيانات شركة التوصيل المتاحة بعد إدخال عنوان الحي بالمكلا
+              </p>
+</div>
+<!-- Tax Included Notice -->
+<div class="flex justify-between items-center text-xs text-slate-500 pt-1">
+<span>الضرائب والرسوم</span>
+<span class="font-medium text-emerald-600">متضمنة في أسعار المتاجر</span>
+</div>
+<div class="border-t border-slate-200 pt-4 flex justify-between items-center">
+<span class="text-base font-bold text-brandDark">الإجمالي التقريبي للسلع</span>
+<div class="text-left">
+<span class="text-xl font-extrabold text-brandBlue">38,000</span>
+<span class="text-xs font-bold text-brandDark"> ر.ي</span>
+</div>
+</div>
+</div>
+<!-- Checkout Primary CTA Button -->
+<a class="w-full flex items-center justify-center gap-3 bg-brandBlue hover:bg-[#43a6de] text-white py-3.5 px-6 rounded-xl font-bold text-base shadow-md shadow-sky-200 transition-all duration-200 hover:-translate-y-0.5" data-purpose="checkout-button" href="#">
+<span>الانتقال لإتمام الطلب</span>
+<svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<!-- Local Trust Badges and Guarantees -->
+<div class="border-t border-slate-100 pt-5 space-y-3">
+<div class="text-xs font-semibold text-slate-500 text-center mb-2">طرق الدفع والضمان بالمكلا</div>
+<div class="grid grid-cols-2 gap-2 text-[11px] font-medium text-slate-600">
+<div class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-100">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>الدفع عند الاستلام</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-100">
+<span class="w-2 h-2 rounded-full bg-brandBlue"></span>
+<span>الكريمي المميز</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-100">
+<span class="w-2 h-2 rounded-full bg-brandAccentPurple"></span>
+<span>ون كاش وبيس</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border border-slate-100">
+<span class="w-2 h-2 rounded-full bg-brandAccentYellow"></span>
+<span>معاينة السلع بالمكلا</span>
+</div>
+</div>
+<p class="text-[11px] text-center text-slate-400 mt-2">
+              جميع العمليات والطلبات محمية وتتم عبر موزعين محليين معتمدين.
+            </p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- END: CartMainContent -->
+<!-- BEGIN: PlatformFooter -->
+<footer class="bg-brandDark text-white mt-16 border-t border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Platform Branding Col -->
+<div class="space-y-4 md:col-span-1">
+<div class="flex items-center gap-3">
+<img alt="شعار غيم سبيس" class="w-12 h-12 object-contain bg-white/10 rounded-xl p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSO6RMyWI5_6XolAr7247R-pxnyQTveFZKYqsxNkKdZO0lEvtulGdjDPnW-e3n85cc_o3iZn-BJE7hlJa_kjtwJvGRiRQjP1Cw8JfuozV8s2UGjNbqtgVi1oJebazP6NeHbubFoLxLt2QUOpG-aegOjmcbyztbqrudRUtG4l2Sa0dq8g8JQuwmSjNtdfEdbm4HdR19jVYG5Je0GTPteut3QL_U8qmqWl-cadi5dDZiIOAiqHh5hcBSBH0ITFUSQ3cYQ"/>
+<div>
+<span class="text-xl font-bold block leading-none">Ghaym Space</span>
+<span class="text-xs text-brandBlue">غيم سبيس</span>
+</div>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed">
+            منصة تجمع المتاجر والأسر المنتجة والمشاريع المحلية في مدينة المكلا بمكان واحد، لتجربة تسوق سريعة وموثوقة.
+          </p>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-sm font-bold text-white mb-3">روابط مهمة</h3>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-brandBlue transition" href="#">عن غيم سبيس</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">المتاجر المسجلة</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">انضم كتاجر محلي</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">سياسة الخصوصية والاستخدام</a></li>
+</ul>
+</div>
+<!-- Delivery & Support -->
+<div>
+<h3 class="text-sm font-bold text-white mb-3">خدماتنا بالمكلا</h3>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-brandBlue transition" href="#">شركات التوصيل المعتمدة</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">التوصيل لكافة أحياء المكلا</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">مركز الدعم والمساعدة</a></li>
+<li><a class="hover:text-brandBlue transition" href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+<!-- Contact & Location -->
+<div>
+<h3 class="text-sm font-bold text-white mb-3">تواصل معنا</h3>
+<p class="text-xs text-slate-300 mb-2">حضرموت - المكلا، اليمن</p>
+<p class="text-xs text-slate-300 mb-3">خدمة العملاء متاحة يومياً من 8 صباحاً حتى 11 مساءً</p>
+<div class="flex items-center gap-3 pt-1">
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandBlue text-white transition text-xs" href="#">واتساب</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandBlue text-white transition text-xs" href="#">فيسبوك</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandBlue text-white transition text-xs" href="#">تويتر</a>
+</div>
+</div>
+</div>
+<!-- Copyright Bar -->
+<div class="border-t border-slate-700/60 mt-10 pt-6 text-center text-xs text-slate-400">
+        © 2024 غيم سبيس Ghaym Space - جميع الحقوق محفوظة لشبكة متاجر المكلا المحلية.
+      </div>
+</div>
+</footer>
+<!-- END: PlatformFooter -->
+</body></html>

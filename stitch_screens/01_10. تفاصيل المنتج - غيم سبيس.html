@@ -1,0 +1,679 @@
+﻿<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>تفاصيل المنتج | غيم سبيس - Ghaym Space</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Cairo Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#172A46',      /* اللون الأساسي */
+              sky: '#54B9F2',       /* المساعد التفاعلي */
+              bg: '#F3F6FB',        /* الخلفية الفاتحة */
+              purple: '#8B7CF6',    /* لمسة ثانوية */
+              amber: '#FFC857',     /* نجوم ولمسات تمييز */
+            }
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #F3F6FB;
+      color: #172A46;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="interaction-states">
+    .size-badge.active {
+      border-color: #54B9F2;
+      background-color: #EBF8FF;
+      color: #172A46;
+      font-weight: 700;
+      box-shadow: 0 0 0 1px #54B9F2;
+    }
+    .thumb-btn.active {
+      border-color: #54B9F2;
+      opacity: 1;
+    }
+    .tab-item.active {
+      color: #54B9F2;
+      border-bottom-color: #54B9F2;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased bg-[#F3F6FB]">
+<!-- BEGIN: MainHeader -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm" data-purpose="main-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Brand Logo & Identity -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="شعار غيم سبيس - Ghaym Space" class="w-12 h-12 object-contain rounded-xl shadow-sm border border-slate-100 group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSO6RMyWI5_6XolAr7247R-pxnyQTveFZKYqsxNkKdZO0lEvtulGdjDPnW-e3n85cc_o3iZn-BJE7hlJa_kjtwJvGRiRQjP1Cw8JfuozV8s2UGjNbqtgVi1oJebazP6NeHbubFoLxLt2QUOpG-aegOjmcbyztbqrudRUtG4l2Sa0dq8g8JQuwmSjNtdfEdbm4HdR19jVYG5Je0GTPteut3QL_U8qmqWl-cadi5dDZiIOAiqHh5hcBSBH0ITFUSQ3cYQ">
+<div class="flex flex-col text-right">
+<span class="text-xl font-black text-brand-dark tracking-tight leading-tight">Ghaym Space</span>
+<span class="text-xs font-semibold text-brand-sky">غـيـم سـبـيـس</span>
+</div>
+</a>
+</div>
+<!-- Navigation Links -->
+<nav aria-label="التنقل الرئيسي" class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+<a class="text-brand-dark hover:text-brand-sky transition-colors" href="#">الرئيسية</a>
+<a class="text-brand-dark hover:text-brand-sky transition-colors" href="#">الأقسام</a>
+<a class="text-brand-dark hover:text-brand-sky transition-colors" href="#">المتاجر</a>
+<a class="text-brand-sky font-bold transition-colors" href="#">العروض الخاصة</a>
+<a class="text-brand-dark hover:text-brand-sky transition-colors" href="#">المزيد</a>
+</nav>
+<!-- Search Bar and Action Shortcuts -->
+<div class="flex items-center gap-4">
+<!-- Search Mini Input -->
+<div class="hidden lg:flex items-center relative w-64">
+<input class="w-full pl-10 pr-4 py-2 text-xs rounded-full bg-slate-100 border border-transparent focus:border-brand-sky focus:bg-white focus:outline-none transition-all" placeholder="ابحث عن منتج أو متجر بالمكلا..." type="text">
+<i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-sm"></i>
+</div>
+<!-- Wishlist & Cart Actions -->
+<a class="relative p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-brand-dark transition-colors" href="#" title="المفضلة">
+<i class="fa-regular fa-heart text-lg"></i>
+</a>
+<a class="relative p-2.5 rounded-xl bg-brand-sky/10 text-brand-sky hover:bg-brand-sky hover:text-white transition-colors" href="#" title="سلة المشتريات">
+<i class="fa-solid fa-cart-shopping text-lg"></i>
+<span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-dark text-white text-[11px] font-bold rounded-full flex items-center justify-center">2</span>
+</a>
+<!-- User Account Button -->
+<button class="flex items-center gap-2 px-4 py-2 bg-brand-dark text-white rounded-xl text-xs font-bold hover:bg-opacity-95 transition-all shadow-sm">
+<i class="fa-regular fa-user text-sm"></i>
+<span>حسابي</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: BreadcrumbAndBackNavigation -->
+<section class="bg-white border-b border-slate-200/80 py-3.5" data-purpose="breadcrumbs-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
+<!-- Breadcrumb Navigation trail -->
+<nav aria-label="مسار التصفح" class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+<a class="hover:text-brand-sky transition-colors flex items-center gap-1.5" href="#">
+<i class="fa-solid fa-house text-slate-400 text-[11px]"></i>
+<span>الرئيسية</span>
+</a>
+<i class="fa-solid fa-chevron-left text-[9px] text-slate-300"></i>
+<a class="hover:text-brand-sky transition-colors" href="#">عطور وبخور</a>
+<i class="fa-solid fa-chevron-left text-[9px] text-slate-300"></i>
+<a class="hover:text-brand-sky transition-colors font-semibold text-slate-700" href="#">متجر نفحات حضرموت</a>
+<i class="fa-solid fa-chevron-left text-[9px] text-slate-300"></i>
+<span class="text-brand-sky font-bold truncate max-w-xs sm:max-w-md">عطر نفحات حضرموت الفاخر</span>
+</nav>
+<!-- Explicit RTL Return Button -->
+<a class="inline-flex items-center gap-2 text-xs font-bold text-brand-dark hover:text-brand-sky bg-slate-100 hover:bg-slate-200 px-3.5 py-1.5 rounded-lg transition-colors duration-150" href="#">
+<i class="fa-solid fa-arrow-right text-[11px]"></i>
+<span>رجوع إلى متجر نفحات حضرموت</span>
+</a>
+</div>
+</section>
+<!-- END: BreadcrumbAndBackNavigation -->
+<!-- BEGIN: MainProductSection -->
+<main class="flex-grow py-8" data-purpose="product-main-view">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+<!-- Product Showcase Grid (Two Balanced Columns) -->
+<div class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200/70 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Right Column: Product Visual Showcase & Gallery (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-4" data-purpose="product-gallery">
+<!-- Main Display Card -->
+<div class="relative bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden p-6 aspect-square flex items-center justify-center group">
+<!-- Badges -->
+<div class="absolute top-4 right-4 flex flex-col gap-2 z-10">
+<span class="bg-brand-dark text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+<i class="fa-solid fa-fire text-brand-amber"></i> الأكثر طلباً
+              </span>
+<span class="bg-brand-sky/15 text-brand-sky border border-brand-sky/30 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5 backdrop-blur-sm">
+<i class="fa-solid fa-bolt"></i> توصيل فوري بالمكلا
+              </span>
+</div>
+<!-- Favorite & Share floating buttons -->
+<div class="absolute top-4 left-4 flex flex-col gap-2 z-10">
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow hover:text-red-500 text-slate-500 transition-colors flex items-center justify-center" title="إضافة إلى المفضلة">
+<i class="fa-regular fa-heart text-base"></i>
+</button>
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow hover:text-brand-sky text-slate-500 transition-colors flex items-center justify-center" title="مشاركة المنتج">
+<i class="fa-solid fa-share-nodes text-sm"></i>
+</button>
+</div>
+<!-- Main High Quality Product Image Placeholder -->
+<img alt="عطر نفحات حضرموت الفاخر الأصلي" class="w-full h-full object-contain max-h-[380px] group-hover:scale-105 transition-transform duration-300 select-none" id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6Y89gojetfPpwABqq7vapdFDLTdFO6joZZyE1domNzgg1_HCSmmxxj14Wvel4Q1eT_rBodJ2AOyEJgnaY-mVAPxl1S956WEw5T-cwGNZYr8Bg3GBI3qkLc1polgRBEZ7Dy4k1z3zGDxfR3iKzqsmuxmGQ3xSiug-CwYd9wovX9Bp0W-2STh5LSPmezTxuep8SVNie6uvXxLvEntruJd079yORypJiTF4XeVUlcQtNK2cIHc6gp1o">
+</div>
+<!-- Thumbnails Gallery Row -->
+<div class="flex items-center gap-3 overflow-x-auto pb-1" data-purpose="gallery-thumbnails">
+<button class="thumb-btn active w-20 h-20 rounded-xl bg-slate-50 border-2 border-brand-sky p-1.5 overflow-hidden flex-shrink-0 transition-all" onclick="changeThumbnail(this, 'https://placehold.co/600x600/172a46/ffffff?text=الزاوية+الرئيسية')">
+<img alt="الزاوية الرئيسية" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSEag28khqnlo68lq3d_KwnyxODC12kTTeWBJhz7OnfQar6le7CEjG24kwb7-a48islyfvE9Ep9tner8f_3Rpyvb_eLKYbgz85dYnUhNaJhzhEvkIWTb72UT0-rrBCCSik8FFtaHxQL32L0r5JEmgP-Lf_z8ifwEjIx0eURXfJJ-Slh-vSdcW1jZgvh_NRUi_rMl55poc7rI8rt7Iz3JHK9I6PpKKQ82QeqbyH0vCLk0_OwY5Yfwt">
+</button>
+<button class="thumb-btn opacity-60 hover:opacity-100 w-20 h-20 rounded-xl bg-slate-50 border-2 border-transparent hover:border-slate-300 p-1.5 overflow-hidden flex-shrink-0 transition-all" onclick="changeThumbnail(this, 'https://placehold.co/600x600/172a46/54b9f2?text=تفاصيل+الزجاجة+والنقش')">
+<img alt="تفاصيل الزجاجة" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMSuou9C4CEcEGx-0TzknMys4uGIQ_xDrSt3EZKfDXuhvx_rVV11zHKYeDvmAMWMKir6Dkk3GUbQLe_XCcI2becq0L8efZQc0CQp2vtfmw5We3o1GdqTFtt1Dt0Jjj2YPrukYkEGGC8dhCqu4svGubxTriBRhGL8CwD24RhENK69C0hwCAcAsP9MPXZ7Afis0-QUnmzjqonTXUVHSwkOUmmW2UGW1fdeCkjj7kCucu8bfXRh5aQTue">
+</button>
+<button class="thumb-btn opacity-60 hover:opacity-100 w-20 h-20 rounded-xl bg-slate-50 border-2 border-transparent hover:border-slate-300 p-1.5 overflow-hidden flex-shrink-0 transition-all" onclick="changeThumbnail(this, 'https://placehold.co/600x600/172a46/ffc857?text=صندوق+الهدايا+الفاخر')">
+<img alt="صندوق الهدايا" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhQNuWJUQTEjkcih5QN8YmDk_UWcbIQ18_GSj3Iy-1CF-3NjKr269LKCPg4I4C-VoauFXu794vRDUgQ99MUomV9sUMc2jnvBDyn_h6xs3tf6DmPH7nmEAvs2kl9EampD20CMhZkbyaDJwuqZ9_NKi-7vF1A5Z87HIXb40et5k7incOvxOUYJYqrjGjrcsa2QhPzEQNDqNdswBvOZqp12GBJFOF5_BrY_RqBlRXXFeTJkzjYorzSOhU">
+</button>
+<button class="thumb-btn opacity-60 hover:opacity-100 w-20 h-20 rounded-xl bg-slate-50 border-2 border-transparent hover:border-slate-300 p-1.5 overflow-hidden flex-shrink-0 transition-all" onclick="changeThumbnail(this, 'https://placehold.co/600x600/172a46/8b7cf6?text=مكونات+العطر+والعود')">
+<img alt="المكونات العطرية" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVuF83RgsmyXGIWBWoU8TwoOKeKp-qsiMUYzqOhG4us5hKUyP8GiWg9jNnpHQCLoArgVXttbTntYpZjCsszLrLCufRV29OBrfEuvsMaSekp2qiqTGuFzVJ5f1jjkAEd_U-ZymP3N906e2UWSGr1Fn2HkqpsemYvvJTlKs_QcJ9NLc6jG09CP1MgRUh9b1MZkGkTzqHeHdju73nJFIX5WJwDI5aNWqxkkwLkEtJFjiPhoiCJ-n3bK3">
+</button>
+</div>
+<!-- Quick Verified Notice -->
+<div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-xs text-slate-600">
+<i class="fa-solid fa-shield-halved text-brand-sky text-lg"></i>
+<span>منتج يمني حضرمي أصلي 100% مستخلص من أجود أنواع خشب العود وزيت الورد الدوعني.</span>
+</div>
+</div>
+<!-- Left Column: Product Purchasing Details & Interactions (7 cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-6" data-purpose="product-info-and-actions">
+<!-- Title & Subtitle -->
+<div class="space-y-2 border-b border-slate-100 pb-5">
+<h1 class="text-2xl sm:text-3xl font-black text-brand-dark leading-tight">
+              عطر نفحات حضرموت الفاخر
+            </h1>
+<p class="text-slate-500 text-sm leading-relaxed font-normal">
+              مزيج ساحر واستثنائي يجمع بين العود الكمبودي المعتق، الصندل الطبيعي الهادئ، ونفحات الورد الدوعني الأصيل.
+            </p>
+<!-- Store Mini Card -->
+<div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-dark/5 border border-brand-sky/40 flex items-center justify-center text-brand-dark">
+<i class="fa-solid fa-store text-brand-sky"></i>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-400">يباع بواسطة:</span>
+<a class="text-sm font-bold text-brand-dark hover:text-brand-sky transition-colors" href="#">
+                      متجر نفحات حضرموت
+                    </a>
+<span class="inline-flex items-center gap-1 bg-green-50 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200">
+<i class="fa-solid fa-circle-check text-[9px]"></i> موثق
+                    </span>
+</div>
+<span class="text-xs text-slate-400 flex items-center gap-1">
+<i class="fa-solid fa-location-dot text-slate-300"></i> المكلا - حي الشرج
+                  </span>
+</div>
+</div>
+<a class="text-xs font-bold text-brand-sky bg-brand-sky/10 hover:bg-brand-sky hover:text-white px-3 py-1.5 rounded-lg transition-colors duration-150" href="#">
+                عرض المتجر
+              </a>
+</div>
+</div>
+<!-- Ratings & Reviews Summary -->
+<div class="flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1 text-brand-amber">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+<span class="font-extrabold text-brand-dark">4.9 من 5</span>
+<span class="text-slate-300">|</span>
+<a class="text-xs text-brand-sky hover:underline font-semibold" href="#reviews-section">
+              (68 تقييم موثق لعملاء المكلا)
+            </a>
+<span class="text-slate-300">|</span>
+<span class="text-xs text-green-600 font-semibold flex items-center gap-1">
+<i class="fa-solid fa-box text-[10px]"></i> متوفر في المخزون
+            </span>
+</div>
+<!-- Price Display -->
+<div class="bg-slate-50/70 p-4 rounded-2xl border border-slate-200/80 flex items-baseline gap-3">
+<span class="text-3xl font-black text-brand-dark" id="product-price">14,000</span>
+<span class="text-lg font-bold text-brand-sky">ر.ي</span>
+<span class="text-xs text-slate-400 font-normal">شامل كافة الرسوم والضريبة</span>
+<span class="mr-auto bg-green-100 text-green-800 text-[11px] font-bold px-2.5 py-1 rounded-md">
+              وفر 2,000 ر.ي لفترة محدودة
+            </span>
+</div>
+<!-- Product Options: Size selector -->
+<div class="space-y-3">
+<label class="block text-xs font-bold text-slate-700">
+              اختر الحجم المتوفر:
+            </label>
+<div class="grid grid-cols-3 gap-3" data-purpose="size-selector">
+<button class="size-badge flex flex-col items-center justify-center p-3 rounded-xl border border-slate-200 bg-white hover:border-brand-sky transition-all cursor-pointer text-center" onclick="selectSize(this, 9500, '50 مل')" type="button">
+<span class="text-sm font-bold">50 مل</span>
+<span class="text-[11px] text-slate-400 mt-1">9,500 ر.ي</span>
+</button>
+<button class="size-badge active flex flex-col items-center justify-center p-3 rounded-xl border border-brand-sky bg-brand-sky/10 transition-all cursor-pointer text-center relative" onclick="selectSize(this, 14000, '100 مل')" type="button">
+<span class="absolute -top-2.5 bg-brand-amber text-brand-dark text-[9px] font-black px-2 py-0.5 rounded-full shadow-sm">الأكثر طلباً</span>
+<span class="text-sm font-black text-brand-dark">100 مل</span>
+<span class="text-[11px] text-brand-sky font-bold mt-1">14,000 ر.ي</span>
+</button>
+<button class="size-badge flex flex-col items-center justify-center p-3 rounded-xl border border-slate-200 bg-white hover:border-brand-sky transition-all cursor-pointer text-center" onclick="selectSize(this, 19500, '150 مل')" type="button">
+<span class="text-sm font-bold">150 مل</span>
+<span class="text-[11px] text-slate-400 mt-1">19,500 ر.ي</span>
+</button>
+</div>
+</div>
+<!-- Quantity and Action Buttons -->
+<div class="space-y-4 pt-2">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<!-- Quantity Controller -->
+<div class="flex items-center justify-between border-2 border-slate-200 rounded-2xl p-1 bg-white w-full sm:w-36 h-12">
+<button aria-label="زيادة الكمية" class="w-10 h-full rounded-xl hover:bg-slate-100 flex items-center justify-center text-brand-dark font-bold transition-colors text-base" onclick="updateQuantity(1)" type="button">
+<i class="fa-solid fa-plus text-xs"></i>
+</button>
+<span class="text-base font-black text-brand-dark px-3" id="qty-counter">1</span>
+<button aria-label="إنقاص الكمية" class="w-10 h-full rounded-xl hover:bg-slate-100 flex items-center justify-center text-brand-dark font-bold transition-colors text-base" onclick="updateQuantity(-1)" type="button">
+<i class="fa-solid fa-minus text-xs"></i>
+</button>
+</div>
+<!-- Primary Action: Add to Cart -->
+<button class="flex-1 h-12 bg-brand-sky hover:bg-[#3fa5e0] active:scale-[0.99] text-white font-bold rounded-2xl shadow-sm shadow-brand-sky/40 flex items-center justify-center gap-3 transition-all duration-150 text-sm" type="button">
+<i class="fa-solid fa-cart-arrow-down text-base"></i>
+<span>أضف إلى السلة</span>
+</button>
+<!-- Secondary Action: Direct Checkout -->
+<button class="sm:w-40 h-12 bg-brand-dark hover:bg-slate-800 text-white font-bold rounded-2xl transition-colors duration-150 text-sm flex items-center justify-center gap-2" type="button">
+<i class="fa-solid fa-bolt-lightning text-brand-amber"></i>
+<span>شراء الآن</span>
+</button>
+</div>
+</div>
+<!-- Trust Badges & Local Convenience Features -->
+<div class="border-t border-slate-100 pt-5 grid grid-cols-1 sm:grid-cols-3 gap-4" data-purpose="trust-badges">
+<div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+<div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-sky shadow-2xs shrink-0">
+<i class="fa-solid fa-truck-fast text-sm"></i>
+</div>
+<div class="text-right">
+<h4 class="text-xs font-bold text-brand-dark">توصيل 45 دقيقة</h4>
+<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">خدمة توصيل فورية داخل مدينة المكلا وضواحيها</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+<div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-sky shadow-2xs shrink-0">
+<i class="fa-solid fa-wallet text-sm"></i>
+</div>
+<div class="text-right">
+<h4 class="text-xs font-bold text-brand-dark">دفع محلي مرن</h4>
+<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">عند الاستلام، ون كاش، بيس، أو بنك الكريمي</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+<div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-sky shadow-2xs shrink-0">
+<i class="fa-solid fa-shield-check text-sm"></i>
+</div>
+<div class="text-right">
+<h4 class="text-xs font-bold text-brand-dark">ضمان الجودة</h4>
+<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">استرجاع مجاني خلال 48 ساعة في حال عدم المطابقة</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BEGIN: DetailedTabsSection -->
+<section class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200/70 shadow-sm" data-purpose="product-tabs">
+<!-- Tab Navigation Headers -->
+<div class="border-b border-slate-200 flex items-center gap-8 overflow-x-auto">
+<button class="tab-item active pb-4 text-sm border-b-2 border-brand-sky text-brand-sky transition-colors whitespace-nowrap" onclick="switchTab(this, 'tab-description')">
+            وصف المنتج الكامل
+          </button>
+<button class="tab-item pb-4 text-sm border-b-2 border-transparent text-slate-500 hover:text-brand-dark transition-colors whitespace-nowrap" onclick="switchTab(this, 'tab-ingredients')">
+            مكونات وهرم العطر
+          </button>
+<button class="tab-item pb-4 text-sm border-b-2 border-transparent text-slate-500 hover:text-brand-dark transition-colors whitespace-nowrap" onclick="switchTab(this, 'tab-shipping')">
+            شروط التوصيل والاستبدال بالمكلا
+          </button>
+<button class="tab-item pb-4 text-sm border-b-2 border-transparent text-slate-500 hover:text-brand-dark transition-colors whitespace-nowrap flex items-center gap-1.5" onclick="switchTab(this, 'tab-reviews')">
+<span>آراء العملاء</span>
+<span class="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded-full">68</span>
+</button>
+</div>
+<!-- Tab Content Panes -->
+<div class="py-6 text-sm text-slate-600 leading-relaxed">
+<!-- Tab 1: Description -->
+<div class="tab-pane block space-y-4" id="tab-description">
+<h3 class="text-base font-bold text-brand-dark">فخامة تنطق بالأصالة الحضرمية</h3>
+<p>
+              صُمم عطر نفحات حضرموت ليعكس الطابع الشرقي العريق بروح عصرية فريدة. تم تركيبه بعناية فائقة بواسطة خبراء العطور في المكلا ليمتزج بانسجام مع مناخ الساحل، مانحاً ثباتاً عالياً وفوحاناً يستمر لأكثر من 24 ساعة دون أي تغير في نقاء الرائحة.
+            </p>
+<p>
+              الزجاجة مصنوعة من الكريستال السميك المقاوم ومزودة برذاذ ضبابي يوزع العطر بتجانس مثالي، مغلفة بصندوق جلدي فاخر يجعله الهدية المثالية لأعزائكم في كل المناسبات السعيدة.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3">
+<div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+<span class="font-bold text-brand-dark block mb-1">الاستخدام الموصى به:</span>
+<span>المناسبات الرسمية، الأعياد، وحفلات الزفاف والمجالس.</span>
+</div>
+<div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+<span class="font-bold text-brand-dark block mb-1">درجة الثبات والتركيز:</span>
+<span>Eau de Parfum بتركيز زيوت عطرية نقية تتجاوز 25%.</span>
+</div>
+</div>
+</div>
+<!-- Tab 2: Ingredients (Hidden by default) -->
+<div class="tab-pane hidden space-y-4" id="tab-ingredients">
+<h3 class="text-base font-bold text-brand-dark">الهرم العطري والمكونات النقية</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="border border-slate-200 p-4 rounded-2xl text-center bg-slate-50/50">
+<span class="text-xs text-brand-sky font-bold block mb-1">القمة العطرية (الإفتتاحية)</span>
+<p class="font-bold text-brand-dark">الورد الدوعني، البرغموت، ورذاذ الهيل الأخضر</p>
+</div>
+<div class="border border-slate-200 p-4 rounded-2xl text-center bg-slate-50/50">
+<span class="text-xs text-brand-sky font-bold block mb-1">قلب العطر (الوسط)</span>
+<p class="font-bold text-brand-dark">خشب الصندل العتيق، حبوب التونكا، والعنبر الصافي</p>
+</div>
+<div class="border border-slate-200 p-4 rounded-2xl text-center bg-slate-50/50">
+<span class="text-xs text-brand-sky font-bold block mb-1">قاعدة العطر (الارتكاز)</span>
+<p class="font-bold text-brand-dark">دهن العود الكمبودي المعتق والمسك الأبيض الأصيل</p>
+</div>
+</div>
+</div>
+<!-- Tab 3: Shipping & Policies (Hidden by default) -->
+<div class="tab-pane hidden space-y-4" id="tab-shipping">
+<h3 class="text-base font-bold text-brand-dark">سياسة الشحن والاستلام الفوري داخل حضرموت</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-600">
+<li>التوصيل المباشر في المكلا (الشرج، الديس، المكلا القديمة، فوه، روكب) يتم خلال 45 إلى 90 دقيقة من تأكيد الطلب.</li>
+<li>التوصيل إلى مدن ساحل ووادي حضرموت الأخرى (الشحر، غيل باوزير، تريم، سيئون) يتم خلال 24 - 48 ساعة.</li>
+<li>يحق للعميل معاينة زجاجة العطر وتجربة عينة التيستر المرفقة مع الطلب قبل السداد لمندوب التوصيل.</li>
+<li>استرجاع مجاني بنسبة 100% في حال عدم رضى العميل عن العينة التجريبية دون فتح العبوة الأساسية.</li>
+</ul>
+</div>
+<!-- Tab 4: Reviews Preview (Hidden by default) -->
+<div class="tab-pane hidden space-y-4" id="tab-reviews">
+<div class="flex items-center justify-between border-b border-slate-100 pb-3">
+<h3 class="text-base font-bold text-brand-dark">تقييمات المشترين من المكلا (68 تقييم)</h3>
+<button class="text-xs font-bold text-brand-sky hover:underline">أضف تقييمك</button>
+</div>
+<div class="space-y-3">
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+<div class="flex items-center justify-between mb-1">
+<span class="font-bold text-brand-dark text-xs">سالم بن محفوظ - حي السلام</span>
+<div class="text-brand-amber text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+</div>
+<p class="text-xs text-slate-600">عطر فخم جداً وريحته ثابته بالثوب حتى بعد الغسيل. التوصيل كان سريع خلال نص ساعة فقط للديس. شكراً متجر نفحات وغيم سبيس.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DetailedTabsSection -->
+<!-- BEGIN: SimilarProductsSection -->
+<section class="space-y-5" data-purpose="similar-products">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-xl font-black text-brand-dark">منتجات مشابهة من نفس المتجر</h2>
+<p class="text-xs text-slate-500 mt-1">المزيد من الخيارات العطرية المتميزة لدى متجر نفحات حضرموت</p>
+</div>
+<a class="text-xs font-bold text-brand-sky hover:underline flex items-center gap-1.5" href="#">
+<span>عرض كل منتجات المتجر</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</a>
+</div>
+<!-- 3 Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-2xl border border-slate-200/80 p-4 hover:shadow-md transition-shadow group flex flex-col justify-between">
+<div>
+<div class="relative bg-slate-50 rounded-xl p-4 aspect-square mb-3 flex items-center justify-center overflow-hidden">
+<img alt="بخور دوعني ملكي فاخر" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_NishL28l8MtitnC_ldKLSQWK0asxlOk3Qhj410M4Zkq7q0ZxWENVnoOfkcT85Mchjw5-0J8deSK7aUUMsae9bmlmizEPP0LUEAuPpTRl8Ck7PvcPFBYEQEuGQABPz3wnxVwXlfo5VhqUGC66UP-_p6H2tR16WFkII4gVGRLxnqE77PE_JaXuV_qDUPL-Br2vTr7jf4DARLk0oQC-t76m-rmHX73mQk7-5uyHQfue-z4icgf8JPH">
+<button class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-slate-400 hover:text-red-500 shadow flex items-center justify-center transition-colors">
+<i class="fa-regular fa-heart text-xs"></i>
+</button>
+</div>
+<div class="text-[11px] text-brand-sky font-semibold mb-1">بخور وعرائسي</div>
+<h3 class="text-sm font-bold text-brand-dark mb-1 group-hover:text-brand-sky transition-colors">
+                بخور دوعني ملكي معتق بالمسك
+              </h3>
+<div class="flex items-center gap-1 text-brand-amber text-xs mb-3">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span class="text-slate-400 text-[10px] mr-1">(4.9)</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 pt-3">
+<div>
+<span class="text-base font-black text-brand-dark">8,500</span>
+<span class="text-xs font-bold text-brand-sky">ر.ي</span>
+</div>
+<button class="w-9 h-9 rounded-xl bg-brand-sky/15 text-brand-sky hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-2xl border border-slate-200/80 p-4 hover:shadow-md transition-shadow group flex flex-col justify-between">
+<div>
+<div class="relative bg-slate-50 rounded-xl p-4 aspect-square mb-3 flex items-center justify-center overflow-hidden">
+<img alt="تولة دهن عود كمبودي خالص" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF4ZyfJ2-DFWiDf9GJ250DJPuGJikCoFYIOW-2h9GrhVrSgl0cmz1ZIaMhkaLQWE457tCvK_pomvLiNAFO_D5c4TkcUkfJ9Wc3AQ95TLJ6BkHlEg1yLsKSGhmZq1WgPkCTv-vs49F9gFUI2SQgr90ZJ55VW5Nm_r1CRQ3ZM-63_uyR6Zp1dAmarFJHbqxIqaD7uCjf21wkKoGX_L1KOAW9WtIH_Eizy8CyhkKNH1MDefEJ0H7W3jwV">
+<button class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-slate-400 hover:text-red-500 shadow flex items-center justify-center transition-colors">
+<i class="fa-regular fa-heart text-xs"></i>
+</button>
+</div>
+<div class="text-[11px] text-brand-sky font-semibold mb-1">أدهان شرقية</div>
+<h3 class="text-sm font-bold text-brand-dark mb-1 group-hover:text-brand-sky transition-colors">
+                تولة دهن عود كمبودي معتق سوبر
+              </h3>
+<div class="flex items-center gap-1 text-brand-amber text-xs mb-3">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span class="text-slate-400 text-[10px] mr-1">(4.8)</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 pt-3">
+<div>
+<span class="text-base font-black text-brand-dark">22,000</span>
+<span class="text-xs font-bold text-brand-sky">ر.ي</span>
+</div>
+<button class="w-9 h-9 rounded-xl bg-brand-sky/15 text-brand-sky hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-2xl border border-slate-200/80 p-4 hover:shadow-md transition-shadow group flex flex-col justify-between">
+<div>
+<div class="relative bg-slate-50 rounded-xl p-4 aspect-square mb-3 flex items-center justify-center overflow-hidden">
+<img alt="مرش مجالس الأصالة الملكي" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-0dQYdNAdEDZk5ca3o79xitZCd7uXsC3dwAw0Ri_68cbufk_aOkpj4IZwsH7aRH4DeH4NRjNk0ZSkFP6IRMUKdOQweoQNAhBKqJ5Po78EK4BAWiy02N28mxdsE2HY9BP4ARCYNKdswRsB7DR27p0-cVPWbE4VPtlIQyrUxFSSrpBztBQP56aFihduLa---cGz1YAQnlKJ3PnGRt_yLyFew7qMu3T9XHyWXz9_vJa8-qIDCKS6T1cg">
+<button class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-slate-400 hover:text-red-500 shadow flex items-center justify-center transition-colors">
+<i class="fa-regular fa-heart text-xs"></i>
+</button>
+</div>
+<div class="text-[11px] text-brand-sky font-semibold mb-1">مرشات ومفارش</div>
+<h3 class="text-sm font-bold text-brand-dark mb-1 group-hover:text-brand-sky transition-colors">
+                مرش المجالس والمفارش الفندقي 500 مل
+              </h3>
+<div class="flex items-center gap-1 text-brand-amber text-xs mb-3">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span class="text-slate-400 text-[10px] mr-1">(5.0)</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 pt-3">
+<div>
+<span class="text-base font-black text-brand-dark">6,000</span>
+<span class="text-xs font-bold text-brand-sky">ر.ي</span>
+</div>
+<button class="w-9 h-9 rounded-xl bg-brand-sky/15 text-brand-sky hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SimilarProductsSection -->
+</div>
+</main>
+<!-- END: MainProductSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-dark text-white border-t border-slate-800 mt-16" data-purpose="main-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Platform Brand & Info -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<img alt="شعار غيم سبيس" class="w-12 h-12 object-contain rounded-xl bg-slate-900 p-1 border border-slate-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSO6RMyWI5_6XolAr7247R-pxnyQTveFZKYqsxNkKdZO0lEvtulGdjDPnW-e3n85cc_o3iZn-BJE7hlJa_kjtwJvGRiRQjP1Cw8JfuozV8s2UGjNbqtgVi1oJebazP6NeHbubFoLxLt2QUOpG-aegOjmcbyztbqrudRUtG4l2Sa0dq8g8JQuwmSjNtdfEdbm4HdR19jVYG5Je0GTPteut3QL_U8qmqWl-cadi5dDZiIOAiqHh5hcBSBH0ITFUSQ3cYQ">
+<div>
+<span class="text-xl font-black text-white tracking-tight">Ghaym Space</span>
+<span class="block text-xs font-semibold text-brand-sky">غـيـم سـبـيـس</span>
+</div>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed font-light">
+            منصة تسوق إلكتروني محلية تجمع متاجر وأسر منتجة في المكلا وحضرموت في مكان واحد لتجربة شراء سريعة وآمنة.
+          </p>
+<div class="flex items-center gap-3 pt-1 text-slate-400">
+<a class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors" href="#"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+<a class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors" href="#"><i class="fa-brands fa-instagram"></i></a>
+<a class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-sky hover:text-white flex items-center justify-center transition-colors" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-sm font-bold text-white mb-4 border-r-2 border-brand-sky pr-2">روابط سريعة</h4>
+<ul class="space-y-2.5 text-xs text-slate-300">
+<li><a class="hover:text-brand-sky transition-colors" href="#">عن غيم سبيس</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">متاجر حضرموت المعتمدة</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">قسم العطور والبخور</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">انضم إلينا كتاجر بالمكلا</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+<!-- Customer Care & Security -->
+<div>
+<h4 class="text-sm font-bold text-white mb-4 border-r-2 border-brand-sky pr-2">خدمة العملاء والضمان</h4>
+<ul class="space-y-2.5 text-xs text-slate-300">
+<li><a class="hover:text-brand-sky transition-colors" href="#">سياسة التوصيل والشحن المحلي</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">سياسة الاستبدال والاسترجاع</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">طرق الدفع الإلكتروني المعتمدة</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">حماية المشتري وحقوق المستهلك</a></li>
+<li><a class="hover:text-brand-sky transition-colors" href="#">الشروط والأحكام</a></li>
+</ul>
+</div>
+<!-- Local Help & Contact -->
+<div>
+<h4 class="text-sm font-bold text-white mb-4 border-r-2 border-brand-sky pr-2">تواصل معنا</h4>
+<div class="space-y-3 text-xs text-slate-300">
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-location-dot text-brand-sky text-sm"></i>
+<span>حضرموت - المكلا، الشرج</span>
+</div>
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-phone text-brand-sky text-sm"></i>
+<span dir="ltr">+967 770 000 000</span>
+</div>
+<div class="flex items-center gap-2.5">
+<i class="fa-solid fa-envelope text-brand-sky text-sm"></i>
+<span>support@ghaymspace.com</span>
+</div>
+<div class="pt-2">
+<span class="block text-[11px] text-slate-400 mb-1.5">بوابات الدفع المدعومة:</span>
+<div class="flex flex-wrap gap-2 text-[10px] text-slate-300">
+<span class="px-2 py-1 bg-slate-800 rounded border border-slate-700">الكريمي</span>
+<span class="px-2 py-1 bg-slate-800 rounded border border-slate-700">ون كاش</span>
+<span class="px-2 py-1 bg-slate-800 rounded border border-slate-700">بيس</span>
+<span class="px-2 py-1 bg-slate-800 rounded border border-slate-700">الدفع عند الاستلام</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Sub-footer -->
+<div class="border-t border-slate-800/80 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+<p>© 2025 منصة غيم سبيس (Ghaym Space). جميع الحقوق محفوظة.</p>
+<p class="text-slate-500 font-light text-[11px]">صنع بحب لخدمة مجتمع حضرموت والمكلا</p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: InteractiveHandlersScript -->
+<script data-purpose="product-page-interactivity">
+    // Change active thumbnail and update main image display
+    function changeThumbnail(btnElement, newImageUrl) {
+      const mainImg = document.getElementById('main-product-image');
+      if (mainImg) {
+        mainImg.src = newImageUrl;
+      }
+      
+      // Update active state styling
+      document.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.classList.remove('active', 'border-brand-sky');
+        btn.classList.add('opacity-60', 'border-transparent');
+      });
+      
+      btnElement.classList.add('active', 'border-brand-sky');
+      btnElement.classList.remove('opacity-60', 'border-transparent');
+    }
+
+    // Select size badge and update price display accordingly
+    function selectSize(badgeElement, price, sizeLabel) {
+      document.querySelectorAll('.size-badge').forEach(badge => {
+        badge.classList.remove('active');
+        badge.classList.add('bg-white', 'border-slate-200');
+      });
+
+      badgeElement.classList.add('active');
+      badgeElement.classList.remove('bg-white', 'border-slate-200');
+
+      // Update formatted price text
+      const priceElem = document.getElementById('product-price');
+      if (priceElem) {
+        priceElem.textContent = price.toLocaleString('ar-YE');
+      }
+    }
+
+    // Update product quantity counter
+    function updateQuantity(change) {
+      const qtyElem = document.getElementById('qty-counter');
+      if (!qtyElem) return;
+      let currentVal = parseInt(qtyElem.textContent, 10) || 1;
+      currentVal += change;
+      if (currentVal < 1) currentVal = 1;
+      if (currentVal > 20) currentVal = 20; // safety limit
+      qtyElem.textContent = currentVal;
+    }
+
+    // Tab switcher logic
+    function switchTab(clickedTab, targetPaneId) {
+      // Toggle tab header styles
+      document.querySelectorAll('.tab-item').forEach(tab => {
+        tab.classList.remove('active', 'text-brand-sky', 'border-brand-sky');
+        tab.classList.add('text-slate-500', 'border-transparent');
+      });
+      clickedTab.classList.add('active', 'text-brand-sky', 'border-brand-sky');
+      clickedTab.classList.remove('text-slate-500', 'border-transparent');
+
+      // Toggle tab content display
+      document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.add('hidden');
+        pane.classList.remove('block');
+      });
+      const activePane = document.getElementById(targetPaneId);
+      if (activePane) {
+        activePane.classList.remove('hidden');
+        activePane.classList.add('block');
+      }
+    }
+  </script>
+<!-- END: InteractiveHandlersScript -->
+</body></html>

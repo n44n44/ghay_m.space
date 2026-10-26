@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>13. إتمام الطلب - غيم سبيس</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#c7e7ff",
+            "tertiary-fixed": "#e5deff",
+            "outline": "#8e9098",
+            "on-surface-variant": "#c4c6ce",
+            "on-primary": "#1e314d",
+            "on-background": "#d8e3f7",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#004c6c",
+            "surface-container": "#15202f",
+            "surface-container-highest": "#2b3545",
+            "primary-fixed-dim": "#b5c7eb",
+            "surface-container-lowest": "#040f1c",
+            "secondary": "#84cfff",
+            "on-secondary-container": "#002d42",
+            "tertiary-fixed-dim": "#c7bfff",
+            "on-tertiary": "#2c0e94",
+            "primary-container": "#172a46",
+            "outline-variant": "#44474d",
+            "on-tertiary-fixed": "#180065",
+            "inverse-on-surface": "#263140",
+            "on-tertiary-container": "#8f80fa",
+            "surface-dim": "#091422",
+            "on-primary-container": "#7f92b3",
+            "error-container": "#93000a",
+            "inverse-primary": "#4d5f7e",
+            "secondary-container": "#299ad1",
+            "primary-fixed": "#d6e3ff",
+            "background": "#091422",
+            "surface-tint": "#b5c7eb",
+            "surface-variant": "#2b3545",
+            "surface-container-high": "#202b39",
+            "tertiary-container": "#25008c",
+            "surface-bright": "#2f3a49",
+            "secondary-fixed-dim": "#84cfff",
+            "on-secondary-fixed": "#001e2e",
+            "surface-container-low": "#111c2a",
+            "on-error-container": "#ffdad6",
+            "tertiary": "#c7bfff",
+            "surface": "#091422",
+            "primary": "#b5c7eb",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "on-primary-fixed": "#061c37",
+            "on-surface": "#d8e3f7",
+            "on-secondary": "#00344c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter-desktop": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-2xl": "3rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "body-sm": ["Manrope"],
+            "label-lg": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "body-lg": ["Manrope"],
+            "label-sm": ["Space Grotesk"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "display-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #091422;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #202b39;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-secondary selection:text-surface-container-lowest">
+<!-- TopNavBar (Shared Component JSON Blueprint) -->
+<header class="bg-surface-container-low/85 backdrop-blur-md sticky top-0 z-50 shadow-2xl shadow-surface-container-lowest/50">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+<!-- Logo & Identity -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-secondary/30 p-1 bg-surface-container-high/60 group-hover:border-secondary transition-colors">
+<img alt="شعار منصة سوق غيم سبيس" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpSAyekrK53kqLCykWNxBu8oWSsEQQFohyGt_JX10rQN8zbM7DA5-L5GqzSzYsnjaXUovHU_VzDyE6rw-qtcOxWgoCK1BfGSONnRbn-NyLHEHQ4trHhSFV9VI_rE980LeVOcs98lW6r2S5KJ8eInUOI921ConvAjcjTlTOgAF1jLmxl7Wl45_guIECAzCYyAqDTKE2enRNX7qgRi7gNSRtdXQ2zLghbaxdPurBRfqKdUkUAOFSQs-_"/>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-secondary tracking-tight">Ghaym Space</span>
+</a>
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest border border-outline-variant/30 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          المكلا - حضرموت
+        </span>
+</div>
+<!-- Navigation Links (Contextually Inactive/Active states) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">المتجر</a>
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 transition-all text-label-md font-label-md" href="#">الطلبات</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">العروض</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 text-label-md font-label-md" href="#">لوحة التاجر</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 sm:gap-2">
+<button aria-label="تتبع الشحنات" class="p-2 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</button>
+<button aria-label="الإشعارات" class="p-2 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors relative" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#FFC857]"></span>
+</button>
+<a aria-label="سلة المشتريات" class="p-2 rounded-lg text-secondary bg-surface-container-high/70 border border-secondary/20 relative" href="#">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-surface-container-lowest font-headline-sm font-bold text-label-sm w-4 h-4 rounded-full flex items-center justify-center">3</span>
+</a>
+</div>
+<div class="h-6 w-px bg-outline-variant/30 hidden sm:block"></div>
+<button class="flex items-center gap-2 py-1.5 px-3 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface hover:border-secondary/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_circle</span>
+<span class="text-label-md font-label-md font-semibold">حسابي</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Checkout Stepper / Breadcrumbs Flow Bar -->
+<section class="bg-surface-container-low border-b border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Breadcrumb & Back Action -->
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-secondary text-label-md font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span>الرجوع إلى السلة</span>
+</a>
+<span class="text-outline-variant">|</span>
+<nav aria-label="مسار التصفح" class="flex items-center gap-2 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">الرئيسية</a>
+<span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_left</span>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">السلة</a>
+<span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_left</span>
+<span class="text-secondary font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              إتمام الطلب
+            </span>
+</nav>
+</div>
+<!-- Security / Guarantee Micro Indicator -->
+<div class="flex items-center gap-4 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#FFC857] text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>منصة موثوقة في حضرموت</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+<span>بيانات ومعاملة مشفرة 100%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+<div class="mb-8">
+<h1 class="text-headline-lg font-headline-lg text-on-surface flex items-center gap-3 tracking-tight">
+<span>إتمام الطلب وتأكيد الشحن</span>
+<span class="text-label-md font-label-md font-normal px-2.5 py-1 rounded bg-secondary/15 text-secondary border border-secondary/30">المكلا وضواحيها</span>
+</h1>
+<p class="text-on-surface-variant text-body-md font-body-md mt-1">يرجى التحقق من تفاصيل الطلب وتأكيد عنوان التوصيل الدقيق وطريقة السداد المناسبة لك.</p>
+</div>
+<!-- Asymmetric Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Primary Data Canvas (Columns 1-7) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Section 1: Order Items Review -->
+<div class="bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/30 shadow-xl shadow-surface-container-lowest/40">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-semibold">1. مراجعة المنتجات المحددة</h2>
+</div>
+<span class="text-label-md font-label-md px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">3 منتجات</span>
+</div>
+<!-- Products List -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-secondary/30 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0 border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="A luxury artisanal Arabian perfume glass bottle filled with rich amber fragrance resting on a dark slate base in a nocturnal studio setting with soft sky-blue and deep navy atmospheric rim lighting, luxury Hadhrami aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpmMsALGhEhvr0yRsVhlhT9eVcZZBfG1ZmA5yNIHIX0557xnNHeVAj97U2Xi2SrEKu0BGD77fCNztLlIrAQKrcrctPmKsS8gu1lPLEsHag-TZpFiqyeICGGs5TgxGc4y-sYdOiNQ5gy0brWUNKWnOhsXm_9ZDlkxmKP6BjxRw8yivSYgT9GwIC2Lp-ozglLBqYTJB5BYErgiZeboQJ8ZeQ1drTPvWXyOQ729imUMo"/>
+</div>
+<div>
+<h3 class="text-headline-sm text-sm font-bold text-on-surface">عطر نفحات حضرموت الفاخر</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center gap-1 text-[#FFC857]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span>متجر الشحر للأطياب</span>
+</span>
+<span>•</span>
+<span>الحجم: 100 مل</span>
+</div>
+<div class="inline-block mt-1 px-2 py-0.5 rounded bg-surface-container-highest text-label-sm font-label-sm text-secondary">الكمية: 1 علبة</div>
+</div>
+</div>
+<div class="text-left w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-end border-t sm:border-t-0 pt-2 sm:pt-0 border-outline-variant/10">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold">18,500 <span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">18,500 ر.ي للقطعة</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-secondary/30 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0 border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Freshly baked traditional Hadhrami Maamoul pastries infused with authentic Doani pure honey presented neatly inside an elegant dark packaging box with golden highlights and soft sky blue ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJY2G7daQfht3yZFv6HzONLqIJYFHJUiIIYBcKWsa64iZOcgcFBcYgRIDEtpJL4cBHH51z5COsFhR_2y14XX5wpPSUDha701Uer9wdyuCGmoQid464_wh-EQnkIQ2Ev7Bna6jQVbVWrOAcmG2s_2N1qwsZ_2WXSzEh-JRz5mfmqrp0MLUjATq5Kel4VniqFnPj15zA7Qgm8NSKuNmxQUwy6QV4KaDxhorihoD8fk"/>
+</div>
+<div>
+<h3 class="text-headline-sm text-sm font-bold text-on-surface">معمول حضرمي بالعسل الدوعني</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center gap-1 text-[#FFC857]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span>حلويات وادي دوعن التراثية</span>
+</span>
+<span>•</span>
+<span>الوزن: 1 كجم</span>
+</div>
+<div class="inline-block mt-1 px-2 py-0.5 rounded bg-surface-container-highest text-label-sm font-label-sm text-secondary">الكمية: 2 عبوة</div>
+</div>
+</div>
+<div class="text-left w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-end border-t sm:border-t-0 pt-2 sm:pt-0 border-outline-variant/10">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold">12,000 <span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">6,000 ر.ي للعبوة</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20 hover:border-secondary/30 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0 border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="An ornate glass spray bottle containing royal scented mist branded Ghaym Space, sitting on polished stone with soft violet and celestial blue luminescence reflecting off water-mist particles in a dark luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfpo1_7QU-DdYZZnsa6R2xY_leQQo4RMwXxFbofRz8deAxUIA74EPmDXsMfU3POsSAbY4NTf3e8h4UotwGr3As7PrbhBz5zi4ii6NGIFAHjjo7ZTbn7Zf9Rggoz75kTAc8G5jO1LDOhn1EYFUTAX30BMQsVYyvcrTo1ECUEC0TNzWJP6M4LweHh69rwxRnHVBqEp8WiqYJtuSzTTBEKLVre_wuk08pwgLeXI0MIuQ"/>
+</div>
+<div>
+<h3 class="text-headline-sm text-sm font-bold text-on-surface">مرشوش غيم سبيس الملكي</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+<span class="flex items-center gap-1 text-[#FFC857]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span>غيم بوتيك كولكشن</span>
+</span>
+<span>•</span>
+<span>العبوة: 250 مل</span>
+</div>
+<div class="inline-block mt-1 px-2 py-0.5 rounded bg-surface-container-highest text-label-sm font-label-sm text-secondary">الكمية: 1 قطعة</div>
+</div>
+</div>
+<div class="text-left w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-end border-t sm:border-t-0 pt-2 sm:pt-0 border-outline-variant/10">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold">7,500 <span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">7,500 ر.ي للقطعة</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Delivery Address within Mukalla -->
+<div class="bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/30 shadow-xl shadow-surface-container-lowest/40">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-semibold">2. عنوان التوصيل داخل أحياء المكلا</h2>
+</div>
+<button class="text-label-sm font-label-sm text-secondary hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_location_alt</span>
+<span>إضافة عنوان جديد</span>
+</button>
+</div>
+<!-- Stored Address Card (Selected) -->
+<div class="p-4 rounded-xl border-2 border-secondary bg-surface-container-high/80 relative transition-all shadow-md">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center bg-secondary">
+<span class="material-symbols-outlined text-surface-container-lowest text-[14px] font-bold">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm text-sm font-bold text-on-surface">المنزل الرئيسي (المكلا)</h3>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-secondary/20 text-secondary border border-secondary/30">العنوان الافتراضي</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface mt-1 font-semibold">
+                    المكلا - حي الشرج، قرب الجسر الصيني
+                  </p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    عمارة الأمل، الدور الثاني، شقة 4 - بجوار مسجد النور
+                  </p>
+<div class="flex items-center gap-3 mt-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]">call</span>
+<span dir="ltr">+967 770 123 456</span>
+</span>
+<span>•</span>
+<span>المستلم: م. أحمد مبارك باوزير</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors" title="تعديل العنوان" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<!-- Stylized Mini-Map Component -->
+<div class="mt-4 rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-low relative">
+<div class="h-32 w-full relative overflow-hidden" data-location="Al-Mukalla, Yemen" style="">
+<img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" data-alt="A stylized digital map interface display of Al-Mukalla coastal bay and Al-Sharj district showing coastal roads, Chinese Bridge landmark, and precise navigational pins in a glowing nocturnal navy and sky-blue color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8Jn9CKNSI4FSLtBlSYFcWT5u_LUVzZKdyREsKHlY4leKN7zr4T3BA2e-YGixNicRypLUJumIAd8AVJJzxoCzveNogJBaLtjngrnm2ubxZig_pu8jXK3O_z7Ff67tM7REbXQdHDTmQoV3Yw_1E7TPx_Rw6KldJmemKlavWlLX2lXrULoEUrGmyuYcAeV3FTWZtUb6lGLchpz5EcYmFg8jFzUFA9PkpeNKT1boTBU"/>
+<!-- Overlay Pin Indicator -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative flex flex-col items-center">
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 border border-secondary text-secondary text-label-sm font-label-sm font-bold shadow-lg mb-1 flex items-center gap-1 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span>قرب الجسر الصيني - الشرج</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[32px] drop-shadow-[0_4px_8px_rgba(84,185,242,0.6)]" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-1 rounded text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/30">
+                  خريطة المندوب المعتمد - المكلا
+                </div>
+</div>
+</div>
+</div>
+<!-- Mandatory Delivery Cost Notice Section -->
+<div class="mt-4 p-4 rounded-xl bg-primary-container/40 border border-secondary/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">local_shipping</span>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-headline-sm text-sm font-bold text-secondary">رسوم التوصيل المحددة وفق بيانات شركة التوصيل المعتمد�� بالمكلا:</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-surface-container-lowest font-headline-sm text-label-md font-bold">1,500 ر.ي</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface">
+                (توصيل محلي عبر الأسطول المعتمد) إلى كافة أحياء المكلا (الشرج، المكلا القديمة، الديس، فوه، روكب، جول مسحة). يتم التوصيل في نفس اليوم لطلبات الفترة الصباحية.
+              </p>
+</div>
+</div>
+</div>
+<!-- Section 3: Approved Payment Methods Only -->
+<div class="bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/30 shadow-xl shadow-surface-container-lowest/40">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-semibold">3. طريقة الدفع المعتمدة</h2>
+</div>
+<span class="text-label-sm font-label-sm text-[#FFC857] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+              وسائل محلية آمنة
+            </span>
+</div>
+<div class="space-y-4">
+<!-- Payment Option 1: Cash On Delivery -->
+<label class="block cursor-pointer">
+<div class="p-4 rounded-xl border border-outline-variant/30 hover:border-secondary/40 bg-surface-container-low transition-all">
+<div class="flex items-start gap-3.5">
+<input class="mt-1 text-secondary focus:ring-secondary focus:ring-offset-background bg-surface-container border-outline-variant" name="payment_method" type="radio" value="cod"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="text-headline-sm text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">handshake</span>
+                        الدفع عند الاستلام
+                      </span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">متاح في المكلا</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                      سداد إجمالي المبلغ نقدًا بالريال اليمني لمندوب التوصيل عند فحص واستلام شحنتك أمام منزلك.
+                    </p>
+</div>
+</div>
+</div>
+</label>
+<!-- Payment Option 2: Direct Bank Transfer (Selected by default to show rich transfer details) -->
+<div class="p-4 rounded-xl border-2 border-secondary bg-surface-container-high/60 transition-all">
+<div class="flex items-start gap-3.5">
+<input checked="" class="mt-1 text-secondary focus:ring-secondary focus:ring-offset-background bg-surface-container border-outline-variant" name="payment_method" type="radio" value="bank"/>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="text-headline-sm text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+                      التحويل المباشر إلى حساب بنكي (بنك الكريمي المميز أو ون كاش)
+                    </span>
+<span class="text-label-sm font-label-sm px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary border border-secondary/30 font-semibold">موصى به للسرعة</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                    قم بالتحويل عبر تطبيق كريمي جوال أو ون كاش (OneCash) إلى الحساب التجاري المعتمد الخاص بمنصة غيم سبيس أدناه:
+                  </p>
+<!-- Bank Details Box -->
+<div class="mt-4 p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/30 space-y-3">
+<!-- Kuraimi Account -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 rounded bg-surface-container-low border border-outline-variant/20">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">بنك الكريمي للتمويل الأصغر الإسلامي (حساب تجاري)</div>
+<div class="text-headline-sm text-sm font-bold text-secondary font-mono tracking-wider" dir="ltr">300 489 1221</div>
+<div class="text-body-sm text-[11px] text-on-surface-variant">الاسم: منصة غيم سبيس للتجارة المتعددة - المكلا</div>
+</div>
+<button class="self-start sm:self-center px-2.5 py-1 rounded bg-surface-container-highest hover:bg-secondary hover:text-surface-container-lowest text-label-sm font-label-sm text-secondary transition-all flex items-center gap-1" onclick="navigator.clipboard.writeText('3004891221')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+<span>نسخ الرقم</span>
+</button>
+</div>
+<!-- OneCash Account -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 rounded bg-surface-container-low border border-outline-variant/20">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">محفظة ون كاش (One Cash - كود الخدمة التجاري)</div>
+<div class="text-headline-sm text-sm font-bold text-[#c7bfff] font-mono tracking-wider" dir="ltr">770 994 400</div>
+<div class="text-body-sm text-[11px] text-on-surface-variant">الاسم: غيم سبيس للتسوق الإلكتروني</div>
+</div>
+<button class="self-start sm:self-center px-2.5 py-1 rounded bg-surface-container-highest hover:bg-[#c7bfff] hover:text-[#2c0e94] text-label-sm font-label-sm text-[#c7bfff] transition-all flex items-center gap-1" onclick="navigator.clipboard.writeText('770994400')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+<span>نسخ الرقم</span>
+</button>
+</div>
+<!-- Upload Proof of Transfer -->
+<div class="pt-2">
+<label class="block text-label-md font-label-md font-semibold text-on-surface mb-1.5">
+                        إرفاق إشعار السداد أو لقطة الشاشة:
+                      </label>
+<div class="border-2 border-dashed border-outline-variant/40 hover:border-secondary/60 rounded-lg p-4 text-center cursor-pointer transition-colors bg-surface-container-low/50">
+<span class="material-symbols-outlined text-secondary text-[28px]">upload_file</span>
+<p class="text-body-sm font-body-sm text-on-surface mt-1">انقر هنا لرفع إشعار الحوالة (PNG, JPG, PDF)</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">أو اسحب الملف وأفلته مباشرة هنا للتأكيد الفوري</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Order Summary Canvas (Columns 8-12) -->
+<div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
+<!-- Final Order Summary Card -->
+<div class="bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/30 shadow-2xl shadow-surface-container-lowest/60">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-4">
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">receipt_long</span>
+              ملخص الطلب النهائي
+            </h2>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary/15 px-2 py-0.5 rounded border border-secondary/30">فاتورة الشحن</span>
+</div>
+<!-- Items Breakdown -->
+<div class="space-y-3 pb-4 border-b border-outline-variant/20 text-body-sm font-body-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>عطر نفحات حضرموت الفاخر (×1)</span>
+<span class="font-headline-sm text-xs font-semibold text-on-surface">18,500 ر.ي</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>معمول حضرمي بالعسل الدوعني (×2)</span>
+<span class="font-headline-sm text-xs font-semibold text-on-surface">12,000 ر.ي</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>مرشوش غيم سبيس الملكي (×1)</span>
+<span class="font-headline-sm text-xs font-semibold text-on-surface">7,500 ر.ي</span>
+</div>
+</div>
+<!-- Subtotals & Charges -->
+<div class="py-4 space-y-3 border-b border-outline-variant/20">
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<span>مجموع المنتجات الفرعي:</span>
+<span class="font-headline-sm text-sm font-bold text-on-surface">38,000 ر.ي</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md">
+<span class="text-on-surface flex items-center gap-1.5">
+<span>رسوم التوصيل المعتمدة (المكلا):</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" title="توصيل محلي عبر أسطول غيم سبيس">info</span>
+</span>
+<span class="font-headline-sm text-sm font-bold text-secondary">1,500 ر.ي</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>ضريبة ال��يمة المضافة / الرسوم:</span>
+<span class="text-[#84cfff] font-bold">0 ر.ي (شاملة)</span>
+</div>
+</div>
+<!-- Discount Coupon Code Input -->
+<div class="py-4 border-b border-outline-variant/20">
+<label class="block text-label-sm font-label-sm text-on-surface-variant mb-1.5">كوبون الخصم أو قسيمة الشراء</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-3 py-2 text-on-surface text-body-sm placeholder:text-outline focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="أدخل رمز الكوبون إن وجد" type="text"/>
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-secondary text-label-sm font-label-sm font-bold rounded-lg transition-all border border-secondary/20" type="button">
+                تطبيق
+              </button>
+</div>
+</div>
+<!-- Grand Total Highlight -->
+<div class="pt-4 pb-6">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-md font-label-md text-on-surface-variant block">المبلغ الإجمالي المستحق:</span>
+<span class="text-body-sm text-xs text-secondary font-medium">شامل المنتجات والتوصيل المعتمد</span>
+</div>
+<div class="text-left">
+<span class="text-display-lg-mobile font-headline-lg font-bold text-secondary tracking-tight">39,500</span>
+<span class="text-label-lg font-bold text-on-surface mr-1">ر.ي</span>
+</div>
+</div>
+</div>
+<!-- Primary CTA Button (Explicitly Requested Sky Blue #54B9F2) -->
+<button class="w-full py-4 px-6 rounded-xl bg-secondary hover:bg-secondary-fixed-dim active:scale-[0.98] text-[#0D1826] font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-3 transition-all shadow-[0_0_24px_rgba(84,185,242,0.35)] hover:shadow-[0_0_28px_rgba(84,185,242,0.5)]" type="button">
+<span>تأكيد وإرسال الطلب</span>
+<span class="material-symbols-outlined text-[24px]">send</span>
+</button>
+<!-- Safe Shopping Assurances -->
+<div class="mt-6 pt-5 border-t border-outline-variant/20 grid grid-cols-2 gap-3 text-center">
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-[#FFC857] text-[20px] mb-1" style="font-variation-settings: 'FILL' 1;">security</span>
+<p class="text-label-sm font-label-sm text-on-surface font-semibold">حماية المشتري</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5">ضمان استرجاع وإلغاء ميسر</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-[20px] mb-1">speed</span>
+<p class="text-label-sm font-label-sm text-on-surface font-semibold">توصيل سريع</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5">خلال ساعات داخل أحياء المكلا</p>
+</div>
+</div>
+</div>
+<!-- Vendor Direct Contact Card -->
+<div class="p-4 rounded-xl bg-surface-container/60 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-10 h-10 rounded-full bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">هل تحتاج لمساعدة في الطلب؟</p>
+<p class="text-body-sm text-xs text-on-surface-variant">خدمة عملاء غيم سبيس متواجدة على مدار اليوم</p>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-secondary text-label-sm font-label-sm font-semibold transition-colors" href="#">
+            واتساب
+          </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Platform Footer (Shared Component JSON Blueprint) -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/15 mt-16">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant/30 p-1 bg-surface-container-high/40">
+<img alt="شعار منصة غيم سبيس" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpSAyekrK53kqLCykWNxBu8oWSsEQQFohyGt_JX10rQN8zbM7DA5-L5GqzSzYsnjaXUovHU_VzDyE6rw-qtcOxWgoCK1BfGSONnRbn-NyLHEHQ4trHhSFV9VI_rE980LeVOcs98lW6r2S5KJ8eInUOI921ConvAjcjTlTOgAF1jLmxl7Wl45_guIECAzCYyAqDTKE2enRNX7qgRi7gNSRtdXQ2zLghbaxdPurBRfqKdUkUAOFSQs-_"/>
+</div>
+<div>
+<span class="text-headline-md font-headline-md font-bold text-secondary block">Ghaym Space</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+            © 2025 منصة غيم سبيس للتجارة المتعددة - المكلا، حضرموت. جميع الحقوق محفوظة.
+          </p>
+</div>
+</div>
+<!-- Links Cluster -->
+<nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">عن غيم سبيس</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">شروط الخدمة للتاجر</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">سياسة الشحن والتوصيل</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">طرق الدفع المحلية</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">تتبع الشحنات</a>
+</nav>
+</div>
+</footer>
+</body></html>

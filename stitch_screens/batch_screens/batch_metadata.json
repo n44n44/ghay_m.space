@@ -1,0 +1,51 @@
+[
+  {
+    "index": 1,
+    "id": "1ee15a6a40c14cdbac0c80523a16cb27",
+    "title": "25. الاشتراك والمدفوعات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/01_25. الاشتراك والمدفوعات - غيم سبيس_1ee15a6a40c14cdbac0c80523a16cb27.html",
+    "imgFile": ""
+  },
+  {
+    "index": 2,
+    "id": "7a9ad48d373e4891839e8ef1844ab411",
+    "title": "22. إدارة الطلبات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/02_22. إدارة الطلبات - غيم سبيس_7a9ad48d373e4891839e8ef1844ab411.html",
+    "imgFile": ""
+  },
+  {
+    "index": 3,
+    "id": "7d025f586d694827b56824dc34fb9886",
+    "title": "20. إدارة المنتجات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/03_20. إدارة المنتجات - غيم سبيس_7d025f586d694827b56824dc34fb9886.html",
+    "imgFile": ""
+  },
+  {
+    "index": 4,
+    "id": "86ec4314e6b943f5a92157a797d33a99",
+    "title": "21. إضافة منتج وتعديله - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/04_21. إضافة منتج وتعديله - غيم سبيس_86ec4314e6b943f5a92157a797d33a99.html",
+    "imgFile": ""
+  },
+  {
+    "index": 5,
+    "id": "9193d0d167384849ba874092e06516eb",
+    "title": "26. تخصيص المتجر ومعاينته - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/05_26. تخصيص المتجر ومعاينته - غيم سبيس_9193d0d167384849ba874092e06516eb.html",
+    "imgFile": ""
+  },
+  {
+    "index": 6,
+    "id": "b51598715f6643f78bddfc99c3a3eef4",
+    "title": "23. تفاصيل الطلب للتاجر - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/06_23. تفاصيل الطلب للتاجر - غيم سبيس_b51598715f6643f78bddfc99c3a3eef4.html",
+    "imgFile": ""
+  },
+  {
+    "index": 7,
+    "id": "cbe5e608c25d43359b4ee4f11df30efc",
+    "title": "24. التقييمات والمراجعات - غيم سبيس",
+    "htmlFile": "stitch_screens/batch_screens/07_24. التقييمات والمراجعات - غيم سبيس_cbe5e608c25d43359b4ee4f11df30efc.html",
+    "imgFile": ""
+  }
+]

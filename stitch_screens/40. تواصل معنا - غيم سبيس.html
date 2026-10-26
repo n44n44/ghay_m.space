@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تواصل معنا | Ghaym Space - سوق غيم سبيس</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed": "#001e2e",
+            "primary-container": "#172a46",
+            "primary-fixed": "#d6e3ff",
+            "secondary-fixed-dim": "#84cfff",
+            "primary": "#b5c7eb",
+            "on-primary-fixed": "#061c37",
+            "on-background": "#d8e3f7",
+            "tertiary": "#c7bfff",
+            "secondary": "#84cfff",
+            "outline": "#8e9098",
+            "on-tertiary": "#2c0e94",
+            "inverse-surface": "#d8e3f7",
+            "outline-variant": "#44474d",
+            "error-container": "#93000a",
+            "surface": "#091422",
+            "tertiary-fixed-dim": "#c7bfff",
+            "background": "#091422",
+            "surface-container": "#15202f",
+            "surface-tint": "#b5c7eb",
+            "secondary-fixed": "#c7e7ff",
+            "tertiary-container": "#25008c",
+            "on-tertiary-fixed-variant": "#4330aa",
+            "surface-dim": "#091422",
+            "on-primary-container": "#7f92b3",
+            "surface-variant": "#2b3545",
+            "on-error": "#690005",
+            "secondary-container": "#299ad1",
+            "on-surface": "#d8e3f7",
+            "inverse-on-surface": "#263140",
+            "surface-container-highest": "#2b3545",
+            "on-primary-fixed-variant": "#354765",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#180065",
+            "surface-container-lowest": "#040f1c",
+            "surface-container-low": "#111c2a",
+            "tertiary-fixed": "#e5deff",
+            "surface-container-high": "#202b39",
+            "surface-bright": "#2f3a49",
+            "on-primary": "#1e314d",
+            "on-secondary-container": "#002d42",
+            "on-surface-variant": "#c4c6ce",
+            "on-tertiary-container": "#8f80fa",
+            "on-secondary-fixed-variant": "#004c6c",
+            "inverse-primary": "#4d5f7e",
+            "on-secondary": "#00344c",
+            "primary-fixed-dim": "#b5c7eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "3rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Manrope"],
+            "label-md": ["Space Grotesk"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "body-sm": ["Manrope"],
+            "headline-sm": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-lg": ["Manrope"],
+            "label-sm": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #091422;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #172a46;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary antialiased custom-scroll">
+<!-- TopNavBar (Shared Component from JSON) -->
+<header class="bg-surface-container-low/85 dark:bg-surface-container-low/85 backdrop-blur-md text-secondary dark:text-secondary docked full-width top-0 z-50 shadow-2xl shadow-surface-container-lowest/50 border-b border-outline-variant/20 dark:border-outline-variant/20 sticky">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+<!-- Right Side (in RTL): Brand & Search Trigger -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-10 h-10 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary shadow-lg shadow-surface-container-lowest group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="cloud">cloud</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary tracking-tight">Ghaym Space</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant -mt-1">حضرموت - المكلا</span>
+</div>
+</a>
+<!-- Desktop Navigation Links from JSON -->
+<nav class="hidden md:flex items-center gap-6 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="#">المتجر</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="#">الطلبات</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="#">العروض</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="#">لوحة التاجر</a>
+</nav>
+</div>
+<!-- Left Side (in RTL): Trailing Actions & Search & Account -->
+<div class="flex items-center gap-3">
+<!-- Search bar on left (per JSON: "on_left") -->
+<div class="hidden lg:flex items-center relative">
+<input class="bg-surface-container-lowest border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/50 text-body-sm font-body-sm rounded-full py-1.5 pe-4 ps-10 w-64 focus:outline-none focus:border-secondary transition-all" placeholder="ابحث عن متجر، خدمة، أو مساعدة..." type="text"/>
+<span class="material-symbols-outlined text-on-surface-variant absolute start-3 text-lg" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95 duration-150 relative" title="تتبع الشحنات">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</button>
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95 duration-150 relative" title="الإشعارات">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="w-2 h-2 rounded-full bg-secondary absolute top-1.5 start-1.5"></span>
+</button>
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95 duration-150 relative" title="سلة المشتريات">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -end-1 bg-secondary text-surface-container-lowest text-label-sm font-label-sm w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/30 mx-1 hidden sm:block"></div>
+<!-- Trailing Primary Action (Account / حسابي) -->
+<a class="flex items-center gap-2 bg-primary-container hover:bg-surface-container-high border border-outline-variant/30 text-secondary px-3 py-1.5 rounded-full transition-all active:scale-95 duration-150 text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<span>حسابي</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumb & Return to Home -->
+<nav class="flex items-center justify-between pb-6 border-b border-outline-variant/15 text-body-sm font-body-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<a class="hover:text-secondary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base" data-icon="home">home</span>
+<span>الرئيسية</span>
+</a>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="chevron_left">chevron_left</span>
+<span class="text-secondary font-medium">تواصل معنا</span>
+</div>
+<a class="inline-flex items-center gap-1.5 text-secondary hover:text-primary transition-colors text-label-md font-label-md bg-surface-container-high/60 px-3 py-1.5 rounded-lg border border-outline-variant/20 hover:border-secondary/30" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+<span>العودة للمتجر الرئيسي</span>
+</a>
+</nav>
+<!-- Hero Header Section with Cloud Coastal Atmosphere -->
+<section class="mt-8 mb-12 text-center md:text-start relative overflow-hidden rounded-2xl bg-gradient-to-bl from-primary-container/80 via-surface-container to-surface-container-low p-6 sm:p-10 border border-outline-variant/25 shadow-2xl shadow-surface-container-lowest/50">
+<div class="absolute -top-24 -end-24 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -start-24 w-80 h-80 rounded-full bg-tertiary-container/30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary border border-secondary/30 text-label-sm font-label-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>بوابة الدعم المباشر - ساحل حضرموت</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface text-2xl sm:text-3xl lg:text-4xl leading-tight font-bold tracking-tight">
+          تواصل مع فريق غيم سبيس - نحن هنا لمساعدتك في حضرموت
+        </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-4 leading-relaxed max-w-2xl">
+          نسعد دائماً بسماع آرائكم واستفساراتكم لخدمة التجارة الرقمية في المكلا وجميع مديريات حضرموت. سواء كنت متسوقاً، أو تاجراً شريكاً، فريقنا متأهب لدعمك تقنياً وميدانياً.
+        </p>
+</div>
+</section>
+<!-- Bento Grid Section: Contact Information Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Card 1: Headquarters -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-6 rounded-xl border border-outline-variant/20 hover:border-secondary/40 shadow-xl shadow-surface-container-lowest/40 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="location_on">location_on</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider block mb-1">المقر الرئيسي</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-2">المكلا، حضرموت</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            شارع الستين، بالقرب من الجسر الصيني، مجمع الغيم التجاري، الطابق الثاني، حضرموت، الجمهورية اليمنية.
+          </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">الرمز البريدي: 50101</span>
+<a class="inline-flex items-center gap-1 text-secondary text-label-sm font-label-sm hover:underline" href="#">
+<span>عرض الخريطة</span>
+<span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Customer Service & Field Support Phone -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-6 rounded-xl border border-outline-variant/20 hover:border-secondary/40 shadow-xl shadow-surface-container-lowest/40 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="support_agent">support_agent</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider block mb-1">الهاتف المباشر</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-2">خدمة العملاء والدعم</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mb-3">
+            فريق متواجد لمتابعة الشحنات، حل المشكلات التقنية للمتاجر، وتلقي البلاغات.
+          </p>
+<div class="space-y-1.5 font-label-md text-label-md">
+<a class="block text-on-surface hover:text-secondary transition-colors ltr:text-left dir-ltr flex items-center gap-2" href="tel:+96705300123">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="call">call</span>
+<span>+967 (05) 300 123</span>
+</a>
+<a class="block text-on-surface hover:text-secondary transition-colors ltr:text-left dir-ltr flex items-center gap-2" href="tel:+967770123456">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="phone_android">phone_android</span>
+<span>+967 770 123 456</span>
+</a>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">الخطوط ساخنة</span>
+<span class="text-secondary font-semibold">متاحة حالياً</span>
+</div>
+</div>
+<!-- Card 3: WhatsApp Instant Support Channels -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-6 rounded-xl border border-outline-variant/20 hover:border-secondary/40 shadow-xl shadow-surface-container-lowest/40 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="chat">chat</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider block mb-1">دعم سريع عبر واتساب</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-2">قنوات المحادثة الفورية</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mb-3">
+            مساندة مباشرة عبر تطبيق واتساب لمرافقة المتسوقين ومتابعة متطلبات التجار.
+          </p>
+<div class="space-y-2">
+<a class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 hover:border-secondary/50 text-body-sm font-body-sm transition-all" href="https://wa.me/967770123456" rel="noopener noreferrer" target="_blank">
+<span class="text-on-surface font-medium">دعم المتسوقين</span>
+<span class="text-secondary flex items-center gap-1 text-label-sm font-label-sm">
+<span>تحدث الآن</span>
+<span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
+</span>
+</a>
+<a class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 hover:border-secondary/50 text-body-sm font-body-sm transition-all" href="https://wa.me/967770123457" rel="noopener noreferrer" target="_blank">
+<span class="text-on-surface font-medium">مساندة التجار والشركاء</span>
+<span class="text-secondary flex items-center gap-1 text-label-sm font-label-sm">
+<span>تحدث الآن</span>
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+</span>
+</a>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">الرد المعتاد</span>
+<span class="text-secondary font-medium">خلال دقائق معدودة</span>
+</div>
+</div>
+<!-- Card 4: Operating Hours -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 p-6 rounded-xl border border-outline-variant/20 hover:border-secondary/40 shadow-xl shadow-surface-container-lowest/40 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="schedule">schedule</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider block mb-1">أوقات العمل</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-2">ساعات مراكز الدعم</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mb-3">
+            تعمل غرف العمليات وخدمة العملاء يومياً لتسهيل إدارة الطلبيات ال��يدانية.
+          </p>
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-outline-variant/20">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="text-on-surface font-semibold">يومياً بدون انقطاع</span>
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="text-secondary text-label-lg font-label-lg font-bold">
+              8:00 ص - 11:00 م
+            </div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">بتوقيت المكلا، حضرموت</span>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">الدعم الطارئ</span>
+<span class="text-on-surface font-medium">متاح على مدار الساعة</span>
+</div>
+</div>
+</div>
+<!-- Main Section: Form & Contextual Card -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+<!-- Contact Form Canvas (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container p-6 sm:p-8 rounded-2xl border border-outline-variant/20 shadow-2xl shadow-surface-container-lowest/50">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-outline-variant/15">
+<div class="w-10 h-10 rounded-xl bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">أرسل استفسارك أو طلبك مباشرة</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">املأ النموذج أدناه وسيقوم المشرف المسؤول بالتواصل معك</p>
+</div>
+</div>
+<form action="#" class="space-y-5" method="POST" onsubmit="event.preventDefault(); alert('تم استلام رسالتكم بنجاح! سيتواصل معكم فريق غيم سبيس في أقرب وقت.');">
+<!-- Full Name -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="fullName">الاسم الكامل <span class="text-secondary">*</span></label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 rounded-xl py-2.5 pe-4 ps-11 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md" id="fullName" placeholder="مثال: صالح عبدالله العمودي" required="" type="text"/>
+<span class="material-symbols-outlined text-on-surface-variant absolute start-3.5 top-3 text-lg" data-icon="badge">badge</span>
+</div>
+</div>
+<!-- Phone & Email Two-Column -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Mobile Phone (+967) -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="phone">رقم الهاتف المحمول <span class="text-secondary">*</span></label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 rounded-xl py-2.5 pe-4 ps-16 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md text-start" dir="ltr" id="phone" placeholder="77X XXX XXX" required="" type="tel"/>
+<span class="absolute start-3 top-2.5 text-label-sm font-label-sm text-secondary bg-primary-container px-1.5 py-0.5 rounded border border-secondary/20 font-mono">+967</span>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="email">البريد الإلكتروني <span class="text-secondary">*</span></label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 rounded-xl py-2.5 pe-4 ps-11 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md" id="email" placeholder="name@domain.com" required="" type="email"/>
+<span class="material-symbols-outlined text-on-surface-variant absolute start-3.5 top-3 text-lg" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</div>
+<!-- User Role & Topic Type Two-Column -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- User Role / صفة المتواصل -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="role">صفة المتواصل <span class="text-secondary">*</span></label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl py-2.5 pe-4 ps-11 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md appearance-none" id="role" required="">
+<option disabled="" selected="" value="">اختر صفتك في المنصة...</option>
+<option value="customer">عميل / متسوق</option>
+<option value="vendor">تاجر أو صاحب مشروع</option>
+<option value="delivery">مندوب توصيل محلي</option>
+<option value="partner">شريك تجاري / مورد</option>
+</select>
+<span class="material-symbols-outlined text-on-surface-variant absolute start-3.5 top-3 text-lg pointer-events-none" data-icon="account_circle">account_circle</span>
+<span class="material-symbols-outlined text-outline absolute end-3 top-3 text-lg pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Topic / نوع الموضوع -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="topic">نوع الموضوع <span class="text-secondary">*</span></label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl py-2.5 pe-4 ps-11 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md appearance-none" id="topic" required="">
+<option disabled="" selected="" value="">حدد موضوع الرسالة...</option>
+<option value="order">استفسار عن طلب أو شحنة</option>
+<option value="support">دعم فني ومشاكل التطبيق</option>
+<option value="merchant">انضمام كتاجر في سوق غيم</option>
+<option value="feedback">شكوى أو اقتراح تطويري</option>
+</select>
+<span class="material-symbols-outlined text-on-surface-variant absolute start-3.5 top-3 text-lg pointer-events-none" data-icon="category">category</span>
+<span class="material-symbols-outlined text-outline absolute end-3 top-3 text-lg pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Message Body -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="message">نص الرسالة أو تفاصيل الاستفسار <span class="text-secondary">*</span></label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 rounded-xl p-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-body-md font-body-md resize-none" id="message" placeholder="اكتب رسالتك بوضوح مع ذكر رقم الطلب أو اسم المتجر إن وُجد..." required="" rows="4"></textarea>
+</div>
+<!-- SLA Commitment Notice -->
+<div class="flex items-start gap-3 p-3.5 rounded-xl bg-primary-container/40 border border-secondary/20 text-on-surface-variant text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-secondary text-xl flex-shrink-0" data-icon="verified">verified</span>
+<p>
+<strong class="text-secondary font-semibold">تنويه والتزام غيم سبيس:</strong> نحن نلتزم بمراجعة كافة الرسائل الواردة والرد عليها خلال مدة أقصاها <span class="text-secondary font-bold">24 ساعة</span> من وقت الإرسال، لضمان تجربة تسوق وتجارة موثوقة في حضرموت.
+            </p>
+</div>
+<!-- Submit Button (#54B9F2 Sky Blue) -->
+<button class="w-full bg-secondary hover:bg-secondary-fixed text-on-secondary-fixed font-bold py-3.5 px-6 rounded-xl transition-all duration-200 shadow-lg shadow-secondary/20 hover:shadow-secondary/40 flex items-center justify-center gap-2 group active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform" data-icon="send">send</span>
+<span class="text-label-lg font-label-lg">إرسال الرسالة إلى فريق الدعم</span>
+</button>
+</form>
+</div>
+<!-- Contextual Visual & Fast Assist Sidebar (5 Cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Coastal Hadhramaut Map & Location Overview Card -->
+<div class="bg-surface-container rounded-2xl border border-outline-variant/20 overflow-hidden shadow-2xl shadow-surface-container-lowest/50">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A nocturnal cinematic landscape of Mukalla coastal city in Hadhramaut, Yemen, with tranquil Arabian Sea waters reflecting glowing sky blue city lights, traditional coastal Arab stone architecture bathed in dark navy shadows, and misty atmospheric clouds illuminated by subtle golden fixtures, creating a modern elevated marketplace ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoA8T_UTy1K3anvhzEMfX3pYcKFzC02QlrG0zHIqeCZFknNA978GwJ-qZneTojIsBUfEuA2LxHdyOU1lTljasTw-XfCP43tu0yp3CSCj9VTE-QPZQIUziVo_n995q4kh_MzwILNBMn19S6vj63oOFufBlvv5HSMK0IwCkrMJ9qCiJfTJzTE2uWYd0QaimnpLjgrz5Fxm5zlO59aeGfdIwQ_eDf1W9zC-GPFzcRPgvaxKli1mQwFeRY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+<div class="absolute bottom-3 start-4 flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-surface-container-lowest/80 text-secondary border border-secondary/30 backdrop-blur-md">
+<span class="material-symbols-outlined text-sm" data-icon="pin_drop">pin_drop</span>
+</span>
+<span class="text-label-md font-label-md text-on-surface font-semibold drop-shadow">كورنيش الستين - المكلا</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">زيارة المقر الإداري</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed mb-4">
+              نرحب بالتجار وأصحاب الحرف ورواد الأعمال الراغبين في تسجيل متاجرهم أو إبرام عقود الشحن والتسليم التكاملي في مكتبنا الرئيسي.
+            </p>
+<div class="space-y-3 pt-3 border-t border-outline-variant/15 text-body-sm font-body-sm">
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="apartment">apartment</span>
+<span>قسم علاقات التجار</span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-mono">vendor@ghaym.space</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="local_shipping">local_shipping</span>
+<span>عمليات الشحن والمكلا إكسبرس</span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-mono">logistics@ghaym.space</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="handshake">handshake</span>
+<span>الشراكات والتسويق</span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-mono">partner@ghaym.space</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Fast Links Box -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="help">help</span>
+<span>أسئلة شائعة متكررة</span>
+</h3>
+<span class="text-label-sm font-label-sm text-secondary">إجابات سريعة</span>
+</div>
+<div class="space-y-2.5">
+<a class="block p-3 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-secondary/40 transition-colors group" href="#">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-on-surface group-hover:text-secondary transition-colors">كم يستغرق توصيل الطلب داخل المكلا؟</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-sm" data-icon="chevron_left">chevron_left</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 text-xs">خلال ساعتين إلى 6 ساعات عبر شبكة مندوبي المكلا.</p>
+</a>
+<a class="block p-3 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-secondary/40 transition-colors group" href="#">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-on-surface group-hover:text-secondary transition-colors">كيف أفتح متجرا�� وأبدأ البيع على غيم سبيس؟</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-sm" data-icon="chevron_left">chevron_left</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 text-xs">التسجيل مجاني ويتطلب فقط وثيقة النشاط أو إثبات الهوية.</p>
+</a>
+<a class="block p-3 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-secondary/40 transition-colors group" href="#">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-on-surface group-hover:text-secondary transition-colors">ما هي طرق الدفع المعتمدة محلياً؟</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-sm" data-icon="chevron_left">chevron_left</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 text-xs">الدفع عند الاستلام، المحافظ الإلكترونية، والتحويل عبر بنك القطيبي والعمقي.</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component from JSON) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-secondary dark:text-secondary docked full-width bottom-0 border-t border-outline-variant/15 dark:border-outline-variant/15 shadow-none mt-auto">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-start">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="cloud">cloud</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary">Ghaym Space</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-xl">
+          © 2025 منصة غيم سبيس للتجارة المتعددة - الم��لا، حضرموت. جميع الحقوق محفوظة.
+        </p>
+</div>
+<!-- Footer Navigation Links from JSON -->
+<nav class="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">عن غيم سبيس</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">شروط الخدمة للتاجر</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">سياسة الشحن والتوصيل</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">طرق الدفع المحلية</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">تتبع الشحنات</a>
+</nav>
+</div>
+</footer>
+</body></html>

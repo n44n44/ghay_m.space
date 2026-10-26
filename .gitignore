@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS & Temp Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+.temp/
+
+# IDE & Editor files
+.vscode/
+.idea/
+.gemini/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+dist/
+build/
+scratch/
+
+# Sensitive or temp download scripts
+download_*.ps1
+*.cjs
+

@@ -1,0 +1,731 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ghaym Space | غيم سبيس - سوق المكلا الأول</title>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts: Cairo -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#172A46',
+              sky: '#54B9F2',
+              bg: '#F3F6FB',
+              purple: '#887CF6',
+              gold: '#FFC857',
+              darkBlue: '#0F1E33',
+            }
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+  </style>
+<style data-purpose="decorations">
+    /* Cloud curve silhouette & glass effects */
+    .hero-cloud-shape {
+      border-radius: 2rem 2rem 3.5rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 80% 20%, rgba(84, 185, 242, 0.28) 0%, rgba(23, 42, 70, 0) 70%);
+    }
+    .badge-shadow {
+      box-shadow: 0 4px 15px -1px rgba(84, 185, 242, 0.3);
+    }
+    .product-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(23, 42, 70, 0.08), 0 10px 10px -5px rgba(23, 42, 70, 0.04);
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-[#F3F6FB] text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-sky selection:text-white">
+<!-- BEGIN: TopNotificationBar -->
+<aside class="bg-brand-darkBlue text-slate-300 text-xs py-2 px-4 border-b border-white/10" data-purpose="top-announcement">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+<!-- Delivery Location Selector -->
+<div class="flex items-center gap-2 text-slate-200">
+<i class="fa-solid fa-location-dot text-brand-sky"></i>
+<span>التوصيل إلى:</span>
+<button class="font-bold text-white hover:text-brand-sky transition flex items-center gap-1">
+<span>المكلا - (الشرج، الديس، فوة، فو�� القديمة)</span>
+<i class="fa-solid fa-chevron-down text-[10px]"></i>
+</button>
+</div>
+<!-- Quick Highlights & App Links -->
+<div class="flex items-center gap-6 text-[11px] sm:text-xs">
+<span class="hidden md:inline-flex items-center gap-1.5 text-emerald-400">
+<i class="fa-solid fa-bolt"></i>
+<span>توصيل سريع خلال ساعتين داخل المكلا</span>
+</span>
+<span class="text-slate-400">|</span>
+<a class="hover:text-brand-sky transition" href="#support">مركز المساعدة</a>
+<span class="text-slate-400">|</span>
+<a class="text-brand-gold hover:underline font-semibold" href="#sellers">سجّل كمتجر أو أسرة منتجة</a>
+</div>
+</div>
+</aside>
+<!-- END: TopNotificationBar -->
+<!-- BEGIN: MainHeader -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-100" data-purpose="primary-navbar">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+<div class="flex items-center justify-between gap-4 lg:gap-8">
+<!-- Brand Logo & Name -->
+<a class="flex items-center gap-3 shrink-0 group" href="#">
+<img alt="شعار غيم سبيس Ghaym Space" class="w-12 h-12 object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjJNLY1b5l0buKQM-sAB1XrwxoyYNTMASIs0E7Sdawii7i0H14LxSNOQe2LQEHdXj_vATrlVxaWE3eTcXnIRTImS7GgrpGevpSUNoVSdbrNBVEy5UVIIFg9uyK9V2T3ZbBZz5Jpfa99H7x_IJ81SaZVPaIYu5OddGh1q5JRTqDwRGxPJbO8Lq4M7Mlim2VtnLrdN7ImqPiEpmdDMUBcVLnUlzo3Y69jRi2gCDsrUbC3D1eI3EaKk7Ww6bD_lvWAOlRg">
+<div class="flex flex-col">
+<span class="text-xl font-extrabold text-brand-navy tracking-tight leading-tight flex items-center gap-1.5">
+              Ghaym Space
+              <span class="w-2 h-2 rounded-full bg-brand-sky animate-pulse"></span>
+</span>
+<span class="text-xs font-semibold text-slate-500">سوق المكلا الإلكتروني</span>
+</div>
+</a>
+<!-- Search Bar with Category Select -->
+<div class="hidden md:flex flex-1 max-w-2xl items-center relative" data-purpose="search-container">
+<div class="w-full flex items-center bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-sky focus-within:border-transparent transition-all">
+<select aria-label="اختر القسم" class="bg-slate-100/80 text-xs font-medium text-slate-700 py-3 pr-3 pl-8 border-none focus:ring-0 cursor-pointer border-l border-slate-200">
+<option>جميع الأقسام</option>
+<option>عطور وبخور</option>
+<option>أسر منتجة وحلويات</option>
+<option>هدايا وزهور</option>
+<option>حرف وفضيات حضرمية</option>
+</select>
+<input class="w-full bg-transparent border-none py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:ring-0" placeholder="ابحث عن بخور، عسل دوعني، متجر، أو هدية..." type="text">
+<button aria-label="بحث" class="bg-brand-sky hover:bg-[#43a9e2] text-white px-6 py-2.5 font-bold text-sm transition-colors flex items-center gap-2">
+<i class="fa-solid fa-magnifying-glass"></i>
+<span>بحث</span>
+</button>
+</div>
+</div>
+<!-- User Actions (Cart, Wishlist, Account) -->
+<div class="flex items-center gap-3 sm:gap-4">
+<!-- Wishlist Button -->
+<a aria-label="المفضلة" class="relative p-2.5 text-slate-600 hover:text-brand-navy hover:bg-slate-100 rounded-xl transition" href="#">
+<i class="fa-regular fa-heart text-lg"></i>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 bg-brand-purple text-white text-[10px] font-bold flex items-center justify-center rounded-full">3</span>
+</a>
+<!-- Cart Button -->
+<a aria-label="سلة المشتريات" class="relative p-2.5 text-slate-600 hover:text-brand-navy hover:bg-slate-100 rounded-xl transition flex items-center gap-2" href="#">
+<div class="relative">
+<i class="fa-solid fa-bag-shopping text-lg text-brand-navy"></i>
+<span class="absolute -top-1.5 -right-2 w-4 h-4 bg-brand-sky text-white text-[10px] font-bold flex items-center justify-center rounded-full">4</span>
+</div>
+<div class="hidden xl:flex flex-col text-right">
+<span class="text-[10px] text-slate-400 font-medium">السلة</span>
+<span class="text-xs font-bold text-brand-navy">31,500 ر.ي</span>
+</div>
+</a>
+<!-- Login / Profile Button -->
+<a class="bg-brand-navy text-white hover:bg-brand-darkBlue px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition" href="#">
+<i class="fa-regular fa-user text-brand-sky"></i>
+<span>تسجيل الدخول</span>
+</a>
+</div>
+</div>
+<!-- Mobile Search Form -->
+<div class="mt-3 md:hidden">
+<div class="flex items-center bg-slate-100 border border-slate-200 rounded-xl overflow-hidden px-3">
+<i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
+<input class="w-full bg-transparent border-none py-2 px-3 text-xs text-slate-800 placeholder-slate-400 focus:ring-0" placeholder="ابحث في أسواق ومتاجر المكلا..." type="text">
+<button class="bg-brand-sky text-white text-xs px-3 py-1.5 rounded-lg font-bold my-1">
+            بحث
+          </button>
+</div>
+</div>
+</div>
+<!-- Secondary Categories Navigation Bar -->
+<nav class="border-t border-slate-100 bg-slate-50/70 overflow-x-auto scrollbar-hide" data-purpose="secondary-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<ul class="flex items-center gap-8 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 whitespace-nowrap">
+<li>
+<a class="text-brand-sky flex items-center gap-1.5" href="#">
+<i class="fa-solid fa-bars-staggered"></i>
+<span>كل الأقسام</span>
+</a>
+</li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-spray-can-sparkles text-brand-purple"></i> عطور وبخور</a></li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-cookie-bite text-amber-500"></i> أسر منتجة ومخبوزات</a></li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-gift text-rose-500"></i> هدايا وتوزيعات</a></li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-gem text-emerald-500"></i> حِرف وفضيات حضرمية</a></li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-shirt text-indigo-500"></i> أزياء وملابس</a></li>
+<li><a class="hover:text-brand-sky transition flex items-center gap-1.5" href="#"><i class="fa-solid fa-mobile-screen text-sky-500"></i> إلكترونيات وملحقات</a></li>
+<li class="mr-auto"><a class="text-rose-600 hover:text-rose-700 font-bold flex items-center gap-1" href="#"><i class="fa-solid fa-fire-flame-curved"></i> عروض اليوم بالمكلا</a></li>
+</ul>
+</div>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-grow">
+<!-- BEGIN: HeroSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10" data-purpose="hero-banner">
+<div class="hero-cloud-shape bg-gradient-to-r from-brand-navy via-[#14233a] to-brand-navy text-white p-8 md:p-14 lg:p-16 relative shadow-2xl">
+<!-- Background Ambient Glow & Cloud SVGs -->
+<div class="absolute inset-0 hero-glow pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-64 h-64 bg-brand-sky/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-1/4 w-80 h-80 bg-brand-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Text Content (Right in RTL) -->
+<div class="lg:col-span-7 space-y-6 text-right">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sky/15 border border-brand-sky/30 text-brand-sky text-xs font-bold">
+<i class="fa-solid fa-cloud"></i>
+<span>منصة التسوق الحضرمية الأولى</span>
+</div>
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white">
+              اكتشف أفضل المنتجات <br>
+<span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-sky via-sky-300 to-white">
+                من متاجر وأُسر منتجة في المكلا
+              </span>
+</h1>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+              من روائح البخور الدوعني الفاخر والمخبوزات المنزلية الطازجة إلى أرقى الفضيات والمشغولات اليدوية.. نجمع لك إبداعات المكلا وتصلك إلى باب دارك بسرعة وأمان.
+            </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="bg-brand-sky hover:bg-[#43a9e2] text-white px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 badge-shadow flex items-center gap-2" href="#featured-products">
+<span>تسوق الآن</span>
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+<a class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition" href="#quick-categories">
+                استكشف الأقسام
+              </a>
+</div>
+<!-- Trust Badges -->
+<div class="pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-slate-300">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-truck-fast text-brand-sky text-sm"></i>
+<span>توصيل فوري لجميع أحياء المكلا</span>
+</div>
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-wallet text-brand-gold text-sm"></i>
+<span>دفع عند الاستلام أو عبر محفظتك</span>
+</div>
+</div>
+</div>
+<!-- Hero Graphic Card (Left in RTL) -->
+<div class="lg:col-span-5 relative flex justify-center">
+<!-- Mukalla Themed Collage Card -->
+<div class="w-full max-w-md bg-white/10 backdrop-blur-md p-5 rounded-3xl border border-white/20 shadow-2xl relative">
+<div class="relative h-64 rounded-2xl overflow-hidden bg-brand-navy/60 border border-white/15">
+<img alt="مشهد لسوق المكلا والمنتجات" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxodUcvKqG30XPKKD1ulT9mbB6hoKSbx3ZXAQ25xa3KLMmt-7E6rJ8ckUGirz0QeBprZ_8OJxQE0pgKxv3c_p8S7-xFlndkdeRyxXtwY7ppR0eCGM-JQ977GVFksvJrlHJkhZswFTd1bFIV_W7xD74h4LZXvAAJccKF58yJrLGC2Sc3kEcwlVVb9ud3Ajo9by1WKJsbsakVbbt9UxrKtgmSScxou28OafnP03CmNO_rnjjaycoayjC">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
+<div class="absolute bottom-3 right-3 left-3 text-right">
+<span class="inline-block bg-brand-gold text-brand-navy text-[10px] font-black px-2 py-0.5 rounded-md mb-1">حصرياً في غيم سبيس</span>
+<p class="text-xs font-bold text-white">دعم مباشر لأكثر من 120 أسرة منتجة في حضرموت</p>
+</div>
+</div>
+<!-- Floating Feature Cards -->
+<div class="mt-4 grid grid-cols-2 gap-3 text-right">
+<div class="bg-white/15 p-3 rounded-xl border border-white/10 backdrop-blur-sm">
+<div class="text-brand-sky text-lg font-bold mb-0.5">+450</div>
+<div class="text-[11px] text-slate-200">منتج حضرمي فريد</div>
+</div>
+<div class="bg-white/15 p-3 rounded-xl border border-white/10 backdrop-blur-sm">
+<div class="text-brand-gold text-lg font-bold mb-0.5">100%</div>
+<div class="text-[11px] text-slate-200">جودة وضمان محلي</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: QuickCategoriesSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-purpose="quick-categories" id="quick-categories">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-xl sm:text-2xl font-black text-brand-navy">تصفح حسب الأقسام</h2>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">اختر فئتك المفضلة وابدأ رحلة التسوق</p>
+</div>
+<a class="text-xs sm:text-sm font-bold text-brand-sky hover:text-brand-navy transition flex items-center gap-1" href="#">
+<span>عرض ك��فة الأقسام</span>
+<i class="fa-solid fa-chevron-left text-[11px]"></i>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+<!-- Cat 1 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-spray-can-sparkles"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">عطور وبخور</span>
+<span class="text-[11px] text-slate-400 mt-0.5">85 متجر</span>
+</a>
+<!-- Cat 2 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-cookie"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">طعام ومخبوزات</span>
+<span class="text-[11px] text-slate-400 mt-0.5">110 أسر منتجة</span>
+</a>
+<!-- Cat 3 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-gift"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">هدايا وتوزيعات</span>
+<span class="text-[11px] text-slate-400 mt-0.5">42 متجر</span>
+</a>
+<!-- Cat 4 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-gem"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">حِرف وفضيات</span>
+<span class="text-[11px] text-slate-400 mt-0.5">29 صانع حرفي</span>
+</a>
+<!-- Cat 5 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-sky-50 text-brand-sky flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-shirt"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">ملابس وموضة</span>
+<span class="text-[11px] text-slate-400 mt-0.5">64 متجر</span>
+</a>
+<!-- Cat 6 -->
+<a class="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-sky/40 transition flex flex-col items-center text-center" href="#">
+<div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-laptop"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-brand-navy">إلكترونيات</span>
+<span class="text-[11px] text-slate-400 mt-0.5">38 متجر</span>
+</a>
+</div>
+</section>
+<!-- END: QuickCategoriesSection -->
+<!-- BEGIN: FeaturedStoresSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-purpose="featured-stores" id="sellers">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-6 bg-brand-sky rounded-full inline-block"></span>
+<h2 class="text-xl sm:text-2xl font-black text-brand-navy">متاجر مميزة في المكلا</h2>
+</div>
+<a class="text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-navy flex items-center gap-1" href="#">
+<span>تصفح كل المتاجر</span>
+<i class="fa-solid fa-arrow-left text-[11px]"></i>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Store Card 1 -->
+<article class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-lg transition">
+<div class="flex items-start gap-4">
+<div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
+<img alt="شعار متجر نفحات حضرموت" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7FpVWVdNyrIkuSTp-a4P-Q1y3n7aQL16WjsyC5UsZJhtQ3sxY_-S0ng3OSkoRLj3qparrbUOJ-vM12Ar2dv5XoIVi1hKf29Tg7xswBSfDl5z3-Q8ykYKY06i2sDm-4JymZIr-pg4ssY-KfJc2RIM3v8QOL42Np9JRZBHg6KT30qQPVm8JVv1mPTeUzz-GmjRqlFDmcPIthycy81kA-iI1ynK_ZWJhfJnqXPH57-JnTZZkZS1mlAYm">
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-900 text-base">متجر نفحات حضرموت</h3>
+<span class="inline-flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">
+<i class="fa-solid fa-star text-[10px]"></i> 4.9
+                </span>
+</div>
+<p class="text-xs text-slate-500 mt-1">متخصص في البخور العدني، العود الموروكي والخلطات الملكية</p>
+<div class="flex items-center gap-3 mt-3 text-[11px] text-slate-500">
+<span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-brand-sky"></i> المكلا - الشرج</span>
+<span class="flex items-center gap-1"><i class="fa-solid fa-clock text-emerald-500"></i> توصيل 45 دقيقة</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-xs text-slate-400">120+ منتج متاح</span>
+<a class="text-xs font-bold text-brand-sky hover:text-brand-navy transition flex items-center gap-1" href="#">
+<span>زيارة المتجر</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</a>
+</div>
+</article>
+<!-- Store Card 2 -->
+<article class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-lg transition">
+<div class="flex items-start gap-4">
+<div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
+<img alt="شعار أطايب المكلا" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqD16cTf9yInYsTWFDEmHUJI4ly5XqeNBXkVLErEro_4CsL-RdzFRcHurq8ToKZSqTPJWg_-zQtiIFjMMiiRKndA6JuaAXpAeGZzepNgbvzJ6nv2A1IeXWhqrVVcOy0f4B3fhn7w_6Hr84UHnFOR8b1fesZ7HJcFXOez8dcOKi3ksqTYgbY_Pop9yg9ET8B4zLQ4NuRAWzlYDj1O7tgHEDSNOPWmI8Rpff5tqAbCJ2HBNh29fNg_k_">
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-900 text-base">أطايب المكلا (أسر منتجة)</h3>
+<span class="inline-flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">
+<i class="fa-solid fa-star text-[10px]"></i> 4.8
+                </span>
+</div>
+<p class="text-xs text-slate-500 mt-1">حلويات حضرمية تراثية، كعك، معمول تمر وعسل دوعني نقي</p>
+<div class="flex items-center gap-3 mt-3 text-[11px] text-slate-500">
+<span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-brand-sky"></i> المكلا - الديس</span>
+<span class="flex items-center gap-1"><i class="fa-solid fa-clock text-emerald-500"></i> طازج يومياً</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-xs text-slate-400">45 منتج منزلي</span>
+<a class="text-xs font-bold text-brand-sky hover:text-brand-navy transition flex items-center gap-1" href="#">
+<span>زيارة المتجر</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</a>
+</div>
+</article>
+<!-- Store Card 3 -->
+<article class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-lg transition">
+<div class="flex items-start gap-4">
+<div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
+<img alt="شعار رواق الحرف والفضيات" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFyteEPeF8NN0zI_SiaDiT2tyY_GMUCnrNlaJjHOLIQ-lXK7AtJndxty6FVnXfmzc7f2VoeqWNUgJsCLdyZPw-Zk_w1_h5YU1P9BAOF0ry1TQ55zx2xBgaQ7d1ieuF_xs9xr3EhC-DfDNdlEK2Aa69LFRitFAmrzZKW8j_2Idvr4zw05Kzk4hGy63yvUnQY5wGc2BK5MpmJeLlGINOvo1xO2jscB2877wHn2iLHkDxCnjPPkaISoqY">
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-900 text-base">رواق الحِرف والفضيات</h3>
+<span class="inline-flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md">
+<i class="fa-solid fa-star text-[10px]"></i> 5.0
+                </span>
+</div>
+<p class="text-xs text-slate-500 mt-1">صياغة خناجر وفضيات حضرمية وحقائب خوص مطرزة يدوياً</p>
+<div class="flex items-center gap-3 mt-3 text-[11px] text-slate-500">
+<span class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-brand-sky"></i> المكلا - فوة</span>
+<span class="flex items-center gap-1"><i class="fa-solid fa-clock text-emerald-500"></i> شحن مضمون</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-xs text-slate-400">80+ تحفة يدوية</span>
+<a class="text-xs font-bold text-brand-sky hover:text-brand-navy transition flex items-center gap-1" href="#">
+<span>زيارة المتجر</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedStoresSection -->
+<!-- BEGIN: FeaturedProductsSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12" data-purpose="featured-products" id="featured-products">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-6 bg-brand-purple rounded-full inline-block"></span>
+<h2 class="text-xl sm:text-2xl font-black text-brand-navy">منتجات مختارة للمكلا</h2>
+</div>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">أكثر المنتجات طلباً وجودة مع التوصيل الفوري</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+<button class="bg-brand-navy text-white text-xs px-3.5 py-1.5 rounded-lg font-bold">الكل</button>
+<button class="bg-white text-slate-600 hover:text-brand-navy border border-slate-200 text-xs px-3.5 py-1.5 rounded-lg font-medium">الأكثر مبيعاً</button>
+<button class="bg-white text-slate-600 hover:text-brand-navy border border-slate-200 text-xs px-3.5 py-1.5 rounded-lg font-medium">عطور وبخور</button>
+<button class="bg-white text-slate-600 hover:text-brand-navy border border-slate-200 text-xs px-3.5 py-1.5 rounded-lg font-medium">أسر منتجة</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product 1 -->
+<article class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm product-card-hover flex flex-col justify-between">
+<div class="relative">
+<div class="h-48 w-full bg-slate-50 overflow-hidden">
+<img alt="عطر العود الكمبودي الملكي" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBixi2ZgS03-v1p5QxedS6qTsnBcQaV9Hth985se-s4d5uEJAlZiXRZkvaFdZ5YkvaqXdKzbqxy9gXAcYXopzYYuQHb1GRA7wpwq-toZuMQQStVgaxN4ONNf8ug9dmSrgpuwwjujRrqyBcGeMfY9NgyLiy1bvtYPaIlE2fBz6xo_N2xOFS87ezZKrDLVn1N5p_-qcrPSBQVtaZ_N-UbEzS7sf2obqaUFRWMaXxTBfBXvrz7_KKXowIg">
+</div>
+<span class="absolute top-3 right-3 bg-brand-navy/90 text-brand-sky text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">
+              الأعلى تقييماً
+            </span>
+<button aria-label="أضف للمفضلة" class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-600 hover:text-rose-500 shadow-sm flex items-center justify-center transition">
+<i class="fa-regular fa-heart text-sm"></i>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="text-[11px] font-semibold text-brand-sky">متجر نفحات حضرموت</span>
+<h3 class="font-bold text-slate-900 text-sm mt-1 line-clamp-1">عطر العود الكمبودي الملكي 50 مل</h3>
+<div class="flex items-center gap-1 mt-1 text-amber-500 text-xs">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span class="text-slate-400 text-[10px] mr-1">(34 تقييم)</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<span class="text-xs text-slate-400 block text-right">السعر</span>
+<span class="text-base font-extrabold text-brand-navy">18,500 <span class="text-xs font-bold text-slate-500">ر.ي</span></span>
+</div>
+<button class="bg-brand-sky hover:bg-[#43a9e2] text-white p-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+<span class="text-xs font-bold hidden sm:inline">أضف</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm product-card-hover flex flex-col justify-between">
+<div class="relative">
+<div class="h-48 w-full bg-slate-50 overflow-hidden">
+<img alt="معمول حضرمي بالعسل الدوعني" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAs-9yh4SwZRIleFu421yL9lYMSmlvCLKC2cdoLUAYrZWWRBoau8sM6PMkRw1TQc3_p6UgAfTLScGeWmiawzRCuZ0fPk-m8hAKLQAvopHZEtiF1aM74zKLlD4_ygORqunjOoEoswTTGJH5FPpvrLHW2uqeT0Vonv-trJcvscv06GFOhur1lbSPFGgMyei6RNVQ4jB-a9HA0zzK6bu0NkGhQoaYqhU4oRSHauZ9LyAk-6HLAru7crk">
+</div>
+<span class="absolute top-3 right-3 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
+              صنع منزلي طازج
+            </span>
+<button aria-label="أضف للمفضلة" class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-600 hover:text-rose-500 shadow-sm flex items-center justify-center transition">
+<i class="fa-regular fa-heart text-sm"></i>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="text-[11px] font-semibold text-brand-sky">أطايب المكلا</span>
+<h3 class="font-bold text-slate-900 text-sm mt-1 line-clamp-1">معمول حضرمي فاخر بالعسل الدوعني (1 كجم)</h3>
+<div class="flex items-center gap-1 mt-1 text-amber-500 text-xs">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span class="text-slate-400 text-[10px] mr-1">(52 تقييم)</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<span class="text-xs text-slate-400 block text-right">السعر</span>
+<span class="text-base font-extrabold text-brand-navy">9,000 <span class="text-xs font-bold text-slate-500">ر.ي</span></span>
+</div>
+<button class="bg-brand-sky hover:bg-[#43a9e2] text-white p-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+<span class="text-xs font-bold hidden sm:inline">أضف</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm product-card-hover flex flex-col justify-between">
+<div class="relative">
+<div class="h-48 w-full bg-slate-50 overflow-hidden">
+<img alt="حقيبة خوص تراثية مطرزة" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-PEQWhxFH_2MBt9C9w0NnOUFBhioKLNX4UftwqjTeJqVzLcGcCTYx51G46bRVRWEmJFHhzvxTAsi2HV4zOzIkMzHZGY63MG9TfknqdOFZk9Dd9iKDYDY_KCMk9kj0h9jHtb0OGPb_0gYv8kH2xpw3rqfd3toFuNGwyIdVdq4yV3vnQ_60ewyBrDjaOKd9IFnDhq3-j7mUlCiBzEXuk2uEeSPic-jr07Quxdoyr4y-BtzRG50jtYTt">
+</div>
+<span class="absolute top-3 right-3 bg-brand-purple text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
+              حرفة يدوية
+            </span>
+<button aria-label="أضف للمفضلة" class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-600 hover:text-rose-500 shadow-sm flex items-center justify-center transition">
+<i class="fa-regular fa-heart text-sm"></i>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="text-[11px] font-semibold text-brand-sky">رواق الحِرف والفضيات</span>
+<h3 class="font-bold text-slate-900 text-sm mt-1 line-clamp-1">حقيبة خوص حضرمية بنقوش جلدية</h3>
+<div class="flex items-center gap-1 mt-1 text-amber-500 text-xs">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span class="text-slate-400 text-[10px] mr-1">(19 تقييم)</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<span class="text-xs text-slate-400 block text-right">السعر</span>
+<span class="text-base font-extrabold text-brand-navy">12,500 <span class="text-xs font-bold text-slate-500">ر.ي</span></span>
+</div>
+<button class="bg-brand-sky hover:bg-[#43a9e2] text-white p-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+<span class="text-xs font-bold hidden sm:inline">أضف</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm product-card-hover flex flex-col justify-between">
+<div class="relative">
+<div class="h-48 w-full bg-slate-50 overflow-hidden">
+<img alt="صندوق بخور العرائس الفاخر" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuMm9tb1bVfAc2zapmX77-pDoE1OwxlRCQL7Lwcdh8ANOrJNSdXdmuA8GaCRbFrrOJ_e6ZZ8wyAXspTtNuboB1W1mcmm4N3ummA-yNXqXhaxiiWWQpPs89tnsACaayQVs76tJOUpXS3ezD9FRyLCrQkIsWwJD2jgk2o_ISmz6RpiYyYhH-luPeq_tCyT9V0mrpma_1LDf8Qs2nOYhHLCKTDXM95Q4OPkjInomd8TGSGHexyuV3zDVt">
+</div>
+<span class="absolute top-3 right-3 bg-rose-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
+              خصم 15%
+            </span>
+<button aria-label="أضف للمفضلة" class="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-600 hover:text-rose-500 shadow-sm flex items-center justify-center transition">
+<i class="fa-regular fa-heart text-sm"></i>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="text-[11px] font-semibold text-brand-sky">متجر نفحات حضرموت</span>
+<h3 class="font-bold text-slate-900 text-sm mt-1 line-clamp-1">صندوق بخور العرائس الملكي مع مِبخرة خشبية</h3>
+<div class="flex items-center gap-1 mt-1 text-amber-500 text-xs">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span class="text-slate-400 text-[10px] mr-1">(48 تقييم)</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<span class="text-xs text-slate-400 block text-right">السعر</span>
+<span class="text-base font-extrabold text-brand-navy">14,000 <span class="text-xs font-bold text-slate-500">ر.ي</span></span>
+</div>
+<button class="bg-brand-sky hover:bg-[#43a9e2] text-white p-2.5 rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+<i class="fa-solid fa-cart-plus text-sm"></i>
+<span class="text-xs font-bold hidden sm:inline">أضف</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedProductsSection -->
+<!-- BEGIN: LocalValueProposition -->
+<section class="bg-white border-y border-slate-200/80 py-8" data-purpose="features-strip">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-right">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center text-xl shrink-0">
+<i class="fa-solid fa-motorcycle"></i>
+</div>
+<div>
+<h4 class="font-bold text-brand-navy text-sm">توصيل محلي فوري</h4>
+<p class="text-xs text-slate-500 mt-1">توصيل سريع لكافة أحياء المكلا وضواحيها في أقل من ساعتين.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+</div>
+<div>
+<h4 class="font-bold text-brand-navy text-sm">دفع عند الاستلام ومحافظ</h4>
+<p class="text-xs text-slate-500 mt-1">الدفع نقداً عند الباب أو عبر الكريمي مميز، بيس، وون كاش.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-purple-50 text-brand-purple flex items-center justify-center text-xl shrink-0">
+<i class="fa-solid fa-people-roof"></i>
+</div>
+<div>
+<h4 class="font-bold text-brand-navy text-sm">دعم الأسر المنتجة</h4>
+<p class="text-xs text-slate-500 mt-1">منصة تفتح آفاقاً جديدة للمشاريع المنزلية والحرفية الحضرمية.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-xl shrink-0">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+<div>
+<h4 class="font-bold text-brand-navy text-sm">ضمان الجودة 100%</h4>
+<p class="text-xs text-slate-500 mt-1">منتجات أصلية ومفحوصة مع إمكانية المعاينة قبل الدفع.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LocalValueProposition -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-navy text-slate-300 pt-14 pb-8 border-t border-slate-800" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-white/10">
+<!-- Platform Intro -->
+<div class="lg:col-span-2 space-y-4 text-right">
+<div class="flex items-center gap-3">
+<img alt="Ghaym Space Logo" class="w-12 h-12 rounded-xl object-contain bg-white/5 p-1 border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjJNLY1b5l0buKQM-sAB1XrwxoyYNTMASIs0E7Sdawii7i0H14LxSNOQe2LQEHdXj_vATrlVxaWE3eTcXnIRTImS7GgrpGevpSUNoVSdbrNBVEy5UVIIFg9uyK9V2T3ZbBZz5Jpfa99H7x_IJ81SaZVPaIYu5OddGh1q5JRTqDwRGxPJbO8Lq4M7Mlim2VtnLrdN7ImqPiEpmdDMUBcVLnUlzo3Y69jRi2gCDsrUbC3D1eI3EaKk7Ww6bD_lvWAOlRg">
+<div>
+<span class="text-xl font-black text-white">Ghaym Space</span>
+<span class="block text-xs text-brand-sky font-semibold">غيم سبيس - سوق المكلا</span>
+</div>
+</div>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+            المنصة الإلكترونية الأولى في حضرموت لربط المتاجر المعتمدة والأسر المنتجة بالمستهلكين في المكلا وضواحيها، بتجربة تسوق عصرية وسلسة.
+          </p>
+<div class="flex items-center gap-3 pt-2">
+<a aria-label="فيسبوك" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-sky hover:text-white flex items-center justify-center transition text-sm text-slate-300" href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+<a aria-label="تويتر" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-sky hover:text-white flex items-center justify-center transition text-sm text-slate-300" href="#">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+<a aria-label="انستغرام" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-sky hover:text-white flex items-center justify-center transition text-sm text-slate-300" href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a aria-label="واتساب" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition text-sm text-slate-300" href="#">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</div>
+</div>
+<!-- Links: Quick Links -->
+<div class="text-right">
+<h5 class="text-white font-bold text-sm mb-4">روابط سريعة</h5>
+<ul class="space-y-2.5 text-xs text-slate-400">
+<li><a class="hover:text-brand-sky transition" href="#">الرئيسية</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">جميع المتاجر</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">أقسام المنتجات</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">العروض الحصرية</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">انضم كتاجر / أسرة منتجة</a></li>
+</ul>
+</div>
+<!-- Links: Customer Service -->
+<div class="text-right">
+<h5 class="text-white font-bold text-sm mb-4">خدمة العملاء</h5>
+<ul class="space-y-2.5 text-xs text-slate-400">
+<li><a class="hover:text-brand-sky transition" href="#">مركز المساعدة والشكاوى</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">سياسة التوصيل والإرجاع</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">الشروط والأحكام</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">سياسة الخصوصية</a></li>
+<li><a class="hover:text-brand-sky transition" href="#">تتبع طلبيتك بالمكلا</a></li>
+</ul>
+</div>
+<!-- Local Payment Gateways -->
+<div class="text-right">
+<h5 class="text-white font-bold text-sm mb-4">طرق الدفع المعتمدة</h5>
+<p class="text-xs text-slate-400 mb-3">نوفر وسائل دفع محلية سهلة ومباشرة:</p>
+<div class="grid grid-cols-2 gap-2 text-[11px] font-bold text-slate-200">
+<span class="bg-white/5 border border-white/10 p-2 rounded-lg text-center flex items-center justify-center gap-1">
+<i class="fa-solid fa-money-bill-wave text-brand-gold"></i> الدفع عند الاستلام
+            </span>
+<span class="bg-white/5 border border-white/10 p-2 rounded-lg text-center flex items-center justify-center gap-1">
+<i class="fa-solid fa-mobile-screen-button text-brand-sky"></i> كريمي جوال
+            </span>
+<span class="bg-white/5 border border-white/10 p-2 rounded-lg text-center flex items-center justify-center gap-1">
+<i class="fa-solid fa-wallet text-emerald-400"></i> محفظة بيس (PYS)
+            </span>
+<span class="bg-white/5 border border-white/10 p-2 rounded-lg text-center flex items-center justify-center gap-1">
+<i class="fa-solid fa-qrcode text-brand-purple"></i> ون كاش (One Cash)
+            </span>
+</div>
+</div>
+</div>
+<!-- Copyright & City Footer Note -->
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+<p>© 2025 منصة Ghaym Space (غيم سبيس) - جميع الحقوق محفوظة. صُمم بحب في المكلا، حضرموت.</p>
+<div class="flex items-center gap-2 text-slate-400">
+<span>سوق المكلا الرقمي المتكامل</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-sky"></span>
+<span>خدمة توصيل تغطي: الشرج - الديس - فوه - المكلا القديمة</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

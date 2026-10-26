@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/merchant",
+      "destination": "/merchant_dashboard.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin_dashboard.html"
+    },
+    {
+      "source": "/driver",
+      "destination": "/delivery_portal.html"
+    },
+    {
+      "source": "/store",
+      "destination": "/index.html"
+    }
+  ]
+}

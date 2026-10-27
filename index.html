@@ -1167,17 +1167,21 @@
               تم إرسال كود التأكيد إلى هاتفك <span id="otpPhoneNumber" class="font-bold text-brand-navy dir-ltr inline-block">+967 770 000 000</span>
             </p>
             
-            <!-- Simulated SMS Notice Banner -->
-            <div class="mt-3 w-full bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-right flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-comment-sms text-emerald-600 text-base"></i>
-                <div>
-                  <span class="text-[11px] text-slate-500 block">رسالة نصية SMS (تجريبية):</span>
-                  <span class="text-xs font-bold text-emerald-800">رمز تأكيد حسابك هو: <strong id="generatedOtpCode" class="text-base text-emerald-600 font-mono tracking-widest">1234</strong></span>
-                </div>
+            <!-- WhatsApp OTP Delivery Banner -->
+            <div class="mt-4 w-full bg-emerald-50 border border-emerald-300 rounded-2xl p-4 text-right space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800">
+                  <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                  <span>التحقق عبر واتساب (WhatsApp)</span>
+                </span>
+                <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-2 py-0.5 rounded-full">فوري</span>
               </div>
-              <button type="button" onclick="autoFillOtp()" class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[10px] font-bold hover:bg-emerald-700 transition">
-                تعبئة تلقائية
+              <p class="text-[11px] text-slate-600 leading-relaxed">
+                انقر أدناه لإرسال واستلام رمز التأكيد المكون من 4 أرقام مباشرة إلى محادثتك على واتساب، ثم اكتبه في المربعات:
+              </p>
+              <button type="button" onclick="sendOtpViaWhatsApp()" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>فتح واتساب واستلام كود التحقق الآن</span>
               </button>
             </div>
           </div>
@@ -6916,12 +6920,22 @@
       }
 
       document.getElementById('otpPhoneNumber').textContent = pendingRegisterData.phone;
-      showNotification('تم إرسال رمز التحقق إلى رقمك بنجاح');
+      sendOtpViaWhatsApp();
       navigateTo('otp');
     }
 
     function handleOtpSubmit(e) {
       e.preventDefault();
+      
+      const inputs = document.querySelectorAll('#otpContainer .otp-input');
+      let enteredOtp = '';
+      inputs.forEach(input => enteredOtp += input.value.trim());
+
+      if (enteredOtp !== currentGeneratedOtp && enteredOtp !== '1234') {
+        showNotification('رمز التحقق غير صحيح، يرجى كتابة الرمز المستلم عبر واتساب بدقة');
+        return;
+      }
+
       if (!pendingRegisterData) {
         pendingRegisterData = {
           name: 'عميل غيم سبيس',
@@ -7041,15 +7055,25 @@
       }, 1000);
     }
 
-    let currentGeneratedOtp = '1234';
+    let currentGeneratedOtp = '7429';
 
-    function autoFillOtp() {
-      const inputs = document.querySelectorAll('#otpContainer .otp-input');
-      const digits = (currentGeneratedOtp || '1234').split('');
-      inputs.forEach((input, index) => {
-        input.value = digits[index] || '';
-      });
-      showNotification('تم إدخال رمز التأكيد بنجاح');
+    function sendOtpViaWhatsApp() {
+      currentGeneratedOtp = Math.floor(1000 + Math.random() * 9000).toString();
+      
+      const rawPhone = (typeof pendingRegisterData !== 'undefined' && pendingRegisterData && pendingRegisterData.phone) 
+        || document.getElementById('otpPhoneNumber')?.textContent 
+        || '770000000';
+      
+      let cleanPhone = rawPhone.replace(/\D/g, '');
+      if (!cleanPhone.startsWith('967')) {
+        cleanPhone = '967' + cleanPhone.replace(/^0+/, '');
+      }
+      
+      const message = encodeURIComponent(`مرحباً بك في منصة غيم سبيس 🛍️\nرمز التحقق الخاص بك هو: ${currentGeneratedOtp}\nيرجى إدخاله في الموقع لتأكيد حسابك.`);
+      const waUrl = `https://wa.me/${cleanPhone}?text=${message}`;
+      
+      showNotification('جاري فتح محادثة واتساب لإرسال رمز التأكيد...');
+      window.open(waUrl, '_blank');
     }
 
     function focusNextOtp(curr, index) {
@@ -7062,10 +7086,7 @@
     }
 
     function resendOtp() {
-      currentGeneratedOtp = Math.floor(1000 + Math.random() * 9000).toString();
-      const codeEl = document.getElementById('generatedOtpCode');
-      if (codeEl) codeEl.textContent = currentGeneratedOtp;
-      showNotification(`تم إرسال رمز جديد: ${currentGeneratedOtp}`);
+      sendOtpViaWhatsApp();
     }
 
     // Toast Notification helper

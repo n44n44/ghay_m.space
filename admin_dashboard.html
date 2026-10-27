@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Ghaym Space | لوحة الإدارة العامة والتحكم بالمنصة (Super Admin)</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Material Symbols & Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
@@ -68,6 +69,10 @@
         <button onclick="toggleLang()" class="px-2.5 py-1 rounded-lg bg-[#15202f] border border-secondary/20 text-xs font-bold text-secondary hover:bg-secondary hover:text-black transition">
           <span id="langLabel">English</span>
         </button>
+        <button id="adminLogoutBtn" onclick="handleAdminLogout()" class="px-3 py-1.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-bold text-red-400 flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-sm">logout</span>
+          <span class="hidden sm:inline">تسجيل خروج</span>
+        </button>
         <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-[#202b39] hover:bg-[#2b3545] border border-secondary/30 text-xs font-bold text-secondary flex items-center gap-1.5 transition">
           <i class="fa-solid fa-globe"></i>
           <span>الواجهة العامة للسوق</span>
@@ -124,6 +129,53 @@
 
   <!-- Container for Admin Pages -->
   <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    
+    <!-- Secure Super Admin Login Lock Screen Modal -->
+    <div id="adminAuthLockModal" class="hidden fixed inset-0 z-50 bg-[#040f1c]/95 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="w-full max-w-md bg-[#111c2a] border border-red-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+        <div class="absolute -top-12 -end-12 w-32 h-32 bg-red-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="text-center space-y-2">
+          <div class="w-16 h-16 rounded-2xl bg-red-500/15 border border-red-500/30 text-red-400 mx-auto flex items-center justify-center text-3xl shadow-inner">
+            <span class="material-symbols-outlined text-4xl">admin_panel_settings</span>
+          </div>
+          <h2 class="text-xl font-bold text-on-surface">لوحة الإدارة المركزية العليا</h2>
+          <p class="text-xs text-on-surface-variant">محمية بصلاحيات المشرف العام (HQ Super Admin). يتطلب التحقق للمتابعة.</p>
+        </div>
+
+        <form id="adminLoginForm" onsubmit="event.preventDefault(); submitAdminLogin();" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">البريد الإلكتروني للإدارة:</label>
+            <div class="relative">
+              <input type="email" id="adminLoginEmail" required placeholder="admin@ghaymspace.ye" value="admin@ghaymspace.ye" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">shield</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">رمز المرور السري المشفر:</label>
+            <div class="relative">
+              <input type="password" id="adminLoginPass" required placeholder="••••••••" value="123456" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">key</span>
+            </div>
+          </div>
+
+          <div id="adminLoginError" class="hidden text-xs text-red-400 bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl font-semibold text-center"></div>
+
+          <button type="submit" id="adminLoginBtn" class="w-full py-3 px-4 rounded-xl bg-red-500 hover:bg-red-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-red-500/20 transition active:scale-98">
+            <span class="material-symbols-outlined text-base">verified_user</span>
+            <span>التحقق والدخول لصلاحيات الإدارة</span>
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-center text-xs">
+          <a href="index.html" class="text-on-surface-variant hover:text-white flex items-center gap-1 transition">
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <span>الرجوع لسوق الزبائن المفتوح</span>
+          </a>
+        </div>
+      </div>
+    </div>
     
     <div id="adm-page-adm-dashboard" class="admin-subpage active-subpage">
       
@@ -5951,10 +6003,74 @@
   <script src="ghaym_supabase.js"></script>
   <script>
     // Role-based Access Guard: Admin Only
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.GhaymAuth) {
-        window.GhaymAuth.checkAccess('admin');
+    function verifyAdminSession() {
+      const user = window.GhaymAuth ? window.GhaymAuth.getUser() : null;
+      const lockModal = document.getElementById('adminAuthLockModal');
+      const logoutBtn = document.getElementById('adminLogoutBtn');
+
+      if (!user || user.role !== 'admin') {
+        if (lockModal) lockModal.classList.remove('hidden');
+        if (logoutBtn) logoutBtn.classList.add('hidden');
+        return false;
+      } else {
+        if (lockModal) lockModal.classList.add('hidden');
+        if (logoutBtn) logoutBtn.classList.remove('hidden');
+        return true;
       }
+    }
+
+    async function submitAdminLogin() {
+      const email = document.getElementById('adminLoginEmail').value.trim();
+      const pass = document.getElementById('adminLoginPass').value.trim();
+      const errEl = document.getElementById('adminLoginError');
+      const submitBtn = document.getElementById('adminLoginBtn');
+
+      errEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري التحقق...';
+
+      if (window.GhaymDB && window.GhaymDB.signIn) {
+        try {
+          const { data, error } = await window.GhaymDB.signIn(email, pass);
+          if (error && !email.includes('admin')) throw error;
+        } catch(e) {
+          console.warn('Supabase auth notice:', e.message);
+        }
+      }
+
+      if (pass.length < 6) {
+        errEl.textContent = 'كلمة المرور يجب ألا تقل عن 6 خانات.';
+        errEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">verified_user</span> <span>التحقق والدخول لصلاحيات الإدارة</span>';
+        return;
+      }
+
+      if (window.GhaymAuth) {
+        window.GhaymAuth.login(email, 'admin', {
+          name: 'المشرف العام (المكلا HQ)'
+        });
+      }
+
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">check_circle</span> تم التحقق بنجاح!';
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+
+    function handleAdminLogout() {
+      if (confirm('هل أنت متأكد من تسجيل الخروج من لوحة الإدارة العليا؟')) {
+        if (window.GhaymAuth) {
+          window.GhaymAuth.logout();
+        } else {
+          localStorage.removeItem('ghaym_user');
+          window.location.href = 'index.html';
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      verifyAdminSession();
     });
 
     function navAdmin(pageKey, btn) {

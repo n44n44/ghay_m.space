@@ -916,10 +916,31 @@
     });
   }
 
+  // Global Styling Enhancements (Custom Slim Scrollbars & Year updater)
+  function applyGlobalStyles() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #091422; }
+      ::-webkit-scrollbar-thumb { background: #1f334d; border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: #54b9f2; }
+    `;
+    document.head.appendChild(style);
+
+    // Update dynamic footer year
+    const year = new Date().getFullYear();
+    document.querySelectorAll('footer p').forEach(p => {
+      if (p.textContent.includes('2025')) {
+        p.textContent = p.textContent.replace('2025', year);
+      }
+    });
+  }
+
   // Initialize on load
   document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(currentLang);
     setupInteractiveDelegation();
+    applyGlobalStyles();
   });
 
   window.toggleLang = toggleLanguage;

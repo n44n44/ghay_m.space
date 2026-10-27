@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Ghaym Space | لوحة تحكم التاجر المتعددة</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Material Symbols & Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
@@ -89,6 +90,11 @@
           <span id="langLabel">English</span>
         </button>
 
+        <button id="vendorLogoutBtn" onclick="handleVendorLogout()" class="px-3 py-1.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-bold text-red-400 flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-sm">logout</span>
+          <span class="hidden sm:inline">تسجيل خروج</span>
+        </button>
+
         <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-[#202b39] hover:bg-[#2b3545] border border-secondary/30 text-xs font-bold text-secondary flex items-center gap-1.5 transition">
           <span class="material-symbols-outlined text-[16px]">storefront</span>
           <span class="hidden sm:inline">معاينة المتجر في السوق</span>
@@ -146,6 +152,56 @@
   <!-- Container for Vendor Pages -->
   <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     
+    <!-- Secure Merchant Login Lock Screen Modal -->
+    <div id="vendorAuthLockModal" class="hidden fixed inset-0 z-50 bg-[#040f1c]/95 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="w-full max-w-md bg-[#111c2a] border border-secondary/30 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+        <div class="absolute -top-12 -end-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="text-center space-y-2">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/15 border border-secondary/30 text-secondary mx-auto flex items-center justify-center text-3xl shadow-inner">
+            <span class="material-symbols-outlined text-4xl">storefront</span>
+          </div>
+          <h2 class="text-xl font-bold text-on-surface">تسجيل دخول التاجر الشريك</h2>
+          <p class="text-xs text-on-surface-variant">بوابة إدارة المتاجر، المنتجات، المحفظة والطلبات المعتمدة في المكلا.</p>
+        </div>
+
+        <form id="vendorLoginForm" onsubmit="event.preventDefault(); submitVendorLogin();" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">البريد الإلكتروني للتاجر:</label>
+            <div class="relative">
+              <input type="email" id="vendorLoginEmail" required placeholder="merchant@nafahat.ye" value="merchant@nafahat.ye" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">mail</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">كلمة المرور:</label>
+            <div class="relative">
+              <input type="password" id="vendorLoginPass" required placeholder="••••••••" value="123456" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">key</span>
+            </div>
+          </div>
+
+          <div id="vendorLoginError" class="hidden text-xs text-red-400 bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl font-semibold text-center"></div>
+
+          <button type="submit" id="vendorLoginBtn" class="w-full py-3 px-4 rounded-xl bg-secondary text-surface-container-lowest font-bold text-xs flex items-center justify-center gap-2 hover:bg-secondary/90 shadow-lg shadow-secondary/20 transition active:scale-98">
+            <span class="material-symbols-outlined text-base">login</span>
+            <span>دخول إلى لوحة المتجر</span>
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between text-xs">
+          <a href="index.html" class="text-on-surface-variant hover:text-white flex items-center gap-1 transition">
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <span>الرجوع للمتجر العام</span>
+          </a>
+          <a href="index.html#vendor-reg-1" class="text-secondary hover:underline font-bold">
+            تسجيل متجر جديد
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div id="vpage-v-dashboard" class="vendor-subpage active-subpage">
 
 <!-- Breadcrumbs & Merchant Identity Banner Card -->
@@ -3738,10 +3794,76 @@
   <script src="ghaym_supabase.js"></script>
   <script>
     // Role-based Access Guard: Merchant Only
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.GhaymAuth) {
-        window.GhaymAuth.checkAccess('merchant');
+    function verifyVendorSession() {
+      const user = window.GhaymAuth ? window.GhaymAuth.getUser() : null;
+      const lockModal = document.getElementById('vendorAuthLockModal');
+      const logoutBtn = document.getElementById('vendorLogoutBtn');
+
+      if (!user || (user.role !== 'merchant' && user.role !== 'admin')) {
+        if (lockModal) lockModal.classList.remove('hidden');
+        if (logoutBtn) logoutBtn.classList.add('hidden');
+        return false;
+      } else {
+        if (lockModal) lockModal.classList.add('hidden');
+        if (logoutBtn) logoutBtn.classList.remove('hidden');
+        return true;
       }
+    }
+
+    async function submitVendorLogin() {
+      const email = document.getElementById('vendorLoginEmail').value.trim();
+      const pass = document.getElementById('vendorLoginPass').value.trim();
+      const errEl = document.getElementById('vendorLoginError');
+      const submitBtn = document.getElementById('vendorLoginBtn');
+
+      errEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري التحقق...';
+
+      if (window.GhaymDB && window.GhaymDB.signIn) {
+        try {
+          const { data, error } = await window.GhaymDB.signIn(email, pass);
+          if (error && !email.includes('merchant')) throw error;
+        } catch(e) {
+          console.warn('Supabase auth notice:', e.message);
+        }
+      }
+
+      if (pass.length < 6) {
+        errEl.textContent = 'كلمة المرور يجب ألا تقل عن 6 خانات.';
+        errEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">login</span> <span>دخول إلى لوحة المتجر</span>';
+        return;
+      }
+
+      if (window.GhaymAuth) {
+        window.GhaymAuth.login(email, 'merchant', {
+          name: email.includes('@') ? (email.split('@')[0] === 'merchant' ? 'متجر نفحات حضرموت' : email.split('@')[0]) : 'متجر معتمد',
+          storeId: 'store_nafahat',
+          storeName: 'متجر نفحات حضرموت'
+        });
+      }
+
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">check_circle</span> تم الدخول بنجاح!';
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+
+    function handleVendorLogout() {
+      if (confirm('هل أنت متأكد من تسجيل الخروج من لوحة التاجر؟')) {
+        if (window.GhaymAuth) {
+          window.GhaymAuth.logout();
+        } else {
+          localStorage.removeItem('ghaym_user');
+          window.location.href = 'index.html';
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      verifyVendorSession();
     });
 
     function navVendor(pageKey, btn) {

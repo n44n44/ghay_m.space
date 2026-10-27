@@ -104,6 +104,50 @@
       }
     },
 
+    // Fetch Orders from Cloud
+    getOrders: async () => {
+      if (!supabaseClient) return null;
+      try {
+        const { data, error } = await supabaseClient
+          .from('orders')
+          .select('*, order_items(*)')
+          .order('created_at', { ascending: false });
+        if (error) throw error;
+        return data;
+      } catch (err) {
+        console.warn('Fallback to local orders:', err.message);
+        return null;
+      }
+    },
+
+    // Update Order Status (For Driver & Admin)
+    updateOrderStatus: async (orderId, newStatus) => {
+      if (!supabaseClient) return null;
+      try {
+        const { data, error } = await supabaseClient
+          .from('orders')
+          .update({ status: newStatus })
+          .or(`id.eq.${orderId},order_number.eq.${orderId}`)
+          .select();
+        if (error) throw error;
+        return data;
+      } catch (err) {
+        console.error('Failed to update order status:', err.message);
+        return null;
+      }
+    },
+
+    // Subscribe to Live Orders (Courier & Admin Real-time)
+    subscribeToOrders: (callback) => {
+      if (!supabaseClient) return null;
+      return supabaseClient
+        .channel('public:orders')
+        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'orders' }, payload => {
+          if (callback) callback(payload.new);
+        })
+        .subscribe();
+    },
+
     // Fetch Stores
     getStores: async () => {
       if (!supabaseClient) return null;

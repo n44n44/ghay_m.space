@@ -144,6 +144,26 @@ window.GhaymApp = (function() {
       time: Date.now()
     }));
 
+    // Sync order to Supabase Cloud if available
+    if (window.GhaymDB && window.GhaymDB.createOrder) {
+      window.GhaymDB.createOrder({
+        order_number: newOrder.orderId,
+        customer_name: newOrder.customerName,
+        customer_phone: newOrder.customerPhone,
+        delivery_address: newOrder.customerAddress,
+        district: newOrder.district,
+        payment_method: paymentMethodKey === 'cash' ? 'cash' : (paymentMethodKey === 'kuraimi' ? 'kuraimi' : 'onecash'),
+        subtotal_yer: itemsTotal,
+        delivery_fee_yer: deliveryFee,
+        total_amount_yer: totalAmount,
+        status: 'new'
+      }, orderItems).then(res => {
+        console.log('☁️ Order synced with Supabase:', res);
+      }).catch(err => {
+        console.warn('Supabase sync notice:', err.message);
+      });
+    }
+
     return newOrder;
   }
 

@@ -1058,8 +1058,27 @@
       }
     });
 
+    // Supabase Cloud Real-time Listener for Courier
+    function setupCloudCourierListener() {
+      if (window.GhaymDB && window.GhaymDB.subscribeToOrders) {
+        window.GhaymDB.subscribeToOrders((newOrder) => {
+          console.log('⚡ [Courier] Realtime Cloud Order Received:', newOrder);
+          showDriverIncomingAlert({
+            orderId: newOrder.order_number,
+            total: newOrder.total_amount_yer,
+            customerName: newOrder.customer_name,
+            district: newOrder.district,
+            customerAddress: newOrder.delivery_address,
+            storeName: 'متجر المكلا المعتمد',
+            time: new Date().toLocaleTimeString('ar-YE', { hour: '2-digit', minute: '2-digit' })
+          });
+        });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       checkForNewOrders();
+      setTimeout(setupCloudCourierListener, 1500);
     });
   </script>
   <script src="ghaym_core.js"></script>

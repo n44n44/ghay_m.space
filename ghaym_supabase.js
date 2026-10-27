@@ -46,6 +46,16 @@
       return await supabaseClient.auth.signInWithPassword({ email, password });
     },
 
+    signInWithGoogle: async () => {
+      if (!supabaseClient) return { error: { message: 'Supabase client not initialized' } };
+      return await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin + window.location.pathname
+        }
+      });
+    },
+
     signOut: async () => {
       if (!supabaseClient) return;
       await supabaseClient.auth.signOut();

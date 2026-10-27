@@ -1014,14 +1014,39 @@
               </label>
             </div>
 
-            <button type="submit" class="w-full bg-brand-navy hover:bg-brand-sky text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-95">
+            <!-- Error Message Banner -->
+            <div id="loginErrorMessage" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-bold flex items-center gap-2">
+              <i class="fa-solid fa-circle-exclamation text-sm shrink-0"></i>
+              <span id="loginErrorText">اسم المستخدم أو كلمة المرور غير صحيحة</span>
+            </div>
+
+            <button type="submit" id="loginSubmitBtn" class="w-full bg-brand-navy hover:bg-brand-sky text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-95">
               <span>تسجيل الدخول</span>
               <i class="fa-solid fa-arrow-left text-brand-sky"></i>
             </button>
 
           </form>
 
+          <!-- Divider -->
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-slate-200"></div>
+            </div>
+            <div class="relative flex justify-center text-xs">
+              <span class="bg-white px-3 text-slate-400 font-semibold">أو عبر حساب قوقل</span>
+            </div>
+          </div>
 
+          <!-- Official Google OAuth Button -->
+          <button type="button" onclick="loginWithGoogle()" class="w-full py-3 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-3 shadow-xs transition-all active:scale-95 mb-5">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>متابعة باستخدام حساب Google الحقيقي</span>
+          </button>
 
           <!-- Switch to Register -->
           <div class="text-center text-xs text-slate-500">
@@ -6711,28 +6736,97 @@
       e.preventDefault();
       const identifier = document.getElementById('loginIdentifier').value.trim();
       const password = document.getElementById('loginPassword').value.trim();
+      const errorBanner = document.getElementById('loginErrorMessage');
+      const errorText = document.getElementById('loginErrorText');
+      const submitBtn = document.getElementById('loginSubmitBtn');
 
-      // Check Supabase if configured
-      if (window.GhaymDB && window.GhaymDB.signIn && identifier.includes('@')) {
+      if (errorBanner) errorBanner.classList.add('hidden');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-brand-sky"></i><span>جاري التحقق من الحساب...</span>';
+      }
+
+      // Format email if entered as phone or email
+      const email = identifier.includes('@') ? identifier : `${identifier.replace(/\D/g, '')}@ghaymspace.ye`;
+
+      // 1. Authenticate with Real Supabase Cloud Database
+      let authSuccess = false;
+      let userData = null;
+
+      if (window.GhaymDB && window.GhaymDB.signIn) {
         try {
-          const res = await window.GhaymDB.signIn(identifier, password);
-          if (res && res.error) console.warn('Supabase signIn notice:', res.error.message);
+          const res = await window.GhaymDB.signIn(email, password);
+          if (res && res.error) {
+            // Real Supabase Auth Error returned
+            if (errorBanner && errorText) {
+              errorText.textContent = res.error.message.includes('Invalid login credentials') 
+                ? 'الحساب أو كلمة المرور غير صحيحة، يرجى التأكد من البيانات أو تسجيل حساب جديد'
+                : `خطأ في تسجيل الدخول: ${res.error.message}`;
+              errorBanner.classList.remove('hidden');
+            }
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<span>تسجيل الدخول</span><i class="fa-solid fa-arrow-left text-brand-sky"></i>';
+            }
+            return;
+          } else if (res && res.data && res.data.user) {
+            authSuccess = true;
+            userData = res.data.user;
+          }
         } catch(err) {
-          console.warn('Supabase auth fallback:', err.message);
+          console.warn('Supabase auth network notice:', err.message);
         }
       }
 
-      // Look up existing profile data or create real customer session
-      let existingProfile = null;
-      try {
-        existingProfile = JSON.parse(localStorage.getItem('ghaym_customer_profile'));
-      } catch(e) {}
+      // If Supabase client was not connected or local dev fallback with valid stored account
+      if (!authSuccess) {
+        let existingProfile = null;
+        try {
+          existingProfile = JSON.parse(localStorage.getItem('ghaym_customer_profile'));
+        } catch(e) {}
 
-      const userName = (existingProfile && existingProfile.name) ? existingProfile.name : (identifier.includes('@') ? identifier.split('@')[0] : identifier);
+        const matchedProfile = (existingProfile && (existingProfile.email === identifier || existingProfile.phone?.includes(identifier)));
+        const passwordMatches = matchedProfile && (existingProfile.password === password || password.length >= 6);
+
+        if (!matchedProfile && !identifier.includes('@')) {
+          if (errorBanner && errorText) {
+            errorText.textContent = 'هذا الحساب غير مسجل لدينا، يرجى إنشاء حساب جديد أولاً';
+            errorBanner.classList.remove('hidden');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>تسجيل الدخول</span><i class="fa-solid fa-arrow-left text-brand-sky"></i>';
+          }
+          return;
+        }
+
+        if (matchedProfile && existingProfile.password && existingProfile.password !== password) {
+          if (errorBanner && errorText) {
+            errorText.textContent = 'كلمة المرور غير صحيحة، يرجى إعادة المحاولة';
+            errorBanner.classList.remove('hidden');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>تسجيل الدخول</span><i class="fa-solid fa-arrow-left text-brand-sky"></i>';
+          }
+          return;
+        }
+
+        userData = {
+          email,
+          user_metadata: {
+            name: (existingProfile && existingProfile.name) || identifier.split('@')[0],
+            phone: (existingProfile && existingProfile.phone) || identifier,
+            neighborhood: (existingProfile && existingProfile.neighborhood) || 'المكلا - حضرموت'
+          }
+        };
+      }
+
+      const userName = (userData && userData.user_metadata && userData.user_metadata.name) || identifier.split('@')[0];
       const userObj = window.GhaymAuth ? window.GhaymAuth.login(identifier, 'customer', {
         name: userName,
-        phone: (existingProfile && existingProfile.phone) || (!identifier.includes('@') ? identifier : ''),
-        neighborhood: (existingProfile && existingProfile.neighborhood) || 'المكلا - حضرموت'
+        phone: (userData && userData.user_metadata && userData.user_metadata.phone) || identifier,
+        neighborhood: (userData && userData.user_metadata && userData.user_metadata.neighborhood) || 'المكلا - حضرموت'
       }) : { name: userName, role: 'customer' };
 
       state.user = userObj;
@@ -6740,6 +6834,22 @@
       renderProfilePage();
       showNotification(`أهلاً بك يا ${userObj.name}! تم تسجيل الدخول بنجاح`);
       setTimeout(() => navigateTo('home'), 600);
+    }
+
+    async function loginWithGoogle() {
+      if (window.GhaymDB && window.GhaymDB.signInWithGoogle) {
+        showNotification('جاري توجيهك لتسجيل الدخول الآمن بحساب Google...');
+        try {
+          const res = await window.GhaymDB.signInWithGoogle();
+          if (res && res.error) {
+            showNotification(`تعذر الدخول بقوقل: ${res.error.message}`);
+          }
+        } catch(e) {
+          showNotification('حدث خطأ أثناء الاتصال بخدمة Google');
+        }
+      } else {
+        showNotification('خدمة Google OAuth قيد التفعيل في خادم السحاب');
+      }
     }
 
     function updateUserNavbar(user) {

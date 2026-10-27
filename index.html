@@ -997,6 +997,15 @@
           <!-- 1. Form: Login with Phone & WhatsApp OTP -->
           <div id="loginPhoneSection" class="space-y-4">
             <form onsubmit="handlePhoneOtpLogin(event)" class="space-y-4">
+              
+              <div class="space-y-1">
+                <label class="block text-xs font-bold text-brand-navy">الاسم الكامل الحقيقي</label>
+                <div class="relative">
+                  <input id="loginNameInput" type="text" required placeholder="سالم احمد العمودي" class="w-full py-3 pr-10 pl-4 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-sky focus:bg-white transition-all text-slate-800">
+                  <i class="fa-solid fa-user absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                </div>
+              </div>
+
               <div class="space-y-1">
                 <label class="block text-xs font-bold text-brand-navy">رقم الهاتف المحمول (اليمن)</label>
                 <div class="relative flex items-center bg-slate-50 border border-slate-200 rounded-xl focus-within:ring-2 focus-within:ring-brand-sky focus-within:bg-white transition overflow-hidden">
@@ -1120,7 +1129,7 @@
             <div class="space-y-1">
               <label class="block text-xs font-bold text-brand-navy">الاسم الكامل</label>
               <div class="relative">
-                <input id="regName" type="text" required placeholder="مثال: سالم صالح باوزير" class="w-full py-3 pr-10 pl-4 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-sky focus:bg-white transition text-slate-800">
+                <input id="regName" type="text" required placeholder="سالم احمد العمودي" class="w-full py-3 pr-10 pl-4 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-sky focus:bg-white transition text-slate-800">
                 <i class="fa-solid fa-user absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
               </div>
             </div>
@@ -6810,7 +6819,9 @@
     async function handlePhoneOtpLogin(e) {
       e.preventDefault();
       const phoneInput = document.getElementById('loginPhoneInput');
+      const nameInput = document.getElementById('loginNameInput');
       const rawPhone = phoneInput.value.trim();
+      const enteredName = nameInput ? nameInput.value.trim() : '';
       if (!rawPhone) return;
 
       const fullPhone = '+967 ' + rawPhone.replace(/\D/g, '');
@@ -6821,8 +6832,10 @@
         existingProfile = JSON.parse(localStorage.getItem('ghaym_customer_profile'));
       } catch(err) {}
 
+      const realName = enteredName || (existingProfile && existingProfile.name) || 'سالم احمد العمودي';
+
       pendingRegisterData = {
-        name: (existingProfile && existingProfile.name) || 'عميل غيم سبيس',
+        name: realName,
         phone: fullPhone,
         neighborhood: (existingProfile && existingProfile.neighborhood) || 'المكلا - حضرموت',
         email: rawPhone.replace(/\D/g, '') + '@ghaymspace.ye'
@@ -6831,7 +6844,7 @@
       const phoneEl = document.getElementById('otpPhoneNumber');
       if (phoneEl) phoneEl.textContent = fullPhone;
 
-      showNotification('جاري إرسال رمز التحقق إلى واتساب الخاص برقمك...');
+      showNotification(`أهلاً بك يا ${realName}! جاري إرسال رمز التحقق إلى واتساب...`);
       sendOtpViaWhatsApp();
       navigateTo('otp');
     }

@@ -55,6 +55,30 @@ window.GhaymApp = (function() {
   }
 
   function addToCart(item) {
+    // If it's a demo preview store and user adds to cart
+    if (item.isDemo || item.store?.includes('(تجريبي)') || item.store?.includes('نفحات حضرموت') || item.store?.includes('أطايب المكلا') || item.store?.includes('بوتيك')) {
+      // Allow adding for test, but show a clear notice banner
+      const existing = cart.find(i => (i.title === item.title) || (i.id === item.id));
+      if (existing) {
+        existing.qty += (item.qty || 1);
+      } else {
+        cart.push({
+          id: item.id || Date.now(),
+          title: item.title,
+          price: item.price,
+          store: item.store || 'متجر معتمد',
+          image: item.image || '',
+          qty: item.qty || 1,
+          isDemo: true
+        });
+      }
+      saveCart();
+      if (typeof showNotification === 'function') {
+        showNotification(`ℹ️ تمت إضافة "${item.title}" (تنبيه: هذا متجر تجريبي للعرض فقط حتى انطلاق المتاجر المعتمدة)`);
+      }
+      return;
+    }
+
     const existing = cart.find(i => (i.title === item.title) || (i.id === item.id));
     if (existing) {
       existing.qty += (item.qty || 1);

@@ -7008,6 +7008,14 @@
         if (btn.textContent && (btn.textContent.includes('تأكيد الطلب') || btn.textContent.includes('إتمام'))) {
           btn.addEventListener('click', (e) => {
             e.preventDefault();
+            const cartItems = window.GhaymApp ? window.GhaymApp.getCart() : [];
+            const hasDemo = cartItems.some(i => i.isDemo || i.store?.includes('نفحات') || i.store?.includes('أطايب'));
+
+            if (hasDemo) {
+              const proceed = confirm(`⚠️ تنبيه مهم:\nسلتك تحتوي على منتجات من متاجر (تجريبية للعرض فقط).\n\nهل تود تأكيد الطلب كتجربة نظام فقط لاختبار التوصيل؟`);
+              if (!proceed) return;
+            }
+
             const dispatchedOrder = window.GhaymApp ? window.GhaymApp.placeCustomerOrder() : null;
             const orderNum = dispatchedOrder ? dispatchedOrder.orderId : 'GS-84920';
             showNotification(`تم تأكيد طلبك بنجاح (${orderNum})، وتم إسناده فوراً لمندوب التوصيل في المكلا! 🚴`);

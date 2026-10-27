@@ -233,39 +233,44 @@ window.GhaymApp = (function() {
         `;
       } else {
         cartContainer.innerHTML = cart.map(item => `
-          <article class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center gap-5 relative transition hover:border-brand-sky/40">
-            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-slate-50 flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center relative">
-              ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover"/>` : `<i class="fa-solid fa-box text-3xl text-slate-300"></i>`}
+          <article class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center justify-between gap-3 sm:gap-4 relative transition hover:border-brand-sky/40">
+            <!-- Compact Thumbnail -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-slate-50 flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center relative">
+              ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover"/>` : `<i class="fa-solid fa-box text-xl text-slate-300"></i>`}
             </div>
             
-            <div class="flex-grow text-center sm:text-right space-y-1.5 w-full">
-              <div class="flex items-center justify-center sm:justify-start gap-2">
-                <span class="text-[11px] font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
-                  <i class="fa-solid fa-store text-brand-sky text-[10px]"></i>
-                  <span>${item.store}</span>
+            <!-- Details -->
+            <div class="flex-grow min-w-0 space-y-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded flex items-center gap-1 truncate max-w-[140px]">
+                  <i class="fa-solid fa-store text-brand-sky text-[9px]"></i>
+                  <span class="truncate">${item.store}</span>
                 </span>
               </div>
-              <h2 class="text-base font-bold text-brand-navy">${item.title}</h2>
-              <div class="text-sm font-bold text-brand-sky">
-                ${item.price.toLocaleString()} <span class="text-xs font-normal text-slate-400">${curr} للقطعة</span>
+              <h2 class="text-xs sm:text-sm font-bold text-brand-navy truncate" title="${item.title}">${item.title}</h2>
+              <div class="text-xs font-black text-brand-sky">
+                ${item.price.toLocaleString()} <span class="text-[10px] font-normal text-slate-400">${curr}</span>
               </div>
             </div>
 
-            <div class="flex items-center justify-between sm:justify-end gap-5 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-slate-100">
-              <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
-                <button onclick="window.GhaymApp.updateQty(${item.id}, 1)" class="w-8 h-8 rounded-lg bg-white text-slate-700 hover:bg-sky-50 hover:text-brand-sky shadow-xs transition font-bold text-sm" title="زيادة الكمية">+</button>
-                <span class="w-8 text-center text-sm font-bold text-brand-navy">${item.qty}</span>
-                <button onclick="window.GhaymApp.updateQty(${item.id}, -1)" class="w-8 h-8 rounded-lg bg-white text-slate-700 hover:bg-slate-100 transition font-bold text-sm" title="إنقاص الكمية">-</button>
+            <!-- Controls & Actions -->
+            <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+              <!-- Qty Stepper -->
+              <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50 p-0.5">
+                <button onclick="window.GhaymApp.updateQty(${item.id}, 1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded bg-white text-slate-700 hover:bg-sky-50 hover:text-brand-sky shadow-xs transition font-bold text-xs" title="زيادة">+</button>
+                <span class="w-6 sm:w-7 text-center text-xs font-bold text-brand-navy">${item.qty}</span>
+                <button onclick="window.GhaymApp.updateQty(${item.id}, -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded bg-white text-slate-700 hover:bg-slate-100 transition font-bold text-xs" title="إنقاص">-</button>
               </div>
 
-              <div class="text-left min-w-[95px]">
-                <span class="text-[11px] text-slate-400 block">المجموع:</span>
-                <span class="text-base font-bold text-brand-navy">${(item.price * item.qty).toLocaleString()}</span>
-                <span class="text-xs font-semibold text-slate-400"> ${curr}</span>
+              <!-- Line Total -->
+              <div class="text-left hidden xs:block sm:block min-w-[70px]">
+                <span class="text-xs sm:text-sm font-black text-brand-navy">${(item.price * item.qty).toLocaleString()}</span>
+                <span class="text-[10px] font-medium text-slate-400"> ${curr}</span>
               </div>
 
-              <button onclick="window.GhaymApp.removeFromCart(${item.id})" class="text-slate-400 hover:text-rose-500 p-2.5 rounded-xl hover:bg-rose-50 transition" title="حذف المنتج من السلة">
-                <i class="fa-regular fa-trash-can text-base"></i>
+              <!-- Delete Button -->
+              <button onclick="window.GhaymApp.removeFromCart(${item.id})" class="text-slate-400 hover:text-rose-500 p-1.5 rounded-lg hover:bg-rose-50 transition" title="حذف المنتج">
+                <i class="fa-regular fa-trash-can text-sm"></i>
               </button>
             </div>
           </article>

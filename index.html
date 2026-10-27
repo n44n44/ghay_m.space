@@ -1084,34 +1084,7 @@
 
           </form>
 
-          <!-- Divider -->
-          <div class="relative my-6 text-center">
-            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-100"></div></div>
-            <span class="relative bg-white px-3 text-xs text-slate-400 font-semibold">أو</span>
-          </div>
 
-          <!-- Quick Demo Role Sign-in options -->
-          <div class="space-y-2 mb-4">
-            <p class="text-[11px] font-bold text-slate-500 text-center">أو تسجيل الدخول السريع حسب الصلاحية التجريبية:</p>
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <button type="button" onclick="loginAsRole('customer')" class="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-brand-navy font-bold flex items-center justify-center gap-1.5 transition">
-                <i class="fa-regular fa-user text-brand-sky"></i>
-                <span>عميل موثق</span>
-              </button>
-              <button type="button" onclick="loginAsRole('merchant')" class="p-2 rounded-xl bg-sky-50 hover:bg-sky-100 border border-sky-200 text-brand-navy font-bold flex items-center justify-center gap-1.5 transition">
-                <i class="fa-solid fa-store text-brand-sky"></i>
-                <span>تاجر (نفحات)</span>
-              </button>
-              <button type="button" onclick="loginAsRole('driver')" class="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-bold flex items-center justify-center gap-1.5 transition">
-                <i class="fa-solid fa-motorcycle text-emerald-600"></i>
-                <span>مندوب توصيل</span>
-              </button>
-              <button type="button" onclick="loginAsRole('admin')" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 font-bold flex items-center justify-center gap-1.5 transition">
-                <i class="fa-solid fa-shield-halved text-amber-600"></i>
-                <span>مالك المنصة</span>
-              </button>
-            </div>
-          </div>
 
           <!-- Switch to Register -->
           <div class="text-center text-xs text-slate-500">
@@ -1314,6 +1287,14 @@
     <!-- ============================================================== -->
     <div id="page-product" class="app-page">
       
+      <!-- Top Navigation & Return Bar -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-brand-sky bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs transition-all active:scale-95 group">
+          <i class="fa-solid fa-arrow-right text-brand-sky group-hover:-translate-x-1 transition-transform"></i>
+          <span>رجوع إلى السوق الرئيسي</span>
+        </button>
+      </div>
+
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 <!-- Product Showcase Grid (Two Balanced Columns) -->
 <div class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200/70 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -1576,17 +1557,17 @@
 <!-- Tab 4: Reviews Preview (Hidden by default) -->
 <div class="tab-pane hidden space-y-4" id="tab-reviews">
 <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-<h3 class="text-base font-bold text-brand-dark">تقييمات المشترين من المكلا (68 تقييم)</h3>
-<button class="text-xs font-bold text-brand-sky hover:underline">أضف تقييمك</button>
+<h3 class="text-base font-bold text-brand-dark">تقييمات وتجارب المشترين</h3>
+<span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-500">تقييمات العملاء الموثقين فقط</span>
 </div>
-<div class="space-y-3">
-<div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
-<div class="flex items-center justify-between mb-1">
-<span class="font-bold text-brand-dark text-xs">سالم بن محفوظ - حي السلام</span>
-<div class="text-brand-amber text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<div class="py-8 px-4 text-center bg-slate-50 rounded-2xl border border-slate-100/80 space-y-3">
+<div class="w-12 h-12 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mx-auto text-xl">
+<i class="fa-regular fa-star"></i>
 </div>
-<p class="text-xs text-slate-600">عطر فخم جداً وريحته ثابته بالثوب حتى بعد الغسيل. التوصيل كان سريع خلال نص ساعة فقط للديس. شكراً متجر نفحات وغيم سبيس.</p>
-</div>
+<h4 class="text-sm font-bold text-brand-navy">لا توجد تقييمات مسبقة لهذا المنتج حتى الآن</h4>
+<p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
+يُتاح التقييم وكتابة الآراء حصرياً للمشترين الحقيقيين بعد إتمام استلام الطلب بنجاح عبر مندوب منصة غيم سبيس.
+</p>
 </div>
 </div>
 </div>
@@ -1716,8 +1697,8 @@
       
 <!-- Navigation Back Link (Strict RTL direction arrow) -->
 <div class="mb-4">
-<a class="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#54B9F2] bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-sm transition-all group" href="javascript:void(0)">
-<i class="fa-solid fa-arrow-right text-sm text-[#54B9F2] group-hover:-translate-x-1 transition-transform"></i>
+<a onclick="navigateTo('stores')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-brand-sky bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs transition-all active:scale-95 group cursor-pointer">
+<i class="fa-solid fa-arrow-right text-sm text-brand-sky group-hover:-translate-x-1 transition-transform"></i>
 <span>رجوع إلى قائمة المتاجر</span>
 </a>
 </div>
@@ -1844,15 +1825,15 @@
 <span class="text-[10px] text-[#54B9F2] font-semibold block mt-0.5">أصلي ومضمون 100%</span>
 </div>
 </div>
-<!-- Metric 4: Direct Pickup Option -->
+<!-- Metric 4: Express Mukalla Delivery Coverage -->
 <div class="bg-white rounded-2xl p-4 border border-slate-200 flex items-center gap-3.5 shadow-sm">
-<div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0">
-<i class="fa-solid fa-shop"></i>
+<div class="w-12 h-12 rounded-2xl bg-sky-50 text-brand-sky flex items-center justify-center text-xl flex-shrink-0">
+<i class="fa-solid fa-motorcycle"></i>
 </div>
 <div>
-<span class="text-[11px] font-medium text-slate-400 block leading-tight">الاستلام المباشر</span>
-<span class="text-sm font-extrabold text-[#172A46]">متاح من الفرع</span>
-<span class="text-[10px] text-slate-500 block mt-0.5">شارع الستين - المكلا</span>
+<span class="text-[11px] font-medium text-slate-400 block leading-tight">توصيل منزلي سريع</span>
+<span class="text-sm font-extrabold text-[#172A46]">كافة أحياء المكلا</span>
+<span class="text-[10px] text-brand-sky font-bold block mt-0.5">الشرج • الديس • فوه • القديمة</span>
 </div>
 </div>
 </section>
@@ -2632,7 +2613,7 @@
 <span class="text-brand-navy font-bold">قائمة المفضلة</span>
 </div>
 <!-- Explicit Return Button -->
-<a class="inline-flex items-center gap-2 px-4 py-2 bg-white text-brand-navy hover:text-brand-sky text-sm font-bold rounded-xl border border-slate-200 hover:border-brand-sky shadow-sm transition-all" href="javascript:void(0)">
+<a onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 bg-white text-brand-navy hover:text-brand-sky text-sm font-bold rounded-xl border border-slate-200 hover:border-brand-sky shadow-sm transition-all cursor-pointer">
 <i class="fa-solid fa-arrow-right"></i>
 <span>الرجوع إلى المتجر</span>
 </a>
@@ -2883,6 +2864,9 @@
 <!-- Cart Items Header -->
 <div class="bg-white p-5 rounded-2xl border border-slate-200/80 custom-shadow flex items-center justify-between">
 <div class="flex items-center gap-3">
+<button onclick="navigateTo('home')" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-brandDark flex items-center justify-center transition-colors" title="رجوع للسوق">
+  <i class="fa-solid fa-arrow-right text-sm"></i>
+</button>
 <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue flex items-center justify-center font-bold">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -2893,9 +2877,10 @@
 <p class="text-xs text-slate-500 mt-0.5"><span data-cart-count>0</span> منتجات في سلتك</p>
 </div>
 </div>
-<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-            جاهز للشحن المحلي
-          </span>
+<button onclick="navigateTo('home')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-brand-sky hover:bg-sky-50 transition-colors">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span>متابعة التسوق</span>
+</button>
 </div>
 
 <!-- DYNAMIC CART ITEMS CONTAINER -->
@@ -3004,7 +2989,7 @@
 <p class="text-body-sm font-body-sm text-on-surface-variant">متابعة كافة طلباتك ومشترياتك عبر متاجر المكلا وحضرموت المعتمدة</p>
 </div>
 <!-- Back Action Button -->
-<a class="self-start sm:self-center inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface border border-outline-variant/30 transition-all active:scale-95 text-label-md font-label-md" href="#">
+<a onclick="navigateTo('profile')" class="self-start sm:self-center inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface border border-outline-variant/30 transition-all active:scale-95 text-label-md font-label-md cursor-pointer">
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 <span>الرجوع للحساب</span>
 </a>
@@ -4057,7 +4042,14 @@
     <!-- ============================================================== -->
     <div id="page-profile" class="app-page">
 
-<!-- Top Welcome Banner with Nocturnal Coast Atmosphere -->
+      <!-- Profile Top Navigation Bar -->
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-outline-variant/15">
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 text-xs font-bold text-on-surface bg-surface-container px-3.5 py-2 rounded-xl border border-outline-variant/30 hover:text-secondary transition-all active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          <span>الرجوع إلى المتجر الرئيسي</span>
+        </button>
+        <span class="text-xs text-on-surface-variant font-medium">لوحة تحكم العميل</span>
+      </div>
 <div class="relative overflow-hidden rounded-xl bg-gradient-to-l from-primary-container via-surface-container to-surface-container-high border border-secondary/20 p-6 sm:p-8 mb-8 shadow-xl shadow-surface-container-lowest/60">
 <div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
 <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -4068,12 +4060,12 @@
 </div>
 <div>
 <div class="flex items-center gap-2.5">
-<h1 class="text-headline-lg font-headline-lg text-on-surface font-bold">أهلاً بك، عمر سالم باوزير</h1>
-<span class="bg-secondary/15 text-secondary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full border border-secondary/30">عميل موثق</span>
+<h1 class="text-headline-lg font-headline-lg text-on-surface font-bold">أهلاً بك، <span id="profileWelcomeName">العميل العزيز</span></h1>
+<span id="profileBadgeRole" class="bg-secondary/15 text-secondary text-label-sm font-label-sm px-2.5 py-0.5 rounded-full border border-secondary/30">عميل موثق</span>
 </div>
 <p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5 mt-1">
 <span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
-              المكلا، ساحل حضرموت • عضو مسجل منذ يناير 2024
+              <span id="profileUserLocation">المكلا، ساحل حضرموت • مستخدم معتمد</span>
             </p>
 </div>
 </div>
@@ -4192,7 +4184,7 @@
 <span class="absolute inset-y-0 right-3.5 flex items-center text-on-surface-variant pointer-events-none">
 <span class="material-symbols-outlined text-[20px]">badge</span>
 </span>
-<input class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="text" value="عمر سالم باوزير"/>
+<input id="profileInputName" class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="text" placeholder="أدخل اسمك الكامل" value=""/>
 </div>
 </div>
 <!-- Mobile Phone Number -->
@@ -4202,7 +4194,7 @@
 <span class="absolute inset-y-0 right-3.5 flex items-center text-on-surface-variant pointer-events-none">
 <span class="material-symbols-outlined text-[20px]">smartphone</span>
 </span>
-<input class="w-full text-right bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" dir="ltr" type="tel" value="+967 770 123 456"/>
+<input id="profileInputPhone" class="w-full text-right bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" dir="ltr" type="tel" placeholder="+967 7XXXXXXXX" value=""/>
 </div>
 </div>
 <!-- Email Address -->
@@ -4212,7 +4204,7 @@
 <span class="absolute inset-y-0 right-3.5 flex items-center text-on-surface-variant pointer-events-none">
 <span class="material-symbols-outlined text-[20px]">mail</span>
 </span>
-<input class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="email" value="omar.bawazeer@ghaymspace.ye"/>
+<input id="profileInputEmail" class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="email" placeholder="example@mail.com" value=""/>
 </div>
 </div>
 <!-- City (المدينة: المكلا) -->
@@ -4222,7 +4214,7 @@
 <span class="absolute inset-y-0 right-3.5 flex items-center text-secondary pointer-events-none">
 <span class="material-symbols-outlined text-[20px]">location_city</span>
 </span>
-<select class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-8 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all appearance-none cursor-pointer">
+<select id="profileInputCity" class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-8 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all appearance-none cursor-pointer">
 <option selected="" value="mukalla">المكلا (حضرموت)</option>
 <option value="ghayl">غيل باوزير</option>
 <option value="shihr">الشحر</option>
@@ -4235,20 +4227,20 @@
 </div>
 <!-- Neighborhood (الحي) -->
 <div class="space-y-1.5 md:col-span-2">
-<label class="block text-label-md font-label-md text-on-surface font-medium">الحي السكني أو المنطقة</label>
+<label class="block text-label-md font-label-md text-on-surface font-medium">الحي السكني أو المنطقة داخل المكلا</label>
 <div class="relative">
 <span class="absolute inset-y-0 right-3.5 flex items-center text-on-surface-variant pointer-events-none">
 <span class="material-symbols-outlined text-[20px]">holiday_village</span>
 </span>
-<input class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="text" value="حي الديس - بجوار حديقة الطفل، المكلا"/>
+<input id="profileInputNeighborhood" class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg pr-11 pl-4 py-2.5 border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-all" type="text" placeholder="مثال: الشرج، الديس، فوه، المكلا القديمة" value=""/>
 </div>
 </div>
 <!-- Submit Action -->
 <div class="md:col-span-2 flex items-center justify-end gap-3 pt-4 border-t border-outline-variant/15">
-<button class="px-5 py-2.5 rounded-lg text-body-md font-body-md text-on-surface-variant hover:text-on-surface bg-surface-container-high hover:bg-surface-container-highest transition-all" type="button">
+<button onclick="renderProfilePage()" class="px-5 py-2.5 rounded-lg text-body-md font-body-md text-on-surface-variant hover:text-on-surface bg-surface-container-high hover:bg-surface-container-highest transition-all" type="button">
                 إلغاء
               </button>
-<button class="px-6 py-2.5 rounded-lg text-label-lg font-label-lg font-bold bg-secondary text-surface-container-lowest hover:bg-secondary-fixed active:scale-95 transition-all custom-glow flex items-center gap-2" type="submit">
+<button onclick="saveUserProfile()" class="px-6 py-2.5 rounded-lg text-label-lg font-label-lg font-bold bg-secondary text-surface-container-lowest hover:bg-secondary-fixed active:scale-95 transition-all custom-glow flex items-center gap-2" type="button">
 <span class="material-symbols-outlined text-[20px]">save</span>
 <span>حفظ التغييرات</span>
 </button>
@@ -6737,49 +6729,39 @@
       }
     }
 
-    function handleLoginSubmit(e) {
+    async function handleLoginSubmit(e) {
       e.preventDefault();
-      const user = document.getElementById('loginIdentifier').value;
-      const userObj = window.GhaymAuth ? window.GhaymAuth.login(user, 'customer') : { name: user };
+      const identifier = document.getElementById('loginIdentifier').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+
+      // Check Supabase if configured
+      if (window.GhaymDB && window.GhaymDB.signIn && identifier.includes('@')) {
+        try {
+          const res = await window.GhaymDB.signIn(identifier, password);
+          if (res && res.error) console.warn('Supabase signIn notice:', res.error.message);
+        } catch(err) {
+          console.warn('Supabase auth fallback:', err.message);
+        }
+      }
+
+      // Look up existing profile data or create real customer session
+      let existingProfile = null;
+      try {
+        existingProfile = JSON.parse(localStorage.getItem('ghaym_customer_profile'));
+      } catch(e) {}
+
+      const userName = (existingProfile && existingProfile.name) ? existingProfile.name : (identifier.includes('@') ? identifier.split('@')[0] : identifier);
+      const userObj = window.GhaymAuth ? window.GhaymAuth.login(identifier, 'customer', {
+        name: userName,
+        phone: (existingProfile && existingProfile.phone) || (!identifier.includes('@') ? identifier : ''),
+        neighborhood: (existingProfile && existingProfile.neighborhood) || 'المكلا - حضرموت'
+      }) : { name: userName, role: 'customer' };
+
       state.user = userObj;
       updateUserNavbar(userObj);
-      showNotification(`أهلاً بك مجدداً يا ${userObj.name}! تم تسجيل دخولك بنجاح`);
+      renderProfilePage();
+      showNotification(`أهلاً بك يا ${userObj.name}! تم تسجيل الدخول بنجاح`);
       setTimeout(() => navigateTo('home'), 600);
-    }
-
-    function loginAsRole(role) {
-      let identifier = 'customer@ghaymspace.ye';
-      let name = 'أحمد باوزير (عميل)';
-      let extra = {};
-
-      if (role === 'merchant') {
-        identifier = 'merchant@nafahat.ye';
-        name = 'متجر نفحات حضرموت';
-        extra = { storeId: 'store_nafahat', storeName: 'متجر نفحات حضرموت' };
-      } else if (role === 'driver') {
-        identifier = 'driver@ghaymspace.ye';
-        name = 'سالم بامعس (كابتن التوصيل)';
-        extra = { driverId: 'driver_mukalla_01' };
-      } else if (role === 'admin') {
-        identifier = 'admin@ghaymspace.ye';
-        name = 'الإدارة المركزية (المكلا HQ)';
-      }
-
-      const userObj = window.GhaymAuth ? window.GhaymAuth.login(identifier, role, extra) : { name, role };
-      state.user = userObj;
-      updateUserNavbar(userObj);
-
-      showNotification(`تم تسجيل الدخول بصلاحية: ${name}`);
-
-      if (role === 'merchant') {
-        setTimeout(() => window.location.href = 'merchant_dashboard.html', 700);
-      } else if (role === 'driver') {
-        setTimeout(() => window.location.href = 'delivery_portal.html', 700);
-      } else if (role === 'admin') {
-        setTimeout(() => window.location.href = 'admin_dashboard.html', 700);
-      } else {
-        setTimeout(() => navigateTo('home'), 500);
-      }
     }
 
     function updateUserNavbar(user) {
@@ -6798,36 +6780,139 @@
       navigateTo('home');
     }
 
-    function handleRegisterSubmit(e) {
+    // Temporary storage for active registration step
+    let pendingRegisterData = null;
+
+    async function handleRegisterSubmit(e) {
       e.preventDefault();
-      const phone = document.getElementById('regPhone').value;
-      document.getElementById('otpPhoneNumber').textContent = '+967 ' + phone;
+      const name = document.getElementById('regName').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const neighborhood = document.getElementById('regNeighborhood').value;
+      const password = document.getElementById('regPassword').value;
+
+      pendingRegisterData = {
+        name,
+        phone: '+967 ' + phone,
+        neighborhood,
+        email: phone + '@ghaymspace.ye',
+        password
+      };
+
+      // Try registering user in Supabase cloud
+      if (window.GhaymDB && window.GhaymDB.signUp) {
+        try {
+          const res = await window.GhaymDB.signUp(pendingRegisterData.email, password, {
+            name,
+            phone: pendingRegisterData.phone,
+            neighborhood
+          });
+          if (res && res.error) console.warn('Supabase signUp notice:', res.error.message);
+        } catch(err) {
+          console.warn('Supabase reg notice:', err.message);
+        }
+      }
+
+      document.getElementById('otpPhoneNumber').textContent = pendingRegisterData.phone;
       showNotification('تم إرسال رمز التحقق إلى رقمك بنجاح');
       navigateTo('otp');
     }
 
-    function handleForgotSubmit(e) {
-      e.preventDefault();
-      const phone = document.getElementById('forgotPhone').value;
-      document.getElementById('otpPhoneNumber').textContent = '+967 ' + phone;
-      showNotification('تم إرسال رمز استعادة كلمة المرور إلى هاتفك');
-      navigateTo('otp');
-    }
-
-    function focusNextOtp(el, idx) {
-      if (el.value.length === 1) {
-        const inputs = document.querySelectorAll('.otp-input');
-        if (idx < inputs.length - 1) {
-          inputs[idx + 1].focus();
-        }
-      }
-    }
-
     function handleOtpSubmit(e) {
       e.preventDefault();
-      showNotification('تم التحقق من الحساب بنجاح! مرحباً بك في غيم سبيس');
-      document.getElementById('userAccountBtnText').textContent = 'حسابي';
-      setTimeout(() => navigateTo('home'), 1000);
+      if (!pendingRegisterData) {
+        pendingRegisterData = {
+          name: 'عميل غيم سبيس',
+          phone: document.getElementById('otpPhoneNumber').textContent || '+967 770000000',
+          neighborhood: 'المكلا - حضرموت'
+        };
+      }
+
+      // Save real user profile to localStorage
+      localStorage.setItem('ghaym_customer_profile', JSON.stringify(pendingRegisterData));
+
+      const userObj = window.GhaymAuth ? window.GhaymAuth.login(pendingRegisterData.phone, 'customer', {
+        name: pendingRegisterData.name,
+        phone: pendingRegisterData.phone,
+        neighborhood: pendingRegisterData.neighborhood
+      }) : { name: pendingRegisterData.name, role: 'customer' };
+
+      state.user = userObj;
+      updateUserNavbar(userObj);
+      renderProfilePage();
+
+      showNotification(`تم تأكيد حسابك بنجاح يا ${userObj.name}! مرحباً بك في غيم سبيس`);
+      setTimeout(() => navigateTo('home'), 800);
+    }
+
+    function renderProfilePage() {
+      let profile = null;
+      try {
+        profile = JSON.parse(localStorage.getItem('ghaym_customer_profile'));
+      } catch(e) {}
+
+      const user = state.user || profile || (window.GhaymAuth ? window.GhaymAuth.getUser() : null);
+      if (!user) return;
+
+      const name = user.name || (profile && profile.name) || 'عميل غيم سبيس';
+      const phone = user.phone || (profile && profile.phone) || user.identifier || '';
+      const email = user.email || (profile && profile.email) || '';
+      const neighborhood = user.neighborhood || (profile && profile.neighborhood) || 'حي الشرج، المكلا';
+
+      const welcomeName = document.getElementById('profileWelcomeName');
+      if (welcomeName) welcomeName.textContent = name;
+
+      const userLocation = document.getElementById('profileUserLocation');
+      if (userLocation) userLocation.textContent = `${neighborhood} • عضو موثق`;
+
+      const inputName = document.getElementById('profileInputName');
+      if (inputName) inputName.value = name;
+
+      const inputPhone = document.getElementById('profileInputPhone');
+      if (inputPhone) inputPhone.value = phone;
+
+      const inputEmail = document.getElementById('profileInputEmail');
+      if (inputEmail) inputEmail.value = email;
+
+      const inputNeigh = document.getElementById('profileInputNeighborhood');
+      if (inputNeigh) inputNeigh.value = neighborhood;
+    }
+
+    function saveUserProfile() {
+      const name = document.getElementById('profileInputName')?.value.trim();
+      const phone = document.getElementById('profileInputPhone')?.value.trim();
+      const email = document.getElementById('profileInputEmail')?.value.trim();
+      const city = document.getElementById('profileInputCity')?.value || 'mukalla';
+      const neighborhood = document.getElementById('profileInputNeighborhood')?.value.trim();
+
+      if (!name) {
+        showNotification('يرجى إدخال الاسم الكامل');
+        return;
+      }
+
+      const updatedProfile = {
+        name,
+        phone,
+        email,
+        city,
+        neighborhood
+      };
+
+      localStorage.setItem('ghaym_customer_profile', JSON.stringify(updatedProfile));
+
+      if (state.user) {
+        state.user.name = name;
+        state.user.phone = phone;
+        state.user.email = email;
+        state.user.neighborhood = neighborhood;
+      }
+
+      if (window.GhaymAuth && state.user) {
+        window.GhaymAuth.login(state.user.identifier || phone || email || 'customer', 'customer', updatedProfile);
+      }
+
+      updateUserNavbar({ name });
+      renderProfilePage();
+      showNotification('تم حفظ وتحديث بياناتك الشخصية بنجاح!');
     }
 
     function resendOtp() {

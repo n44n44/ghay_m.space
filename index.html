@@ -272,79 +272,69 @@
       <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10">
 
         <!-- HERO SECTION -->
-        <section class="hero-cloud-shape bg-brand-navy text-white p-6 sm:p-10 lg:p-12 shadow-xl border border-white/10" data-purpose="hero-banner">
-          <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- HERO ADVERTISING BANNER (Pinterest Aesthetic & Real Photography) -->
+        <section class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-brand-navy via-[#172a46] to-[#0c1a2d] text-white shadow-2xl border border-white/10" data-purpose="hero-banner">
+          <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay pointer-events-none" style="background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=80');"></div>
+          <div class="absolute -top-24 -left-24 w-72 h-72 bg-brand-sky/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             
-            <div class="lg:col-span-7 space-y-6 text-right">
-              <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-sky border border-white/10">
+            <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-right">
+              <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-brand-sky border border-white/15 shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span>المنصة الأولى المعتمدة في المكلا 📍</span>
+                <span>سوق المكلا الإلكتروني الأول 📍 عروض حصرية اليوم</span>
               </div>
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight">
-                كل ما تحتاجه في <span class="text-brand-sky underline decoration-brand-gold decoration-wavy decoration-2">المكلا</span>، بين يديك الآن
+
+              <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight sm:leading-snug tracking-tight">
+                أرقى منتجات <span class="text-brand-sky underline decoration-brand-gold decoration-wavy decoration-2">حضرموت</span>، تصلك لباب بيتك
               </h1>
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-                اكتشف أشهر متاجر حضرموت وأفضل إبداعات الأسر المنتجة المحلية. عطور وبخور، مأكولات منزلية، حرف وفضيات مع خدمة التوصيل السريع لجميع الأحياء.
+
+              <p class="text-slate-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
+                بخور دوعني فاخر، عسل سدر بلدي أصلي، فضيات منقوشة، وإبداعات الأسر المنتجة في المكلا بتوصيل فوري ودفع آمن عند الاستلام.
               </p>
               
-              <div class="flex flex-wrap items-center gap-4 pt-2">
-                <button onclick="navigateTo('categories')" class="bg-brand-sky hover:bg-[#43a9e2] text-white px-7 py-3.5 rounded-2xl font-extrabold text-sm shadow-lg badge-shadow transition-all flex items-center gap-2.5 active:scale-95">
-                  <i class="fa-solid fa-shapes"></i>
-                  <span>تصفح جميع الأقسام</span>
+              <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+                <button onclick="navigateTo('search')" class="bg-gradient-to-r from-brand-sky to-[#299ad1] hover:brightness-110 text-white px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm shadow-lg shadow-brand-sky/30 transition-all flex items-center gap-2 active:scale-95">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                  <span>تسوق العروض الآن</span>
                 </button>
-                <button onclick="navigateTo('search')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-2xl font-bold text-sm backdrop-blur-md transition-all flex items-center gap-2">
-                  <i class="fa-solid fa-fire text-brand-gold"></i>
-                  <span>استكشف عروض اليوم</span>
+                <button onclick="navigateTo('categories')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm backdrop-blur-md transition-all flex items-center gap-1.5">
+                  <i class="fa-solid fa-shapes text-brand-gold"></i>
+                  <span>الأقسام (7)</span>
                 </button>
               </div>
 
-              <!-- Quick Trust Points -->
-              <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs text-slate-300">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
-                  <span>متاجر موثقة ومعتمدة</span>
+              <!-- Badges Strip -->
+              <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-[10px] sm:text-xs text-slate-300 font-semibold">
+                <div class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-certificate text-emerald-400 text-xs sm:text-sm"></i>
+                  <span>متاجر معتمدة</span>
                 </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-truck-fast text-brand-sky text-sm"></i>
-                  <span>توصيل فوري خلال ساعتين</span>
+                <div class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-truck-fast text-brand-sky text-xs sm:text-sm"></i>
+                  <span>توصيل ساعتين</span>
                 </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-wallet text-brand-gold text-sm"></i>
-                  <span>دفع عند الاستلام وكريمي</span>
+                <div class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-wallet text-brand-gold text-xs sm:text-sm"></i>
+                  <span>دفع كاش وكريمي</span>
                 </div>
               </div>
             </div>
 
-            <!-- Hero Feature Card -->
-            <div class="lg:col-span-5 relative flex justify-center">
-              <div class="relative w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/15 p-6 rounded-3xl shadow-2xl text-white">
-                <div class="flex items-center justify-between pb-4 border-b border-white/10">
-                  <div class="flex items-center gap-2.5">
-                    <img class="w-10 h-10 rounded-xl object-contain bg-white/10 p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjJNLY1b5l0buKQM-sAB1XrwxoyYNTMASIs0E7Sdawii7i0H14LxSNOQe2LQEHdXj_vATrlVxaWE3eTcXnIRTImS7GgrpGevpSUNoVSdbrNBVEy5UVIIFg9uyK9V2T3ZbBZz5Jpfa99H7x_IJ81SaZVPaIYu5OddGh1q5JRTqDwRGxPJbO8Lq4M7Mlim2VtnLrdN7ImqPiEpmdDMUBcVLnUlzo3Y69jRi2gCDsrUbC3D1eI3EaKk7Ww6bD_lvWAOlRg">
-                    <div>
-                      <h4 class="font-bold text-sm text-white">متجر المكلا المختار</h4>
-                      <p class="text-[11px] text-brand-sky">عطور وبخور دوعنية أصلية</p>
-                    </div>
+            <!-- Visual Advertising Showcase Card with Real Photo -->
+            <div class="lg:col-span-5 relative mt-2 lg:mt-0">
+              <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80" alt="عطور وبخور غيم سبيس الفاخرة" class="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-4 sm:p-5">
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <span class="bg-brand-gold text-brand-navy text-[10px] font-black px-2.5 py-1 rounded-lg shadow">عرض اليوم الخاص 50%</span>
+                    <span class="text-white text-xs font-bold flex items-center gap-1">
+                      <i class="fa-solid fa-star text-brand-gold text-[11px]"></i> 4.9 تقييم
+                    </span>
                   </div>
-                  <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-extrabold px-2.5 py-1 rounded-full">مفتوح الآن</span>
+                  <h3 class="text-white font-extrabold text-sm sm:text-base leading-snug">باقة أصالة حضرموت (بخور + عسل دوعني)</h3>
+                  <p class="text-slate-300 text-[11px] mt-0.5">توصيل فوري مجاني داخل أحياء المكلا (الشرج، الديس، فوة)</p>
                 </div>
-
-                <div class="py-4 space-y-3">
-                  <div class="flex items-center justify-between text-xs bg-white/5 p-3 rounded-xl border border-white/5">
-                    <span class="text-slate-300">أعلى تقييم بالمكلا ⭐</span>
-                    <span class="font-bold text-brand-gold">4.9 / 5.0 (240 تقييم)</span>
-                  </div>
-                  <div class="flex items-center justify-between text-xs bg-white/5 p-3 rounded-xl border border-white/5">
-                    <span class="text-slate-300">مناطق التوصيل الفوري</span>
-                    <span class="font-bold text-white">الشرج - فوه - الديس</span>
-                  </div>
-                </div>
-
-                <button onclick="navigateTo('search')" class="w-full bg-gradient-to-r from-brand-sky to-brand-purple text-white py-3 rounded-xl font-bold text-xs transition-opacity hover:opacity-95 shadow-md flex items-center justify-center gap-2">
-                  <span>طلب الآن مع توصيل مجاني</span>
-                  <i class="fa-solid fa-arrow-left"></i>
-                </button>
               </div>
             </div>
 

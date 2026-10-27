@@ -515,7 +515,7 @@
 <th class="py-3.5 px-4 text-center">الإجراءات</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant/15 text-body-md font-body-md">
+<tbody id="merchantProductsTbody" class="divide-y divide-outline-variant/15 text-body-md font-body-md">
 <!-- Product Row 1: عطر نفحات حضرموت الفاخر -->
 <tr class="hover:bg-surface-container-high/40 transition-colors group">
 <td class="py-4 px-4 text-center">
@@ -3654,6 +3654,117 @@
 
     </div>
   
+  <!-- Modern Clean Modal: Add / Edit Product with Studio Image Upload -->
+  <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+    <div class="bg-surface-container border border-secondary/30 rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-outline-variant/20 mb-6">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">add_photo_alternate</span>
+          </div>
+          <div>
+            <h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">إضافة منتج جديد للمتجر</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">أضف بيانات المنتج وصورته من الاستديو لعرضه بسوق غيم سبيس</p>
+          </div>
+        </div>
+        <button onclick="closeProductModal()" class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface flex items-center justify-center transition">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- Add Product Form -->
+      <form onsubmit="handleSaveMerchantProduct(event)" class="space-y-4">
+        
+        <!-- Studio Image Upload Section -->
+        <div class="space-y-1.5">
+          <label class="block text-label-md font-label-md font-bold text-on-surface">صورة المنتج من الاستديو</label>
+          <div class="border-2 border-dashed border-secondary/40 hover:border-secondary rounded-2xl p-4 text-center bg-surface-container-lowest/60 hover:bg-surface-container-lowest transition cursor-pointer relative group" onclick="document.getElementById('productImageStudioInput').click()">
+            <input id="productImageStudioInput" type="file" accept="image/*" class="hidden" onchange="handleProductImagePreview(event)">
+            
+            <div id="productImagePreviewContainer" class="hidden relative w-32 h-32 mx-auto mb-2 rounded-xl overflow-hidden border border-secondary/30 shadow-md">
+              <img id="productImagePreview" src="" alt="معاينة المنتج" class="w-full h-full object-cover">
+              <span class="absolute inset-0 bg-black/40 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">تغيير الصورة</span>
+            </div>
+
+            <div id="productImagePlaceholder" class="space-y-2 py-3">
+              <div class="w-12 h-12 mx-auto rounded-full bg-secondary/15 text-secondary flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl">perm_media</span>
+              </div>
+              <div>
+                <p class="text-label-md font-bold text-secondary">اضغط هنا لاختيار صورة من الاستديو</p>
+                <p class="text-[11px] text-on-surface-variant">يدعم صور PNG, JPG, WebP من الهاتف أو الكمبيوتر</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Name -->
+        <div class="space-y-1">
+          <label class="block text-label-md font-bold text-on-surface">اسم المنتج</label>
+          <input id="newProdName" required type="text" placeholder="مثال: عطر بخور العود الملكي" class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl px-4 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Price -->
+          <div class="space-y-1">
+            <label class="block text-label-md font-bold text-on-surface">السعر (ريال يمني)</label>
+            <div class="relative">
+              <input id="newProdPrice" required type="number" min="100" placeholder="مثال: 15000" class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl pr-4 pl-12 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-on-surface-variant">ر.ي</span>
+            </div>
+          </div>
+
+          <!-- Stock Quantity -->
+          <div class="space-y-1">
+            <label class="block text-label-md font-bold text-on-surface">الكمية المتوفرة</label>
+            <input id="newProdStock" required type="number" min="1" value="10" placeholder="10" class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl px-4 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none">
+          </div>
+        </div>
+
+        <!-- Category & SKU -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="block text-label-md font-bold text-on-surface">القسم والتصنيف</label>
+            <select id="newProdCategory" class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl px-4 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none cursor-pointer">
+              <option value="عطور وبخور">عطور وبخور</option>
+              <option value="عسل حضرمي طبيعي">عسل حضرمي طبيعي</option>
+              <option value="مأكولات وأسر منتجة">مأكولات وأسر منتجة</option>
+              <option value="حرف يدوية وتراث">حرف يدوية وتراث</option>
+              <option value="كونكريت وشموع">كونكريت وشموع</option>
+              <option value="أزياء وملابس">أزياء وملابس</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-label-md font-bold text-on-surface">رمز SKU التعريفي</label>
+            <input id="newProdSku" type="text" placeholder="تلقائي: GHY-001" class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl px-4 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="space-y-1">
+          <label class="block text-label-md font-bold text-on-surface">وصف المنتج ومميزاته</label>
+          <textarea id="newProdDesc" rows="3" placeholder="اكتب نبذة جذابة توضح تفاصيل ومكونات المنتج لزبائن المكلا..." class="w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl px-4 py-2.5 text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none resize-none"></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-outline-variant/20">
+          <button type="button" onclick="closeProductModal()" class="px-5 py-2.5 rounded-xl border border-outline-variant/30 text-on-surface hover:bg-surface-container-high text-xs font-bold transition">
+            إلغاء
+          </button>
+          <button type="submit" id="saveProductBtn" class="bg-secondary hover:bg-secondary-fixed text-on-secondary px-6 py-2.5 rounded-xl text-xs font-bold shadow-lg shadow-secondary/25 transition active:scale-95 flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">cloud_upload</span>
+            <span>حفظ ونشر المنتج في المتجر</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
   </main>
 
   <footer class="bg-[#040f1c] border-t border-[#44474d]/20 py-6 text-center text-xs text-slate-500">
@@ -3764,13 +3875,173 @@
       alert('تم التبديل إلى نطاق: ' + s.name + ' - كافة البيانات المعروضة مقتصرة تماماً على هذا المتجر.');
     }
 
-    function handleAddProduct(e) {
-      if (e) e.preventDefault();
-      const title = document.getElementById('prodNameInput')?.value || 'منتج جديد';
-      const price = parseInt(document.getElementById('prodPriceInput')?.value) || 5000;
-      alert(`تم نشر المنتج "${title}" بسعر ${price.toLocaleString()} ر.ي بنجاح في متجرك على سوق غيم سبيس!`);
-      navVendor('v-products');
+    let currentProductImageBase64 = '';
+
+    function handleProductImagePreview(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        alert('يرجى اختيار ملف صورة صالح من الاستديو.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        currentProductImageBase64 = e.target.result;
+        const preview = document.getElementById('productImagePreview');
+        const container = document.getElementById('productImagePreviewContainer');
+        const placeholder = document.getElementById('productImagePlaceholder');
+
+        if (preview && container && placeholder) {
+          preview.src = currentProductImageBase64;
+          container.classList.remove('hidden');
+          placeholder.classList.add('hidden');
+        }
+      };
+      reader.readAsDataURL(file);
     }
+
+    function closeProductModal() {
+      document.getElementById('product-modal').classList.add('hidden');
+      currentProductImageBase64 = '';
+      const previewContainer = document.getElementById('productImagePreviewContainer');
+      const placeholder = document.getElementById('productImagePlaceholder');
+      if (previewContainer) previewContainer.classList.add('hidden');
+      if (placeholder) placeholder.classList.remove('hidden');
+    }
+
+    async function handleSaveMerchantProduct(e) {
+      e.preventDefault();
+      const saveBtn = document.getElementById('saveProductBtn');
+      const name = document.getElementById('newProdName').value.trim();
+      const price = parseInt(document.getElementById('newProdPrice').value) || 0;
+      const stock = parseInt(document.getElementById('newProdStock').value) || 1;
+      const category = document.getElementById('newProdCategory').value;
+      const sku = document.getElementById('newProdSku').value.trim() || ('GHY-' + Math.floor(1000 + Math.random() * 9000));
+      const desc = document.getElementById('newProdDesc').value.trim();
+      
+      const defaultImg = 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=500&q=80';
+      const finalImage = currentProductImageBase64 || defaultImg;
+
+      if (!name || price <= 0) {
+        alert('يرجى كتابة اسم المنتج وتحديد سعر صالح.');
+        return;
+      }
+
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري الحفظ...';
+
+      const newProduct = {
+        id: 'prod_' + Date.now(),
+        name_ar: name,
+        title: name,
+        price_yer: price,
+        price: price,
+        stock_quantity: stock,
+        stock: stock,
+        category: category,
+        sku: sku,
+        description: desc,
+        image_url: finalImage,
+        image: finalImage,
+        rating: 5.0,
+        sales_count: 0,
+        is_active: true,
+        created_at: new Date().toISOString()
+      };
+
+      // 1. Save to Supabase Cloud Database if configured
+      if (window.GhaymDB && window.GhaymDB.createProduct) {
+        try {
+          await window.GhaymDB.createProduct(newProduct);
+        } catch(err) {
+          console.warn('Supabase product sync notice:', err.message);
+        }
+      }
+
+      // 2. Save to LocalStorage merchant products
+      let localProducts = [];
+      try {
+        localProducts = JSON.parse(localStorage.getItem('ghaym_merchant_products')) || [];
+      } catch(err) {}
+
+      localProducts.unshift(newProduct);
+      localStorage.setItem('ghaym_merchant_products', JSON.stringify(localProducts));
+
+      // 3. Insert row directly to table
+      prependProductRowToTable(newProduct);
+
+      saveBtn.disabled = false;
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-base">cloud_upload</span> <span>حفظ ونشر المنتج في المتجر</span>';
+      
+      closeProductModal();
+      alert(`تهانينا! تم حفظ ونشر "${name}" بنجاح في متجرك وسوق غيم سبيس.`);
+    }
+
+    function prependProductRowToTable(p) {
+      const tbody = document.getElementById('merchantProductsTbody');
+      if (!tbody) return;
+
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-surface-container-high/40 transition-colors group bg-secondary/5';
+      tr.innerHTML = `
+        <td class="py-4 px-4 text-center">
+          <input class="rounded bg-surface-container-high border-outline-variant/40 text-secondary focus:ring-secondary focus:ring-offset-background" type="checkbox"/>
+        </td>
+        <td class="py-4 px-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-14 h-14 rounded-xl bg-surface-container-lowest overflow-hidden flex-shrink-0 border border-secondary/20 relative shadow-md">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="${p.image_url || p.image}" alt="${p.name_ar}"/>
+            </div>
+            <div class="space-y-0.5">
+              <span class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-secondary transition-colors block">
+                ${p.name_ar}
+              </span>
+              <div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">${p.category}</span>
+                <span>•</span>
+                <span>رمز SKU: ${p.sku}</span>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="py-4 px-4">
+          <div class="space-y-0.5">
+            <div class="flex items-baseline gap-1 text-secondary font-bold font-label-lg text-label-lg">
+              <span>${Number(p.price_yer || p.price).toLocaleString()}</span>
+              <span class="text-label-sm font-normal text-on-surface-variant">ر.ي</span>
+            </div>
+          </div>
+        </td>
+        <td class="py-4 px-4">
+          <span class="text-on-surface font-bold">${p.stock_quantity || p.stock} قطعة</span>
+        </td>
+        <td class="py-4 px-4">
+          <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">نشط ومعروض</span>
+        </td>
+        <td class="py-4 px-4">
+          <span class="text-on-surface-variant text-xs">جديد (0 طلب)</span>
+        </td>
+        <td class="py-4 px-4 text-center">
+          <button onclick="alert('تم تفعيل التعديل السريع للمنتج')" class="p-1.5 rounded-lg text-secondary hover:bg-secondary/15 transition" title="تعديل">
+            <span class="material-symbols-outlined text-lg">edit</span>
+          </button>
+        </td>
+      `;
+      tbody.prepend(tr);
+    }
+
+    function loadSavedMerchantProducts() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('ghaym_merchant_products')) || [];
+        saved.forEach(p => prependProductRowToTable(p));
+      } catch(err) {}
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadSavedMerchantProducts();
+    });
   </script>
 </body>
 </html>

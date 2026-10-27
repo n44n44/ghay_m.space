@@ -4040,9 +4040,16 @@
 <div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
 <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
 <div class="flex items-center gap-4">
-<div class="relative">
-<img class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-secondary custom-glow" data-alt="Portrait of an elegant young Yemeni man with traditional features and neat grooming, wearing modern dark navy attire, soft golden and coastal blue nocturnal backlight, crisp cinematic photography style matching Ghaym Space branding in Mukalla." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0r3QOLyGiWvbp6aeBytAYOX5LstZjU-iGBvfQOzq4Yty6cQ8wB47zysdA5HfIJpGuNO7uh0wM7oce0MeGAxE3ACnbNN9t0B6RjJbWJ9_Nm8yjHBbgQ_-qiz5kyw0lIQpT-XG8RR3uJDccHVj2fp7npqSsMLAF-zH04jXPuhncAJdIvLPigjE1d1BbOE09027avakoiI1s4pdOJWuLZ2-8igRPYXtwK9TKC0s51ys"/>
-<span class="absolute bottom-0 right-0 w-5 h-5 bg-emerald-500 rounded-full border-2 border-surface-container flex items-center justify-center text-[10px] text-white" title="نشط الآن">✓</span>
+<div class="relative group cursor-pointer" onclick="document.getElementById('profileAvatarInput').click()">
+<img id="profileUserAvatarImg" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-secondary custom-glow transition group-hover:opacity-80" data-alt="صورة الملف الشخصي" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0r3QOLyGiWvbp6aeBytAYOX5LstZjU-iGBvfQOzq4Yty6cQ8wB47zysdA5HfIJpGuNO7uh0wM7oce0MeGAxE3ACnbNN9t0B6RjJbWJ9_Nm8yjHBbgQ_-qiz5kyw0lIQpT-XG8RR3uJDccHVj2fp7npqSsMLAF-zH04jXPuhncAJdIvLPigjE1d1BbOE09027avakoiI1s4pdOJWuLZ2-8igRPYXtwK9TKC0s51ys"/>
+<div class="absolute inset-0 bg-black/40 rounded-full flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+  <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+  <span class="text-[9px] font-bold">الاستديو</span>
+</div>
+<span class="absolute bottom-0 right-0 w-6 h-6 bg-secondary text-on-secondary rounded-full border-2 border-surface-container flex items-center justify-center text-xs shadow-md" title="تغيير الصورة من الاستديو">
+  <span class="material-symbols-outlined text-[13px]">edit</span>
+</span>
+<input id="profileAvatarInput" type="file" accept="image/*" class="hidden" onchange="handleProfileAvatarUpload(event)"/>
 </div>
 <div>
 <div class="flex items-center gap-2.5">
@@ -7053,6 +7060,12 @@
       const email = user.email || (profile && profile.email) || '';
       const neighborhood = user.neighborhood || (profile && profile.neighborhood) || 'حي الشرج، المكلا';
 
+      const avatar = (profile && profile.avatar) || (user && user.avatar);
+      const avatarImg = document.getElementById('profileUserAvatarImg');
+      if (avatarImg && avatar) {
+        avatarImg.src = avatar;
+      }
+
       const welcomeName = document.getElementById('profileWelcomeName');
       if (welcomeName) welcomeName.textContent = name;
 
@@ -7070,6 +7083,35 @@
 
       const inputNeigh = document.getElementById('profileInputNeighborhood');
       if (inputNeigh) inputNeigh.value = neighborhood;
+    }
+
+    function handleProfileAvatarUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        showNotification('يرجى اختيار ملف صورة صالح من الاستديو');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const base64Img = e.target.result;
+        const avatarImg = document.getElementById('profileUserAvatarImg');
+        if (avatarImg) avatarImg.src = base64Img;
+
+        let profile = {};
+        try {
+          profile = JSON.parse(localStorage.getItem('ghaym_customer_profile')) || {};
+        } catch(err) {}
+
+        profile.avatar = base64Img;
+        localStorage.setItem('ghaym_customer_profile', JSON.stringify(profile));
+        
+        if (state.user) state.user.avatar = base64Img;
+        showNotification('تم تحديث وتثبيت صورة ملفك الشخصي من الاستديو بنجاح! 📸');
+      };
+      reader.readAsDataURL(file);
     }
 
     function saveUserProfile() {

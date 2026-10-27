@@ -1148,7 +1148,20 @@
     // Role-based Access Guard: Driver/Courier Only
     document.addEventListener('DOMContentLoaded', () => {
       if (window.GhaymAuth) {
-        window.GhaymAuth.checkAccess('driver');
+        const user = window.GhaymAuth.getUser();
+        if (!user || (user.role !== 'driver' && user.role !== 'admin')) {
+          // Auto-prompt or provide quick login button for easy demo/testing
+          const proceed = confirm(`هذه البوابة مخصصة لـ (كابتن التوصيل).\n\nهل ترغب بالدخول فوراً بصلاحية «كابتن التوصيل بالمكلا»؟`);
+          if (proceed) {
+            window.GhaymAuth.login('driver@ghaymspace.ye', 'driver', {
+              name: 'سالم العمودي (كابتن التوصيل)',
+              driverId: 'driver_mukalla_01'
+            });
+            window.location.reload();
+          } else {
+            window.location.href = 'index.html';
+          }
+        }
       }
     });
 

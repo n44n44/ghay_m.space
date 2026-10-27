@@ -920,7 +920,20 @@
   function applyGlobalStyles() {
     const style = document.createElement('style');
     style.innerHTML = `
-      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      html, body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      img, video, canvas, svg {
+        max-width: 100%;
+        height: auto;
+      }
+      ::-webkit-scrollbar { width: 5px; height: 5px; }
       ::-webkit-scrollbar-track { background: #091422; }
       ::-webkit-scrollbar-thumb { background: #1f334d; border-radius: 9999px; }
       ::-webkit-scrollbar-thumb:hover { background: #54b9f2; }

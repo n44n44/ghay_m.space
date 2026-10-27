@@ -121,9 +121,17 @@
       box-shadow: 0 0 0 3px rgba(84, 185, 242, 0.22);
       transform: translateY(-2px);
     }
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
-<body class="bg-[#F3F6FB] text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-sky selection:text-white">
+<body class="bg-[#F3F6FB] text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-sky selection:text-white overflow-x-hidden w-full">
 
   <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
   <aside class="bg-brand-darkBlue text-slate-300 text-xs py-2 px-4 border-b border-white/10 z-50">

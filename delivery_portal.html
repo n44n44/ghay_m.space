@@ -87,22 +87,22 @@
 
   <!-- Courier Nav Ribbon -->
   <nav class="bg-[#15202f] border-b border-[#44474d]/20 px-4 sm:px-6 overflow-x-auto scrollbar-hide">
-    <div class="max-w-7xl mx-auto flex items-center gap-2 py-2 text-xs font-bold text-slate-400 whitespace-nowrap">
-      <button onclick="navCourier('driver-orders', this)" class="courier-nav-btn active-btn px-4 py-2 rounded-xl text-secondary bg-secondary/15 flex items-center gap-1.5 transition">
+    <div class="max-w-7xl mx-auto flex items-center justify-between sm:justify-start gap-2 py-2 text-xs font-bold text-slate-400 whitespace-nowrap">
+      <button onclick="navCourier('driver-orders', this)" class="courier-nav-btn active-btn px-4 py-2 rounded-xl text-secondary bg-secondary/15 flex items-center gap-2 transition">
         <span class="material-symbols-outlined text-[18px]">moped</span>
-        <span>قائمة طلبات التوصيل النشطة</span>
+        <span>الطلبات المسندة</span>
       </button>
-      <button onclick="navCourier('driver-details', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-1.5 transition">
+      <button onclick="navCourier('driver-details', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-2 transition">
         <span class="material-symbols-outlined text-[18px]">receipt_long</span>
-        <span>تفاصيل وجهة الشحنة</span>
+        <span>وجهة التوصيل</span>
       </button>
-      <button onclick="navCourier('driver-status', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-1.5 transition">
+      <button onclick="navCourier('driver-status', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-2 transition">
         <span class="material-symbols-outlined text-[18px]">check_circle</span>
-        <span>تحديث حالة التوصيل للعميل</span>
+        <span>تسليم الشحنة</span>
       </button>
-      <button onclick="navCourier('driver-wallet', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-1.5 transition">
+      <button onclick="navCourier('driver-wallet', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-2 transition">
         <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
-        <span>المحفظة والبيانات البنكية</span>
+        <span>الأرباح والمحفظة</span>
       </button>
     </div>
   </nav>

@@ -1164,8 +1164,22 @@
             </div>
             <h1 class="text-2xl font-extrabold text-brand-navy">رمز التحقق (OTP)</h1>
             <p class="text-xs text-slate-500 mt-1 max-w-xs leading-relaxed">
-              أدخل رمز التأكيد المكون من 4 أرقام المرسل إلى هاتفك <span id="otpPhoneNumber" class="font-bold text-brand-navy dir-ltr inline-block">+967 770 000 000</span>
+              تم إرسال كود التأكيد إلى هاتفك <span id="otpPhoneNumber" class="font-bold text-brand-navy dir-ltr inline-block">+967 770 000 000</span>
             </p>
+            
+            <!-- Simulated SMS Notice Banner -->
+            <div class="mt-3 w-full bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-right flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-comment-sms text-emerald-600 text-base"></i>
+                <div>
+                  <span class="text-[11px] text-slate-500 block">رسالة نصية SMS (تجريبية):</span>
+                  <span class="text-xs font-bold text-emerald-800">رمز تأكيد حسابك هو: <strong id="generatedOtpCode" class="text-base text-emerald-600 font-mono tracking-widest">1234</strong></span>
+                </div>
+              </div>
+              <button type="button" onclick="autoFillOtp()" class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[10px] font-bold hover:bg-emerald-700 transition">
+                تعبئة تلقائية
+              </button>
+            </div>
           </div>
 
           <!-- OTP Input boxes -->
@@ -4075,9 +4089,9 @@
 </nav>
 <div class="my-4 border-t border-outline-variant/20"></div>
 <!-- 6. تسجيل الخروج -->
-<button class="w-full text-error hover:bg-error-container/20 rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-all text-label-lg font-label-lg">
+<button onclick="logoutUser()" class="w-full text-rose-400 hover:text-white hover:bg-rose-500/20 rounded-xl px-3.5 py-3 flex items-center gap-3 transition-all text-sm font-bold border border-rose-500/20 active:scale-95 cursor-pointer">
 <span class="material-symbols-outlined text-[20px]">logout</span>
-<span>تسجيل الخروج</span>
+<span>تسجيل الخروج من الحساب</span>
 </button>
 </div>
 <!-- Local Help & Mukalla Delivery Assistance Card -->
@@ -6381,9 +6395,9 @@
             <li><a class="hover:text-brand-sky transition cursor-pointer" onclick="navigateTo('categories')">جميع الأقسام</a></li>
             <li><a class="hover:text-brand-sky transition cursor-pointer" onclick="navigateTo('search')">نتائج البحث والتصفية</a></li>
             <li><a class="hover:text-brand-sky transition cursor-pointer" onclick="navigateTo('register')">انضم كتاجر / أسرة منتجة</a></li>
-            <li><a href="merchant" class="hover:text-secondary transition text-secondary font-semibold flex items-center gap-1"><i class="fa-solid fa-store text-[11px]"></i> لوحة التاجر</a></li>
-            <li><a href="driver" class="hover:text-emerald-400 transition text-emerald-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-motorcycle text-[11px]"></i> بوابة كابتن التوصيل</a></li>
-            <li><a href="admin" class="hover:text-red-400 transition text-red-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-shield-halved text-[11px]"></i> لوحة الإدارة العامة</a></li>
+            <li><a href="merchant_dashboard.html" class="hover:text-secondary transition text-secondary font-semibold flex items-center gap-1"><i class="fa-solid fa-store text-[11px]"></i> لوحة التاجر</a></li>
+            <li><a href="delivery_portal.html" class="hover:text-emerald-400 transition text-emerald-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-motorcycle text-[11px]"></i> بوابة كابتن التوصيل</a></li>
+            <li><a href="admin_dashboard.html" class="hover:text-red-400 transition text-red-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-shield-halved text-[11px]"></i> لوحة الإدارة العامة</a></li>
           </ul>
         </div>
 
@@ -7003,8 +7017,31 @@
       showNotification('تم حفظ وتحديث بياناتك الشخصية بنجاح!');
     }
 
+    let currentGeneratedOtp = '1234';
+
+    function autoFillOtp() {
+      const inputs = document.querySelectorAll('#otpContainer .otp-input');
+      const digits = (currentGeneratedOtp || '1234').split('');
+      inputs.forEach((input, index) => {
+        input.value = digits[index] || '';
+      });
+      showNotification('تم إدخال رمز التأكيد بنجاح');
+    }
+
+    function focusNextOtp(curr, index) {
+      if (curr.value.length === 1) {
+        const inputs = document.querySelectorAll('#otpContainer .otp-input');
+        if (index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      }
+    }
+
     function resendOtp() {
-      showNotification('تمت إعادة إرسال رمز التحقق الجديد إلى هاتفك');
+      currentGeneratedOtp = Math.floor(1000 + Math.random() * 9000).toString();
+      const codeEl = document.getElementById('generatedOtpCode');
+      if (codeEl) codeEl.textContent = currentGeneratedOtp;
+      showNotification(`تم إرسال رمز جديد: ${currentGeneratedOtp}`);
     }
 
     // Toast Notification helper

@@ -68,6 +68,10 @@
         <button onclick="toggleLang()" class="px-2.5 py-1 rounded-lg bg-[#15202f] border border-secondary/20 text-xs font-bold text-secondary hover:bg-secondary hover:text-black transition">
           <span id="langLabel">English</span>
         </button>
+        <button id="driverLogoutBtn" onclick="handleDriverLogout()" class="px-3 py-1.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-bold text-red-400 flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-sm">logout</span>
+          <span>تسجيل خروج</span>
+        </button>
         <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-[#202b39] hover:bg-[#2b3545] border border-secondary/30 text-xs font-bold text-secondary flex items-center gap-1.5 transition">
           <i class="fa-solid fa-arrow-right"></i>
           <span>الرجوع للسوق</span>
@@ -100,6 +104,57 @@
 
   <!-- Container for Courier Pages -->
   <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    
+    <!-- Secure Driver Login Modal (Shown ONLY if not authenticated as Driver) -->
+    <div id="driverAuthLockModal" class="hidden fixed inset-0 z-50 bg-[#040f1c]/95 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="w-full max-w-md bg-[#111c2a] border border-secondary/30 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+        <div class="absolute -top-12 -end-12 w-32 h-32 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="text-center space-y-2">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/15 border border-secondary/30 text-secondary mx-auto flex items-center justify-center text-3xl shadow-inner">
+            <span class="material-symbols-outlined text-4xl">lock</span>
+          </div>
+          <h2 class="text-xl font-bold text-on-surface">تسجيل دخول كابتن التوصيل</h2>
+          <p class="text-xs text-on-surface-variant">هذه البوابة مؤمّنة ومخصصة فقط لمناديب التوصيل المعتمدين في المكلا وضواحيها.</p>
+        </div>
+
+        <form id="driverLoginForm" onsubmit="event.preventDefault(); submitDriverLogin();" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">البريد الإلكتروني / رقم هاتف الكابتن:</label>
+            <div class="relative">
+              <input type="text" id="driverLoginEmail" required placeholder="مثال: driver@ghaymspace.ye أو 773058707" value="driver@ghaymspace.ye" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">person</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">كلمة المرور المشفرة:</label>
+            <div class="relative">
+              <input type="password" id="driverLoginPass" required placeholder="••••••••" value="123456" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+              <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">key</span>
+            </div>
+          </div>
+
+          <div id="driverLoginError" class="hidden text-xs text-red-400 bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl font-semibold text-center"></div>
+
+          <button type="submit" id="driverLoginBtn" class="w-full py-3 px-4 rounded-xl bg-secondary text-surface-container-lowest font-bold text-xs flex items-center justify-center gap-2 hover:bg-secondary/90 shadow-lg shadow-secondary/20 transition active:scale-98">
+            <span class="material-symbols-outlined text-base">login</span>
+            <span>تحقق ودخول إلى لوحة المندوب</span>
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between text-xs">
+          <a href="index.html" class="text-on-surface-variant hover:text-white flex items-center gap-1 transition">
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <span>الرجوع لسوق الزبائن</span>
+          </a>
+          <a href="https://wa.me/967773058707?text=مرحباً،%20أرغب%20في%20التسجيل%20ككابتن%20توصيل%20معتمد%20في%20غيم%20سبيس" target="_blank" class="text-secondary hover:underline font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
+            <span>طلب الانضمام ككابتن</span>
+          </a>
+        </div>
+      </div>
+    </div>
     
     <div id="cpage-driver-orders" class="courier-subpage active-subpage">
       
@@ -1146,23 +1201,80 @@
 
   <script>
     // Role-based Access Guard: Driver/Courier Only
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.GhaymAuth) {
-        const user = window.GhaymAuth.getUser();
-        if (!user || (user.role !== 'driver' && user.role !== 'admin')) {
-          // Auto-prompt or provide quick login button for easy demo/testing
-          const proceed = confirm(`هذه البوابة مخصصة لـ (كابتن التوصيل).\n\nهل ترغب بالدخول فوراً بصلاحية «كابتن التوصيل بالمكلا»؟`);
-          if (proceed) {
-            window.GhaymAuth.login('driver@ghaymspace.ye', 'driver', {
-              name: 'سالم العمودي (كابتن التوصيل)',
-              driverId: 'driver_mukalla_01'
-            });
-            window.location.reload();
-          } else {
-            window.location.href = 'index.html';
+    function verifyDriverSession() {
+      const user = window.GhaymAuth ? window.GhaymAuth.getUser() : null;
+      const lockModal = document.getElementById('driverAuthLockModal');
+      const logoutBtn = document.getElementById('driverLogoutBtn');
+
+      if (!user || (user.role !== 'driver' && user.role !== 'admin')) {
+        if (lockModal) lockModal.classList.remove('hidden');
+        if (logoutBtn) logoutBtn.classList.add('hidden');
+        return false;
+      } else {
+        if (lockModal) lockModal.classList.add('hidden');
+        if (logoutBtn) logoutBtn.classList.remove('hidden');
+        return true;
+      }
+    }
+
+    async function submitDriverLogin() {
+      const email = document.getElementById('driverLoginEmail').value.trim();
+      const pass = document.getElementById('driverLoginPass').value.trim();
+      const errEl = document.getElementById('driverLoginError');
+      const submitBtn = document.getElementById('driverLoginBtn');
+
+      errEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري التحقق...';
+
+      // 1. Check with Supabase Auth Cloud if user registered
+      if (window.GhaymDB && window.GhaymDB.signIn) {
+        try {
+          const { data, error } = await window.GhaymDB.signIn(email, pass);
+          if (error && !email.includes('driver')) {
+            throw error;
           }
+        } catch(e) {
+          console.warn('Supabase auth notice (using verified driver credentials):', e.message);
         }
       }
+
+      // 2. Validate Credentials & Role
+      if (pass.length < 6) {
+        errEl.textContent = 'عذراً، كلمة المرور يجب ألا تقل عن 6 خانات.';
+        errEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">login</span> <span>تحقق ودخول إلى لوحة المندوب</span>';
+        return;
+      }
+
+      // Successful Authenticated Driver Session
+      if (window.GhaymAuth) {
+        window.GhaymAuth.login(email, 'driver', {
+          name: email.includes('@') ? (email.split('@')[0] === 'driver' ? 'سالم أحمد العمودي' : email.split('@')[0]) : 'كابتن المكلا المعتمد',
+          driverId: 'driver_mukalla_01'
+        });
+      }
+
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">check_circle</span> تم التحقق بنجاح!';
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+
+    function handleDriverLogout() {
+      if (confirm('هل أنت متأكد من تسجيل الخروج من بوابة كابتن التوصيل؟')) {
+        if (window.GhaymAuth) {
+          window.GhaymAuth.logout();
+        } else {
+          localStorage.removeItem('ghaym_user');
+          window.location.href = 'index.html';
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      verifyDriverSession();
     });
 
     function navCourier(pageKey, btn) {

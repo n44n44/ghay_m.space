@@ -91,6 +91,10 @@
         <span class="material-symbols-outlined text-[18px]">check_circle</span>
         <span>تحديث حالة التوصيل للعميل</span>
       </button>
+      <button onclick="navCourier('driver-wallet', this)" class="courier-nav-btn px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 flex items-center gap-1.5 transition">
+        <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+        <span>المحفظة والبيانات البنكية</span>
+      </button>
     </div>
   </nav>
 
@@ -916,6 +920,223 @@
 </div>
 
     </div>
+ 
+     <!-- SUBPAGE 4: محفظة الكابتن والبيانات البنكية ورقم التواصل -->
+     <div id="cpage-driver-wallet" class="courier-subpage space-y-6">
+       
+       <!-- Header Banner with Driver Profile Summary -->
+       <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-low border border-secondary/30 p-6 sm:p-8 shadow-xl">
+         <div class="absolute top-0 end-0 -mt-8 -me-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
+           <div class="flex items-center gap-4">
+             <div class="w-16 h-16 rounded-2xl bg-secondary/15 border-2 border-secondary/40 flex items-center justify-center text-secondary text-2xl font-black shadow-lg">
+               <span class="material-symbols-outlined text-3xl">sports_motorsports</span>
+             </div>
+             <div>
+               <div class="flex items-center gap-2">
+                 <h2 id="driverProfileDisplayName" class="text-xl sm:text-2xl font-bold text-on-surface">الكابتن: سالم أحمد العمودي</h2>
+                 <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-xs font-bold flex items-center gap-1">
+                   <span class="material-symbols-outlined text-sm">verified</span>
+                   كابتن معتمد
+                 </span>
+               </div>
+               <p class="text-xs text-on-surface-variant mt-1 flex items-center gap-2">
+                 <span><i class="fa-solid fa-location-dot text-secondary"></i> المكلا، حضرموت (قطاع الشرج والديس وفوة)</span>
+                 <span>•</span>
+                 <span id="driverProfilePhoneDisplay">773058707</span>
+               </p>
+             </div>
+           </div>
+
+           <!-- Earnings Quick Stats -->
+           <div class="flex items-center gap-3">
+             <div class="bg-surface-container-lowest/80 border border-secondary/30 rounded-xl px-4 py-3 text-start">
+               <span class="text-[11px] text-on-surface-variant block font-semibold">رصيد أرباح التوصيل المتاح:</span>
+               <span class="text-2xl font-black text-secondary">42,500 <span class="text-xs text-on-surface">ر.ي</span></span>
+             </div>
+             <button onclick="requestPayout()" class="px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-emerald-500/20 active:scale-95 transition">
+               <span class="material-symbols-outlined text-lg">payments</span>
+               <span>طلب سحب</span>
+             </button>
+           </div>
+         </div>
+       </div>
+
+       <!-- Two Columns Grid: Contact Info & Bank Details -->
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+         
+         <!-- Card 1: بيانات التواصل الميداني والواتساب -->
+         <div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-5 sm:p-6 space-y-5">
+           <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+             <div class="flex items-center gap-2.5">
+               <div class="w-9 h-9 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
+                 <span class="material-symbols-outlined text-xl">contact_phone</span>
+               </div>
+               <div>
+                 <h3 class="font-bold text-base text-on-surface">بيانات التواصل الميداني</h3>
+                 <p class="text-xs text-on-surface-variant">تظهر هذه الأرقام للزبائن والمتاجر للتنسيق الميداني</p>
+               </div>
+             </div>
+             <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">نشط</span>
+           </div>
+
+           <form id="driverContactForm" onsubmit="event.preventDefault(); saveDriverContact();" class="space-y-4">
+             <div>
+               <label class="block text-xs font-bold text-on-surface-variant mb-1.5">اسم الكابتن الكامل (كما يظهر للزبون):</label>
+               <div class="relative">
+                 <input type="text" id="driverInputName" value="سالم أحمد العمودي" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+                 <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">badge</span>
+               </div>
+             </div>
+
+             <div>
+               <label class="block text-xs font-bold text-on-surface-variant mb-1.5">رقم الهاتف الرئيسي للاتصال المباشر:</label>
+               <div class="relative">
+                 <input type="tel" id="driverInputPhone" value="773058707" placeholder="مثال: 773058707" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition dir-ltr text-end" dir="ltr">
+                 <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">call</span>
+               </div>
+               <span class="text-[10px] text-outline mt-1 block">يستخدمه العميل عند الضغط على زر (اتصال بالكابتن).</span>
+             </div>
+
+             <div>
+               <label class="block text-xs font-bold text-on-surface-variant mb-1.5">رقم الواتساب المعتمد (مع الرمز الدولي أو محلي):</label>
+               <div class="relative">
+                 <input type="tel" id="driverInputWhatsapp" value="967773058707" placeholder="967773058707" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition dir-ltr text-end" dir="ltr">
+                 <i class="fa-brands fa-whatsapp absolute end-3.5 top-3 text-emerald-400 text-lg pointer-events-none"></i>
+               </div>
+               <span class="text-[10px] text-outline mt-1 block">يفتح نافذة محادثة الواتساب الفورية مع الزبون للتنسيق وتثبيت الموقع.</span>
+             </div>
+
+             <div>
+               <label class="block text-xs font-bold text-on-surface-variant mb-1.5">منطقة / أحياء التغطية المفضلة في المكلا:</label>
+               <select id="driverInputDistrict" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 px-3 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+                 <option value="الكل" selected>جميع أحياء المكلا وضواحيها</option>
+                 <option value="الشرج">المكلا - الشرج وشارع الستين</option>
+                 <option value="الديس">المكلا - حي الديس والغليلة</option>
+                 <option value="المكلا القديمة">المكلا القديمة وحي الشهيد</option>
+                 <option value="فوة">فوة (القديمة، الإنشاءات، المتضررين)</option>
+                 <option value="روكب وبويش">روكب وبويش وجول مسحة</option>
+               </select>
+             </div>
+
+             <button type="submit" class="w-full py-3 px-4 rounded-xl bg-secondary text-surface-container-lowest font-bold text-xs flex items-center justify-center gap-2 hover:bg-secondary/90 transition active:scale-98">
+               <span class="material-symbols-outlined text-base">save</span>
+               <span>حفظ وتحديث بيانات التواصل</span>
+             </button>
+           </form>
+         </div>
+
+         <!-- Card 2: الحسابات البنكية والمحافظ لتحويل الأرباح -->
+         <div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-5 sm:p-6 space-y-5">
+           <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+             <div class="flex items-center gap-2.5">
+               <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                 <span class="material-symbols-outlined text-xl">account_balance</span>
+               </div>
+               <div>
+                 <h3 class="font-bold text-base text-on-surface">الحسابات البنكية ومحافظ التحصيل</h3>
+                 <p class="text-xs text-on-surface-variant">الحسابات المعتمدة لتحويل مستحقات وعمولات التوصيل</p>
+               </div>
+             </div>
+             <span class="text-xs text-secondary font-bold bg-secondary/10 px-2 py-0.5 rounded border border-secondary/20">محلي معتمد</span>
+           </div>
+
+           <form id="driverBankForm" onsubmit="event.preventDefault(); saveDriverBank();" class="space-y-4">
+             
+             <!-- خيار الكريمي -->
+             <div class="p-3.5 rounded-xl bg-surface-container/70 border border-outline-variant/20 space-y-2">
+               <div class="flex items-center justify-between">
+                 <label class="text-xs font-bold text-on-surface flex items-center gap-2">
+                   <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                   <span>حساب بنك الكريمي (حساب مميز):</span>
+                 </label>
+                 <span class="text-[10px] text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded">بنك الكريمي</span>
+               </div>
+               <div class="relative">
+                 <input type="text" id="driverKuraimiAcc" value="3001234567" placeholder="أدخل رقم حساب الكريمي المميز" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2 px-3 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition dir-ltr text-end" dir="ltr">
+                 <span class="material-symbols-outlined absolute end-3 top-2 text-outline text-base pointer-events-none">credit_card</span>
+               </div>
+               <input type="text" id="driverKuraimiName" value="سالم أحمد عمر العمودي" placeholder="اسم صاحب الحساب في الكريمي" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-1.5 px-3 text-xs text-on-surface focus:border-secondary focus:outline-none transition">
+             </div>
+
+             <!-- خيار محفظة ون كاش أو بيس -->
+             <div class="p-3.5 rounded-xl bg-surface-container/70 border border-outline-variant/20 space-y-2">
+               <div class="flex items-center justify-between">
+                 <label class="text-xs font-bold text-on-surface flex items-center gap-2">
+                   <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+                   <span>رقم محفظة ون كاش (OneCash):</span>
+                 </label>
+                 <span class="text-[10px] text-blue-300 font-bold bg-blue-500/10 px-2 py-0.5 rounded">محفظة ون كاش</span>
+               </div>
+               <div class="relative">
+                 <input type="tel" id="driverOnecashAcc" value="773058707" placeholder="رقم هاتف محفظة ون كاش" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2 px-3 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition dir-ltr text-end" dir="ltr">
+                 <span class="material-symbols-outlined absolute end-3 top-2 text-outline text-base pointer-events-none">phone_iphone</span>
+               </div>
+             </div>
+
+             <!-- حساب بنكي إضافي (العمقي / القعيطي) -->
+             <div class="p-3.5 rounded-xl bg-surface-container/70 border border-outline-variant/20 space-y-2">
+               <div class="flex items-center justify-between">
+                 <label class="text-xs font-bold text-on-surface flex items-center gap-2">
+                   <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                   <span>حساب بنك القعيطي / العمقي للصرافة:</span>
+                 </label>
+                 <span class="text-[10px] text-emerald-300 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">تحويل محلي</span>
+               </div>
+               <input type="text" id="driverOmqyAcc" value="العمقي: 12894002" placeholder="اسم المنشأة ورقم الحساب" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2 px-3 text-sm text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/40 focus:outline-none transition">
+             </div>
+
+             <button type="submit" class="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition active:scale-98">
+               <span class="material-symbols-outlined text-base">check_circle</span>
+               <span>حفظ وتثبيت الحسابات البنكية</span>
+             </button>
+           </form>
+         </div>
+
+       </div>
+
+       <!-- Recent Payout Transactions History -->
+       <div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-5 sm:p-6 space-y-4">
+         <div class="flex items-center justify-between">
+           <h3 class="font-bold text-sm text-on-surface flex items-center gap-2">
+             <span class="material-symbols-outlined text-secondary text-lg">history</span>
+             <span>سجل عمليات التحويل وسحب المستحقات الأخيرة</span>
+           </h3>
+           <span class="text-xs text-on-surface-variant">تحديث فوري</span>
+         </div>
+
+         <div class="overflow-x-auto">
+           <table class="w-full text-start text-xs">
+             <thead>
+               <tr class="border-b border-outline-variant/20 text-on-surface-variant font-bold pb-2">
+                 <th class="py-2.5 text-start">رقم المعاملة</th>
+                 <th class="py-2.5 text-start">التاريخ والوقت</th>
+                 <th class="py-2.5 text-start">الحساب المستلم</th>
+                 <th class="py-2.5 text-start">المبلغ المسحوب</th>
+                 <th class="py-2.5 text-start">حالة التحويل</th>
+               </tr>
+             </thead>
+             <tbody class="divide-y divide-outline-variant/15 text-on-surface font-semibold">
+               <tr>
+                 <td class="py-3 font-mono text-secondary">#TX-94021</td>
+                 <td class="py-3 text-on-surface-variant">26 أكتوبر 2026 - 08:30 م</td>
+                 <td class="py-3">بنك الكريمي (حساب: 3001234567)</td>
+                 <td class="py-3 text-emerald-400 font-bold font-mono">35,000 ر.ي</td>
+                 <td class="py-3"><span class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">تم الإيداع بنجاح</span></td>
+               </tr>
+               <tr>
+                 <td class="py-3 font-mono text-secondary">#TX-91048</td>
+                 <td class="py-3 text-on-surface-variant">22 أكتوبر 2026 - 04:15 م</td>
+                 <td class="py-3">محفظة ون كاش (773058707)</td>
+                 <td class="py-3 text-emerald-400 font-bold font-mono">22,500 ر.ي</td>
+                 <td class="py-3"><span class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">تم الإيداع بنجاح</span></td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+
+     </div>
   
   </main>
 
@@ -1076,8 +1297,80 @@
       }
     }
 
+    // Driver Wallet & Contact Profile Management
+    const DRIVER_PROFILE_KEY = 'ghaym_driver_profile';
+
+    function loadDriverProfile() {
+      const saved = localStorage.getItem(DRIVER_PROFILE_KEY);
+      if (saved) {
+        try {
+          const profile = JSON.parse(saved);
+          if (profile.name) {
+            document.getElementById('driverInputName').value = profile.name;
+            document.getElementById('driverProfileDisplayName').textContent = 'الكابتن: ' + profile.name;
+          }
+          if (profile.phone) {
+            document.getElementById('driverInputPhone').value = profile.phone;
+            document.getElementById('driverProfilePhoneDisplay').textContent = profile.phone;
+          }
+          if (profile.whatsapp) document.getElementById('driverInputWhatsapp').value = profile.whatsapp;
+          if (profile.district) document.getElementById('driverInputDistrict').value = profile.district;
+          if (profile.kuraimiAcc) document.getElementById('driverKuraimiAcc').value = profile.kuraimiAcc;
+          if (profile.kuraimiName) document.getElementById('driverKuraimiName').value = profile.kuraimiName;
+          if (profile.onecashAcc) document.getElementById('driverOnecashAcc').value = profile.onecashAcc;
+          if (profile.omqyAcc) document.getElementById('driverOmqyAcc').value = profile.omqyAcc;
+        } catch(e) {}
+      }
+    }
+
+    function saveDriverContact() {
+      const name = document.getElementById('driverInputName').value.trim();
+      const phone = document.getElementById('driverInputPhone').value.trim();
+      const whatsapp = document.getElementById('driverInputWhatsapp').value.trim();
+      const district = document.getElementById('driverInputDistrict').value;
+
+      const profile = JSON.parse(localStorage.getItem(DRIVER_PROFILE_KEY) || '{}');
+      profile.name = name;
+      profile.phone = phone;
+      profile.whatsapp = whatsapp;
+      profile.district = district;
+
+      localStorage.setItem(DRIVER_PROFILE_KEY, JSON.stringify(profile));
+      document.getElementById('driverProfileDisplayName').textContent = 'الكابتن: ' + name;
+      document.getElementById('driverProfilePhoneDisplay').textContent = phone;
+
+      alert('✅ تم حفظ وتحديث بيانات التواصل الميداني بنجاح!');
+    }
+
+    function saveDriverBank() {
+      const kuraimiAcc = document.getElementById('driverKuraimiAcc').value.trim();
+      const kuraimiName = document.getElementById('driverKuraimiName').value.trim();
+      const onecashAcc = document.getElementById('driverOnecashAcc').value.trim();
+      const omqyAcc = document.getElementById('driverOmqyAcc').value.trim();
+
+      const profile = JSON.parse(localStorage.getItem(DRIVER_PROFILE_KEY) || '{}');
+      profile.kuraimiAcc = kuraimiAcc;
+      profile.kuraimiName = kuraimiName;
+      profile.onecashAcc = onecashAcc;
+      profile.omqyAcc = omqyAcc;
+
+      localStorage.setItem(DRIVER_PROFILE_KEY, JSON.stringify(profile));
+      alert('✅ تم تثبيت بيانات الحسابات البنكية ومحافظ التحصيل بنجاح!');
+    }
+
+    function requestPayout() {
+      const profile = JSON.parse(localStorage.getItem(DRIVER_PROFILE_KEY) || '{}');
+      const bank = profile.kuraimiAcc ? `الكريمي (${profile.kuraimiAcc})` : (profile.onecashAcc ? `ون كاش (${profile.onecashAcc})` : 'الحساب البنكي');
+      
+      const confirmPayout = confirm(`هل تود تأكيد طلب تحويل كامل رصيد أرباح التوصيل المتاح (42,500 ر.ي) إلى ${bank}؟`);
+      if (confirmPayout) {
+        alert('🎉 تم رفع طلب السحب بنجاح! سيتم إيداع المبلغ خلال 15 دقيقة وإشعارك برسالة تأكيد.');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       checkForNewOrders();
+      loadDriverProfile();
       setTimeout(setupCloudCourierListener, 1500);
     });
   </script>

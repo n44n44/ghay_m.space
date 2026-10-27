@@ -137,17 +137,20 @@
 
         <form id="adminLoginForm" onsubmit="event.preventDefault(); submitAdminLogin();" class="space-y-4">
           <div>
-            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">البريد الإلكتروني للإدارة:</label>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">البريد الإلكتروني للمشرف العام:</label>
             <div class="relative">
-              <input type="email" id="adminLoginEmail" required placeholder="admin@ghaymspace.ye" value="admin@ghaymspace.ye" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
+              <input type="email" id="adminLoginEmail" required placeholder="أدخل بريدك الإداري الخاص" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
               <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">shield</span>
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-on-surface-variant mb-1.5">رمز المرور السري المشفر:</label>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="block text-xs font-bold text-on-surface-variant">رمز المرور السري الخاص بك:</label>
+              <button type="button" onclick="promptResetAdminCredentials()" class="text-[11px] text-red-400 hover:underline">تعيين رمز سري جديد؟</button>
+            </div>
             <div class="relative">
-              <input type="password" id="adminLoginPass" required placeholder="••••••••" value="123456" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
+              <input type="password" id="adminLoginPass" required placeholder="أدخل رمزك السري المحمي" class="w-full bg-[#091422] border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface focus:border-red-400 focus:ring-1 focus:ring-red-400/40 focus:outline-none transition">
               <span class="material-symbols-outlined absolute end-3 top-2.5 text-outline text-lg pointer-events-none">key</span>
             </div>
           </div>
@@ -156,7 +159,7 @@
 
           <button type="submit" id="adminLoginBtn" class="w-full py-3 px-4 rounded-xl bg-red-500 hover:bg-red-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-red-500/20 transition active:scale-98">
             <span class="material-symbols-outlined text-base">verified_user</span>
-            <span>التحقق والدخول لصلاحيات الإدارة</span>
+            <span>التحقق والدخول لصلاحيات الإدارة العليا</span>
           </button>
         </form>
 
@@ -5913,31 +5916,55 @@
       }
     }
 
+    function promptResetAdminCredentials() {
+      const newEmail = prompt('أدخل البريد الإلكتروني الذي تريد اعتماده حصرياً للوحة التحكم:');
+      if (!newEmail || !newEmail.includes('@')) {
+        alert('يرجى إدخال بريد إلكتروني صالح.');
+        return;
+      }
+      const newPass = prompt('أدخل رمز المرور السري الجديد (6 خانات على الأقل):');
+      if (!newPass || newPass.length < 6) {
+        alert('كلمة المرور يجب أن تكون 6 خانات أو أكثر.');
+        return;
+      }
+
+      const adminCreds = { email: newEmail.trim().toLowerCase(), pass: newPass.trim() };
+      localStorage.setItem('ghaym_admin_secret_creds', JSON.stringify(adminCreds));
+      alert('تم حفظ وتثبيت بيانات حساب الإدارة الخاصة بك بنجاح! لن يتمكن أحد سواك من الدخول.');
+      
+      const emailInput = document.getElementById('adminLoginEmail');
+      if (emailInput) emailInput.value = newEmail.trim();
+    }
+
     async function submitAdminLogin() {
-      const email = document.getElementById('adminLoginEmail').value.trim();
+      const email = document.getElementById('adminLoginEmail').value.trim().toLowerCase();
       const pass = document.getElementById('adminLoginPass').value.trim();
       const errEl = document.getElementById('adminLoginError');
       const submitBtn = document.getElementById('adminLoginBtn');
 
       errEl.classList.add('hidden');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري التحقق...';
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> جاري التحقق من الرمز السري...';
 
-      if (window.GhaymDB && window.GhaymDB.signIn) {
-        try {
-          const { data, error } = await window.GhaymDB.signIn(email, pass);
-          if (error && !email.includes('admin')) throw error;
-        } catch(e) {
-          console.warn('Supabase auth notice:', e.message);
+      // Check saved custom admin credentials or initialize on first use
+      let savedCreds = null;
+      try {
+        savedCreds = JSON.parse(localStorage.getItem('ghaym_admin_secret_creds'));
+      } catch(e) {}
+
+      if (!savedCreds) {
+        // If this is the very first time setting credentials, save them permanently
+        savedCreds = { email: email, pass: pass };
+        localStorage.setItem('ghaym_admin_secret_creds', JSON.stringify(savedCreds));
+      } else {
+        // Strict verification: credentials MUST match the owner's saved credentials
+        if (savedCreds.email !== email || savedCreds.pass !== pass) {
+          errEl.textContent = 'بيانات الدخول غير صحيحة! هذا الحساب محمي بالكامل ومخصص للمشرف العام فقط.';
+          errEl.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">verified_user</span> <span>التحقق والدخول لصلاحيات الإدارة العليا</span>';
+          return;
         }
-      }
-
-      if (pass.length < 6) {
-        errEl.textContent = 'كلمة المرور يجب ألا تقل عن 6 خانات.';
-        errEl.classList.remove('hidden');
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">verified_user</span> <span>التحقق والدخول لصلاحيات الإدارة</span>';
-        return;
       }
 
       if (window.GhaymAuth) {

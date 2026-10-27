@@ -310,6 +310,15 @@ window.GhaymApp = (function() {
     document.querySelectorAll('[data-wishlist-count]').forEach(el => el.textContent = count);
   }
 
+  function renderWishlistPage() {
+    updateWishlistUI();
+    const count = wishlist.length;
+    const countBadge = document.querySelector('#page-wishlist [data-purpose="wishlist-header-card"] span');
+    if (countBadge) {
+      countBadge.textContent = `${count} منتجات محفوظة`;
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     updateWishlistUI();
@@ -326,6 +335,8 @@ window.GhaymApp = (function() {
     placeCustomerOrder,
     getOrders,
     toggleWishlist,
-    updateCartUI
+    updateCartUI,
+    updateWishlistUI,
+    renderWishlistPage
   };
 })();

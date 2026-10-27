@@ -170,7 +170,7 @@
 <div class="space-y-1">
 <span class="font-label-sm text-label-sm text-on-surface-variant">طلبات اليوم المسندة</span>
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-on-surface group-hover:text-secondary transition-colors">5</span>
+<span class="font-display-lg text-display-lg text-on-surface group-hover:text-secondary transition-colors">0</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">طلبات معتمدة</span>
 </div>
 </div>
@@ -183,7 +183,7 @@
 <div class="space-y-1">
 <span class="font-label-sm text-label-sm text-on-surface-variant">تم تسليمها بنجاح</span>
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-emerald-400">3</span>
+<span class="font-display-lg text-display-lg text-emerald-400">0</span>
 <span class="font-body-sm text-body-sm text-emerald-400/70">مكتملة ومؤكدة</span>
 </div>
 </div>
@@ -196,12 +196,12 @@
 <div class="space-y-1">
 <span class="font-label-sm text-label-sm text-on-surface-variant">جارية حالياً</span>
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-secondary">2</span>
+<span class="font-display-lg text-display-lg text-secondary">0</span>
 <span class="font-body-sm text-body-sm text-secondary/70">تحتاج استلام وتوصيل</span>
 </div>
 </div>
 <div class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-2xl animate-spin" style="animation-duration: 6s;">autorenew</span>
+<span class="material-symbols-outlined text-2xl">autorenew</span>
 </div>
 </div>
 </section>
@@ -250,6 +250,15 @@
 
 <!-- Assigned Orders List (Exclusive to current Driver) -->
 <section id="assignedOrdersList" class="space-y-4">
+  <div class="p-8 text-center bg-surface-container-low border border-outline-variant/20 rounded-xl">
+    <div class="w-14 h-14 rounded-2xl bg-surface-container text-secondary/60 flex items-center justify-center text-2xl mx-auto mb-3">
+      <span class="material-symbols-outlined text-3xl">two_wheeler</span>
+    </div>
+    <h3 class="text-on-surface font-bold text-sm">لا توجد شحنات مسندة إليك حالياً</h3>
+    <p class="text-on-surface-variant text-xs mt-1 max-w-sm mx-auto">تم تصفير البيانات الوهمية. عندما يقوم عميل في المكلا بتأكيد طلب من السوق، سيصلك إشعار فوري هنا لقبول الشحنة والبدء في استلامها وتوصيلها.</p>
+  </div>
+</section>
+<section class="hidden">
 <!-- ORDER CARD 1: En Route to Customer -->
 <article class="bg-surface-container-low border border-secondary/30 rounded-xl p-5 shadow-lg relative overflow-hidden transition-all duration-200 hover:border-secondary">
 <div class="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
